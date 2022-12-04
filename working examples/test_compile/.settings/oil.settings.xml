@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<com.eu.evidence.rtdruid3.oil.settings:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.eu.evidence.rtdruid3.oil.settings="http://com.eu.evidence.rtdruid3.oil.settings">
+  <applOilFiles>conf.oil</applOilFiles>
+  <projectEEPath eePath="D:\RTOS_PROJEKT\erica\erika3" enable="true" eeSource="user_value"/>
+  <projectRtdExtPath rtdSource="plugins" enable="true"/>
+  <autoInclude>C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10/arm-none-eabi/include</autoInclude>
+  <autoInclude>C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10/lib/gcc/arm-none-eabi/4.9.3/include</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/devices</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/devices/common</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/inc</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/adc</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/clock/S32K1xx</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/cmp</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/crc</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/csec</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/edma</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/eim</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/erm</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/ewm</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/flexcan</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/flexio</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/ftm</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/lpi2c</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/lpit</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/lpspi</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/lptmr</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/lpuart</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/mpu</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/pdb</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/pins</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/power/S32K1xx</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/rtc</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/trgmux</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/wdog</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/rtos/osif</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/devices/S32K148/include</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/devices/S32K148/startup</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/enet</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/quadspi</autoInclude>
+  <autoInclude>C:\NXP\S32_SDK_S32K1xx_RTM_4.0.3/platform/drivers/src/sai</autoInclude>
+</com.eu.evidence.rtdruid3.oil.settings:Project>
