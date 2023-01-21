@@ -1,0 +1,4362 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc7184b --dep-file=obj/ee_tc_trapvec.c.d_tmp -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -DOS_EE_BUILD -D__CPU__=tc38x -D__CPU_TC38X__ -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src -g2 --make-target=obj/ee_tc_trapvec.c.o --language=+gcc,-volatile,+strings --default-near-size=0 -O1 -o obj\\ee_tc_trapvec.src D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c"
+	.compiler_name		"ctc"
+	;source	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.traptab0.trapvec.000',code,cluster('osEE_tc_trap_mmu_core0')
+	.sect	'.text.traptab0.trapvec.000'
+	
+	.global	osEE_tc_trap_mmu_core0
+; Function osEE_tc_trap_mmu_core0
+.L27:
+osEE_tc_trap_mmu_core0:	.type	func
+	svlcx
+.L200:
+	mov  d15, d15
+.L2:
+	debug
+.L205:
+	j	.L2
+.L198:
+	
+__osEE_tc_trap_mmu_core0_function_end:
+	.size	osEE_tc_trap_mmu_core0,__osEE_tc_trap_mmu_core0_function_end-osEE_tc_trap_mmu_core0
+.L82:
+	; End of function
+	
+	.sdecl	'.text.traptab0.trapvec.001',code,cluster('osEE_tc_trap_protection_core0')
+	.sect	'.text.traptab0.trapvec.001'
+	
+	.global	osEE_tc_trap_protection_core0
+; Function osEE_tc_trap_protection_core0
+.L29:
+osEE_tc_trap_protection_core0:	.type	func
+	svlcx
+.L208:
+	mov  d15, d15
+.L3:
+	debug
+.L210:
+	j	.L3
+.L207:
+	
+__osEE_tc_trap_protection_core0_function_end:
+	.size	osEE_tc_trap_protection_core0,__osEE_tc_trap_protection_core0_function_end-osEE_tc_trap_protection_core0
+.L87:
+	; End of function
+	
+	.sdecl	'.text.traptab0.trapvec.002',code,cluster('osEE_tc_trap_instruction_core0')
+	.sect	'.text.traptab0.trapvec.002'
+	
+	.global	osEE_tc_trap_instruction_core0
+; Function osEE_tc_trap_instruction_core0
+.L31:
+osEE_tc_trap_instruction_core0:	.type	func
+	svlcx
+.L212:
+	mov  d15, d15
+.L4:
+	debug
+.L214:
+	j	.L4
+.L211:
+	
+__osEE_tc_trap_instruction_core0_function_end:
+	.size	osEE_tc_trap_instruction_core0,__osEE_tc_trap_instruction_core0_function_end-osEE_tc_trap_instruction_core0
+.L92:
+	; End of function
+	
+	.sdecl	'.text.traptab0.trapvec.003',code,cluster('osEE_tc_trap_context_core0')
+	.sect	'.text.traptab0.trapvec.003'
+	
+	.global	osEE_tc_trap_context_core0
+; Function osEE_tc_trap_context_core0
+.L33:
+osEE_tc_trap_context_core0:	.type	func
+	svlcx
+.L216:
+	mov  d15, d15
+.L5:
+	debug
+.L218:
+	j	.L5
+.L215:
+	
+__osEE_tc_trap_context_core0_function_end:
+	.size	osEE_tc_trap_context_core0,__osEE_tc_trap_context_core0_function_end-osEE_tc_trap_context_core0
+.L97:
+	; End of function
+	
+	.sdecl	'.text.traptab0.trapvec.004',code,cluster('osEE_tc_trap_bus_core0')
+	.sect	'.text.traptab0.trapvec.004'
+	
+	.global	osEE_tc_trap_bus_core0
+; Function osEE_tc_trap_bus_core0
+.L35:
+osEE_tc_trap_bus_core0:	.type	func
+	svlcx
+.L220:
+	mov  d15, d15
+.L6:
+	debug
+.L222:
+	j	.L6
+.L219:
+	
+__osEE_tc_trap_bus_core0_function_end:
+	.size	osEE_tc_trap_bus_core0,__osEE_tc_trap_bus_core0_function_end-osEE_tc_trap_bus_core0
+.L102:
+	; End of function
+	
+	.sdecl	'.text.traptab0.trapvec.005',code,cluster('osEE_tc_trap_assertion_core0')
+	.sect	'.text.traptab0.trapvec.005'
+	
+	.global	osEE_tc_trap_assertion_core0
+; Function osEE_tc_trap_assertion_core0
+.L37:
+osEE_tc_trap_assertion_core0:	.type	func
+	svlcx
+.L224:
+	mov  d15, d15
+.L7:
+	debug
+.L226:
+	j	.L7
+.L223:
+	
+__osEE_tc_trap_assertion_core0_function_end:
+	.size	osEE_tc_trap_assertion_core0,__osEE_tc_trap_assertion_core0_function_end-osEE_tc_trap_assertion_core0
+.L107:
+	; End of function
+	
+	.sdecl	'.text.traptab0.trapvec.006',code,cluster('osEE_tc_trap_system_core0')
+	.sect	'.text.traptab0.trapvec.006'
+	
+	.global	osEE_tc_trap_system_core0
+; Function osEE_tc_trap_system_core0
+.L39:
+osEE_tc_trap_system_core0:	.type	func
+	mov  d15, d15
+.L8:
+	debug
+.L229:
+	j	.L8
+.L227:
+	
+__osEE_tc_trap_system_core0_function_end:
+	.size	osEE_tc_trap_system_core0,__osEE_tc_trap_system_core0_function_end-osEE_tc_trap_system_core0
+.L112:
+	; End of function
+	
+	.sdecl	'.text.traptab0.trapvec.007',code,cluster('osEE_tc_trap_nmi_core0')
+	.sect	'.text.traptab0.trapvec.007'
+	
+	.global	osEE_tc_trap_nmi_core0
+; Function osEE_tc_trap_nmi_core0
+.L41:
+osEE_tc_trap_nmi_core0:	.type	func
+	svlcx
+.L231:
+	mov  d15, d15
+.L9:
+	debug
+.L233:
+	j	.L9
+.L230:
+	
+__osEE_tc_trap_nmi_core0_function_end:
+	.size	osEE_tc_trap_nmi_core0,__osEE_tc_trap_nmi_core0_function_end-osEE_tc_trap_nmi_core0
+.L117:
+	; End of function
+	
+	.sdecl	'.text.traptab1.trapvec.000',code,cluster('osEE_tc_trap_mmu_core1')
+	.sect	'.text.traptab1.trapvec.000'
+	
+	.global	osEE_tc_trap_mmu_core1
+; Function osEE_tc_trap_mmu_core1
+.L43:
+osEE_tc_trap_mmu_core1:	.type	func
+	svlcx
+.L235:
+	mov  d15, d15
+.L10:
+	debug
+.L237:
+	j	.L10
+.L234:
+	
+__osEE_tc_trap_mmu_core1_function_end:
+	.size	osEE_tc_trap_mmu_core1,__osEE_tc_trap_mmu_core1_function_end-osEE_tc_trap_mmu_core1
+.L122:
+	; End of function
+	
+	.sdecl	'.text.traptab1.trapvec.001',code,cluster('osEE_tc_trap_protection_core1')
+	.sect	'.text.traptab1.trapvec.001'
+	
+	.global	osEE_tc_trap_protection_core1
+; Function osEE_tc_trap_protection_core1
+.L45:
+osEE_tc_trap_protection_core1:	.type	func
+	svlcx
+.L239:
+	mov  d15, d15
+.L11:
+	debug
+.L241:
+	j	.L11
+.L238:
+	
+__osEE_tc_trap_protection_core1_function_end:
+	.size	osEE_tc_trap_protection_core1,__osEE_tc_trap_protection_core1_function_end-osEE_tc_trap_protection_core1
+.L127:
+	; End of function
+	
+	.sdecl	'.text.traptab1.trapvec.002',code,cluster('osEE_tc_trap_instruction_core1')
+	.sect	'.text.traptab1.trapvec.002'
+	
+	.global	osEE_tc_trap_instruction_core1
+; Function osEE_tc_trap_instruction_core1
+.L47:
+osEE_tc_trap_instruction_core1:	.type	func
+	svlcx
+.L243:
+	mov  d15, d15
+.L12:
+	debug
+.L245:
+	j	.L12
+.L242:
+	
+__osEE_tc_trap_instruction_core1_function_end:
+	.size	osEE_tc_trap_instruction_core1,__osEE_tc_trap_instruction_core1_function_end-osEE_tc_trap_instruction_core1
+.L132:
+	; End of function
+	
+	.sdecl	'.text.traptab1.trapvec.003',code,cluster('osEE_tc_trap_context_core1')
+	.sect	'.text.traptab1.trapvec.003'
+	
+	.global	osEE_tc_trap_context_core1
+; Function osEE_tc_trap_context_core1
+.L49:
+osEE_tc_trap_context_core1:	.type	func
+	svlcx
+.L247:
+	mov  d15, d15
+.L13:
+	debug
+.L249:
+	j	.L13
+.L246:
+	
+__osEE_tc_trap_context_core1_function_end:
+	.size	osEE_tc_trap_context_core1,__osEE_tc_trap_context_core1_function_end-osEE_tc_trap_context_core1
+.L137:
+	; End of function
+	
+	.sdecl	'.text.traptab1.trapvec.004',code,cluster('osEE_tc_trap_bus_core1')
+	.sect	'.text.traptab1.trapvec.004'
+	
+	.global	osEE_tc_trap_bus_core1
+; Function osEE_tc_trap_bus_core1
+.L51:
+osEE_tc_trap_bus_core1:	.type	func
+	svlcx
+.L251:
+	mov  d15, d15
+.L14:
+	debug
+.L253:
+	j	.L14
+.L250:
+	
+__osEE_tc_trap_bus_core1_function_end:
+	.size	osEE_tc_trap_bus_core1,__osEE_tc_trap_bus_core1_function_end-osEE_tc_trap_bus_core1
+.L142:
+	; End of function
+	
+	.sdecl	'.text.traptab1.trapvec.005',code,cluster('osEE_tc_trap_assertion_core1')
+	.sect	'.text.traptab1.trapvec.005'
+	
+	.global	osEE_tc_trap_assertion_core1
+; Function osEE_tc_trap_assertion_core1
+.L53:
+osEE_tc_trap_assertion_core1:	.type	func
+	svlcx
+.L255:
+	mov  d15, d15
+.L15:
+	debug
+.L257:
+	j	.L15
+.L254:
+	
+__osEE_tc_trap_assertion_core1_function_end:
+	.size	osEE_tc_trap_assertion_core1,__osEE_tc_trap_assertion_core1_function_end-osEE_tc_trap_assertion_core1
+.L147:
+	; End of function
+	
+	.sdecl	'.text.traptab1.trapvec.006',code,cluster('osEE_tc_trap_system_core1')
+	.sect	'.text.traptab1.trapvec.006'
+	
+	.global	osEE_tc_trap_system_core1
+; Function osEE_tc_trap_system_core1
+.L55:
+osEE_tc_trap_system_core1:	.type	func
+	mov  d15, d15
+.L16:
+	debug
+.L260:
+	j	.L16
+.L258:
+	
+__osEE_tc_trap_system_core1_function_end:
+	.size	osEE_tc_trap_system_core1,__osEE_tc_trap_system_core1_function_end-osEE_tc_trap_system_core1
+.L152:
+	; End of function
+	
+	.sdecl	'.text.traptab1.trapvec.007',code,cluster('osEE_tc_trap_nmi_core1')
+	.sect	'.text.traptab1.trapvec.007'
+	
+	.global	osEE_tc_trap_nmi_core1
+; Function osEE_tc_trap_nmi_core1
+.L57:
+osEE_tc_trap_nmi_core1:	.type	func
+	svlcx
+.L262:
+	mov  d15, d15
+.L17:
+	debug
+.L264:
+	j	.L17
+.L261:
+	
+__osEE_tc_trap_nmi_core1_function_end:
+	.size	osEE_tc_trap_nmi_core1,__osEE_tc_trap_nmi_core1_function_end-osEE_tc_trap_nmi_core1
+.L157:
+	; End of function
+	
+	.sdecl	'.text.traptab2.trapvec.000',code,cluster('osEE_tc_trap_mmu_core2')
+	.sect	'.text.traptab2.trapvec.000'
+	
+	.global	osEE_tc_trap_mmu_core2
+; Function osEE_tc_trap_mmu_core2
+.L59:
+osEE_tc_trap_mmu_core2:	.type	func
+	svlcx
+.L266:
+	mov  d15, d15
+.L18:
+	debug
+.L268:
+	j	.L18
+.L265:
+	
+__osEE_tc_trap_mmu_core2_function_end:
+	.size	osEE_tc_trap_mmu_core2,__osEE_tc_trap_mmu_core2_function_end-osEE_tc_trap_mmu_core2
+.L162:
+	; End of function
+	
+	.sdecl	'.text.traptab2.trapvec.001',code,cluster('osEE_tc_trap_protection_core2')
+	.sect	'.text.traptab2.trapvec.001'
+	
+	.global	osEE_tc_trap_protection_core2
+; Function osEE_tc_trap_protection_core2
+.L61:
+osEE_tc_trap_protection_core2:	.type	func
+	svlcx
+.L270:
+	mov  d15, d15
+.L19:
+	debug
+.L272:
+	j	.L19
+.L269:
+	
+__osEE_tc_trap_protection_core2_function_end:
+	.size	osEE_tc_trap_protection_core2,__osEE_tc_trap_protection_core2_function_end-osEE_tc_trap_protection_core2
+.L167:
+	; End of function
+	
+	.sdecl	'.text.traptab2.trapvec.002',code,cluster('osEE_tc_trap_instruction_core2')
+	.sect	'.text.traptab2.trapvec.002'
+	
+	.global	osEE_tc_trap_instruction_core2
+; Function osEE_tc_trap_instruction_core2
+.L63:
+osEE_tc_trap_instruction_core2:	.type	func
+	svlcx
+.L274:
+	mov  d15, d15
+.L20:
+	debug
+.L276:
+	j	.L20
+.L273:
+	
+__osEE_tc_trap_instruction_core2_function_end:
+	.size	osEE_tc_trap_instruction_core2,__osEE_tc_trap_instruction_core2_function_end-osEE_tc_trap_instruction_core2
+.L172:
+	; End of function
+	
+	.sdecl	'.text.traptab2.trapvec.003',code,cluster('osEE_tc_trap_context_core2')
+	.sect	'.text.traptab2.trapvec.003'
+	
+	.global	osEE_tc_trap_context_core2
+; Function osEE_tc_trap_context_core2
+.L65:
+osEE_tc_trap_context_core2:	.type	func
+	svlcx
+.L278:
+	mov  d15, d15
+.L21:
+	debug
+.L280:
+	j	.L21
+.L277:
+	
+__osEE_tc_trap_context_core2_function_end:
+	.size	osEE_tc_trap_context_core2,__osEE_tc_trap_context_core2_function_end-osEE_tc_trap_context_core2
+.L177:
+	; End of function
+	
+	.sdecl	'.text.traptab2.trapvec.004',code,cluster('osEE_tc_trap_bus_core2')
+	.sect	'.text.traptab2.trapvec.004'
+	
+	.global	osEE_tc_trap_bus_core2
+; Function osEE_tc_trap_bus_core2
+.L67:
+osEE_tc_trap_bus_core2:	.type	func
+	svlcx
+.L282:
+	mov  d15, d15
+.L22:
+	debug
+.L284:
+	j	.L22
+.L281:
+	
+__osEE_tc_trap_bus_core2_function_end:
+	.size	osEE_tc_trap_bus_core2,__osEE_tc_trap_bus_core2_function_end-osEE_tc_trap_bus_core2
+.L182:
+	; End of function
+	
+	.sdecl	'.text.traptab2.trapvec.005',code,cluster('osEE_tc_trap_assertion_core2')
+	.sect	'.text.traptab2.trapvec.005'
+	
+	.global	osEE_tc_trap_assertion_core2
+; Function osEE_tc_trap_assertion_core2
+.L69:
+osEE_tc_trap_assertion_core2:	.type	func
+	svlcx
+.L286:
+	mov  d15, d15
+.L23:
+	debug
+.L288:
+	j	.L23
+.L285:
+	
+__osEE_tc_trap_assertion_core2_function_end:
+	.size	osEE_tc_trap_assertion_core2,__osEE_tc_trap_assertion_core2_function_end-osEE_tc_trap_assertion_core2
+.L187:
+	; End of function
+	
+	.sdecl	'.text.traptab2.trapvec.006',code,cluster('osEE_tc_trap_system_core2')
+	.sect	'.text.traptab2.trapvec.006'
+	
+	.global	osEE_tc_trap_system_core2
+; Function osEE_tc_trap_system_core2
+.L71:
+osEE_tc_trap_system_core2:	.type	func
+	mov  d15, d15
+.L24:
+	debug
+.L291:
+	j	.L24
+.L289:
+	
+__osEE_tc_trap_system_core2_function_end:
+	.size	osEE_tc_trap_system_core2,__osEE_tc_trap_system_core2_function_end-osEE_tc_trap_system_core2
+.L192:
+	; End of function
+	
+	.sdecl	'.text.traptab2.trapvec.007',code,cluster('osEE_tc_trap_nmi_core2')
+	.sect	'.text.traptab2.trapvec.007'
+	
+	.global	osEE_tc_trap_nmi_core2
+; Function osEE_tc_trap_nmi_core2
+.L73:
+osEE_tc_trap_nmi_core2:	.type	func
+	svlcx
+.L293:
+	mov  d15, d15
+.L25:
+	debug
+.L295:
+	j	.L25
+.L292:
+	
+__osEE_tc_trap_nmi_core2_function_end:
+	.size	osEE_tc_trap_nmi_core2,__osEE_tc_trap_nmi_core2_function_end-osEE_tc_trap_nmi_core2
+.L197:
+	; End of function
+	
+	.calls	'osEE_tc_trap_mmu_core0','',0
+	.calls	'osEE_tc_trap_protection_core0','',0
+	.calls	'osEE_tc_trap_instruction_core0','',0
+	.calls	'osEE_tc_trap_context_core0','',0
+	.calls	'osEE_tc_trap_bus_core0','',0
+	.calls	'osEE_tc_trap_assertion_core0','',0
+	.calls	'osEE_tc_trap_system_core0','',0
+	.calls	'osEE_tc_trap_nmi_core0','',0
+	.calls	'osEE_tc_trap_mmu_core1','',0
+	.calls	'osEE_tc_trap_protection_core1','',0
+	.calls	'osEE_tc_trap_instruction_core1','',0
+	.calls	'osEE_tc_trap_context_core1','',0
+	.calls	'osEE_tc_trap_bus_core1','',0
+	.calls	'osEE_tc_trap_assertion_core1','',0
+	.calls	'osEE_tc_trap_system_core1','',0
+	.calls	'osEE_tc_trap_nmi_core1','',0
+	.calls	'osEE_tc_trap_mmu_core2','',0
+	.calls	'osEE_tc_trap_protection_core2','',0
+	.calls	'osEE_tc_trap_instruction_core2','',0
+	.calls	'osEE_tc_trap_context_core2','',0
+	.calls	'osEE_tc_trap_bus_core2','',0
+	.calls	'osEE_tc_trap_assertion_core2','',0
+	.calls	'osEE_tc_trap_system_core2','',0
+	.calls	'osEE_tc_trap_nmi_core2','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L75:
+	.word	12962
+	.half	3
+	.word	.L76
+	.byte	4
+.L74:
+	.byte	1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L77
+.L202:
+	.byte	2
+	.byte	'unsigned char',0,1,8
+.L199:
+	.byte	3
+	.byte	'osEE_tc_get_tin',0,3,1,215,1,32
+	.word	228
+	.byte	1,1
+.L201:
+	.byte	4,0,5
+	.byte	'osEE_tc_dsync',0,3,2,202,1,44,1,1,4,0
+.L204:
+	.byte	5
+	.byte	'osEE_tc_debug',0,3,2,211,1,44,1,1
+.L206:
+	.byte	4,0,6,3,109,9,1,7
+	.byte	'OS_CODE_ID_INVALID',0,127,7
+	.byte	'OS_CORE_ID_0',0,0,7
+	.byte	'OS_CORE_ID_MASTER',0,0,7
+	.byte	'OS_CORE_ID_1',0,1,7
+	.byte	'OS_CORE_ID_2',0,2,7
+	.byte	'OS_CORE_ID_ARR_SIZE',0,3,0,3
+	.byte	'osEE_get_curr_core_id',0,3,2,237,2,52
+	.word	323
+	.byte	1,1,4,0,2
+	.byte	'unsigned short int',0,2,7,2
+	.byte	'unsigned int',0,4,7,3
+	.byte	'osEE_tc_get_cpu_wdt_pw',0,3,4,238,2,3
+	.word	473
+	.byte	1,1,8
+	.byte	'core_index',0,4,238,2,35
+	.word	495
+	.byte	4,0,5
+	.byte	'osEE_tc_clear_cpu_endinit',0,3,4,143,3,2,1,1,8
+	.byte	'core_index',0,4,143,3,37
+	.word	495
+	.byte	8
+	.byte	'pw',0,4,143,3,58
+	.word	473
+	.byte	4,0,5
+	.byte	'osEE_tc_set_cpu_endinit',0,3,4,182,3,3,1,1,8
+	.byte	'core_index',0,4,182,3,36
+	.word	495
+	.byte	8
+	.byte	'pw',0,4,182,3,57
+	.word	473
+	.byte	4,0,5
+	.byte	'osEE_tc_clear_safety_endinit',0,3,4,249,3,3,1,1,8
+	.byte	'pw',0,4,249,3,41
+	.word	473
+	.byte	4,0,5
+	.byte	'osEE_tc_set_safety_endinit',0,3,4,157,4,3,1,1,8
+	.byte	'pw',0,4,157,4,39
+	.word	473
+	.byte	4,0,9
+	.word	495
+	.byte	10
+	.word	802
+	.byte	11
+	.word	807
+	.byte	3
+	.byte	'osEE_tc_cmpswapw',0,3,5,184,1,48
+	.word	495
+	.byte	1,1,8
+	.byte	'p_var',0,5,185,1,29
+	.word	812
+	.byte	8
+	.byte	'new_val',0,5,185,1,45
+	.word	495
+	.byte	8
+	.byte	'expected_val',0,5,185,1,63
+	.word	495
+	.byte	4,0,9
+	.word	495
+	.byte	10
+	.word	902
+	.byte	5
+	.byte	'osEE_hal_spin_lock',0,3,5,150,2,3,1,1,8
+	.byte	'p_lock',0,5,150,2,39
+	.word	907
+	.byte	12,4,0,0,5
+	.byte	'osEE_hal_spin_unlock',0,3,5,160,2,3,1,1,8
+	.byte	'p_lock',0,5,160,2,41
+	.word	907
+	.byte	12,4,0,0,6,8,177,5,9,1,7
+	.byte	'E_OK',0,0,7
+	.byte	'E_OS_ACCESS',0,1,7
+	.byte	'E_OS_CALLEVEL',0,2,7
+	.byte	'E_OS_ID',0,3,7
+	.byte	'E_OS_LIMIT',0,4,7
+	.byte	'E_OS_NOFUNC',0,5,7
+	.byte	'E_OS_RESOURCE',0,6,7
+	.byte	'E_OS_STATE',0,7,7
+	.byte	'E_OS_VALUE',0,8,7
+	.byte	'E_OS_SERVICEID',0,9,7
+	.byte	'E_OS_ILLEGAL_ADDRESS',0,10,7
+	.byte	'E_OS_MISSINGEND',0,11,7
+	.byte	'E_OS_DISABLEDINT',0,12,7
+	.byte	'E_OS_STACKFAULT',0,13,7
+	.byte	'E_OS_PARAM_POINTER',0,14,7
+	.byte	'E_OS_PROTECTION_MEMORY',0,15,7
+	.byte	'E_OS_PROTECTION_TIME',0,16,7
+	.byte	'E_OS_PROTECTION_ARRIVAL',0,17,7
+	.byte	'E_OS_PROTECTION_LOCKED',0,18,7
+	.byte	'E_OS_PROTECTION_EXCEPTION',0,19,7
+	.byte	'E_OS_SPINLOCK',0,20,7
+	.byte	'E_OS_INTERFERENCE_DEADLOCK',0,21,7
+	.byte	'E_OS_NESTING_DEADLOCK',0,22,7
+	.byte	'E_OS_CORE',0,23,7
+	.byte	'E_OS_SYS_INIT',0,24,7
+	.byte	'E_OS_SYS_SUSPEND_NESTING_LIMIT',0,25,7
+	.byte	'E_OS_SYS_TASK',0,26,7
+	.byte	'E_OS_SYS_STACK',0,27,7
+	.byte	'E_OS_SYS_ACT',0,28,0,6,3,72,9,1,7
+	.byte	'OSEE_FALSE',0,0,7
+	.byte	'OSEE_TRUE',0,1,0,13,7,246,6,9,16,14
+	.byte	'ar_core_mask',0
+	.word	495
+	.byte	4,2,35,0,14
+	.byte	'not_ar_core_mask',0
+	.word	495
+	.byte	4,2,35,4,14
+	.byte	'ar_shutdown_mask',0
+	.word	495
+	.byte	4,2,35,8,14
+	.byte	'ar_num_core_started',0
+	.word	228
+	.byte	1,2,35,12,14
+	.byte	'ar_shutdown_all_cores_error',0
+	.word	1008
+	.byte	1,2,35,13,14
+	.byte	'ar_shutdown_all_cores_flag',0
+	.word	1552
+	.byte	1,2,35,14,0,10
+	.word	1583
+	.byte	9
+	.word	495
+	.byte	13,3,158,1,9,4,14
+	.byte	'value',0
+	.word	1771
+	.byte	4,2,35,0,0,10
+	.word	1776
+	.byte	10
+	.word	.L296-.L75
+	.byte	13,9,116,3,4,15
+	.byte	'pcxo',0,2
+	.word	473
+	.byte	16,0,2,35,0,15
+	.byte	'pcxs',0,1
+	.word	228
+	.byte	4,4,2,35,2,15
+	.byte	'ul',0,1
+	.word	228
+	.byte	1,3,2,35,2,15
+	.byte	'pie',0,1
+	.word	228
+	.byte	1,2,2,35,2,15
+	.byte	'pcpn',0,2
+	.word	473
+	.byte	8,2,2,35,2,16,1
+	.word	228
+	.byte	1,1,2,35,3,16,1
+	.word	228
+	.byte	1,0,2,35,3,0,17,9,114,9,4,14
+	.byte	'reg',0
+	.word	495
+	.byte	4,2,35,0,14
+	.byte	'bits',0
+	.word	1808
+	.byte	4,2,35,0,0,18
+	.byte	'void',0,10
+	.word	1946
+	.byte	19
+	.byte	'OsEE_addr',0,3,90,31
+	.word	1952
+.L296:
+	.byte	20
+	.byte	'OsEE_CTX_tag',0,9,243,1,16,16,14
+	.byte	'p_ctx',0
+	.word	1803
+	.byte	4,2,35,0,14
+	.byte	'dummy',0
+	.word	495
+	.byte	4,2,35,4,14
+	.byte	'pcxi',0
+	.word	1913
+	.byte	4,2,35,8,14
+	.byte	'ra',0
+	.word	1957
+	.byte	4,2,35,12,0,10
+	.word	1975
+	.byte	13,9,128,2,9,8,14
+	.byte	'p_bos',0
+	.word	2051
+	.byte	4,2,35,0,14
+	.byte	'stack_size',0
+	.word	495
+	.byte	4,2,35,4,0,11
+	.word	2056
+	.byte	10
+	.word	2098
+	.byte	13,9,251,1,9,4,14
+	.byte	'p_tos',0
+	.word	2051
+	.byte	4,2,35,0,0,10
+	.word	2108
+	.byte	13,9,139,2,9,12,14
+	.byte	'p_sdb',0
+	.word	2103
+	.byte	4,2,35,0,14
+	.byte	'p_scb',0
+	.word	2130
+	.byte	4,2,35,4,14
+	.byte	'isr2_src',0
+	.word	473
+	.byte	2,2,35,8,0,11
+	.word	2135
+	.byte	6,8,221,2,9,1,7
+	.byte	'OSEE_TASK_SUSPENDED',0,0,7
+	.byte	'OSEE_TASK_READY',0,1,7
+	.byte	'OSEE_TASK_READY_STACKED',0,2,7
+	.byte	'OSEE_TASK_WAITING',0,3,7
+	.byte	'OSEE_TASK_RUNNING',0,4,7
+	.byte	'OSEE_TASK_CHAINED',0,5,0,10
+	.word	.L297-.L75
+	.byte	11
+	.word	.L298-.L75
+	.byte	10
+	.word	2333
+.L297:
+	.byte	20
+	.byte	'OsEE_SN_tag',0,10,75,16,8,14
+	.byte	'p_next',0
+	.word	2328
+	.byte	4,2,35,0,14
+	.byte	'p_tdb',0
+	.word	2338
+	.byte	4,2,35,4,0,10
+	.word	2343
+	.byte	13,7,224,1,9,16,14
+	.byte	'current_num_of_act',0
+	.word	228
+	.byte	1,2,35,0,14
+	.byte	'current_prio',0
+	.word	228
+	.byte	1,2,35,1,14
+	.byte	'status',0
+	.word	2195
+	.byte	1,2,35,2,14
+	.byte	'wait_mask',0
+	.word	495
+	.byte	4,2,35,4,14
+	.byte	'event_mask',0
+	.word	495
+	.byte	4,2,35,8,14
+	.byte	'p_own_sn',0
+	.word	2392
+	.byte	4,2,35,12,0,10
+	.word	2397
+	.byte	6,8,197,2,9,1,7
+	.byte	'OSEE_TASK_TYPE_BASIC',0,0,7
+	.byte	'OSEE_TASK_TYPE_EXTENDED',0,1,7
+	.byte	'OSEE_TASK_TYPE_ISR2',0,2,7
+	.byte	'OSEE_TASK_TYPE_IDLE',0,3,0,21,1,1,10
+	.word	2632
+	.byte	19
+	.byte	'TaskFunc',0,8,186,2,9
+	.word	2635
+.L298:
+	.byte	20
+	.byte	'OsEE_TDB_tag',0,7,136,2,16,32,14
+	.byte	'hdb',0
+	.word	2190
+	.byte	12,2,35,0,14
+	.byte	'p_tcb',0
+	.word	2527
+	.byte	4,2,35,12,14
+	.byte	'tid',0
+	.word	495
+	.byte	4,2,35,16,14
+	.byte	'task_type',0
+	.word	2532
+	.byte	1,2,35,20,14
+	.byte	'task_func',0
+	.word	2640
+	.byte	4,2,35,24,14
+	.byte	'ready_prio',0
+	.word	228
+	.byte	1,2,35,28,14
+	.byte	'dispatch_prio',0
+	.word	228
+	.byte	1,2,35,29,14
+	.byte	'max_num_of_act',0
+	.word	228
+	.byte	1,2,35,30,14
+	.byte	'orig_core_id',0
+	.word	323
+	.byte	1,2,35,31,0,11
+	.word	2658
+	.byte	10
+	.word	2846
+	.byte	22
+	.word	2851
+	.byte	23,0,11
+	.word	2856
+	.byte	10
+	.word	2863
+	.byte	6,7,178,4,9,1,7
+	.byte	'OSEE_TRIGGER_INACTIVE',0,0,7
+	.byte	'OSEE_TRIGGER_CANCELED',0,1,7
+	.byte	'OSEE_TRIGGER_ACTIVE',0,2,7
+	.byte	'OSEE_TRIGGER_EXPIRED',0,3,7
+	.byte	'OSEE_TRIGGER_REENABLED',0,4,0,13,7,201,4,9,16,14
+	.byte	'p_next',0
+	.word	.L299-.L75
+	.byte	4,2,35,0,14
+	.byte	'when',0
+	.word	495
+	.byte	4,2,35,4,14
+	.byte	'status',0
+	.word	2873
+	.byte	1,2,35,8,14
+	.byte	'cycle',0
+	.word	495
+	.byte	4,2,35,10,0,10
+	.word	2998
+	.byte	19
+	.byte	'OsEE_kernel_cb',0,7,81,9
+	.word	2635
+	.byte	13,7,137,3,9,16,14
+	.byte	'f',0
+	.word	3071
+	.byte	4,2,35,0,14
+	.byte	'p_tdb',0
+	.word	2851
+	.byte	4,2,35,4,14
+	.byte	'p_counter_db',0
+	.word	.L300-.L75
+	.byte	4,2,35,8,14
+	.byte	'mask',0
+	.word	495
+	.byte	4,2,35,12,0,6,7,255,2,9,1,7
+	.byte	'OSEE_ACTION_TASK',0,0,7
+	.byte	'OSEE_ACTION_EVENT',0,1,7
+	.byte	'OSEE_ACTION_COUNTER',0,2,7
+	.byte	'OSEE_ACTION_CALLBACK',0,3,0,13,7,152,3,9,20,14
+	.byte	'param',0
+	.word	3094
+	.byte	16,2,35,0,14
+	.byte	'type',0
+	.word	3163
+	.byte	1,2,35,16,0,11
+	.word	3254
+	.byte	20
+	.byte	'OsEE_TriggerDB_tag',0,7,240,4,16,28,14
+	.byte	'p_trigger_cb',0
+	.word	3066
+	.byte	4,2,35,0,14
+	.byte	'p_counter_db',0
+	.word	.L300-.L75
+	.byte	4,2,35,4,14
+	.byte	'action',0
+	.word	3290
+	.byte	20,2,35,8,0,11
+	.word	3295
+.L299:
+	.byte	10
+	.word	3381
+	.byte	19
+	.byte	'OsEE_TriggerQ',0,7,209,2,3
+	.word	3386
+	.byte	13,7,213,2,9,8,14
+	.byte	'trigger_queue',0
+	.word	3391
+	.byte	4,2,35,0,14
+	.byte	'value',0
+	.word	495
+	.byte	4,2,35,4,0,10
+	.word	3414
+	.byte	13,8,183,3,9,12,14
+	.byte	'maxallowedvalue',0
+	.word	495
+	.byte	4,2,35,0,14
+	.byte	'ticksperbase',0
+	.word	495
+	.byte	4,2,35,4,14
+	.byte	'mincycle',0
+	.word	495
+	.byte	4,2,35,8,0,13,7,239,2,9,20,14
+	.byte	'p_counter_cb',0
+	.word	3459
+	.byte	4,2,35,0,14
+	.byte	'info',0
+	.word	3464
+	.byte	12,2,35,4,14
+	.byte	'core_id',0
+	.word	323
+	.byte	1,2,35,16,0,11
+	.word	3536
+.L300:
+	.byte	10
+	.word	3596
+	.byte	22
+	.word	3601
+	.byte	23,0,11
+	.word	3606
+	.byte	10
+	.word	3613
+	.byte	11
+	.word	3295
+	.byte	10
+	.word	3623
+	.byte	22
+	.word	3628
+	.byte	23,0,11
+	.word	3633
+	.byte	10
+	.word	3640
+	.byte	13,7,202,7,9,36,14
+	.byte	'p_kcb',0
+	.word	1766
+	.byte	4,2,35,0,14
+	.byte	'p_lock',0
+	.word	907
+	.byte	4,2,35,4,14
+	.byte	'p_barrier',0
+	.word	1798
+	.byte	4,2,35,8,14
+	.byte	'p_tdb_ptr_array',0
+	.word	2868
+	.byte	4,2,35,12,14
+	.byte	'tdb_array_size',0
+	.word	495
+	.byte	4,2,35,16,14
+	.byte	'p_counter_ptr_array',0
+	.word	3618
+	.byte	4,2,35,20,14
+	.byte	'counter_array_size',0
+	.word	495
+	.byte	4,2,35,24,14
+	.byte	'p_alarm_ptr_array',0
+	.word	3645
+	.byte	4,2,35,28,14
+	.byte	'alarm_array_size',0
+	.word	495
+	.byte	4,2,35,32,0,11
+	.word	3650
+	.byte	10
+	.word	3866
+	.byte	3
+	.byte	'osEE_get_kernel',0,3,6,85,50
+	.word	3871
+	.byte	1,1,4,0,10
+	.word	1946
+	.byte	10
+	.word	2632
+	.byte	11
+	.word	3295
+	.byte	10
+	.word	3915
+	.byte	10
+	.word	2632
+	.byte	22
+	.word	2056
+	.byte	23,0,11
+	.word	3930
+	.byte	10
+	.word	3937
+	.byte	22
+	.word	2108
+	.byte	23,0,10
+	.word	3947
+	.byte	13,9,150,2,9,12,14
+	.byte	'p_sdb_array',0
+	.word	3942
+	.byte	4,2,35,0,14
+	.byte	'p_scb_array',0
+	.word	3954
+	.byte	4,2,35,4,14
+	.byte	'stack_num',0
+	.word	495
+	.byte	4,2,35,8,0,11
+	.word	3959
+	.byte	19
+	.byte	'OsEE_RQ',0,10,213,1,19
+	.word	2392
+	.byte	6,7,115,9,1,7
+	.byte	'OSEE_KERNEL_INITIALIZED',0,0,7
+	.byte	'OSEE_KERNEL_STARTING',0,1,7
+	.byte	'OSEE_KERNEL_STARTED',0,2,7
+	.byte	'OSEE_KERNEL_SHUTDOWN',0,3,0,9
+	.word	4049
+	.byte	6,8,244,5,9,1,7
+	.byte	'OSServiceId_ActivateTask',0,0,7
+	.byte	'OSServiceId_TerminateTask',0,2,7
+	.byte	'OSServiceId_ChainTask',0,4,7
+	.byte	'OSServiceId_Schedule',0,6,7
+	.byte	'OSServiceId_GetTaskID',0,8,7
+	.byte	'OSServiceId_GetTaskState',0,10,7
+	.byte	'OSServiceId_DisableAllInterrupts',0,12,7
+	.byte	'OSServiceId_EnableAllInterrupts',0,14,7
+	.byte	'OSServiceId_SuspendAllInterrupts',0,16,7
+	.byte	'OSServiceId_ResumeAllInterrupts',0,18,7
+	.byte	'OSServiceId_SuspendOSInterrupts',0,20,7
+	.byte	'OSServiceId_ResumeOSInterrupts',0,22,7
+	.byte	'OSServiceId_SetEvent',0,28,7
+	.byte	'OSServiceId_ClearEvent',0,30,7
+	.byte	'OSServiceId_GetEvent',0,32,7
+	.byte	'OSServiceId_WaitEvent',0,34,7
+	.byte	'OSServiceId_GetAlarmBase',0,36,7
+	.byte	'OSServiceId_GetAlarm',0,38,7
+	.byte	'OSServiceId_SetRelAlarm',0,40,7
+	.byte	'OSServiceId_SetAbsAlarm',0,42,7
+	.byte	'OSServiceId_CancelAlarm',0,44,7
+	.byte	'OSServiceId_IncrementCounter',0,46,7
+	.byte	'OSServiceId_GetCounterValue',0,48,7
+	.byte	'OSServiceId_GetElapsedValue',0,50,7
+	.byte	'OSServiceId_GetActiveApplicationMode',0,198,0,7
+	.byte	'OSServiceId_ShutdownOS',0,200,0,7
+	.byte	'OSServiceId_StartOS',0,202,0,7
+	.byte	'OSServiceId_ShutdownAllCores',0,204,0,7
+	.byte	'OSId_TaskBody',0,206,0,7
+	.byte	'OSId_ISR2Body',0,208,0,7
+	.byte	'OSId_Action',0,210,0,7
+	.byte	'OSId_Kernel',0,212,0,7
+	.byte	'OsId_Invalid',0,214,0,0,6,7,97,9,1,7
+	.byte	'OSEE_KERNEL_CTX',0,0,7
+	.byte	'OSEE_IDLE_CTX',0,1,7
+	.byte	'OSEE_TASK_CTX',0,2,7
+	.byte	'OSEE_TASK_ISR2_CTX',0,3,7
+	.byte	'OSEE_ERRORHOOK_CTX',0,4,7
+	.byte	'OSEE_PROTECTIONHOOK_CTX',0,5,7
+	.byte	'OSEE_PRETASKHOOK_CTX',0,6,7
+	.byte	'OSEE_POSTTASKHOOK_CTX',0,7,7
+	.byte	'OSEE_STARTUPHOOK_CTX',0,8,7
+	.byte	'OSEE_SHUTDOWNHOOK_CTX',0,9,7
+	.byte	'OSEE_ALARMCALLBACK_CTX',0,10,0,13,7,224,5,9,36,14
+	.byte	'p_curr',0
+	.word	2851
+	.byte	4,2,35,0,14
+	.byte	'rq',0
+	.word	4032
+	.byte	4,2,35,4,14
+	.byte	'p_free_sn',0
+	.word	2392
+	.byte	4,2,35,8,14
+	.byte	'p_stk_sn',0
+	.word	2392
+	.byte	4,2,35,12,14
+	.byte	'os_status',0
+	.word	4149
+	.byte	1,2,35,16,14
+	.byte	'app_mode',0
+	.word	228
+	.byte	1,2,35,17,14
+	.byte	'last_error',0
+	.word	1008
+	.byte	1,2,35,18,14
+	.byte	'service_id',0
+	.word	4154
+	.byte	1,2,35,19,14
+	.byte	'os_context',0
+	.word	5034
+	.byte	1,2,35,20,14
+	.byte	'prev_s_isr_all_status',0
+	.word	495
+	.byte	4,2,35,22,14
+	.byte	'prev_s_isr_os_status',0
+	.word	495
+	.byte	4,2,35,26,14
+	.byte	's_isr_all_cnt',0
+	.word	228
+	.byte	1,2,35,30,14
+	.byte	's_isr_os_cnt',0
+	.word	228
+	.byte	1,2,35,31,14
+	.byte	'd_isr_all_cnt',0
+	.word	228
+	.byte	1,2,35,32,14
+	.byte	'orti_service_id_valid',0
+	.word	1552
+	.byte	1,2,35,33,0,10
+	.word	5277
+	.byte	20
+	.byte	'OsEE_autostart_tdb_tag',0,7,206,5,16,8,14
+	.byte	'p_tdb_ptr_array',0
+	.word	2868
+	.byte	4,2,35,0,14
+	.byte	'tdb_array_size',0
+	.word	495
+	.byte	4,2,35,4,0,22
+	.word	5611
+	.byte	23,0,11
+	.word	5690
+	.byte	10
+	.word	5697
+	.byte	11
+	.word	3295
+	.byte	10
+	.word	5707
+	.byte	13,7,176,5,9,12,14
+	.byte	'p_trigger_db',0
+	.word	5712
+	.byte	4,2,35,0,14
+	.byte	'first_tick_parameter',0
+	.word	495
+	.byte	4,2,35,4,14
+	.byte	'second_tick_parameter',0
+	.word	495
+	.byte	4,2,35,8,0,22
+	.word	5717
+	.byte	23,0,11
+	.word	5807
+	.byte	10
+	.word	5814
+	.byte	13,7,194,5,9,8,14
+	.byte	'p_trigger_ptr_array',0
+	.word	5819
+	.byte	4,2,35,0,14
+	.byte	'trigger_array_size',0
+	.word	495
+	.byte	4,2,35,4,0,22
+	.word	5824
+	.byte	23,0,11
+	.word	5888
+	.byte	10
+	.word	5895
+	.byte	13,7,203,6,9,52,14
+	.byte	'chdb',0
+	.word	4027
+	.byte	12,2,35,0,14
+	.byte	'p_ccb',0
+	.word	5606
+	.byte	4,2,35,12,14
+	.byte	'p_lock',0
+	.word	907
+	.byte	4,2,35,16,14
+	.byte	'p_idle_hook',0
+	.word	2640
+	.byte	4,2,35,20,14
+	.byte	'p_idle_task',0
+	.word	2851
+	.byte	4,2,35,24,14
+	.byte	'p_sys_counter_db',0
+	.word	3601
+	.byte	4,2,35,28,14
+	.byte	'p_autostart_tdb_array',0
+	.word	5702
+	.byte	4,2,35,32,14
+	.byte	'autostart_tdb_array_size',0
+	.word	495
+	.byte	4,2,35,36,14
+	.byte	'p_autostart_trigger_array',0
+	.word	5900
+	.byte	4,2,35,40,14
+	.byte	'autostart_trigger_array_size',0
+	.word	495
+	.byte	4,2,35,44,14
+	.byte	'core_id',0
+	.word	323
+	.byte	1,2,35,48,0,11
+	.word	5905
+	.byte	10
+	.word	6180
+	.byte	3
+	.byte	'osEE_get_curr_core',0,3,6,165,3,50
+	.word	6185
+	.byte	1,1,4,0,10
+	.word	2343
+	.byte	5
+	.byte	'osEE_lock_kernel',0,3,6,177,3,44,1,1,12,4,0,0,3
+	.byte	'osEE_lock_and_get_kernel',0,3,6,189,3,50
+	.word	3871
+	.byte	1,1,12,4,4,0,0,5
+	.byte	'osEE_unlock_kernel',0,3,6,200,3,44,1,1,12,4,0,0,13,9,137,1,9,60,14
+	.byte	'psw',0
+	.word	495
+	.byte	4,2,35,0,14
+	.byte	'a10',0
+	.word	1957
+	.byte	4,2,35,4,14
+	.byte	'a11',0
+	.word	1957
+	.byte	4,2,35,8,14
+	.byte	'd8',0
+	.word	495
+	.byte	4,2,35,12,14
+	.byte	'd9',0
+	.word	495
+	.byte	4,2,35,16,14
+	.byte	'd10',0
+	.word	495
+	.byte	4,2,35,20,14
+	.byte	'd11',0
+	.word	495
+	.byte	4,2,35,24,14
+	.byte	'a12',0
+	.word	1957
+	.byte	4,2,35,28,14
+	.byte	'a13',0
+	.word	1957
+	.byte	4,2,35,32,14
+	.byte	'a14',0
+	.word	1957
+	.byte	4,2,35,36,14
+	.byte	'a15',0
+	.word	1957
+	.byte	4,2,35,40,14
+	.byte	'd12',0
+	.word	495
+	.byte	4,2,35,44,14
+	.byte	'd13',0
+	.word	495
+	.byte	4,2,35,48,14
+	.byte	'd14',0
+	.word	495
+	.byte	4,2,35,52,14
+	.byte	'd15',0
+	.word	495
+	.byte	4,2,35,56,0,13,9,156,1,9,60,14
+	.byte	'a11',0
+	.word	1957
+	.byte	4,2,35,0,14
+	.byte	'a2',0
+	.word	1957
+	.byte	4,2,35,4,14
+	.byte	'a3',0
+	.word	1957
+	.byte	4,2,35,8,14
+	.byte	'd0',0
+	.word	495
+	.byte	4,2,35,12,14
+	.byte	'd1',0
+	.word	495
+	.byte	4,2,35,16,14
+	.byte	'd2',0
+	.word	495
+	.byte	4,2,35,20,14
+	.byte	'd3',0
+	.word	495
+	.byte	4,2,35,24,14
+	.byte	'a4',0
+	.word	1957
+	.byte	4,2,35,28,14
+	.byte	'a5',0
+	.word	1957
+	.byte	4,2,35,32,14
+	.byte	'a6',0
+	.word	1957
+	.byte	4,2,35,36,14
+	.byte	'a7',0
+	.word	1957
+	.byte	4,2,35,40,14
+	.byte	'd4',0
+	.word	495
+	.byte	4,2,35,44,14
+	.byte	'd5',0
+	.word	495
+	.byte	4,2,35,48,14
+	.byte	'd6',0
+	.word	495
+	.byte	4,2,35,52,14
+	.byte	'd7',0
+	.word	495
+	.byte	4,2,35,56,0,17,9,175,1,9,60,14
+	.byte	'uctx',0
+	.word	6330
+	.byte	60,2,35,0,14
+	.byte	'lctx',0
+	.word	6530
+	.byte	60,2,35,0,0,13,9,181,1,9,64,14
+	.byte	'l_next',0
+	.word	1913
+	.byte	4,2,35,0,14
+	.byte	'ctx',0
+	.word	6718
+	.byte	60,2,35,4,0,10
+	.word	6753
+	.byte	3
+	.byte	'osEE_tc_csa_link_to_pointer',0,3,11,190,1,3
+	.word	6789
+	.byte	1,1,8
+	.byte	'l_csa',0,11,190,1,45
+	.word	1913
+	.byte	4,0,13,9,190,1,3,4,15
+	.byte	'ccpn',0,1
+	.word	228
+	.byte	8,0,2,35,0,16,1
+	.word	228
+	.byte	7,1,2,35,1,15
+	.byte	'ie',0,1
+	.word	228
+	.byte	1,0,2,35,1,15
+	.byte	'pipn',0,1
+	.word	228
+	.byte	8,0,2,35,2,16,1
+	.word	228
+	.byte	8,0,2,35,3,0,17,9,188,1,9,4,14
+	.byte	'reg',0
+	.word	495
+	.byte	4,2,35,0,14
+	.byte	'bits',0
+	.word	6851
+	.byte	4,2,35,0,0,3
+	.byte	'osEE_tc_get_icr',0,3,11,128,2,48
+	.word	6926
+	.byte	1,1,4,0,5
+	.byte	'osEE_tc_set_icr',0,3,11,135,2,44,1,1,8
+	.byte	'icr',0,11,135,2,69
+	.word	6926
+	.byte	4,0,5
+	.byte	'osEE_hal_disableIRQ',0,3,11,146,2,44,1,1,4,0,3
+	.byte	'OSEE_ISR2_VIRT_TO_HW_PRIO',0,3,11,173,2,1
+	.word	228
+	.byte	1,1,8
+	.byte	'virt_prio',0,11,173,2,36
+	.word	228
+	.byte	4,0,3
+	.byte	'osEE_hal_begin_nested_primitive',0,3,11,233,2,3
+	.word	495
+	.byte	1,1,12,4,4,4,4,4,0,0,5
+	.byte	'osEE_hal_end_nested_primitive',0,3,11,250,2,3,1,1,8
+	.byte	'flags',0,11,250,2,42
+	.word	495
+	.byte	12,4,4,0,0,5
+	.byte	'osEE_tc_conf_src',0,3,11,170,3,3,1,1,8
+	.byte	'tos',0,11,170,3,31
+	.word	323
+	.byte	8
+	.byte	'src_offset',0,11,170,3,45
+	.word	495
+	.byte	8
+	.byte	'prio',0,11,170,3,67
+	.word	228
+	.byte	4,0,24
+	.word	245
+	.byte	4,0,24
+	.word	275
+	.byte	4,0,24
+	.word	299
+	.byte	4,0,24
+	.word	437
+	.byte	4,0,24
+	.word	511
+	.byte	25
+	.word	546
+	.byte	4,0,24
+	.word	568
+	.byte	25
+	.word	602
+	.byte	25
+	.word	622
+	.byte	4,0,24
+	.word	636
+	.byte	25
+	.word	668
+	.byte	25
+	.word	688
+	.byte	4,0,24
+	.word	702
+	.byte	25
+	.word	739
+	.byte	4,0,24
+	.word	753
+	.byte	25
+	.word	788
+	.byte	4,0,24
+	.word	817
+	.byte	25
+	.word	846
+	.byte	25
+	.word	861
+	.byte	25
+	.word	878
+	.byte	4,0,24
+	.word	912
+	.byte	25
+	.word	939
+	.byte	12,26
+	.word	817
+	.byte	25
+	.word	846
+	.byte	25
+	.word	861
+	.byte	25
+	.word	878
+	.byte	27
+	.word	900
+	.byte	0,4,0,0,24
+	.word	959
+	.byte	25
+	.word	988
+	.byte	12,26
+	.word	275
+	.byte	27
+	.word	297
+	.byte	0,4,0,0,24
+	.word	3876
+	.byte	4,0,24
+	.word	6190
+	.byte	4,0,24
+	.word	6228
+	.byte	12,26
+	.word	912
+	.byte	25
+	.word	939
+	.byte	28
+	.word	955
+	.byte	26
+	.word	817
+	.byte	25
+	.word	846
+	.byte	25
+	.word	861
+	.byte	25
+	.word	878
+	.byte	27
+	.word	900
+	.byte	0,27
+	.word	956
+	.byte	0,0,4,0,0,24
+	.word	6257
+	.byte	12,26
+	.word	3876
+	.byte	27
+	.word	3903
+	.byte	0,4,26
+	.word	6228
+	.byte	28
+	.word	6253
+	.byte	26
+	.word	912
+	.byte	25
+	.word	939
+	.byte	28
+	.word	955
+	.byte	26
+	.word	817
+	.byte	25
+	.word	846
+	.byte	25
+	.word	861
+	.byte	25
+	.word	878
+	.byte	27
+	.word	900
+	.byte	0,27
+	.word	956
+	.byte	0,0,27
+	.word	6254
+	.byte	0,0,4,0,0,24
+	.word	6299
+	.byte	12,26
+	.word	959
+	.byte	25
+	.word	988
+	.byte	28
+	.word	1004
+	.byte	26
+	.word	275
+	.byte	27
+	.word	297
+	.byte	0,27
+	.word	1005
+	.byte	0,0,4,0,0,24
+	.word	6794
+	.byte	25
+	.word	6834
+	.byte	4,0,24
+	.word	6960
+	.byte	4,0,24
+	.word	6990
+	.byte	25
+	.word	7014
+	.byte	4,0,24
+	.word	7029
+	.byte	4,0,24
+	.word	7059
+	.byte	25
+	.word	7097
+	.byte	4,0,24
+	.word	7118
+	.byte	12,12,26
+	.word	7059
+	.byte	25
+	.word	7097
+	.byte	27
+	.word	7116
+	.byte	0,26
+	.word	6990
+	.byte	25
+	.word	7014
+	.byte	27
+	.word	7027
+	.byte	0,0,26
+	.word	7059
+	.byte	25
+	.word	7097
+	.byte	27
+	.word	7116
+	.byte	0,4,4,4,26
+	.word	6960
+	.byte	27
+	.word	6988
+	.byte	0,4,0,0,24
+	.word	7170
+	.byte	25
+	.word	7208
+	.byte	12,26
+	.word	6990
+	.byte	25
+	.word	7014
+	.byte	27
+	.word	7027
+	.byte	0,4,26
+	.word	6960
+	.byte	27
+	.word	6988
+	.byte	0,4,0,0,24
+	.word	7228
+	.byte	25
+	.word	7253
+	.byte	25
+	.word	7266
+	.byte	25
+	.word	7286
+	.byte	4,0,2
+	.byte	'short int',0,2,5,19
+	.byte	'__wchar_t',0,12,1,1
+	.word	7873
+	.byte	19
+	.byte	'__size_t',0,12,1,1
+	.word	495
+	.byte	2
+	.byte	'int',0,4,5,19
+	.byte	'__ptrdiff_t',0,12,1,1
+	.word	7921
+	.byte	29,1,10
+	.word	7948
+	.byte	19
+	.byte	'__codeptr',0,12,1,1
+	.word	7950
+	.byte	19
+	.byte	'__intptr_t',0,12,1,1
+	.word	7921
+	.byte	19
+	.byte	'__uintptr_t',0,12,1,1
+	.word	495
+	.byte	19
+	.byte	'size_t',0,13,24,25
+	.word	495
+	.byte	19
+	.byte	'uint8_t',0,14,242,1,41
+	.word	228
+	.byte	19
+	.byte	'uint16_t',0,14,246,1,41
+	.word	473
+	.byte	19
+	.byte	'int32_t',0,14,253,1,41
+	.word	7921
+	.byte	19
+	.byte	'uint32_t',0,14,254,1,41
+	.word	495
+	.byte	19
+	.byte	'OsEE_bool',0,3,75,3
+	.word	1552
+	.byte	19
+	.byte	'OsEE_reg',0,3,91,31
+	.word	495
+	.byte	19
+	.byte	'OsEE_sreg',0,3,92,31
+	.word	7921
+	.byte	19
+	.byte	'OsEE_stack',0,3,93,31
+	.word	495
+	.byte	19
+	.byte	'OsEE_core_id',0,3,130,1,3
+	.word	323
+	.byte	19
+	.byte	'OsEE_prio',0,3,141,1,31
+	.word	228
+	.byte	19
+	.byte	'OsEE_isr_src_id',0,3,146,1,31
+	.word	473
+	.byte	9
+	.word	495
+	.byte	19
+	.byte	'OsEE_spin_lock',0,3,155,1,27
+	.word	8235
+	.byte	19
+	.byte	'OsEE_barrier',0,3,160,1,3
+	.word	1776
+	.byte	19
+	.byte	'OsEE_tc_tin',0,1,208,1,17
+	.word	228
+	.byte	19
+	.byte	'OsEE_pcxi',0,9,131,1,3
+	.word	1913
+	.byte	19
+	.byte	'OsEE_csa_link',0,9,134,1,19
+	.word	1913
+	.byte	19
+	.byte	'OsEE_uctx',0,9,153,1,3
+	.word	6330
+	.byte	19
+	.byte	'OsEE_lctx',0,9,172,1,3
+	.word	6530
+	.byte	19
+	.byte	'OsEE_csa_ctx',0,9,178,1,3
+	.word	6718
+	.byte	19
+	.byte	'OsEE_csa',0,9,184,1,3
+	.word	6753
+	.byte	19
+	.byte	'OsEE_icr',0,9,197,1,3
+	.word	6926
+	.byte	19
+	.byte	'OsEE_CTX',0,9,248,1,3
+	.word	1975
+	.byte	19
+	.byte	'OsEE_SCB',0,9,253,1,3
+	.word	2108
+	.byte	11
+	.word	2056
+	.byte	19
+	.byte	'OsEE_SDB',0,9,134,2,16
+	.word	8481
+	.byte	11
+	.word	2135
+	.byte	19
+	.byte	'OsEE_HDB',0,9,145,2,14
+	.word	8504
+	.byte	11
+	.word	3959
+	.byte	19
+	.byte	'OsEE_CHDB',0,9,154,2,14
+	.word	8527
+	.byte	20
+	.byte	'OsEE_tc_SCU_WDTCPU_CON0_bits_tag',0,4,155,1,16,4,15
+	.byte	'endinit',0,1
+	.word	228
+	.byte	1,7,2,35,0,15
+	.byte	'lck',0,1
+	.word	228
+	.byte	1,6,2,35,0,15
+	.byte	'pw',0,2
+	.word	473
+	.byte	14,0,2,35,0,15
+	.byte	'rel',0,2
+	.word	473
+	.byte	16,0,2,35,2,0,19
+	.byte	'OsEE_tc_SCU_WDTCPU_CON0_bits',0,4,165,1,3
+	.word	8551
+	.byte	19
+	.byte	'OsEE_tc_SCU_WDTS_CON0_bits',0,4,168,1,38
+	.word	8551
+	.byte	20
+	.byte	'OsEE_tc_SCU_WDTCPU_CON1_bits_tag',0,4,171,1,16,4,16,1
+	.word	228
+	.byte	2,6,2,35,0,15
+	.byte	'ir0',0,1
+	.word	228
+	.byte	1,5,2,35,0,15
+	.byte	'dr',0,1
+	.word	228
+	.byte	1,4,2,35,0,16,1
+	.word	228
+	.byte	1,3,2,35,0,15
+	.byte	'ir1',0,1
+	.word	228
+	.byte	1,2,2,35,0,15
+	.byte	'ur',0,1
+	.word	228
+	.byte	1,1,2,35,0,15
+	.byte	'par',0,1
+	.word	228
+	.byte	1,0,2,35,0,15
+	.byte	'tcr',0,1
+	.word	228
+	.byte	1,7,2,35,1,15
+	.byte	'tctr',0,1
+	.word	228
+	.byte	7,0,2,35,1,16,2
+	.word	473
+	.byte	16,0,2,35,2,0,19
+	.byte	'OsEE_tc_SCU_WDTCPU_CON1_bits',0,4,193,1,3
+	.word	8728
+	.byte	20
+	.byte	'OsEE_tc_SCU_WDTS_CON1_bits_tag',0,4,196,1,16,4,15
+	.byte	'clrif',0,1
+	.word	228
+	.byte	1,7,2,35,0,16,1
+	.word	228
+	.byte	1,6,2,35,0,15
+	.byte	'ir0',0,1
+	.word	228
+	.byte	1,5,2,35,0,15
+	.byte	'dr',0,1
+	.word	228
+	.byte	1,4,2,35,0,16,1
+	.word	228
+	.byte	1,3,2,35,0,15
+	.byte	'ir1',0,1
+	.word	228
+	.byte	1,2,2,35,0,15
+	.byte	'ur',0,1
+	.word	228
+	.byte	1,1,2,35,0,15
+	.byte	'par',0,1
+	.word	228
+	.byte	1,0,2,35,0,15
+	.byte	'tcr',0,1
+	.word	228
+	.byte	1,7,2,35,1,15
+	.byte	'tctr',0,1
+	.word	228
+	.byte	7,0,2,35,1,16,2
+	.word	473
+	.byte	16,0,2,35,2,0,19
+	.byte	'OsEE_tc_SCU_WDTS_CON1_bits',0,4,220,1,3
+	.word	8943
+	.byte	20
+	.byte	'OsEE_tc_SCU_WDTCPU_SR_bits_tag',0,4,223,1,16,4,15
+	.byte	'ae',0,1
+	.word	228
+	.byte	1,7,2,35,0,15
+	.byte	'oe',0,1
+	.word	228
+	.byte	1,6,2,35,0,15
+	.byte	'is0',0,1
+	.word	228
+	.byte	1,5,2,35,0,15
+	.byte	'ds',0,1
+	.word	228
+	.byte	1,4,2,35,0,15
+	.byte	'to',0,1
+	.word	228
+	.byte	1,3,2,35,0,15
+	.byte	'is1',0,1
+	.word	228
+	.byte	1,2,2,35,0,15
+	.byte	'us',0,1
+	.word	228
+	.byte	1,1,2,35,0,15
+	.byte	'pas',0,1
+	.word	228
+	.byte	1,0,2,35,0,15
+	.byte	'tcs',0,1
+	.word	228
+	.byte	1,7,2,35,1,15
+	.byte	'tct',0,1
+	.word	228
+	.byte	7,0,2,35,1,15
+	.byte	'tim',0,2
+	.word	473
+	.byte	16,0,2,35,2,0,19
+	.byte	'OsEE_tc_SCU_WDTCPU_SR_bits',0,4,247,1,3
+	.word	9171
+	.byte	19
+	.byte	'OsEE_tc_SCU_WDTS_SR_bits',0,4,250,1,36
+	.word	9171
+	.byte	30
+	.byte	'OsEE_tc_SCU_WDTCPU_CON0_tag',0,4,253,1,15,4,14
+	.byte	'reg',0
+	.word	495
+	.byte	4,2,35,0,14
+	.byte	'bits',0
+	.word	8551
+	.byte	4,2,35,0,0,19
+	.byte	'OsEE_tc_SCU_WDTCPU_CON0',0,4,131,2,3
+	.word	9439
+	.byte	30
+	.byte	'OsEE_tc_SCU_WDTCPU_CON1_tag',0,4,134,2,15,4,14
+	.byte	'reg',0
+	.word	495
+	.byte	4,2,35,0,14
+	.byte	'bits',0
+	.word	8728
+	.byte	4,2,35,0,0,19
+	.byte	'OsEE_tc_SCU_WDTCPU_CON1',0,4,140,2,3
+	.word	9534
+	.byte	30
+	.byte	'OsEE_tc_SCU_WDTCPU_SR_tag',0,4,143,2,15,4,14
+	.byte	'reg',0
+	.word	495
+	.byte	4,2,35,0,14
+	.byte	'bits',0
+	.word	9171
+	.byte	4,2,35,0,0,19
+	.byte	'OsEE_tc_SCU_WDTCPU_SR',0,4,149,2,3
+	.word	9629
+	.byte	30
+	.byte	'OsEE_tc_SCU_WDTS_CON0_tag',0,4,152,2,15,4,14
+	.byte	'reg',0
+	.word	495
+	.byte	4,2,35,0,14
+	.byte	'bits',0
+	.word	8551
+	.byte	4,2,35,0,0,19
+	.byte	'OsEE_tc_SCU_WDTS_CON0',0,4,158,2,3
+	.word	9720
+	.byte	30
+	.byte	'OsEE_tc_SCU_WDTS_CON1_tag',0,4,161,2,15,4,14
+	.byte	'reg',0
+	.word	495
+	.byte	4,2,35,0,14
+	.byte	'bits',0
+	.word	8943
+	.byte	4,2,35,0,0,19
+	.byte	'OsEE_tc_SCU_WDTS_CON1',0,4,167,2,3
+	.word	9811
+	.byte	30
+	.byte	'OsEE_tc_SCU_WDTS_SR_tag',0,4,170,2,15,4,14
+	.byte	'reg',0
+	.word	495
+	.byte	4,2,35,0,14
+	.byte	'bits',0
+	.word	9171
+	.byte	4,2,35,0,0,19
+	.byte	'OsEE_tc_SCU_WDTS_SR',0,4,176,2,3
+	.word	9902
+	.byte	20
+	.byte	'OsEE_tc_STM_CMCON_bits_tag',0,4,225,6,16,4,15
+	.byte	'msize0',0,1
+	.word	228
+	.byte	5,3,2,35,0,16,1
+	.word	228
+	.byte	3,0,2,35,0,15
+	.byte	'mstart0',0,1
+	.word	228
+	.byte	5,3,2,35,1,16,1
+	.word	228
+	.byte	3,0,2,35,1,15
+	.byte	'msize1',0,1
+	.word	228
+	.byte	5,3,2,35,2,16,1
+	.word	228
+	.byte	3,0,2,35,2,15
+	.byte	'mstart1',0,1
+	.word	228
+	.byte	5,3,2,35,3,16,1
+	.word	228
+	.byte	3,0,2,35,3,0,19
+	.byte	'OsEE_tc_STM_CMCON_bits',0,4,243,6,3
+	.word	9989
+	.byte	20
+	.byte	'OsEE_tc_STM_ICR_bits_tag',0,4,135,7,16,4,15
+	.byte	'cmp0en',0,1
+	.word	228
+	.byte	1,7,2,35,0,15
+	.byte	'cmp0ir',0,1
+	.word	228
+	.byte	1,6,2,35,0,15
+	.byte	'cmp0os',0,1
+	.word	228
+	.byte	1,5,2,35,0,16,1
+	.word	228
+	.byte	1,4,2,35,0,15
+	.byte	'cmp1en',0,1
+	.word	228
+	.byte	1,3,2,35,0,15
+	.byte	'cmp1ir',0,1
+	.word	228
+	.byte	1,2,2,35,0,15
+	.byte	'cmp1os',0,1
+	.word	228
+	.byte	1,1,2,35,0,16,4
+	.word	495
+	.byte	25,0,2,35,0,0,19
+	.byte	'OsEE_tc_STM_ICR_bits',0,4,153,7,3
+	.word	10173
+	.byte	13,4,185,11,9,4,16,1
+	.word	228
+	.byte	1,7,2,35,0,15
+	.byte	'plllv',0,1
+	.word	228
+	.byte	1,6,2,35,0,15
+	.byte	'oscres',0,1
+	.word	228
+	.byte	1,5,2,35,0,15
+	.byte	'gainsel',0,1
+	.word	228
+	.byte	2,3,2,35,0,15
+	.byte	'mode',0,1
+	.word	228
+	.byte	2,1,2,35,0,15
+	.byte	'shby',0,1
+	.word	228
+	.byte	1,0,2,35,0,15
+	.byte	'pllhv',0,1
+	.word	228
+	.byte	1,7,2,35,1,15
+	.byte	'hysen',0,1
+	.word	228
+	.byte	1,6,2,35,1,15
+	.byte	'hysctl',0,1
+	.word	228
+	.byte	2,4,2,35,1,15
+	.byte	'ampctl',0,1
+	.word	228
+	.byte	2,2,2,35,1,16,1
+	.word	228
+	.byte	2,0,2,35,1,15
+	.byte	'oscval',0,1
+	.word	228
+	.byte	5,3,2,35,2,16,1
+	.word	228
+	.byte	2,1,2,35,2,15
+	.byte	'apren',0,1
+	.word	228
+	.byte	1,0,2,35,2,15
+	.byte	'cap0en',0,1
+	.word	228
+	.byte	1,7,2,35,3,15
+	.byte	'cap1en',0,1
+	.word	228
+	.byte	1,6,2,35,3,15
+	.byte	'cap2en',0,1
+	.word	228
+	.byte	1,5,2,35,3,15
+	.byte	'cap3en',0,1
+	.word	228
+	.byte	1,4,2,35,3,16,1
+	.word	228
+	.byte	4,0,2,35,3,0,19
+	.byte	'OsEE_tc_SCU_OSCCON_bits',0,4,225,11,3
+	.word	10365
+	.byte	13,4,228,11,9,4,16,1
+	.word	228
+	.byte	2,6,2,35,0,15
+	.byte	'moden',0,1
+	.word	228
+	.byte	1,5,2,35,0,16,2
+	.word	473
+	.byte	6,7,2,35,0,15
+	.byte	'ndiv',0,1
+	.word	228
+	.byte	7,0,2,35,1,15
+	.byte	'pllpwd',0,1
+	.word	228
+	.byte	1,7,2,35,2,16,1
+	.word	228
+	.byte	1,6,2,35,2,15
+	.byte	'resld',0,1
+	.word	228
+	.byte	1,5,2,35,2,16,1
+	.word	228
+	.byte	5,0,2,35,2,15
+	.byte	'pdiv',0,1
+	.word	228
+	.byte	3,5,2,35,3,16,1
+	.word	228
+	.byte	3,2,2,35,3,15
+	.byte	'insel',0,1
+	.word	228
+	.byte	2,0,2,35,3,0,19
+	.byte	'OsEE_tc_SYSPLLCON0_bits',0,4,252,11,3
+	.word	10712
+	.byte	13,4,147,12,9,4,15
+	.byte	'k2div',0,1
+	.word	228
+	.byte	3,5,2,35,0,16,4
+	.word	495
+	.byte	29,0,2,35,0,0,19
+	.byte	'OsEE_tc_SYSPLLCON1_bits',0,4,153,12,3
+	.word	10908
+	.byte	13,4,168,12,9,4,16,1
+	.word	228
+	.byte	1,7,2,35,0,15
+	.byte	'pwdstat',0,1
+	.word	228
+	.byte	1,6,2,35,0,15
+	.byte	'lock',0,1
+	.word	228
+	.byte	1,5,2,35,0,16,1
+	.word	228
+	.byte	2,3,2,35,0,15
+	.byte	'k2rdy',0,1
+	.word	228
+	.byte	1,2,2,35,0,16,1
+	.word	228
+	.byte	1,1,2,35,0,15
+	.byte	'modrun',0,1
+	.word	228
+	.byte	1,0,2,35,0,16,4
+	.word	495
+	.byte	24,0,2,35,0,0,19
+	.byte	'OsEE_tc_SCU_SYSPLLSTAT_bits',0,4,186,12,3
+	.word	10976
+	.byte	13,4,201,12,9,4,16,1
+	.word	228
+	.byte	1,7,2,35,0,15
+	.byte	'pwdstat',0,1
+	.word	228
+	.byte	1,6,2,35,0,15
+	.byte	'lock',0,1
+	.word	228
+	.byte	1,5,2,35,0,16,1
+	.word	228
+	.byte	1,4,2,35,0,15
+	.byte	'k3rdy',0,1
+	.word	228
+	.byte	1,3,2,35,0,15
+	.byte	'k2rdy',0,1
+	.word	228
+	.byte	1,2,2,35,0,16,1
+	.word	228
+	.byte	1,1,2,35,0,16,4
+	.word	495
+	.byte	25,0,2,35,0,0,19
+	.byte	'OsEE_tc_SCU_PERPLLSTAT_bits',0,4,219,12,3
+	.word	11134
+	.byte	13,4,142,13,9,4,15
+	.byte	'stmdiv',0,1
+	.word	228
+	.byte	4,4,2,35,0,15
+	.byte	'gtmdiv',0,1
+	.word	228
+	.byte	4,0,2,35,0,15
+	.byte	'sridiv',0,1
+	.word	228
+	.byte	4,4,2,35,1,15
+	.byte	'lpdiv',0,1
+	.word	228
+	.byte	3,1,2,35,1,16,1
+	.word	228
+	.byte	1,0,2,35,1,15
+	.byte	'spbdiv',0,1
+	.word	228
+	.byte	4,4,2,35,2,15
+	.byte	'bbbdiv',0,1
+	.word	228
+	.byte	4,0,2,35,2,15
+	.byte	'fsidiv',0,1
+	.word	228
+	.byte	2,6,2,35,3,15
+	.byte	'fsi2div',0,1
+	.word	228
+	.byte	2,4,2,35,3,15
+	.byte	'clksel',0,1
+	.word	228
+	.byte	2,2,2,35,3,15
+	.byte	'up',0,1
+	.word	228
+	.byte	1,1,2,35,3,15
+	.byte	'lck',0,1
+	.word	228
+	.byte	1,0,2,35,3,0,19
+	.byte	'OsEE_tc_SCU_CCUCON0_bits',0,4,168,13,4
+	.word	11291
+	.byte	13,4,171,13,9,4,15
+	.byte	'mcandiv',0,1
+	.word	228
+	.byte	4,4,2,35,0,15
+	.byte	'clkselmcan',0,1
+	.word	228
+	.byte	2,2,2,35,0,16,1
+	.word	228
+	.byte	1,1,2,35,0,15
+	.byte	'pll1divdis',0,1
+	.word	228
+	.byte	1,0,2,35,0,15
+	.byte	'i2cdiv',0,1
+	.word	228
+	.byte	4,4,2,35,1,16,1
+	.word	228
+	.byte	4,0,2,35,1,15
+	.byte	'mscdiv',0,1
+	.word	228
+	.byte	4,4,2,35,2,15
+	.byte	'clkselmsc',0,1
+	.word	228
+	.byte	2,2,2,35,2,16,1
+	.word	228
+	.byte	2,0,2,35,2,15
+	.byte	'qspidiv',0,1
+	.word	228
+	.byte	4,4,2,35,3,15
+	.byte	'clkselqspi',0,1
+	.word	228
+	.byte	2,2,2,35,3,16,1
+	.word	228
+	.byte	1,1,2,35,3,15
+	.byte	'lck',0,1
+	.word	228
+	.byte	1,0,2,35,3,0,19
+	.byte	'OsEE_tc_SCU_CCUCON1_bits',0,4,199,13,3
+	.word	11534
+	.byte	19
+	.byte	'AppModeType',0,8,96,49
+	.word	228
+	.byte	19
+	.byte	'TaskType',0,8,120,49
+	.word	495
+	.byte	19
+	.byte	'TaskPrio',0,8,200,1,49
+	.word	228
+	.byte	19
+	.byte	'TaskActivation',0,8,244,1,49
+	.word	228
+	.byte	19
+	.byte	'CoreIdType',0,8,131,2,49
+	.word	323
+	.byte	19
+	.byte	'CoreNumType',0,8,154,2,49
+	.word	228
+	.byte	19
+	.byte	'CoreMaskType',0,8,170,2,49
+	.word	495
+	.byte	19
+	.byte	'OsEE_task_type',0,8,211,2,3
+	.word	2532
+	.byte	19
+	.byte	'TaskExecutionType',0,8,215,2,53
+	.word	2532
+	.byte	19
+	.byte	'OsEE_task_status',0,8,238,2,3
+	.word	2195
+	.byte	19
+	.byte	'TaskStateType',0,8,254,2,53
+	.word	2195
+	.byte	19
+	.byte	'CounterType',0,8,143,3,53
+	.word	495
+	.byte	19
+	.byte	'TickType',0,8,158,3,53
+	.word	495
+	.byte	19
+	.byte	'AlarmBaseType',0,8,194,3,3
+	.word	3464
+	.byte	19
+	.byte	'AlarmType',0,8,214,3,53
+	.word	495
+	.byte	19
+	.byte	'EventMaskType',0,8,183,4,53
+	.word	495
+	.byte	19
+	.byte	'ObjectIDType',0,8,151,5,53
+	.word	495
+	.byte	19
+	.byte	'MemSize',0,8,163,5,53
+	.word	495
+	.byte	19
+	.byte	'OsEE_status_type',0,8,212,5,3
+	.word	1008
+	.byte	19
+	.byte	'StatusType',0,8,217,5,53
+	.word	1008
+	.byte	19
+	.byte	'OsEE_service_id_type',0,8,182,6,3
+	.word	4154
+	.byte	19
+	.byte	'OSServiceIdType',0,8,185,6,53
+	.word	4154
+	.byte	19
+	.byte	'CountType',0,15,81,39
+	.word	495
+	.byte	19
+	.byte	'OsEE_SN',0,10,80,3
+	.word	2343
+	.byte	19
+	.byte	'OsEE_byte',0,7,83,31
+	.word	228
+	.byte	19
+	.byte	'OsEE_os_context',0,7,109,3
+	.word	5034
+	.byte	19
+	.byte	'OsEE_kernel_status',0,7,125,3
+	.word	4049
+	.byte	19
+	.byte	'OsEE_TCB',0,7,129,2,3
+	.word	2397
+	.byte	11
+	.word	2658
+	.byte	19
+	.byte	'OsEE_TDB',0,7,162,2,14
+	.word	12402
+	.byte	19
+	.byte	'OsEE_CounterCB',0,7,222,2,3
+	.word	3414
+	.byte	11
+	.word	3536
+	.byte	19
+	.byte	'OsEE_CounterDB',0,7,252,2,14
+	.word	12449
+	.byte	19
+	.byte	'OsEE_action_type',0,7,132,3,3
+	.word	3163
+	.byte	19
+	.byte	'OsEE_action_param',0,7,148,3,3
+	.word	3094
+	.byte	11
+	.word	3254
+	.byte	19
+	.byte	'OsEE_action',0,7,157,3,14
+	.word	12531
+	.byte	19
+	.byte	'OsEE_trigger_status',0,7,184,4,3
+	.word	2873
+	.byte	19
+	.byte	'OsEE_TriggerCB',0,7,229,4,3
+	.word	2998
+	.byte	11
+	.word	3295
+	.byte	19
+	.byte	'OsEE_TriggerDB',0,7,151,5,14
+	.word	12610
+	.byte	19
+	.byte	'OsEE_AlarmCB',0,7,155,5,24
+	.word	2998
+	.byte	11
+	.word	3295
+	.byte	19
+	.byte	'OsEE_AlarmDB',0,7,156,5,24
+	.word	12661
+	.byte	11
+	.word	5717
+	.byte	19
+	.byte	'OsEE_autostart_trigger_info',0,7,191,5,14
+	.word	12688
+	.byte	11
+	.word	5824
+	.byte	19
+	.byte	'OsEE_autostart_trigger',0,7,199,5,14
+	.word	12730
+	.byte	11
+	.word	5611
+	.byte	19
+	.byte	'OsEE_autostart_tdb',0,7,211,5,14
+	.word	12767
+	.byte	19
+	.byte	'OsEE_CCB',0,7,193,6,3
+	.word	5277
+	.byte	11
+	.word	5905
+	.byte	19
+	.byte	'OsEE_CDB',0,7,241,6,14
+	.word	12818
+	.byte	19
+	.byte	'OsEE_KCB',0,7,186,7,3
+	.word	1583
+	.byte	11
+	.word	3650
+	.byte	19
+	.byte	'OsEE_KDB',0,7,131,8,14
+	.word	12859
+	.byte	20
+	.byte	'OsEE_tc_CPU_PC_bits_tag',0,16,86,16,4,16,1
+	.word	228
+	.byte	1,7,2,35,0,15
+	.byte	'pc',0,4
+	.word	495
+	.byte	31,0,2,35,0,0,19
+	.byte	'OsEE_tc_CPU_PC_bits',0,16,92,3
+	.word	12882
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L76:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,36,0,3,8,11,15,62,15,0,0,3,46,1,3,8,32,13,58,15,59,15
+	.byte	57,15,73,19,54,15,39,12,0,0,4,11,0,0,0,5,46,1,3,8,32,13,58,15,59,15,57,15,54,15,39,12,0,0,6,4,1,58,15
+	.byte	59,15,57,15,11,15,0,0,7,40,0,3,8,28,13,0,0,8,5,0,3,8,58,15,59,15,57,15,73,19,0,0,9,53,0,73,19,0,0,10,15
+	.byte	0,73,19,0,0,11,38,0,73,19,0,0,12,11,1,0,0,13,19,1,58,15,59,15,57,15,11,15,0,0,14,13,0,3,8,73,19,11,15
+	.byte	56,9,0,0,15,13,0,3,8,11,15,73,19,13,15,12,15,56,9,0,0,16,13,0,11,15,73,19,13,15,12,15,56,9,0,0,17,23,1
+	.byte	58,15,59,15,57,15,11,15,0,0,18,59,0,3,8,0,0,19,22,0,3,8,58,15,59,15,57,15,73,19,0,0,20,19,1,3,8,58,15
+	.byte	59,15,57,15,11,15,0,0,21,21,0,54,15,39,12,0,0,22,1,1,73,19,0,0,23,33,0,0,0,24,46,1,49,19,0,0,25,5,0,49
+	.byte	19,0,0,26,29,1,49,19,0,0,27,11,0,49,19,0,0,28,11,1,49,19,0,0,29,21,0,54,15,0,0,30,23,1,3,8,58,15,59,15
+	.byte	57,15,11,15,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L77:
+	.word	.L302-.L301
+.L301:
+	.half	3
+	.word	.L304-.L303
+.L303:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src',0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'C:\\Infineon\\AURIX-Studio-1.8.0\\plugins\\com.infineon.aurix.tools_1.8.0\\build_system\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0
+	.byte	0
+	.byte	'ee_tc_trapvec.h',0,1,0,0
+	.byte	'ee_hal.h',0,1,0,0
+	.byte	'ee_platform_types.h',0,1,0,0
+	.byte	'ee_tc_system.h',0,1,0,0
+	.byte	'ee_hal_mc.h',0,1,0,0
+	.byte	'ee_get_kernel_and_core.h',0,1,0,0
+	.byte	'ee_kernel_types.h',0,1,0,0
+	.byte	'ee_api_types.h',0,1,0,0
+	.byte	'ee_hal_internal_types.h',0,1,0,0
+	.byte	'ee_scheduler_types.h',0,1,0,0
+	.byte	'ee_hal_internal.h',0,2,0,0
+	.byte	'ee_tc_trapvec.c',0,3,0,0
+	.byte	'stddef.h',0,4,0,0
+	.byte	'stdint.h',0,4,0,0
+	.byte	'ee_oo_api_extension.h',0,1,0,0
+	.byte	'ee_hal_mc_internal.h',0,2,0,0,0
+.L304:
+.L302:
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_mmu_core0')
+	.sect	'.debug_info'
+.L78:
+	.word	360
+	.half	3
+	.word	.L79
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L81,.L80
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_mmu_core0',0,1,154,2,1,1,1,1
+	.word	.L27,.L198,.L26
+	.byte	4
+	.word	.L27,.L198
+	.byte	5
+	.word	.L199,.L200,.L2
+	.byte	6
+	.word	.L201,.L200,.L2
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L203
+	.byte	0,0,5
+	.word	.L204,.L2,.L205
+	.byte	8
+	.word	.L206,.L2,.L205
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_mmu_core0')
+	.sect	'.debug_abbrev'
+.L79:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_mmu_core0')
+	.sect	'.debug_line'
+.L80:
+	.word	.L306-.L305
+.L305:
+	.half	3
+	.word	.L308-.L307
+.L307:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L308:
+	.byte	5,1,7,0,5,2
+	.word	.L27
+	.byte	3,153,2,1,4,2,5,3,9
+	.half	.L200-.L27
+	.byte	3,65,1,4,3,9
+	.half	.L2-.L200
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L205-.L2
+	.byte	3,210,0,1,5,1,9
+	.half	.L82-.L205
+	.byte	3,2,0,1,1
+.L306:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_mmu_core0')
+	.sect	'.debug_ranges'
+.L81:
+	.word	-1,.L27,0,.L82-.L27,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_protection_core0')
+	.sect	'.debug_info'
+.L83:
+	.word	367
+	.half	3
+	.word	.L84
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L86,.L85
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_protection_core0',0,1,173,2,1,1,1,1
+	.word	.L29,.L207,.L28
+	.byte	4
+	.word	.L29,.L207
+	.byte	5
+	.word	.L199,.L208,.L3
+	.byte	6
+	.word	.L201,.L208,.L3
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L209
+	.byte	0,0,5
+	.word	.L204,.L3,.L210
+	.byte	8
+	.word	.L206,.L3,.L210
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_protection_core0')
+	.sect	'.debug_abbrev'
+.L84:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_protection_core0')
+	.sect	'.debug_line'
+.L85:
+	.word	.L310-.L309
+.L309:
+	.half	3
+	.word	.L312-.L311
+.L311:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L312:
+	.byte	5,1,7,0,5,2
+	.word	.L29
+	.byte	3,172,2,1,4,2,5,3,9
+	.half	.L208-.L29
+	.byte	3,174,127,1,4,3,9
+	.half	.L3-.L208
+	.byte	3,121,1,4,1,5,57,9
+	.half	.L210-.L3
+	.byte	3,229,0,1,5,1,9
+	.half	.L87-.L210
+	.byte	3,2,0,1,1
+.L310:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_protection_core0')
+	.sect	'.debug_ranges'
+.L86:
+	.word	-1,.L29,0,.L87-.L29,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_instruction_core0')
+	.sect	'.debug_info'
+.L88:
+	.word	368
+	.half	3
+	.word	.L89
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L91,.L90
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_instruction_core0',0,1,192,2,1,1,1,1
+	.word	.L31,.L211,.L30
+	.byte	4
+	.word	.L31,.L211
+	.byte	5
+	.word	.L199,.L212,.L4
+	.byte	6
+	.word	.L201,.L212,.L4
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L213
+	.byte	0,0,5
+	.word	.L204,.L4,.L214
+	.byte	8
+	.word	.L206,.L4,.L214
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_instruction_core0')
+	.sect	'.debug_abbrev'
+.L89:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_instruction_core0')
+	.sect	'.debug_line'
+.L90:
+	.word	.L314-.L313
+.L313:
+	.half	3
+	.word	.L316-.L315
+.L315:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L316:
+	.byte	5,1,7,0,5,2
+	.word	.L31
+	.byte	3,191,2,1,4,2,5,3,9
+	.half	.L212-.L31
+	.byte	3,155,127,1,4,3,9
+	.half	.L4-.L212
+	.byte	3,121,1,4,1,5,57,9
+	.half	.L214-.L4
+	.byte	3,246,0,1,5,1,9
+	.half	.L92-.L214
+	.byte	3,2,0,1,1
+.L314:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_instruction_core0')
+	.sect	'.debug_ranges'
+.L91:
+	.word	-1,.L31,0,.L92-.L31,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_context_core0')
+	.sect	'.debug_info'
+.L93:
+	.word	364
+	.half	3
+	.word	.L94
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L96,.L95
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_context_core0',0,1,209,2,1,1,1,1
+	.word	.L33,.L215,.L32
+	.byte	4
+	.word	.L33,.L215
+	.byte	5
+	.word	.L199,.L216,.L5
+	.byte	6
+	.word	.L201,.L216,.L5
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L217
+	.byte	0,0,5
+	.word	.L204,.L5,.L218
+	.byte	8
+	.word	.L206,.L5,.L218
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_context_core0')
+	.sect	'.debug_abbrev'
+.L94:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_context_core0')
+	.sect	'.debug_line'
+.L95:
+	.word	.L318-.L317
+.L317:
+	.half	3
+	.word	.L320-.L319
+.L319:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L320:
+	.byte	5,1,7,0,5,2
+	.word	.L33
+	.byte	3,208,2,1,4,2,5,3,9
+	.half	.L216-.L33
+	.byte	3,138,127,1,4,3,9
+	.half	.L5-.L216
+	.byte	3,121,1,4,1,5,57,9
+	.half	.L218-.L5
+	.byte	3,135,1,1,5,1,9
+	.half	.L97-.L218
+	.byte	3,2,0,1,1
+.L318:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_context_core0')
+	.sect	'.debug_ranges'
+.L96:
+	.word	-1,.L33,0,.L97-.L33,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_bus_core0')
+	.sect	'.debug_info'
+.L98:
+	.word	360
+	.half	3
+	.word	.L99
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L101,.L100
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_bus_core0',0,1,227,2,1,1,1,1
+	.word	.L35,.L219,.L34
+	.byte	4
+	.word	.L35,.L219
+	.byte	5
+	.word	.L199,.L220,.L6
+	.byte	6
+	.word	.L201,.L220,.L6
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L221
+	.byte	0,0,5
+	.word	.L204,.L6,.L222
+	.byte	8
+	.word	.L206,.L6,.L222
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_bus_core0')
+	.sect	'.debug_abbrev'
+.L99:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_bus_core0')
+	.sect	'.debug_line'
+.L100:
+	.word	.L322-.L321
+.L321:
+	.half	3
+	.word	.L324-.L323
+.L323:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L324:
+	.byte	5,1,7,0,5,2
+	.word	.L35
+	.byte	3,226,2,1,4,2,5,3,9
+	.half	.L220-.L35
+	.byte	3,248,126,1,4,3,9
+	.half	.L6-.L220
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L222-.L6
+	.byte	3,155,1,1,5,1,9
+	.half	.L102-.L222
+	.byte	3,2,0,1,1
+.L322:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_bus_core0')
+	.sect	'.debug_ranges'
+.L101:
+	.word	-1,.L35,0,.L102-.L35,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_assertion_core0')
+	.sect	'.debug_info'
+.L103:
+	.word	366
+	.half	3
+	.word	.L104
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L106,.L105
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_assertion_core0',0,1,246,2,1,1,1,1
+	.word	.L37,.L223,.L36
+	.byte	4
+	.word	.L37,.L223
+	.byte	5
+	.word	.L199,.L224,.L7
+	.byte	6
+	.word	.L201,.L224,.L7
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L225
+	.byte	0,0,5
+	.word	.L204,.L7,.L226
+	.byte	8
+	.word	.L206,.L7,.L226
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_assertion_core0')
+	.sect	'.debug_abbrev'
+.L104:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_assertion_core0')
+	.sect	'.debug_line'
+.L105:
+	.word	.L326-.L325
+.L325:
+	.half	3
+	.word	.L328-.L327
+.L327:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L328:
+	.byte	5,1,7,0,5,2
+	.word	.L37
+	.byte	3,245,2,1,4,2,5,3,9
+	.half	.L224-.L37
+	.byte	3,229,126,1,4,3,9
+	.half	.L7-.L224
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L226-.L7
+	.byte	3,172,1,1,5,1,9
+	.half	.L107-.L226
+	.byte	3,2,0,1,1
+.L326:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_assertion_core0')
+	.sect	'.debug_ranges'
+.L106:
+	.word	-1,.L37,0,.L107-.L37,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_system_core0')
+	.sect	'.debug_info'
+.L108:
+	.word	363
+	.half	3
+	.word	.L109
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L111,.L110
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_system_core0',0,1,138,3,1,1,1,1
+	.word	.L39,.L227,.L38
+	.byte	4
+	.word	.L39,.L227
+	.byte	5
+	.word	.L199,.L39,.L8
+	.byte	6
+	.word	.L201,.L39,.L8
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L228
+	.byte	0,0,5
+	.word	.L204,.L8,.L229
+	.byte	8
+	.word	.L206,.L8,.L229
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_system_core0')
+	.sect	'.debug_abbrev'
+.L109:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_system_core0')
+	.sect	'.debug_line'
+.L110:
+	.word	.L330-.L329
+.L329:
+	.half	3
+	.word	.L332-.L331
+.L331:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L332:
+	.byte	4,2,5,3,7,0,5,2
+	.word	.L39
+	.byte	3,218,1,1,4,3,9
+	.half	.L8-.L39
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L229-.L8
+	.byte	3,199,1,1,5,1,9
+	.half	.L112-.L229
+	.byte	3,3,0,1,1
+.L330:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_system_core0')
+	.sect	'.debug_ranges'
+.L111:
+	.word	-1,.L39,0,.L112-.L39,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_nmi_core0')
+	.sect	'.debug_info'
+.L113:
+	.word	360
+	.half	3
+	.word	.L114
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L116,.L115
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_nmi_core0',0,1,163,3,1,1,1,1
+	.word	.L41,.L230,.L40
+	.byte	4
+	.word	.L41,.L230
+	.byte	5
+	.word	.L199,.L231,.L9
+	.byte	6
+	.word	.L201,.L231,.L9
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L232
+	.byte	0,0,5
+	.word	.L204,.L9,.L233
+	.byte	8
+	.word	.L206,.L9,.L233
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_nmi_core0')
+	.sect	'.debug_abbrev'
+.L114:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_nmi_core0')
+	.sect	'.debug_line'
+.L115:
+	.word	.L334-.L333
+.L333:
+	.half	3
+	.word	.L336-.L335
+.L335:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L336:
+	.byte	5,1,7,0,5,2
+	.word	.L41
+	.byte	3,162,3,1,4,2,5,3,9
+	.half	.L231-.L41
+	.byte	3,184,126,1,4,3,9
+	.half	.L9-.L231
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L233-.L9
+	.byte	3,217,1,1,5,1,9
+	.half	.L117-.L233
+	.byte	3,2,0,1,1
+.L334:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_nmi_core0')
+	.sect	'.debug_ranges'
+.L116:
+	.word	-1,.L41,0,.L117-.L41,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_mmu_core1')
+	.sect	'.debug_info'
+.L118:
+	.word	360
+	.half	3
+	.word	.L119
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L121,.L120
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_mmu_core1',0,1,181,3,1,1,1,1
+	.word	.L43,.L234,.L42
+	.byte	4
+	.word	.L43,.L234
+	.byte	5
+	.word	.L199,.L235,.L10
+	.byte	6
+	.word	.L201,.L235,.L10
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L236
+	.byte	0,0,5
+	.word	.L204,.L10,.L237
+	.byte	8
+	.word	.L206,.L10,.L237
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_mmu_core1')
+	.sect	'.debug_abbrev'
+.L119:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_mmu_core1')
+	.sect	'.debug_line'
+.L120:
+	.word	.L338-.L337
+.L337:
+	.half	3
+	.word	.L340-.L339
+.L339:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L340:
+	.byte	5,1,7,0,5,2
+	.word	.L43
+	.byte	3,180,3,1,4,2,5,3,9
+	.half	.L235-.L43
+	.byte	3,166,126,1,4,3,9
+	.half	.L10-.L235
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L237-.L10
+	.byte	3,237,1,1,5,1,9
+	.half	.L122-.L237
+	.byte	3,2,0,1,1
+.L338:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_mmu_core1')
+	.sect	'.debug_ranges'
+.L121:
+	.word	-1,.L43,0,.L122-.L43,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_protection_core1')
+	.sect	'.debug_info'
+.L123:
+	.word	367
+	.half	3
+	.word	.L124
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L126,.L125
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_protection_core1',0,1,200,3,1,1,1,1
+	.word	.L45,.L238,.L44
+	.byte	4
+	.word	.L45,.L238
+	.byte	5
+	.word	.L199,.L239,.L11
+	.byte	6
+	.word	.L201,.L239,.L11
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L240
+	.byte	0,0,5
+	.word	.L204,.L11,.L241
+	.byte	8
+	.word	.L206,.L11,.L241
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_protection_core1')
+	.sect	'.debug_abbrev'
+.L124:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_protection_core1')
+	.sect	'.debug_line'
+.L125:
+	.word	.L342-.L341
+.L341:
+	.half	3
+	.word	.L344-.L343
+.L343:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L344:
+	.byte	5,1,7,0,5,2
+	.word	.L45
+	.byte	3,199,3,1,4,2,5,3,9
+	.half	.L239-.L45
+	.byte	3,147,126,1,4,3,9
+	.half	.L11-.L239
+	.byte	3,121,1,4,1,5,57,9
+	.half	.L241-.L11
+	.byte	3,128,2,1,5,1,9
+	.half	.L127-.L241
+	.byte	3,2,0,1,1
+.L342:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_protection_core1')
+	.sect	'.debug_ranges'
+.L126:
+	.word	-1,.L45,0,.L127-.L45,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_instruction_core1')
+	.sect	'.debug_info'
+.L128:
+	.word	368
+	.half	3
+	.word	.L129
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L131,.L130
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_instruction_core1',0,1,219,3,1,1,1,1
+	.word	.L47,.L242,.L46
+	.byte	4
+	.word	.L47,.L242
+	.byte	5
+	.word	.L199,.L243,.L12
+	.byte	6
+	.word	.L201,.L243,.L12
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L244
+	.byte	0,0,5
+	.word	.L204,.L12,.L245
+	.byte	8
+	.word	.L206,.L12,.L245
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_instruction_core1')
+	.sect	'.debug_abbrev'
+.L129:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_instruction_core1')
+	.sect	'.debug_line'
+.L130:
+	.word	.L346-.L345
+.L345:
+	.half	3
+	.word	.L348-.L347
+.L347:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L348:
+	.byte	5,1,7,0,5,2
+	.word	.L47
+	.byte	3,218,3,1,4,2,5,3,9
+	.half	.L243-.L47
+	.byte	3,128,126,1,4,3,9
+	.half	.L12-.L243
+	.byte	3,121,1,4,1,5,57,9
+	.half	.L245-.L12
+	.byte	3,145,2,1,5,1,9
+	.half	.L132-.L245
+	.byte	3,2,0,1,1
+.L346:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_instruction_core1')
+	.sect	'.debug_ranges'
+.L131:
+	.word	-1,.L47,0,.L132-.L47,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_context_core1')
+	.sect	'.debug_info'
+.L133:
+	.word	364
+	.half	3
+	.word	.L134
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L136,.L135
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_context_core1',0,1,236,3,1,1,1,1
+	.word	.L49,.L246,.L48
+	.byte	4
+	.word	.L49,.L246
+	.byte	5
+	.word	.L199,.L247,.L13
+	.byte	6
+	.word	.L201,.L247,.L13
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L248
+	.byte	0,0,5
+	.word	.L204,.L13,.L249
+	.byte	8
+	.word	.L206,.L13,.L249
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_context_core1')
+	.sect	'.debug_abbrev'
+.L134:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_context_core1')
+	.sect	'.debug_line'
+.L135:
+	.word	.L350-.L349
+.L349:
+	.half	3
+	.word	.L352-.L351
+.L351:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L352:
+	.byte	5,1,7,0,5,2
+	.word	.L49
+	.byte	3,235,3,1,4,2,5,3,9
+	.half	.L247-.L49
+	.byte	3,239,125,1,4,3,9
+	.half	.L13-.L247
+	.byte	3,121,1,4,1,5,57,9
+	.half	.L249-.L13
+	.byte	3,162,2,1,5,1,9
+	.half	.L137-.L249
+	.byte	3,2,0,1,1
+.L350:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_context_core1')
+	.sect	'.debug_ranges'
+.L136:
+	.word	-1,.L49,0,.L137-.L49,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_bus_core1')
+	.sect	'.debug_info'
+.L138:
+	.word	360
+	.half	3
+	.word	.L139
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L141,.L140
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_bus_core1',0,1,254,3,1,1,1,1
+	.word	.L51,.L250,.L50
+	.byte	4
+	.word	.L51,.L250
+	.byte	5
+	.word	.L199,.L251,.L14
+	.byte	6
+	.word	.L201,.L251,.L14
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L252
+	.byte	0,0,5
+	.word	.L204,.L14,.L253
+	.byte	8
+	.word	.L206,.L14,.L253
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_bus_core1')
+	.sect	'.debug_abbrev'
+.L139:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_bus_core1')
+	.sect	'.debug_line'
+.L140:
+	.word	.L354-.L353
+.L353:
+	.half	3
+	.word	.L356-.L355
+.L355:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L356:
+	.byte	5,1,7,0,5,2
+	.word	.L51
+	.byte	3,253,3,1,4,2,5,3,9
+	.half	.L251-.L51
+	.byte	3,221,125,1,4,3,9
+	.half	.L14-.L251
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L253-.L14
+	.byte	3,182,2,1,5,1,9
+	.half	.L142-.L253
+	.byte	3,2,0,1,1
+.L354:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_bus_core1')
+	.sect	'.debug_ranges'
+.L141:
+	.word	-1,.L51,0,.L142-.L51,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_assertion_core1')
+	.sect	'.debug_info'
+.L143:
+	.word	366
+	.half	3
+	.word	.L144
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L146,.L145
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_assertion_core1',0,1,145,4,1,1,1,1
+	.word	.L53,.L254,.L52
+	.byte	4
+	.word	.L53,.L254
+	.byte	5
+	.word	.L199,.L255,.L15
+	.byte	6
+	.word	.L201,.L255,.L15
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L256
+	.byte	0,0,5
+	.word	.L204,.L15,.L257
+	.byte	8
+	.word	.L206,.L15,.L257
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_assertion_core1')
+	.sect	'.debug_abbrev'
+.L144:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_assertion_core1')
+	.sect	'.debug_line'
+.L145:
+	.word	.L358-.L357
+.L357:
+	.half	3
+	.word	.L360-.L359
+.L359:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L360:
+	.byte	5,1,7,0,5,2
+	.word	.L53
+	.byte	3,144,4,1,4,2,5,3,9
+	.half	.L255-.L53
+	.byte	3,202,125,1,4,3,9
+	.half	.L15-.L255
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L257-.L15
+	.byte	3,199,2,1,5,1,9
+	.half	.L147-.L257
+	.byte	3,2,0,1,1
+.L358:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_assertion_core1')
+	.sect	'.debug_ranges'
+.L146:
+	.word	-1,.L53,0,.L147-.L53,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_system_core1')
+	.sect	'.debug_info'
+.L148:
+	.word	363
+	.half	3
+	.word	.L149
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L151,.L150
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_system_core1',0,1,165,4,1,1,1,1
+	.word	.L55,.L258,.L54
+	.byte	4
+	.word	.L55,.L258
+	.byte	5
+	.word	.L199,.L55,.L16
+	.byte	6
+	.word	.L201,.L55,.L16
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L259
+	.byte	0,0,5
+	.word	.L204,.L16,.L260
+	.byte	8
+	.word	.L206,.L16,.L260
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_system_core1')
+	.sect	'.debug_abbrev'
+.L149:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_system_core1')
+	.sect	'.debug_line'
+.L150:
+	.word	.L362-.L361
+.L361:
+	.half	3
+	.word	.L364-.L363
+.L363:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L364:
+	.byte	4,2,5,3,7,0,5,2
+	.word	.L55
+	.byte	3,218,1,1,4,3,9
+	.half	.L16-.L55
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L260-.L16
+	.byte	3,226,2,1,5,1,9
+	.half	.L152-.L260
+	.byte	3,3,0,1,1
+.L362:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_system_core1')
+	.sect	'.debug_ranges'
+.L151:
+	.word	-1,.L55,0,.L152-.L55,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_nmi_core1')
+	.sect	'.debug_info'
+.L153:
+	.word	360
+	.half	3
+	.word	.L154
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L156,.L155
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_nmi_core1',0,1,190,4,1,1,1,1
+	.word	.L57,.L261,.L56
+	.byte	4
+	.word	.L57,.L261
+	.byte	5
+	.word	.L199,.L262,.L17
+	.byte	6
+	.word	.L201,.L262,.L17
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L263
+	.byte	0,0,5
+	.word	.L204,.L17,.L264
+	.byte	8
+	.word	.L206,.L17,.L264
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_nmi_core1')
+	.sect	'.debug_abbrev'
+.L154:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_nmi_core1')
+	.sect	'.debug_line'
+.L155:
+	.word	.L366-.L365
+.L365:
+	.half	3
+	.word	.L368-.L367
+.L367:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L368:
+	.byte	5,1,7,0,5,2
+	.word	.L57
+	.byte	3,189,4,1,4,2,5,3,9
+	.half	.L262-.L57
+	.byte	3,157,125,1,4,3,9
+	.half	.L17-.L262
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L264-.L17
+	.byte	3,244,2,1,5,1,9
+	.half	.L157-.L264
+	.byte	3,2,0,1,1
+.L366:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_nmi_core1')
+	.sect	'.debug_ranges'
+.L156:
+	.word	-1,.L57,0,.L157-.L57,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_mmu_core2')
+	.sect	'.debug_info'
+.L158:
+	.word	360
+	.half	3
+	.word	.L159
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L161,.L160
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_mmu_core2',0,1,210,4,1,1,1,1
+	.word	.L59,.L265,.L58
+	.byte	4
+	.word	.L59,.L265
+	.byte	5
+	.word	.L199,.L266,.L18
+	.byte	6
+	.word	.L201,.L266,.L18
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L267
+	.byte	0,0,5
+	.word	.L204,.L18,.L268
+	.byte	8
+	.word	.L206,.L18,.L268
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_mmu_core2')
+	.sect	'.debug_abbrev'
+.L159:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_mmu_core2')
+	.sect	'.debug_line'
+.L160:
+	.word	.L370-.L369
+.L369:
+	.half	3
+	.word	.L372-.L371
+.L371:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L372:
+	.byte	5,1,7,0,5,2
+	.word	.L59
+	.byte	3,209,4,1,4,2,5,3,9
+	.half	.L266-.L59
+	.byte	3,137,125,1,4,3,9
+	.half	.L18-.L266
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L268-.L18
+	.byte	3,138,3,1,5,1,9
+	.half	.L162-.L268
+	.byte	3,2,0,1,1
+.L370:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_mmu_core2')
+	.sect	'.debug_ranges'
+.L161:
+	.word	-1,.L59,0,.L162-.L59,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_protection_core2')
+	.sect	'.debug_info'
+.L163:
+	.word	367
+	.half	3
+	.word	.L164
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L166,.L165
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_protection_core2',0,1,229,4,1,1,1,1
+	.word	.L61,.L269,.L60
+	.byte	4
+	.word	.L61,.L269
+	.byte	5
+	.word	.L199,.L270,.L19
+	.byte	6
+	.word	.L201,.L270,.L19
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L271
+	.byte	0,0,5
+	.word	.L204,.L19,.L272
+	.byte	8
+	.word	.L206,.L19,.L272
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_protection_core2')
+	.sect	'.debug_abbrev'
+.L164:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_protection_core2')
+	.sect	'.debug_line'
+.L165:
+	.word	.L374-.L373
+.L373:
+	.half	3
+	.word	.L376-.L375
+.L375:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L376:
+	.byte	5,1,7,0,5,2
+	.word	.L61
+	.byte	3,228,4,1,4,2,5,3,9
+	.half	.L270-.L61
+	.byte	3,246,124,1,4,3,9
+	.half	.L19-.L270
+	.byte	3,121,1,4,1,5,57,9
+	.half	.L272-.L19
+	.byte	3,157,3,1,5,1,9
+	.half	.L167-.L272
+	.byte	3,2,0,1,1
+.L374:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_protection_core2')
+	.sect	'.debug_ranges'
+.L166:
+	.word	-1,.L61,0,.L167-.L61,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_instruction_core2')
+	.sect	'.debug_info'
+.L168:
+	.word	368
+	.half	3
+	.word	.L169
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L171,.L170
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_instruction_core2',0,1,248,4,1,1,1,1
+	.word	.L63,.L273,.L62
+	.byte	4
+	.word	.L63,.L273
+	.byte	5
+	.word	.L199,.L274,.L20
+	.byte	6
+	.word	.L201,.L274,.L20
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L275
+	.byte	0,0,5
+	.word	.L204,.L20,.L276
+	.byte	8
+	.word	.L206,.L20,.L276
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_instruction_core2')
+	.sect	'.debug_abbrev'
+.L169:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_instruction_core2')
+	.sect	'.debug_line'
+.L170:
+	.word	.L378-.L377
+.L377:
+	.half	3
+	.word	.L380-.L379
+.L379:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L380:
+	.byte	5,1,7,0,5,2
+	.word	.L63
+	.byte	3,247,4,1,4,2,5,3,9
+	.half	.L274-.L63
+	.byte	3,227,124,1,4,3,9
+	.half	.L20-.L274
+	.byte	3,121,1,4,1,5,57,9
+	.half	.L276-.L20
+	.byte	3,174,3,1,5,1,9
+	.half	.L172-.L276
+	.byte	3,2,0,1,1
+.L378:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_instruction_core2')
+	.sect	'.debug_ranges'
+.L171:
+	.word	-1,.L63,0,.L172-.L63,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_context_core2')
+	.sect	'.debug_info'
+.L173:
+	.word	364
+	.half	3
+	.word	.L174
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L176,.L175
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_context_core2',0,1,137,5,1,1,1,1
+	.word	.L65,.L277,.L64
+	.byte	4
+	.word	.L65,.L277
+	.byte	5
+	.word	.L199,.L278,.L21
+	.byte	6
+	.word	.L201,.L278,.L21
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L279
+	.byte	0,0,5
+	.word	.L204,.L21,.L280
+	.byte	8
+	.word	.L206,.L21,.L280
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_context_core2')
+	.sect	'.debug_abbrev'
+.L174:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_context_core2')
+	.sect	'.debug_line'
+.L175:
+	.word	.L382-.L381
+.L381:
+	.half	3
+	.word	.L384-.L383
+.L383:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L384:
+	.byte	5,1,7,0,5,2
+	.word	.L65
+	.byte	3,136,5,1,4,2,5,3,9
+	.half	.L278-.L65
+	.byte	3,210,124,1,4,3,9
+	.half	.L21-.L278
+	.byte	3,121,1,4,1,5,57,9
+	.half	.L280-.L21
+	.byte	3,191,3,1,5,1,9
+	.half	.L177-.L280
+	.byte	3,2,0,1,1
+.L382:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_context_core2')
+	.sect	'.debug_ranges'
+.L176:
+	.word	-1,.L65,0,.L177-.L65,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_bus_core2')
+	.sect	'.debug_info'
+.L178:
+	.word	360
+	.half	3
+	.word	.L179
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L181,.L180
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_bus_core2',0,1,155,5,1,1,1,1
+	.word	.L67,.L281,.L66
+	.byte	4
+	.word	.L67,.L281
+	.byte	5
+	.word	.L199,.L282,.L22
+	.byte	6
+	.word	.L201,.L282,.L22
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L283
+	.byte	0,0,5
+	.word	.L204,.L22,.L284
+	.byte	8
+	.word	.L206,.L22,.L284
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_bus_core2')
+	.sect	'.debug_abbrev'
+.L179:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_bus_core2')
+	.sect	'.debug_line'
+.L180:
+	.word	.L386-.L385
+.L385:
+	.half	3
+	.word	.L388-.L387
+.L387:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L388:
+	.byte	5,1,7,0,5,2
+	.word	.L67
+	.byte	3,154,5,1,4,2,5,3,9
+	.half	.L282-.L67
+	.byte	3,192,124,1,4,3,9
+	.half	.L22-.L282
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L284-.L22
+	.byte	3,211,3,1,5,1,9
+	.half	.L182-.L284
+	.byte	3,2,0,1,1
+.L386:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_bus_core2')
+	.sect	'.debug_ranges'
+.L181:
+	.word	-1,.L67,0,.L182-.L67,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_assertion_core2')
+	.sect	'.debug_info'
+.L183:
+	.word	366
+	.half	3
+	.word	.L184
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L186,.L185
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_assertion_core2',0,1,174,5,1,1,1,1
+	.word	.L69,.L285,.L68
+	.byte	4
+	.word	.L69,.L285
+	.byte	5
+	.word	.L199,.L286,.L23
+	.byte	6
+	.word	.L201,.L286,.L23
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L287
+	.byte	0,0,5
+	.word	.L204,.L23,.L288
+	.byte	8
+	.word	.L206,.L23,.L288
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_assertion_core2')
+	.sect	'.debug_abbrev'
+.L184:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_assertion_core2')
+	.sect	'.debug_line'
+.L185:
+	.word	.L390-.L389
+.L389:
+	.half	3
+	.word	.L392-.L391
+.L391:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L392:
+	.byte	5,1,7,0,5,2
+	.word	.L69
+	.byte	3,173,5,1,4,2,5,3,9
+	.half	.L286-.L69
+	.byte	3,173,124,1,4,3,9
+	.half	.L23-.L286
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L288-.L23
+	.byte	3,228,3,1,5,1,9
+	.half	.L187-.L288
+	.byte	3,2,0,1,1
+.L390:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_assertion_core2')
+	.sect	'.debug_ranges'
+.L186:
+	.word	-1,.L69,0,.L187-.L69,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_system_core2')
+	.sect	'.debug_info'
+.L188:
+	.word	363
+	.half	3
+	.word	.L189
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L191,.L190
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_system_core2',0,1,194,5,1,1,1,1
+	.word	.L71,.L289,.L70
+	.byte	4
+	.word	.L71,.L289
+	.byte	5
+	.word	.L199,.L71,.L24
+	.byte	6
+	.word	.L201,.L71,.L24
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L290
+	.byte	0,0,5
+	.word	.L204,.L24,.L291
+	.byte	8
+	.word	.L206,.L24,.L291
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_system_core2')
+	.sect	'.debug_abbrev'
+.L189:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_system_core2')
+	.sect	'.debug_line'
+.L190:
+	.word	.L394-.L393
+.L393:
+	.half	3
+	.word	.L396-.L395
+.L395:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L396:
+	.byte	4,2,5,3,7,0,5,2
+	.word	.L71
+	.byte	3,218,1,1,4,3,9
+	.half	.L24-.L71
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L291-.L24
+	.byte	3,255,3,1,5,1,9
+	.half	.L192-.L291
+	.byte	3,3,0,1,1
+.L394:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_system_core2')
+	.sect	'.debug_ranges'
+.L191:
+	.word	-1,.L71,0,.L192-.L71,0,0
+	.sdecl	'.debug_info',debug,cluster('osEE_tc_trap_nmi_core2')
+	.sect	'.debug_info'
+.L193:
+	.word	360
+	.half	3
+	.word	.L194
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_trapvec.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
+	.word	.L196,.L195
+	.byte	2
+	.word	.L74
+	.byte	3
+	.byte	'osEE_tc_trap_nmi_core2',0,1,219,5,1,1,1,1
+	.word	.L73,.L292,.L72
+	.byte	4
+	.word	.L73,.L292
+	.byte	5
+	.word	.L199,.L293,.L25
+	.byte	6
+	.word	.L201,.L293,.L25
+	.byte	7
+	.byte	'tin',0,2,217,1,15
+	.word	.L202,.L294
+	.byte	0,0,5
+	.word	.L204,.L25,.L295
+	.byte	8
+	.word	.L206,.L25,.L295
+	.byte	0,0,0,0
+	.sdecl	'.debug_abbrev',debug,cluster('osEE_tc_trap_nmi_core2')
+	.sect	'.debug_abbrev'
+.L194:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,1,17,1,18,1,0,0,5,29,1,49,16,17,1,18,1,0,0,6,11,1,49,16,17,1,18,1
+	.byte	0,0,7,52,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,8,11,0,49,16,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('osEE_tc_trap_nmi_core2')
+	.sect	'.debug_line'
+.L195:
+	.word	.L398-.L397
+.L397:
+	.half	3
+	.word	.L400-.L399
+.L399:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
+	.byte	'ee_tc_trapvec.c',0,1,0,0
+	.byte	'ee_tc_trapvec.h',0,2,0,0
+	.byte	'ee_hal.h',0,2,0,0,0
+.L400:
+	.byte	5,1,7,0,5,2
+	.word	.L73
+	.byte	3,218,5,1,4,2,5,3,9
+	.half	.L293-.L73
+	.byte	3,128,124,1,4,3,9
+	.half	.L25-.L293
+	.byte	3,121,1,4,1,5,56,9
+	.half	.L295-.L25
+	.byte	3,145,4,1,5,1,9
+	.half	.L197-.L295
+	.byte	3,2,0,1,1
+.L398:
+	.sdecl	'.debug_ranges',debug,cluster('osEE_tc_trap_nmi_core2')
+	.sect	'.debug_ranges'
+.L196:
+	.word	-1,.L73,0,.L197-.L73,0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_assertion_core0')
+	.sect	'.debug_loc'
+.L36:
+	.word	-1,.L37,0,.L223-.L37
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L225:
+	.word	-1,.L37,.L7-.L37,.L223-.L37
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_assertion_core1')
+	.sect	'.debug_loc'
+.L52:
+	.word	-1,.L53,0,.L254-.L53
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L256:
+	.word	-1,.L53,.L15-.L53,.L254-.L53
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_assertion_core2')
+	.sect	'.debug_loc'
+.L68:
+	.word	-1,.L69,0,.L285-.L69
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L287:
+	.word	-1,.L69,.L23-.L69,.L285-.L69
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_bus_core0')
+	.sect	'.debug_loc'
+.L34:
+	.word	-1,.L35,0,.L219-.L35
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L221:
+	.word	-1,.L35,.L6-.L35,.L219-.L35
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_bus_core1')
+	.sect	'.debug_loc'
+.L50:
+	.word	-1,.L51,0,.L250-.L51
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L252:
+	.word	-1,.L51,.L14-.L51,.L250-.L51
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_bus_core2')
+	.sect	'.debug_loc'
+.L66:
+	.word	-1,.L67,0,.L281-.L67
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L283:
+	.word	-1,.L67,.L22-.L67,.L281-.L67
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_context_core0')
+	.sect	'.debug_loc'
+.L32:
+	.word	-1,.L33,0,.L215-.L33
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L217:
+	.word	-1,.L33,.L5-.L33,.L215-.L33
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_context_core1')
+	.sect	'.debug_loc'
+.L48:
+	.word	-1,.L49,0,.L246-.L49
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L248:
+	.word	-1,.L49,.L13-.L49,.L246-.L49
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_context_core2')
+	.sect	'.debug_loc'
+.L64:
+	.word	-1,.L65,0,.L277-.L65
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L279:
+	.word	-1,.L65,.L21-.L65,.L277-.L65
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_instruction_core0')
+	.sect	'.debug_loc'
+.L30:
+	.word	-1,.L31,0,.L211-.L31
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L213:
+	.word	-1,.L31,.L4-.L31,.L211-.L31
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_instruction_core1')
+	.sect	'.debug_loc'
+.L46:
+	.word	-1,.L47,0,.L242-.L47
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L244:
+	.word	-1,.L47,.L12-.L47,.L242-.L47
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_instruction_core2')
+	.sect	'.debug_loc'
+.L62:
+	.word	-1,.L63,0,.L273-.L63
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L275:
+	.word	-1,.L63,.L20-.L63,.L273-.L63
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_mmu_core0')
+	.sect	'.debug_loc'
+.L26:
+	.word	-1,.L27,0,.L198-.L27
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L203:
+	.word	-1,.L27,.L2-.L27,.L198-.L27
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_mmu_core1')
+	.sect	'.debug_loc'
+.L42:
+	.word	-1,.L43,0,.L234-.L43
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L236:
+	.word	-1,.L43,.L10-.L43,.L234-.L43
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_mmu_core2')
+	.sect	'.debug_loc'
+.L58:
+	.word	-1,.L59,0,.L265-.L59
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L267:
+	.word	-1,.L59,.L18-.L59,.L265-.L59
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_nmi_core0')
+	.sect	'.debug_loc'
+.L40:
+	.word	-1,.L41,0,.L230-.L41
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L232:
+	.word	-1,.L41,.L9-.L41,.L230-.L41
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_nmi_core1')
+	.sect	'.debug_loc'
+.L56:
+	.word	-1,.L57,0,.L261-.L57
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L263:
+	.word	-1,.L57,.L17-.L57,.L261-.L57
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_nmi_core2')
+	.sect	'.debug_loc'
+.L72:
+	.word	-1,.L73,0,.L292-.L73
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L294:
+	.word	-1,.L73,.L25-.L73,.L292-.L73
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_protection_core0')
+	.sect	'.debug_loc'
+.L28:
+	.word	-1,.L29,0,.L207-.L29
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L209:
+	.word	-1,.L29,.L3-.L29,.L207-.L29
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_protection_core1')
+	.sect	'.debug_loc'
+.L44:
+	.word	-1,.L45,0,.L238-.L45
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L240:
+	.word	-1,.L45,.L11-.L45,.L238-.L45
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_protection_core2')
+	.sect	'.debug_loc'
+.L60:
+	.word	-1,.L61,0,.L269-.L61
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L271:
+	.word	-1,.L61,.L19-.L61,.L269-.L61
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_system_core0')
+	.sect	'.debug_loc'
+.L38:
+	.word	-1,.L39,0,.L227-.L39
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L228:
+	.word	-1,.L39,.L8-.L39,.L227-.L39
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_system_core1')
+	.sect	'.debug_loc'
+.L54:
+	.word	-1,.L55,0,.L258-.L55
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L259:
+	.word	-1,.L55,.L16-.L55,.L258-.L55
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('osEE_tc_trap_system_core2')
+	.sect	'.debug_loc'
+.L70:
+	.word	-1,.L71,0,.L289-.L71
+	.half	2
+	.byte	138,0
+	.word	0,0
+.L290:
+	.word	-1,.L71,.L24-.L71,.L289-.L71
+	.half	1
+	.byte	95
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L401:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_mmu_core0')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L27,.L198-.L27
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_protection_core0')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L29,.L207-.L29
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_instruction_core0')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L31,.L211-.L31
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_context_core0')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L33,.L215-.L33
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_bus_core0')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L35,.L219-.L35
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_assertion_core0')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L37,.L223-.L37
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_system_core0')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L39,.L227-.L39
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_nmi_core0')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L41,.L230-.L41
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_mmu_core1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L43,.L234-.L43
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_protection_core1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L45,.L238-.L45
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_instruction_core1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L47,.L242-.L47
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_context_core1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L49,.L246-.L49
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_bus_core1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L51,.L250-.L51
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_assertion_core1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L53,.L254-.L53
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_system_core1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L55,.L258-.L55
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_nmi_core1')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L57,.L261-.L57
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_mmu_core2')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L59,.L265-.L59
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_protection_core2')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L61,.L269-.L61
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_instruction_core2')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L63,.L273-.L63
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_context_core2')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L65,.L277-.L65
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_bus_core2')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L67,.L281-.L67
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_assertion_core2')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L69,.L285-.L69
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_system_core2')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L71,.L289-.L71
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('osEE_tc_trap_nmi_core2')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L401,.L73,.L292-.L73
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	; Module end

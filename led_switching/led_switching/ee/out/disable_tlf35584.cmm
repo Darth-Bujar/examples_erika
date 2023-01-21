@@ -1,0 +1,266 @@
+; --------------------------------------------------------------------------------
+; @Title: Disable Watchdog of TLF35584
+; @Description:
+;   Initialisation script to switch off TLF35584 watchdog and error pin on
+;   TriBoard. Usage: disable_tlf35584.cmm [""AREA""|""SILENT""]. Based on Infineon
+;   script.
+; @Keywords: Infineon, TriCore
+; @Author: MEI
+; @Board: TriBoard-TC3x9
+; @Copyright: (C) 1989-2018 Lauterbach GmbH, licensed for use with TRACE32(R) only
+; @Copyright: (C) 2016 Infineon
+; --------------------------------------------------------------------------------
+; $Id: disable_tlf35584.cmm 12211 2018-02-23 10:34:21Z meick $
+
+
+PARAMETERS &mode
+LOCAL &bSilentMode &bInteractiveMode &textBuf
+
+IF !CPUIS("TC3*")
+(
+  PRINT %ERROR "This script is for TC3xx only (currently selected CPU: "+CPU()+")"
+  ENDDO
+)
+
+IF ("&mode"=="")
+(
+  &bSilentMode=FALSE()
+  &bInteractiveMode=TRUE()
+)
+ELSE IF ("&mode"=="AREA")
+(
+  &bSilentMode=FALSE()
+  &bInteractiveMode=FALSE()
+)
+ELSE IF ("&mode"=="SILENT")
+(
+  &bSilentMode=TRUE()
+  &bInteractiveMode=FALSE()
+)
+ELSE
+(
+  PRINT %ERROR "Unknown mode &mode."
+  PRINT "Usage tlf35584.cmm [""AREA""|""SILENT""]
+  ENDDO
+)
+
+IF &bInteractiveMode
+(
+  GOSUB showDialog
+)
+
+;Wait for power-ON
+IF STATE.POWER()
+(
+  GOTO lDisableSeqStart
+)
+
+ON POWERUP GOTO lDisableSeqStart
+
+GOSUB print "Currently your TriBoard-TC3x9 appears to be unpowered."
+GOSUB print "It might be that power got switched off by the watchdog in the TLF35584 power supply."
+GOSUB print "If you want to disable the watchdog do the following:"
+GOSUB print "  1. power your TriBoard"
+GOSUB print "  2. press the 'ENA' switch on the board."
+
+STOP   // execution will be continued by "ON" handler once power is there
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+lDisableSeqStart:
+  SYStem.Up
+
+  IF &bInteractiveMode
+  (
+    DIALOG.DISable cancelB
+  )
+
+  GOSUB print "Configuring QSPI controller"
+
+  ;SCU_CCUCON1.B.QSPIDIV = 1;
+  Data.Set D:0xF0036034 %Long (Data.Long(D:0xF0036034)|0x01000000)
+
+  ;SPI init and sending commands should happen here
+  ;SPI2_CLC = 0
+  Data.Set D:0xF0001E00 %Long 0x8
+
+  ;QSPI2_GLOBALCON.U = (0x4) | (0xF << 10)
+  Data.Set D:0xF0001E10 %Long 0x20003C04
+
+  ;QSPI2_PISEL.U = 1
+  Data.Set D:0xF0001E04 %Long 0x1
+
+  ;QSPI2_GLOBALCON1.U = (0x1 << 26) | (0x1 << 28)
+  Data.Set D:0xF0001E14 %Long 0x14000000
+
+  ;QSPI2_ECON1.U = ((1) | (0x1 << 8) | (0x1 << 10))
+  Data.Set D:0xF0001E24 %Long 0x501
+
+  ;QSPI2_SSOC.U = (0x1 << 17)
+  Data.Set D:0xF0001E48 %Long 0x00020000
+
+  ;Ports
+  ;P33.4=>output for signalling end of procedure.
+  ;Pull it low
+  Data.Set D:0xF003C114 %Long 0x00000080
+  Data.Set D:0xF003C100 %Long 0x00
+
+  ;P15.3=>Output alt 3
+  Data.Set D:0xF003AF10 %Long 0x98000000
+
+  ;P15.6=>Output alt 3
+  ;P15.7=>Input with pullup
+  Data.Set D:0xF003AF14 %Long 0x10989800
+
+  ;Port 15 drive strength
+  Data.Set D:0xF003AF40 %Long 0x33030333
+
+  ;P14.2=>Output alt 3
+  Data.Set D:0xF003AE10 %Long 0x10980000
+  ;Drive strength
+  Data.Set D:0xF003AE40 %Long 0x33333033
+
+  ;Make sure that flags in STATUS register are cleared
+  ;while ((QSPI2_STATUS.U & 0xFFF) != 0)
+  ; QSPI2_FLAGSCLEAR.U = 0xFFF;
+  GOSUB wait_for_spi "0xFFF" "0x0" "QSPI to get ready"
+  Data.Set D:0xF0001E54 %Long 0xFFF
+
+  ;QSPI2_BACONENTRY.U = 0x1 |(0x1 << 16) | (0x1 << 21 /*MSB first*/) | (0 << 22) | (0xF << 23) | (0x1 << 28);
+  Data.Set D:0xF0001E60 %Long 0x17A10001
+  ;while ((QSPI2_STATUS.U & 0x200) != 0)
+  ;QSPI2_FLAGSCLEAR.U = 0x200;
+  GOSUB wait_for_spi "0x200" "0x200" "TXC of QSPI to be set"
+  Data.Set D:0xF0001E54 %Long 0x200
+
+  ;QSPI2_GLOBALCON.B.EN = 1;
+  Data.Set D:0xF0001E10 %Long (Data.Long(D:0xF0001E10)|0x01000000)
+
+  LOCAL &TLFStep
+
+  ;Write the spi words
+  ;{0x8756,0x87DE,0x86AD,0x8625,0x8D27,0x8811,0x87BE,0x8668,0x877D,0x8795}; /* this is for A-Step */
+  ;{0x8756,0x87DE,0x86AD,0x8625,0x8D27,0x8A01,0x87BE,0x8668,0x877D,0x8795}; /* this is for B-Step */
+
+  GOSUB print "Identifying chip stepping ..."
+
+  GOSUB write_spi_word 0x6801 //Read from address 0x34
+  GOSUB write_spi_word 0x3E01 //Read SPIFS
+  RETURNVALUES &TLFStep
+
+  IF &TLFStep==0x8008
+  (
+      GOSUB print "    found B-Step"
+  )
+  ELSE
+  (
+      GOSUB print "    found A-Step"
+  )
+
+  GOSUB print "Executing disable sequence ..."
+
+  GOSUB write_spi_word 0x8756   // write: 1, addr: 0x3, value: 0xAB; parity: 0
+  GOSUB write_spi_word 0x87DE   // write: 1, addr: 0x3, value: 0xEF; parity: 0
+  GOSUB write_spi_word 0x86AD   // write: 1, addr: 0x3, value: 0x56; parity: 1
+  GOSUB write_spi_word 0x8625   // write: 1, addr: 0x3, value: 0x12; parity: 1
+  GOSUB write_spi_word 0x8D27   // write: 1, addr: 0x6, value: 0x93; parity: 1
+  IF &TLFStep==0x8008
+    GOSUB write_spi_word 0x8A01   // write: 1, addr: 0x5, value: 0x00; parity: 1
+  ELSE
+    GOSUB write_spi_word 0x8811   // write: 1, addr: 0x4, value: 0x08; parity: 1
+  GOSUB write_spi_word 0x87BE   // write: 1, addr: 0x3, value: 0xDF; parity: 0
+  GOSUB write_spi_word 0x8668   // write: 1, addr: 0x3, value: 0x34; parity: 0
+  GOSUB write_spi_word 0x877D   // write: 1, addr: 0x3, value: 0xBE; parity: 1
+  GOSUB write_spi_word 0x8795   // write: 1, addr: 0x3, value: 0xCA; parity: 1
+
+  ;Now read back the WDCFG0 and SYSPCFG0 registers to confirm the switch off.
+  ;GOSUB write_spi_word 0x0C00 //Read WDCFG0
+  ;GOSUB write_spi_word 0x0801 //Read SYSPCFG0
+
+  ;Give a 50ms pulse on P33.4
+  Data.Set D:0xF003C100 %Long 0x10
+  WAIT 50.ms
+  Data.Set D:0xF003C100 %Long 0x00
+
+  GOSUB print "Done."
+  GOSUB print "The watchdog is now disabled."
+
+lDisableSeqEndWithMessage:
+  IF &bInteractiveMode
+  (
+    DIALOG.ENable closeB
+    STOP
+  )
+
+lDisableSeqEnd:
+  IF &bInteractiveMode
+  (
+    DIALOG.END
+  )
+ENDDO
+
+wait_for_spi:
+(
+  PARAMETERS &mask &value &msg
+  WAIT (Data.Long(D:0xF0001E40)&(&mask))==&value 1.s
+  IF (Data.Long(D:0xF0001E40)&(&mask))!=&value
+  (
+    GOSUB print "ERROR: Timeout while waiting for &msg"
+    GOTO lDisableSeqEndWithMessage
+  )
+  RETURN
+)
+
+write_spi_word:
+(
+  PRIVATE &spi_word &rx_data
+  ENTRY &spi_word
+  &rx_data=0
+  Data.Set D:0xF0001E64 %Long &spi_word
+  GOSUB wait_for_spi "0x200" "0x200"
+  Data.Set D:0xF0001E54 %Long 0x200
+
+  GOSUB wait_for_spi "0x400" "0x400"
+  Data.Set D:0xF0001E54 %Long 0x400
+
+  &spi_word=Data.Long(D:0xF0001E90)
+  ;PRINT %Hex &rx_data ;may add to the delay.
+  RETURN "&spi_word"
+)
+
+showDialog:
+(
+  DIALOG.view
+  (
+          HEADER "TLF35584"
+          NAME "D_TLF35584"
+          POS  0.  0. 40. 10.
+dlgMsg:   INFOTEXT "" WHite
+          POS 34. 11. 6. 1.
+cancelB:  BUTTON "Cancel" "GOTO lDisableSeqEnd"
+          POS  0. 11.  6. 1.
+closeB:   DEFBUTTON "Close" "GOTO lDisableSeqEnd"
+          CLOSE "GOTO lDisableSeqEnd"
+  )
+  DIALOG.DISable closeB
+  RETURN
+)
+
+print:
+(
+  PARAMETERS &msg
+  IF &bInteractiveMode
+  (
+    &textBuf="&textBuf"+"&msg"+CONVert.CHAR(10.)
+    DIALOG.Set dlgMsg "&textBuf"
+  )
+  ELSE IF &bSilentMode
+  (
+    // don't show anything in silent mode
+  )
+  ELSE
+  (
+    PRINT "&msg"
+  )
+  RETURN
+)
