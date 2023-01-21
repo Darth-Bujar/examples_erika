@@ -1,0 +1,1943 @@
+	; Module start
+	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
+	.compiler_invocation	"ctc -f cc8276b --dep-file=obj/master.c.d_tmp -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc38x -D__CPU_TC38X__ -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Configurations -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Libraries/Infra/Platform -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Libraries/Infra/Sfr/TC38A/_Reg -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Libraries/iLLD/TC38A/Tricore -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Libraries/Service/CpuGeneric -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/out -g2 --make-target=obj/master.c.o --language=+gcc,-volatile,+strings --default-near-size=0 -O2 -o obj\\master.src D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/master.c"
+	.compiler_name		"ctc"
+	;source	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/master.c'
+
+	
+$TC162
+	
+	.sdecl	'.text.shared.idle_hook_body',code,cluster('idle_hook_body')
+	.sect	'.text.shared.idle_hook_body'
+	.align	2
+	
+; Function idle_hook_body
+.L4:
+idle_hook_body:	.type	func
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	
+.L126:
+	ret
+.L73:
+	
+__idle_hook_body_function_end:
+	.size	idle_hook_body,__idle_hook_body_function_end-idle_hook_body
+.L52:
+	; End of function
+	
+	.sdecl	'.text.master.ErrorHook',code,cluster('ErrorHook')
+	.sect	'.text.master.ErrorHook'
+	.align	2
+	
+	.global	ErrorHook
+; Function ErrorHook
+.L6:
+ErrorHook:	.type	func
+	movh.a	a15,#@his(myErrorCounter)
+	ld.w	d15,[a15]@los(myErrorCounter)
+.L90:
+	add	d15,#1
+	st.w	[a15]@los(myErrorCounter),d15
+.L91:
+	ret
+.L65:
+	
+__ErrorHook_function_end:
+	.size	ErrorHook,__ErrorHook_function_end-ErrorHook
+.L27:
+	; End of function
+	
+	.sdecl	'.text.private0.master.FuncMID_priority_task',code,cluster('FuncMID_priority_task')
+	.sect	'.text.private0.master.FuncMID_priority_task'
+	.align	2
+	
+	.global	FuncMID_priority_task
+; Function FuncMID_priority_task
+.L8:
+FuncMID_priority_task:	.type	func
+	sub.a	a10,#8
+.L77:
+	movh.a	a4,#@his(.1.str)
+	lea	a4,[a4]@los(.1.str)
+	call	printf
+.L113:
+	fcall	.cocofun_8
+	call	WaitSem
+.L114:
+	movh.a	a4,#@his(.2.str)
+	lea	a4,[a4]@los(.2.str)
+	call	printf
+.L115:
+	ld.w	d15,[a15]4
+	st.w	[a10],d15
+.L116:
+	movh.a	a4,#@his(.3.str)
+	lea	a4,[a4]@los(.3.str)
+	call	printf
+.L117:
+	j	TerminateTask
+.L70:
+	
+__FuncMID_priority_task_function_end:
+	.size	FuncMID_priority_task,__FuncMID_priority_task_function_end-FuncMID_priority_task
+.L42:
+	; End of function
+	
+	.sdecl	'.text.private0.master..cocofun_8',code,cluster('.cocofun_8')
+	.sect	'.text.private0.master..cocofun_8'
+	.align	2
+; Function .cocofun_8
+.L10:
+.cocofun_8:	.type	func
+; Function body .cocofun_8, coco_iter:0
+	movh.a	a15,#@his(S)
+	lea	a15,[a15]@los(S)
+	mov.aa	a4,a15
+.L136:
+	fret
+.L62:
+	; End of function
+	.sdecl	'.text.private0.master.FuncLOW_priority_task',code,cluster('FuncLOW_priority_task')
+	.sect	'.text.private0.master.FuncLOW_priority_task'
+	.align	2
+	
+	.global	FuncLOW_priority_task
+; Function FuncLOW_priority_task
+.L12:
+FuncLOW_priority_task:	.type	func
+	sub.a	a10,#8
+.L78:
+	movh.a	a4,#@his(.4.str)
+	lea	a4,[a4]@los(.4.str)
+	call	printf
+.L104:
+	fcall	.cocofun_8
+	call	WaitSem
+.L105:
+	movh.a	a4,#@his(.5.str)
+	lea	a4,[a4]@los(.5.str)
+	call	printf
+.L106:
+	ld.w	d15,[a15]4
+	st.w	[a10],d15
+.L107:
+	movh.a	a4,#@his(.6.str)
+	lea	a4,[a4]@los(.6.str)
+	call	printf
+.L108:
+	j	TerminateTask
+.L69:
+	
+__FuncLOW_priority_task_function_end:
+	.size	FuncLOW_priority_task,__FuncLOW_priority_task_function_end-FuncLOW_priority_task
+.L37:
+	; End of function
+	
+	.sdecl	'.text.private0.master.FuncHIGH_priority_task',code,cluster('FuncHIGH_priority_task')
+	.sect	'.text.private0.master.FuncHIGH_priority_task'
+	.align	2
+	
+	.global	FuncHIGH_priority_task
+; Function FuncHIGH_priority_task
+.L14:
+FuncHIGH_priority_task:	.type	func
+	sub.a	a10,#8
+.L79:
+	movh.a	a4,#@his(.7.str)
+	lea	a4,[a4]@los(.7.str)
+	call	printf
+.L96:
+	fcall	.cocofun_8
+	call	PostSem
+.L97:
+	ld.w	d15,[a15]4
+	st.w	[a10],d15
+.L98:
+	movh.a	a4,#@his(.3.str)
+	lea	a4,[a4]@los(.3.str)
+	call	printf
+.L99:
+	j	TerminateTask
+.L68:
+	
+__FuncHIGH_priority_task_function_end:
+	.size	FuncHIGH_priority_task,__FuncHIGH_priority_task_function_end-FuncHIGH_priority_task
+.L32:
+	; End of function
+	
+	.sdecl	'.text.private0.master.idle_hook_core0',code,cluster('idle_hook_core0')
+	.sect	'.text.private0.master.idle_hook_core0'
+	.align	2
+	
+	.global	idle_hook_core0
+; Function idle_hook_core0
+.L16:
+idle_hook_core0:	.type	func
+	j	idle_hook_body
+.L72:
+	
+__idle_hook_core0_function_end:
+	.size	idle_hook_core0,__idle_hook_core0_function_end-idle_hook_core0
+.L47:
+	; End of function
+	
+	.sdecl	'.text.master.main',code,cluster('main')
+	.sect	'.text.master.main'
+	.align	2
+	
+	.global	main
+; Function main
+.L18:
+main:	.type	func
+	mov	d4,#0
+	call	StartOS
+.L131:
+	mov	d2,#0
+	ret
+.L75:
+	
+__main_function_end:
+	.size	main,__main_function_end-main
+.L57:
+	; End of function
+	
+	.sdecl	'.bss.master.myErrorCounter',data,cluster('myErrorCounter')
+	.sect	'.bss.master.myErrorCounter'
+	.global	myErrorCounter
+	.align	2
+myErrorCounter:	.type	object
+	.size	myErrorCounter,4
+	.space	4
+	.sdecl	'.rodata.master..1.str',data,rom
+	.sect	'.rodata.master..1.str'
+.1.str:	.type	object
+	.size	.1.str,26
+	.byte	32,88,32,87,97,105,116,105
+	.byte	110,103,32,102,111,114,32,115
+	.byte	101,109,97,112,104,111,114,101
+	.byte	10
+	.space	1
+	.sdecl	'.rodata.master..2.str',data,rom
+	.sect	'.rodata.master..2.str'
+.2.str:	.type	object
+	.size	.2.str,22
+	.byte	32,88,32,103,101,116,32,116
+	.byte	104,101,32,115,101,109,97,112
+	.byte	104,111,114,101
+	.byte	10
+	.space	1
+	.sdecl	'.rodata.master..3.str',data,rom
+	.sect	'.rodata.master..3.str'
+.3.str:	.type	object
+	.size	.3.str,30
+	.byte	32,32,32,32,32,32,32,32
+	.byte	32,83,101,109,97,112,104,111
+	.byte	114,101,32,118,97,108,117,101
+	.byte	58,32,37,100
+	.byte	10
+	.space	1
+	.sdecl	'.rodata.master..4.str',data,rom
+	.sect	'.rodata.master..4.str'
+.4.str:	.type	object
+	.size	.4.str,26
+	.byte	32,89,32,87,97,105,116,105
+	.byte	110,103,32,102,111,114,32,115
+	.byte	101,109,97,112,104,111,114,101
+	.byte	10
+	.space	1
+	.sdecl	'.rodata.master..5.str',data,rom
+	.sect	'.rodata.master..5.str'
+.5.str:	.type	object
+	.size	.5.str,22
+	.byte	32,89,32,103,101,116,32,116
+	.byte	104,101,32,115,101,109,97,112
+	.byte	104,111,114,101
+	.byte	10
+	.space	1
+	.sdecl	'.rodata.master..6.str',data,rom
+	.sect	'.rodata.master..6.str'
+.6.str:	.type	object
+	.size	.6.str,29
+	.byte	32,32,32,32,32,32,32,32
+	.byte	83,101,109,97,112,104,111,114
+	.byte	101,32,118,97,108,117,101,58
+	.byte	32,37,100,10
+	.space	1
+	.sdecl	'.rodata.master..7.str',data,rom
+	.sect	'.rodata.master..7.str'
+.7.str:	.type	object
+	.size	.7.str,26
+	.byte	32,90,32,112,111,115,116,105
+	.byte	110,103,32,111,110,101,32,115
+	.byte	101,109,97,112,104,111,114,101
+	.byte	10
+	.space	1
+	.calls	'FuncMID_priority_task','printf'
+	.calls	'FuncMID_priority_task','WaitSem'
+	.calls	'FuncMID_priority_task','TerminateTask'
+	.calls	'FuncLOW_priority_task','printf'
+	.calls	'FuncLOW_priority_task','WaitSem'
+	.calls	'FuncLOW_priority_task','TerminateTask'
+	.calls	'FuncHIGH_priority_task','printf'
+	.calls	'FuncHIGH_priority_task','PostSem'
+	.calls	'FuncHIGH_priority_task','TerminateTask'
+	.calls	'idle_hook_core0','idle_hook_body'
+	.calls	'main','StartOS'
+	.calls	'FuncMID_priority_task','.cocofun_8'
+	.calls	'FuncLOW_priority_task','.cocofun_8'
+	.calls	'FuncHIGH_priority_task','.cocofun_8'
+	.calls	'idle_hook_body','',0
+	.calls	'ErrorHook','',0
+	.calls	'FuncMID_priority_task','',8
+	.calls	'.cocofun_8','',0
+	.calls	'FuncLOW_priority_task','',8
+	.calls	'FuncHIGH_priority_task','',8
+	.calls	'idle_hook_core0','',0
+	.extern	StartOS
+	.extern	TerminateTask
+	.extern	WaitSem
+	.extern	PostSem
+	.extern	S
+	.extern	printf
+	.extern	__printf_int
+	.calls	'main','',0
+	.sdecl	'.debug_info',debug
+	.sect	'.debug_info'
+.L20:
+	.word	7867
+	.half	3
+	.word	.L21
+	.byte	4
+.L19:
+	.byte	1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/master.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\',0,12,1
+	.word	.L22
+	.byte	2,2,109,9,1,3
+	.byte	'OS_CODE_ID_INVALID',0,127,3
+	.byte	'OS_CORE_ID_0',0,0,3
+	.byte	'OS_CORE_ID_MASTER',0,0,3
+	.byte	'OS_CORE_ID_ARR_SIZE',0,1,0,4
+	.byte	'osEE_get_curr_core_id',0,3,1,237,2,52
+	.word	209
+	.byte	1,1,5,0,6
+	.byte	'unsigned short int',0,2,7
+.L76:
+	.byte	6
+	.byte	'unsigned int',0,4,7,4
+	.byte	'osEE_tc_get_cpu_wdt_pw',0,3,3,238,2,3
+	.word	329
+	.byte	1,1,7
+	.byte	'core_index',0,3,238,2,35
+	.word	351
+	.byte	5,0,8
+	.byte	'osEE_tc_clear_cpu_endinit',0,3,3,143,3,2,1,1,7
+	.byte	'core_index',0,3,143,3,37
+	.word	351
+	.byte	7
+	.byte	'pw',0,3,143,3,58
+	.word	329
+	.byte	5,0,8
+	.byte	'osEE_tc_set_cpu_endinit',0,3,3,182,3,3,1,1,7
+	.byte	'core_index',0,3,182,3,36
+	.word	351
+	.byte	7
+	.byte	'pw',0,3,182,3,57
+	.word	329
+	.byte	5,0,8
+	.byte	'osEE_tc_clear_safety_endinit',0,3,3,249,3,3,1,1,7
+	.byte	'pw',0,3,249,3,41
+	.word	329
+	.byte	5,0,8
+	.byte	'osEE_tc_set_safety_endinit',0,3,3,157,4,3,1,1,7
+	.byte	'pw',0,3,157,4,39
+	.word	329
+	.byte	5,0,9
+	.word	293
+	.byte	5,0,9
+	.word	367
+	.byte	10
+	.word	402
+	.byte	5,0,9
+	.word	424
+	.byte	10
+	.word	458
+	.byte	10
+	.word	478
+	.byte	5,0,9
+	.word	492
+	.byte	10
+	.word	524
+	.byte	10
+	.word	544
+	.byte	5,0,9
+	.word	558
+	.byte	10
+	.word	595
+	.byte	5,0,9
+	.word	609
+	.byte	10
+	.word	644
+	.byte	5,0
+.L66:
+	.byte	2,5,177,5,9,1,3
+	.byte	'E_OK',0,0,3
+	.byte	'E_OS_ACCESS',0,1,3
+	.byte	'E_OS_CALLEVEL',0,2,3
+	.byte	'E_OS_ID',0,3,3
+	.byte	'E_OS_LIMIT',0,4,3
+	.byte	'E_OS_NOFUNC',0,5,3
+	.byte	'E_OS_RESOURCE',0,6,3
+	.byte	'E_OS_STATE',0,7,3
+	.byte	'E_OS_VALUE',0,8,3
+	.byte	'E_OS_SERVICEID',0,9,3
+	.byte	'E_OS_ILLEGAL_ADDRESS',0,10,3
+	.byte	'E_OS_MISSINGEND',0,11,3
+	.byte	'E_OS_DISABLEDINT',0,12,3
+	.byte	'E_OS_STACKFAULT',0,13,3
+	.byte	'E_OS_PARAM_POINTER',0,14,3
+	.byte	'E_OS_PROTECTION_MEMORY',0,15,3
+	.byte	'E_OS_PROTECTION_TIME',0,16,3
+	.byte	'E_OS_PROTECTION_ARRIVAL',0,17,3
+	.byte	'E_OS_PROTECTION_LOCKED',0,18,3
+	.byte	'E_OS_PROTECTION_EXCEPTION',0,19,3
+	.byte	'E_OS_SPINLOCK',0,20,3
+	.byte	'E_OS_INTERFERENCE_DEADLOCK',0,21,3
+	.byte	'E_OS_NESTING_DEADLOCK',0,22,3
+	.byte	'E_OS_CORE',0,23,3
+	.byte	'E_OS_SYS_INIT',0,24,3
+	.byte	'E_OS_SYS_SUSPEND_NESTING_LIMIT',0,25,3
+	.byte	'E_OS_SYS_TASK',0,26,3
+	.byte	'E_OS_SYS_STACK',0,27,3
+	.byte	'E_OS_SYS_ACT',0,28,0,6
+	.byte	'unsigned char',0,1,8,11
+	.byte	'StartOS',0,4,161,2,3
+	.word	735
+	.byte	1,1,1,1,7
+	.byte	'Mode',0,4,163,2,31
+	.word	1279
+	.byte	0,12
+	.byte	'TerminateTask',0,4,201,3,3
+	.word	735
+	.byte	1,1,1,1,13
+	.word	.L80-.L20
+	.byte	14
+	.byte	'OsEE_TDB_tag',0,7,65,8,1,15
+	.word	1364
+	.byte	13
+	.word	1382
+.L80:
+	.byte	16
+	.byte	'OsEE_SN_tag',0,7,75,16,8,17
+	.byte	'p_next',0
+	.word	1359
+	.byte	4,2,35,0,17
+	.byte	'p_tdb',0
+	.word	1387
+	.byte	4,2,35,4,0,13
+	.word	1392
+	.byte	16
+	.byte	'OsEE_sem_tag',0,7,219,1,16,8,17
+	.byte	'blocked_queue',0
+	.word	1441
+	.byte	4,2,35,0,17
+	.byte	'count',0
+	.word	351
+	.byte	4,2,35,4,0,13
+	.word	1446
+	.byte	18
+	.byte	'SemRefType',0,6,71,59
+	.word	1504
+	.byte	11
+	.byte	'WaitSem',0,6,127,3
+	.word	735
+	.byte	1,1,1,1,7
+	.byte	'Sem',0,6,129,1,30
+	.word	1509
+	.byte	0,13
+	.word	1446
+	.byte	11
+	.byte	'PostSem',0,6,150,1,3
+	.word	735
+	.byte	1,1,1,1,7
+	.byte	'Sem',0,6,152,1,30
+	.word	1509
+	.byte	0
+.L74:
+	.byte	6
+	.byte	'int',0,4,5,6
+	.byte	'char',0,1,6,15
+	.word	1609
+	.byte	13
+	.word	1617
+	.byte	19
+	.word	1622
+	.byte	11
+	.byte	'printf',0,8,143,1,16
+	.word	1602
+	.byte	1,1,1,1,20,8,143,1,38
+	.word	1627
+	.byte	21,8,143,1,50,0,6
+	.byte	'short int',0,2,5,18
+	.byte	'__wchar_t',0,9,1,1
+	.word	1667
+	.byte	18
+	.byte	'__size_t',0,9,1,1
+	.word	351
+	.byte	18
+	.byte	'__ptrdiff_t',0,9,1,1
+	.word	1602
+	.byte	22,1,13
+	.word	1735
+	.byte	18
+	.byte	'__codeptr',0,9,1,1
+	.word	1737
+	.byte	18
+	.byte	'__intptr_t',0,9,1,1
+	.word	1602
+	.byte	18
+	.byte	'__uintptr_t',0,9,1,1
+	.word	351
+	.byte	18
+	.byte	'size_t',0,10,24,25
+	.word	351
+	.byte	18
+	.byte	'uint8_t',0,11,242,1,41
+	.word	1279
+	.byte	18
+	.byte	'uint16_t',0,11,246,1,41
+	.word	329
+	.byte	18
+	.byte	'int32_t',0,11,253,1,41
+	.word	1602
+	.byte	18
+	.byte	'uint32_t',0,11,254,1,41
+	.word	351
+	.byte	2,2,72,9,1,3
+	.byte	'OSEE_FALSE',0,0,3
+	.byte	'OSEE_TRUE',0,1,0,18
+	.byte	'OsEE_bool',0,2,75,3
+	.word	1884
+	.byte	23
+	.byte	'void',0,13
+	.word	1933
+	.byte	18
+	.byte	'OsEE_addr',0,2,90,31
+	.word	1939
+	.byte	18
+	.byte	'OsEE_reg',0,2,91,31
+	.word	351
+	.byte	18
+	.byte	'OsEE_sreg',0,2,92,31
+	.word	1602
+	.byte	18
+	.byte	'OsEE_stack',0,2,93,31
+	.word	351
+	.byte	18
+	.byte	'OsEE_core_id',0,2,130,1,3
+	.word	209
+	.byte	18
+	.byte	'OsEE_prio',0,2,141,1,31
+	.word	1279
+	.byte	18
+	.byte	'OsEE_isr_src_id',0,2,146,1,31
+	.word	329
+	.byte	18
+	.byte	'OsEE_tc_tin',0,12,208,1,17
+	.word	1279
+	.byte	24,13,116,3,4,25
+	.byte	'pcxo',0,2
+	.word	329
+	.byte	16,0,2,35,0,25
+	.byte	'pcxs',0,1
+	.word	1279
+	.byte	4,4,2,35,2,25
+	.byte	'ul',0,1
+	.word	1279
+	.byte	1,3,2,35,2,25
+	.byte	'pie',0,1
+	.word	1279
+	.byte	1,2,2,35,2,25
+	.byte	'pcpn',0,2
+	.word	329
+	.byte	8,2,2,35,2,26,1
+	.word	1279
+	.byte	1,1,2,35,3,26,1
+	.word	1279
+	.byte	1,0,2,35,3,0,27,13,114,9,4,17
+	.byte	'reg',0
+	.word	351
+	.byte	4,2,35,0,17
+	.byte	'bits',0
+	.word	2103
+	.byte	4,2,35,0,0,18
+	.byte	'OsEE_pcxi',0,13,131,1,3
+	.word	2208
+	.byte	18
+	.byte	'OsEE_csa_link',0,13,134,1,19
+	.word	2208
+	.byte	24,13,137,1,9,60,17
+	.byte	'psw',0
+	.word	351
+	.byte	4,2,35,0,17
+	.byte	'a10',0
+	.word	1944
+	.byte	4,2,35,4,17
+	.byte	'a11',0
+	.word	1944
+	.byte	4,2,35,8,17
+	.byte	'd8',0
+	.word	351
+	.byte	4,2,35,12,17
+	.byte	'd9',0
+	.word	351
+	.byte	4,2,35,16,17
+	.byte	'd10',0
+	.word	351
+	.byte	4,2,35,20,17
+	.byte	'd11',0
+	.word	351
+	.byte	4,2,35,24,17
+	.byte	'a12',0
+	.word	1944
+	.byte	4,2,35,28,17
+	.byte	'a13',0
+	.word	1944
+	.byte	4,2,35,32,17
+	.byte	'a14',0
+	.word	1944
+	.byte	4,2,35,36,17
+	.byte	'a15',0
+	.word	1944
+	.byte	4,2,35,40,17
+	.byte	'd12',0
+	.word	351
+	.byte	4,2,35,44,17
+	.byte	'd13',0
+	.word	351
+	.byte	4,2,35,48,17
+	.byte	'd14',0
+	.word	351
+	.byte	4,2,35,52,17
+	.byte	'd15',0
+	.word	351
+	.byte	4,2,35,56,0,18
+	.byte	'OsEE_uctx',0,13,153,1,3
+	.word	2283
+	.byte	13
+	.word	1933
+	.byte	24,13,156,1,9,60,17
+	.byte	'a11',0
+	.word	1944
+	.byte	4,2,35,0,17
+	.byte	'a2',0
+	.word	1944
+	.byte	4,2,35,4,17
+	.byte	'a3',0
+	.word	1944
+	.byte	4,2,35,8,17
+	.byte	'd0',0
+	.word	351
+	.byte	4,2,35,12,17
+	.byte	'd1',0
+	.word	351
+	.byte	4,2,35,16,17
+	.byte	'd2',0
+	.word	351
+	.byte	4,2,35,20,17
+	.byte	'd3',0
+	.word	351
+	.byte	4,2,35,24,17
+	.byte	'a4',0
+	.word	1944
+	.byte	4,2,35,28,17
+	.byte	'a5',0
+	.word	1944
+	.byte	4,2,35,32,17
+	.byte	'a6',0
+	.word	1944
+	.byte	4,2,35,36,17
+	.byte	'a7',0
+	.word	1944
+	.byte	4,2,35,40,17
+	.byte	'd4',0
+	.word	351
+	.byte	4,2,35,44,17
+	.byte	'd5',0
+	.word	351
+	.byte	4,2,35,48,17
+	.byte	'd6',0
+	.word	351
+	.byte	4,2,35,52,17
+	.byte	'd7',0
+	.word	351
+	.byte	4,2,35,56,0,18
+	.byte	'OsEE_lctx',0,13,172,1,3
+	.word	2507
+	.byte	27,13,175,1,9,60,17
+	.byte	'uctx',0
+	.word	2283
+	.byte	60,2,35,0,17
+	.byte	'lctx',0
+	.word	2507
+	.byte	60,2,35,0,0,18
+	.byte	'OsEE_csa_ctx',0,13,178,1,3
+	.word	2714
+	.byte	24,13,181,1,9,64,17
+	.byte	'l_next',0
+	.word	2208
+	.byte	4,2,35,0,17
+	.byte	'ctx',0
+	.word	2714
+	.byte	60,2,35,4,0,18
+	.byte	'OsEE_csa',0,13,184,1,3
+	.word	2771
+	.byte	13
+	.word	.L81-.L20
+.L81:
+	.byte	16
+	.byte	'OsEE_CTX_tag',0,13,243,1,16,16,17
+	.byte	'p_ctx',0
+	.word	2825
+	.byte	4,2,35,0,17
+	.byte	'dummy',0
+	.word	351
+	.byte	4,2,35,4,17
+	.byte	'pcxi',0
+	.word	2208
+	.byte	4,2,35,8,17
+	.byte	'ra',0
+	.word	1944
+	.byte	4,2,35,12,0,18
+	.byte	'OsEE_CTX',0,13,248,1,3
+	.word	2830
+	.byte	13
+	.word	2830
+	.byte	24,13,251,1,9,4,17
+	.byte	'p_tos',0
+	.word	2924
+	.byte	4,2,35,0,0,18
+	.byte	'OsEE_SCB',0,13,253,1,3
+	.word	2929
+	.byte	24,13,128,2,9,8,17
+	.byte	'p_bos',0
+	.word	2924
+	.byte	4,2,35,0,17
+	.byte	'stack_size',0
+	.word	351
+	.byte	4,2,35,4,0,15
+	.word	2969
+	.byte	18
+	.byte	'OsEE_SDB',0,13,134,2,16
+	.word	3011
+	.byte	16
+	.byte	'OsEE_tc_SCU_WDTCPU_CON0_bits_tag',0,3,155,1,16,4,25
+	.byte	'endinit',0,1
+	.word	1279
+	.byte	1,7,2,35,0,25
+	.byte	'lck',0,1
+	.word	1279
+	.byte	1,6,2,35,0,25
+	.byte	'pw',0,2
+	.word	329
+	.byte	14,0,2,35,0,25
+	.byte	'rel',0,2
+	.word	329
+	.byte	16,0,2,35,2,0,18
+	.byte	'OsEE_tc_SCU_WDTCPU_CON0_bits',0,3,165,1,3
+	.word	3034
+	.byte	18
+	.byte	'OsEE_tc_SCU_WDTS_CON0_bits',0,3,168,1,38
+	.word	3034
+	.byte	16
+	.byte	'OsEE_tc_SCU_WDTCPU_CON1_bits_tag',0,3,171,1,16,4,26,1
+	.word	1279
+	.byte	2,6,2,35,0,25
+	.byte	'ir0',0,1
+	.word	1279
+	.byte	1,5,2,35,0,25
+	.byte	'dr',0,1
+	.word	1279
+	.byte	1,4,2,35,0,26,1
+	.word	1279
+	.byte	1,3,2,35,0,25
+	.byte	'ir1',0,1
+	.word	1279
+	.byte	1,2,2,35,0,25
+	.byte	'ur',0,1
+	.word	1279
+	.byte	1,1,2,35,0,25
+	.byte	'par',0,1
+	.word	1279
+	.byte	1,0,2,35,0,25
+	.byte	'tcr',0,1
+	.word	1279
+	.byte	1,7,2,35,1,25
+	.byte	'tctr',0,1
+	.word	1279
+	.byte	7,0,2,35,1,26,2
+	.word	329
+	.byte	16,0,2,35,2,0,18
+	.byte	'OsEE_tc_SCU_WDTCPU_CON1_bits',0,3,193,1,3
+	.word	3211
+	.byte	16
+	.byte	'OsEE_tc_SCU_WDTS_CON1_bits_tag',0,3,196,1,16,4,25
+	.byte	'clrif',0,1
+	.word	1279
+	.byte	1,7,2,35,0,26,1
+	.word	1279
+	.byte	1,6,2,35,0,25
+	.byte	'ir0',0,1
+	.word	1279
+	.byte	1,5,2,35,0,25
+	.byte	'dr',0,1
+	.word	1279
+	.byte	1,4,2,35,0,26,1
+	.word	1279
+	.byte	1,3,2,35,0,25
+	.byte	'ir1',0,1
+	.word	1279
+	.byte	1,2,2,35,0,25
+	.byte	'ur',0,1
+	.word	1279
+	.byte	1,1,2,35,0,25
+	.byte	'par',0,1
+	.word	1279
+	.byte	1,0,2,35,0,25
+	.byte	'tcr',0,1
+	.word	1279
+	.byte	1,7,2,35,1,25
+	.byte	'tctr',0,1
+	.word	1279
+	.byte	7,0,2,35,1,26,2
+	.word	329
+	.byte	16,0,2,35,2,0,18
+	.byte	'OsEE_tc_SCU_WDTS_CON1_bits',0,3,220,1,3
+	.word	3426
+	.byte	16
+	.byte	'OsEE_tc_SCU_WDTCPU_SR_bits_tag',0,3,223,1,16,4,25
+	.byte	'ae',0,1
+	.word	1279
+	.byte	1,7,2,35,0,25
+	.byte	'oe',0,1
+	.word	1279
+	.byte	1,6,2,35,0,25
+	.byte	'is0',0,1
+	.word	1279
+	.byte	1,5,2,35,0,25
+	.byte	'ds',0,1
+	.word	1279
+	.byte	1,4,2,35,0,25
+	.byte	'to',0,1
+	.word	1279
+	.byte	1,3,2,35,0,25
+	.byte	'is1',0,1
+	.word	1279
+	.byte	1,2,2,35,0,25
+	.byte	'us',0,1
+	.word	1279
+	.byte	1,1,2,35,0,25
+	.byte	'pas',0,1
+	.word	1279
+	.byte	1,0,2,35,0,25
+	.byte	'tcs',0,1
+	.word	1279
+	.byte	1,7,2,35,1,25
+	.byte	'tct',0,1
+	.word	1279
+	.byte	7,0,2,35,1,25
+	.byte	'tim',0,2
+	.word	329
+	.byte	16,0,2,35,2,0,18
+	.byte	'OsEE_tc_SCU_WDTCPU_SR_bits',0,3,247,1,3
+	.word	3654
+	.byte	18
+	.byte	'OsEE_tc_SCU_WDTS_SR_bits',0,3,250,1,36
+	.word	3654
+	.byte	28
+	.byte	'OsEE_tc_SCU_WDTCPU_CON0_tag',0,3,253,1,15,4,17
+	.byte	'reg',0
+	.word	351
+	.byte	4,2,35,0,17
+	.byte	'bits',0
+	.word	3034
+	.byte	4,2,35,0,0,18
+	.byte	'OsEE_tc_SCU_WDTCPU_CON0',0,3,131,2,3
+	.word	3922
+	.byte	28
+	.byte	'OsEE_tc_SCU_WDTCPU_CON1_tag',0,3,134,2,15,4,17
+	.byte	'reg',0
+	.word	351
+	.byte	4,2,35,0,17
+	.byte	'bits',0
+	.word	3211
+	.byte	4,2,35,0,0,18
+	.byte	'OsEE_tc_SCU_WDTCPU_CON1',0,3,140,2,3
+	.word	4017
+	.byte	28
+	.byte	'OsEE_tc_SCU_WDTCPU_SR_tag',0,3,143,2,15,4,17
+	.byte	'reg',0
+	.word	351
+	.byte	4,2,35,0,17
+	.byte	'bits',0
+	.word	3654
+	.byte	4,2,35,0,0,18
+	.byte	'OsEE_tc_SCU_WDTCPU_SR',0,3,149,2,3
+	.word	4112
+	.byte	28
+	.byte	'OsEE_tc_SCU_WDTS_CON0_tag',0,3,152,2,15,4,17
+	.byte	'reg',0
+	.word	351
+	.byte	4,2,35,0,17
+	.byte	'bits',0
+	.word	3034
+	.byte	4,2,35,0,0,18
+	.byte	'OsEE_tc_SCU_WDTS_CON0',0,3,158,2,3
+	.word	4203
+	.byte	28
+	.byte	'OsEE_tc_SCU_WDTS_CON1_tag',0,3,161,2,15,4,17
+	.byte	'reg',0
+	.word	351
+	.byte	4,2,35,0,17
+	.byte	'bits',0
+	.word	3426
+	.byte	4,2,35,0,0,18
+	.byte	'OsEE_tc_SCU_WDTS_CON1',0,3,167,2,3
+	.word	4294
+	.byte	28
+	.byte	'OsEE_tc_SCU_WDTS_SR_tag',0,3,170,2,15,4,17
+	.byte	'reg',0
+	.word	351
+	.byte	4,2,35,0,17
+	.byte	'bits',0
+	.word	3654
+	.byte	4,2,35,0,0,18
+	.byte	'OsEE_tc_SCU_WDTS_SR',0,3,176,2,3
+	.word	4385
+	.byte	16
+	.byte	'OsEE_tc_STM_CMCON_bits_tag',0,3,225,6,16,4,25
+	.byte	'msize0',0,1
+	.word	1279
+	.byte	5,3,2,35,0,26,1
+	.word	1279
+	.byte	3,0,2,35,0,25
+	.byte	'mstart0',0,1
+	.word	1279
+	.byte	5,3,2,35,1,26,1
+	.word	1279
+	.byte	3,0,2,35,1,25
+	.byte	'msize1',0,1
+	.word	1279
+	.byte	5,3,2,35,2,26,1
+	.word	1279
+	.byte	3,0,2,35,2,25
+	.byte	'mstart1',0,1
+	.word	1279
+	.byte	5,3,2,35,3,26,1
+	.word	1279
+	.byte	3,0,2,35,3,0,18
+	.byte	'OsEE_tc_STM_CMCON_bits',0,3,243,6,3
+	.word	4472
+	.byte	16
+	.byte	'OsEE_tc_STM_ICR_bits_tag',0,3,135,7,16,4,25
+	.byte	'cmp0en',0,1
+	.word	1279
+	.byte	1,7,2,35,0,25
+	.byte	'cmp0ir',0,1
+	.word	1279
+	.byte	1,6,2,35,0,25
+	.byte	'cmp0os',0,1
+	.word	1279
+	.byte	1,5,2,35,0,26,1
+	.word	1279
+	.byte	1,4,2,35,0,25
+	.byte	'cmp1en',0,1
+	.word	1279
+	.byte	1,3,2,35,0,25
+	.byte	'cmp1ir',0,1
+	.word	1279
+	.byte	1,2,2,35,0,25
+	.byte	'cmp1os',0,1
+	.word	1279
+	.byte	1,1,2,35,0,26,4
+	.word	351
+	.byte	25,0,2,35,0,0,18
+	.byte	'OsEE_tc_STM_ICR_bits',0,3,153,7,3
+	.word	4656
+	.byte	24,3,185,11,9,4,26,1
+	.word	1279
+	.byte	1,7,2,35,0,25
+	.byte	'plllv',0,1
+	.word	1279
+	.byte	1,6,2,35,0,25
+	.byte	'oscres',0,1
+	.word	1279
+	.byte	1,5,2,35,0,25
+	.byte	'gainsel',0,1
+	.word	1279
+	.byte	2,3,2,35,0,25
+	.byte	'mode',0,1
+	.word	1279
+	.byte	2,1,2,35,0,25
+	.byte	'shby',0,1
+	.word	1279
+	.byte	1,0,2,35,0,25
+	.byte	'pllhv',0,1
+	.word	1279
+	.byte	1,7,2,35,1,25
+	.byte	'hysen',0,1
+	.word	1279
+	.byte	1,6,2,35,1,25
+	.byte	'hysctl',0,1
+	.word	1279
+	.byte	2,4,2,35,1,25
+	.byte	'ampctl',0,1
+	.word	1279
+	.byte	2,2,2,35,1,26,1
+	.word	1279
+	.byte	2,0,2,35,1,25
+	.byte	'oscval',0,1
+	.word	1279
+	.byte	5,3,2,35,2,26,1
+	.word	1279
+	.byte	2,1,2,35,2,25
+	.byte	'apren',0,1
+	.word	1279
+	.byte	1,0,2,35,2,25
+	.byte	'cap0en',0,1
+	.word	1279
+	.byte	1,7,2,35,3,25
+	.byte	'cap1en',0,1
+	.word	1279
+	.byte	1,6,2,35,3,25
+	.byte	'cap2en',0,1
+	.word	1279
+	.byte	1,5,2,35,3,25
+	.byte	'cap3en',0,1
+	.word	1279
+	.byte	1,4,2,35,3,26,1
+	.word	1279
+	.byte	4,0,2,35,3,0,18
+	.byte	'OsEE_tc_SCU_OSCCON_bits',0,3,225,11,3
+	.word	4848
+	.byte	24,3,228,11,9,4,26,1
+	.word	1279
+	.byte	2,6,2,35,0,25
+	.byte	'moden',0,1
+	.word	1279
+	.byte	1,5,2,35,0,26,2
+	.word	329
+	.byte	6,7,2,35,0,25
+	.byte	'ndiv',0,1
+	.word	1279
+	.byte	7,0,2,35,1,25
+	.byte	'pllpwd',0,1
+	.word	1279
+	.byte	1,7,2,35,2,26,1
+	.word	1279
+	.byte	1,6,2,35,2,25
+	.byte	'resld',0,1
+	.word	1279
+	.byte	1,5,2,35,2,26,1
+	.word	1279
+	.byte	5,0,2,35,2,25
+	.byte	'pdiv',0,1
+	.word	1279
+	.byte	3,5,2,35,3,26,1
+	.word	1279
+	.byte	3,2,2,35,3,25
+	.byte	'insel',0,1
+	.word	1279
+	.byte	2,0,2,35,3,0,18
+	.byte	'OsEE_tc_SYSPLLCON0_bits',0,3,252,11,3
+	.word	5195
+	.byte	24,3,147,12,9,4,25
+	.byte	'k2div',0,1
+	.word	1279
+	.byte	3,5,2,35,0,26,4
+	.word	351
+	.byte	29,0,2,35,0,0,18
+	.byte	'OsEE_tc_SYSPLLCON1_bits',0,3,153,12,3
+	.word	5391
+	.byte	24,3,168,12,9,4,26,1
+	.word	1279
+	.byte	1,7,2,35,0,25
+	.byte	'pwdstat',0,1
+	.word	1279
+	.byte	1,6,2,35,0,25
+	.byte	'lock',0,1
+	.word	1279
+	.byte	1,5,2,35,0,26,1
+	.word	1279
+	.byte	2,3,2,35,0,25
+	.byte	'k2rdy',0,1
+	.word	1279
+	.byte	1,2,2,35,0,26,1
+	.word	1279
+	.byte	1,1,2,35,0,25
+	.byte	'modrun',0,1
+	.word	1279
+	.byte	1,0,2,35,0,26,4
+	.word	351
+	.byte	24,0,2,35,0,0,18
+	.byte	'OsEE_tc_SCU_SYSPLLSTAT_bits',0,3,186,12,3
+	.word	5459
+	.byte	24,3,201,12,9,4,26,1
+	.word	1279
+	.byte	1,7,2,35,0,25
+	.byte	'pwdstat',0,1
+	.word	1279
+	.byte	1,6,2,35,0,25
+	.byte	'lock',0,1
+	.word	1279
+	.byte	1,5,2,35,0,26,1
+	.word	1279
+	.byte	1,4,2,35,0,25
+	.byte	'k3rdy',0,1
+	.word	1279
+	.byte	1,3,2,35,0,25
+	.byte	'k2rdy',0,1
+	.word	1279
+	.byte	1,2,2,35,0,26,1
+	.word	1279
+	.byte	1,1,2,35,0,26,4
+	.word	351
+	.byte	25,0,2,35,0,0,18
+	.byte	'OsEE_tc_SCU_PERPLLSTAT_bits',0,3,219,12,3
+	.word	5617
+	.byte	24,3,142,13,9,4,25
+	.byte	'stmdiv',0,1
+	.word	1279
+	.byte	4,4,2,35,0,25
+	.byte	'gtmdiv',0,1
+	.word	1279
+	.byte	4,0,2,35,0,25
+	.byte	'sridiv',0,1
+	.word	1279
+	.byte	4,4,2,35,1,25
+	.byte	'lpdiv',0,1
+	.word	1279
+	.byte	3,1,2,35,1,26,1
+	.word	1279
+	.byte	1,0,2,35,1,25
+	.byte	'spbdiv',0,1
+	.word	1279
+	.byte	4,4,2,35,2,25
+	.byte	'bbbdiv',0,1
+	.word	1279
+	.byte	4,0,2,35,2,25
+	.byte	'fsidiv',0,1
+	.word	1279
+	.byte	2,6,2,35,3,25
+	.byte	'fsi2div',0,1
+	.word	1279
+	.byte	2,4,2,35,3,25
+	.byte	'clksel',0,1
+	.word	1279
+	.byte	2,2,2,35,3,25
+	.byte	'up',0,1
+	.word	1279
+	.byte	1,1,2,35,3,25
+	.byte	'lck',0,1
+	.word	1279
+	.byte	1,0,2,35,3,0,18
+	.byte	'OsEE_tc_SCU_CCUCON0_bits',0,3,168,13,4
+	.word	5774
+	.byte	24,3,171,13,9,4,25
+	.byte	'mcandiv',0,1
+	.word	1279
+	.byte	4,4,2,35,0,25
+	.byte	'clkselmcan',0,1
+	.word	1279
+	.byte	2,2,2,35,0,26,1
+	.word	1279
+	.byte	1,1,2,35,0,25
+	.byte	'pll1divdis',0,1
+	.word	1279
+	.byte	1,0,2,35,0,25
+	.byte	'i2cdiv',0,1
+	.word	1279
+	.byte	4,4,2,35,1,26,1
+	.word	1279
+	.byte	4,0,2,35,1,25
+	.byte	'mscdiv',0,1
+	.word	1279
+	.byte	4,4,2,35,2,25
+	.byte	'clkselmsc',0,1
+	.word	1279
+	.byte	2,2,2,35,2,26,1
+	.word	1279
+	.byte	2,0,2,35,2,25
+	.byte	'qspidiv',0,1
+	.word	1279
+	.byte	4,4,2,35,3,25
+	.byte	'clkselqspi',0,1
+	.word	1279
+	.byte	2,2,2,35,3,26,1
+	.word	1279
+	.byte	1,1,2,35,3,25
+	.byte	'lck',0,1
+	.word	1279
+	.byte	1,0,2,35,3,0,18
+	.byte	'OsEE_tc_SCU_CCUCON1_bits',0,3,199,13,3
+	.word	6017
+	.byte	18
+	.byte	'AppModeType',0,5,96,49
+	.word	1279
+	.byte	18
+	.byte	'TaskType',0,5,120,49
+	.word	351
+	.byte	2,5,197,2,9,1,3
+	.byte	'OSEE_TASK_TYPE_BASIC',0,0,3
+	.byte	'OSEE_TASK_TYPE_EXTENDED',0,1,3
+	.byte	'OSEE_TASK_TYPE_ISR2',0,2,3
+	.byte	'OSEE_TASK_TYPE_IDLE',0,3,0,18
+	.byte	'OsEE_task_type',0,5,211,2,3
+	.word	6315
+	.byte	2,5,221,2,9,1,3
+	.byte	'OSEE_TASK_SUSPENDED',0,0,3
+	.byte	'OSEE_TASK_READY',0,1,3
+	.byte	'OSEE_TASK_READY_STACKED',0,2,3
+	.byte	'OSEE_TASK_WAITING',0,3,3
+	.byte	'OSEE_TASK_RUNNING',0,4,3
+	.byte	'OSEE_TASK_CHAINED',0,5,0,18
+	.byte	'OsEE_task_status',0,5,238,2,3
+	.word	6439
+	.byte	18
+	.byte	'TaskStateType',0,5,254,2,53
+	.word	6439
+	.byte	18
+	.byte	'TickType',0,5,158,3,53
+	.word	351
+	.byte	24,5,183,3,9,12,17
+	.byte	'maxallowedvalue',0
+	.word	351
+	.byte	4,2,35,0,17
+	.byte	'ticksperbase',0
+	.word	351
+	.byte	4,2,35,4,17
+	.byte	'mincycle',0
+	.word	351
+	.byte	4,2,35,8,0,18
+	.byte	'AlarmBaseType',0,5,194,3,3
+	.word	6639
+	.byte	18
+	.byte	'EventMaskType',0,5,183,4,53
+	.word	351
+	.byte	18
+	.byte	'ObjectIDType',0,5,151,5,53
+	.word	351
+	.byte	18
+	.byte	'OsEE_status_type',0,5,212,5,3
+	.word	735
+	.byte	18
+	.byte	'StatusType',0,5,217,5,53
+	.word	735
+	.byte	2,5,244,5,9,1,3
+	.byte	'OSServiceId_ActivateTask',0,0,3
+	.byte	'OSServiceId_TerminateTask',0,2,3
+	.byte	'OSServiceId_ChainTask',0,4,3
+	.byte	'OSServiceId_Schedule',0,6,3
+	.byte	'OSServiceId_GetTaskID',0,8,3
+	.byte	'OSServiceId_GetTaskState',0,10,3
+	.byte	'OSServiceId_DisableAllInterrupts',0,12,3
+	.byte	'OSServiceId_EnableAllInterrupts',0,14,3
+	.byte	'OSServiceId_SuspendAllInterrupts',0,16,3
+	.byte	'OSServiceId_ResumeAllInterrupts',0,18,3
+	.byte	'OSServiceId_SuspendOSInterrupts',0,20,3
+	.byte	'OSServiceId_ResumeOSInterrupts',0,22,3
+	.byte	'OSServiceId_SetEvent',0,28,3
+	.byte	'OSServiceId_ClearEvent',0,30,3
+	.byte	'OSServiceId_GetEvent',0,32,3
+	.byte	'OSServiceId_WaitEvent',0,34,3
+	.byte	'OSServiceId_GetAlarmBase',0,36,3
+	.byte	'OSServiceId_GetAlarm',0,38,3
+	.byte	'OSServiceId_SetRelAlarm',0,40,3
+	.byte	'OSServiceId_SetAbsAlarm',0,42,3
+	.byte	'OSServiceId_CancelAlarm',0,44,3
+	.byte	'OSServiceId_IncrementCounter',0,46,3
+	.byte	'OSServiceId_GetCounterValue',0,48,3
+	.byte	'OSServiceId_GetElapsedValue',0,50,3
+	.byte	'OSServiceId_GetActiveApplicationMode',0,198,0,3
+	.byte	'OSServiceId_ShutdownOS',0,200,0,3
+	.byte	'OSServiceId_StartOS',0,202,0,3
+	.byte	'OSId_TaskBody',0,206,0,3
+	.byte	'OSId_ISR2Body',0,208,0,3
+	.byte	'OSId_Action',0,210,0,3
+	.byte	'OSId_Kernel',0,212,0,3
+	.byte	'OsId_Invalid',0,214,0,0,18
+	.byte	'OsEE_service_id_type',0,5,182,6,3
+	.word	6825
+	.byte	18
+	.byte	'CountType',0,6,81,39
+	.word	351
+	.byte	18
+	.byte	'OsEE_SN',0,7,80,3
+	.word	1392
+	.byte	18
+	.byte	'OsEE_rq_mask',0,7,184,1,37
+	.word	1279
+	.byte	24,7,193,1,9,8,17
+	.byte	'p_head',0
+	.word	1441
+	.byte	4,2,35,0,17
+	.byte	'p_tail',0
+	.word	1441
+	.byte	4,2,35,4,0,18
+	.byte	'OsEE_rq_queue',0,7,196,1,3
+	.word	7759
+	.byte	18
+	.byte	'SemType',0,7,231,1,29
+	.word	1446
+	.byte	29
+	.byte	'S',0,14,65,16
+	.word	1446
+	.byte	1,1,18
+	.byte	'_iob_flag_t',0,8,82,25
+	.word	329
+	.byte	0
+	.sdecl	'.debug_abbrev',debug
+	.sect	'.debug_abbrev'
+.L21:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,16,6,0,0,2,4,1,58,15,59,15,57,15,11,15,0,0,3,40,0,3,8,28,13,0,0,4
+	.byte	46,1,3,8,32,13,58,15,59,15,57,15,73,19,54,15,39,12,0,0,5,11,0,0,0,6,36,0,3,8,11,15,62,15,0,0,7,5,0,3,8
+	.byte	58,15,59,15,57,15,73,19,0,0,8,46,1,3,8,32,13,58,15,59,15,57,15,54,15,39,12,0,0,9,46,1,49,19,0,0,10,5,0
+	.byte	49,19,0,0,11,46,1,3,8,58,15,59,15,57,15,73,19,54,15,39,12,63,12,60,12,0,0,12,46,0,3,8,58,15,59,15,57,15
+	.byte	73,19,54,15,39,12,63,12,60,12,0,0,13,15,0,73,19,0,0,14,19,0,3,8,58,15,59,15,57,15,60,12,0,0,15,38,0,73
+	.byte	19,0,0,16,19,1,3,8,58,15,59,15,57,15,11,15,0,0,17,13,0,3,8,73,19,11,15,56,9,0,0,18,22,0,3,8,58,15,59,15
+	.byte	57,15,73,19,0,0,19,55,0,73,19,0,0,20,5,0,58,15,59,15,57,15,73,19,0,0,21,24,0,58,15,59,15,57,15,0,0,22
+	.byte	21,0,54,15,0,0,23,59,0,3,8,0,0,24,19,1,58,15,59,15,57,15,11,15,0,0,25,13,0,3,8,11,15,73,19,13,15,12,15
+	.byte	56,9,0,0,26,13,0,11,15,73,19,13,15,12,15,56,9,0,0,27,23,1,58,15,59,15,57,15,11,15,0,0,28,23,1,3,8,58,15
+	.byte	59,15,57,15,11,15,0,0,29,52,0,3,8,58,15,59,15,57,15,73,19,63,12,60,12,0,0,0
+	.sdecl	'.debug_line',debug
+	.sect	'.debug_line'
+.L22:
+	.word	.L83-.L82
+.L82:
+	.half	3
+	.word	.L85-.L84
+.L84:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0
+	.byte	'C:\\Infineon\\AURIX-Studio-1.8.0\\plugins\\com.infineon.aurix.tools_1.8.0\\build_system\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out',0,0
+	.byte	'ee_hal.h',0,1,0,0
+	.byte	'ee_platform_types.h',0,1,0,0
+	.byte	'ee_tc_system.h',0,1,0,0
+	.byte	'ee_oo_api_osek.h',0,1,0,0
+	.byte	'ee_api_types.h',0,1,0,0
+	.byte	'ee_oo_api_extension.h',0,1,0,0
+	.byte	'ee_scheduler_types.h',0,1,0,0
+	.byte	'stdio.h',0,2,0,0
+	.byte	'master.c',0,3,0,0
+	.byte	'stddef.h',0,2,0,0
+	.byte	'stdint.h',0,2,0,0
+	.byte	'ee_tc_trapvec.h',0,1,0,0
+	.byte	'ee_hal_internal_types.h',0,1,0,0
+	.byte	'ee_declcfg.h',0,4,0,0,0
+.L85:
+.L83:
+	.sdecl	'.debug_info',debug,cluster('ErrorHook')
+	.sect	'.debug_info'
+.L23:
+	.word	272
+	.half	3
+	.word	.L24
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/master.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\',0,12,1
+	.word	.L26,.L25
+	.byte	2
+	.word	.L19
+	.byte	3
+	.byte	'ErrorHook',0,1,57,6,1,1,1
+	.word	.L6,.L65,.L5
+	.byte	4
+	.byte	'Error',0,1,57,27
+	.word	.L66,.L67
+	.byte	5
+	.word	.L6,.L65
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('ErrorHook')
+	.sect	'.debug_abbrev'
+.L24:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,5,0,3,8,58,15,59,15,57,15,73,16,2,6,0,0,5,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('ErrorHook')
+	.sect	'.debug_line'
+.L25:
+	.word	.L87-.L86
+.L86:
+	.half	3
+	.word	.L89-.L88
+.L88:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee',0,0
+	.byte	'master.c',0,1,0,0,0
+.L89:
+	.byte	5,5,7,0,5,2
+	.word	.L6
+	.byte	3,60,1,5,3,9
+	.half	.L90-.L6
+	.byte	1,5,1,9
+	.half	.L91-.L90
+	.byte	3,1,1,7,9
+	.half	.L27-.L91
+	.byte	0,1,1
+.L87:
+	.sdecl	'.debug_ranges',debug,cluster('ErrorHook')
+	.sect	'.debug_ranges'
+.L26:
+	.word	-1,.L6,0,.L27-.L6,0,0
+	.sdecl	'.debug_info',debug,cluster('FuncHIGH_priority_task')
+	.sect	'.debug_info'
+.L28:
+	.word	267
+	.half	3
+	.word	.L29
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/master.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\',0,12,1
+	.word	.L31,.L30
+	.byte	2
+	.word	.L19
+	.byte	3
+	.byte	'FuncHIGH_priority_task',0,1,98,1,1,1,1
+	.word	.L14,.L68,.L13
+	.byte	4
+	.word	.L14,.L68
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('FuncHIGH_priority_task')
+	.sect	'.debug_abbrev'
+.L29:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('FuncHIGH_priority_task')
+	.sect	'.debug_line'
+.L30:
+	.word	.L93-.L92
+.L92:
+	.half	3
+	.word	.L95-.L94
+.L94:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee',0,0
+	.byte	'master.c',0,1,0,0,0
+.L95:
+	.byte	5,1,7,0,5,2
+	.word	.L14
+	.byte	3,225,0,1,5,11,9
+	.half	.L79-.L14
+	.byte	3,2,1,5,13,9
+	.half	.L96-.L79
+	.byte	3,1,1,5,46,9
+	.half	.L97-.L96
+	.byte	3,1,1,5,11,9
+	.half	.L98-.L97
+	.byte	1,5,17,9
+	.half	.L99-.L98
+	.byte	3,1,1,5,1,7,9
+	.half	.L32-.L99
+	.byte	3,1,0,1,1
+.L93:
+	.sdecl	'.debug_ranges',debug,cluster('FuncHIGH_priority_task')
+	.sect	'.debug_ranges'
+.L31:
+	.word	-1,.L14,0,.L32-.L14,0,0
+	.sdecl	'.debug_info',debug,cluster('FuncLOW_priority_task')
+	.sect	'.debug_info'
+.L33:
+	.word	266
+	.half	3
+	.word	.L34
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/master.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\',0,12,1
+	.word	.L36,.L35
+	.byte	2
+	.word	.L19
+	.byte	3
+	.byte	'FuncLOW_priority_task',0,1,87,1,1,1,1
+	.word	.L12,.L69,.L11
+	.byte	4
+	.word	.L12,.L69
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('FuncLOW_priority_task')
+	.sect	'.debug_abbrev'
+.L34:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('FuncLOW_priority_task')
+	.sect	'.debug_line'
+.L35:
+	.word	.L101-.L100
+.L100:
+	.half	3
+	.word	.L103-.L102
+.L102:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee',0,0
+	.byte	'master.c',0,1,0,0,0
+.L103:
+	.byte	5,1,7,0,5,2
+	.word	.L12
+	.byte	3,214,0,1,5,12,9
+	.half	.L78-.L12
+	.byte	3,2,1,5,14,9
+	.half	.L104-.L78
+	.byte	3,2,1,5,12,9
+	.half	.L105-.L104
+	.byte	3,1,1,5,46,9
+	.half	.L106-.L105
+	.byte	3,1,1,5,12,9
+	.half	.L107-.L106
+	.byte	1,5,18,9
+	.half	.L108-.L107
+	.byte	3,2,1,5,1,7,9
+	.half	.L37-.L108
+	.byte	3,1,0,1,1
+.L101:
+	.sdecl	'.debug_ranges',debug,cluster('FuncLOW_priority_task')
+	.sect	'.debug_ranges'
+.L36:
+	.word	-1,.L12,0,.L37-.L12,0,0
+	.sdecl	'.debug_info',debug,cluster('FuncMID_priority_task')
+	.sect	'.debug_info'
+.L38:
+	.word	262
+	.half	3
+	.word	.L39
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/master.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\',0,12,1
+	.word	.L41,.L40
+	.byte	2
+	.word	.L19
+	.byte	3
+	.byte	'FuncMID_priority_task',0,1,74,1,1,1,1
+	.word	.L8,.L70,.L7
+	.byte	4
+	.word	.L71
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('FuncMID_priority_task')
+	.sect	'.debug_abbrev'
+.L39:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,85,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('FuncMID_priority_task')
+	.sect	'.debug_line'
+.L40:
+	.word	.L110-.L109
+.L109:
+	.half	3
+	.word	.L112-.L111
+.L111:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee',0,0
+	.byte	'master.c',0,1,0,0,0
+.L112:
+	.byte	5,1,7,0,5,2
+	.word	.L8
+	.byte	3,201,0,1,5,11,9
+	.half	.L77-.L8
+	.byte	3,3,1,5,13,9
+	.half	.L113-.L77
+	.byte	3,1,1,5,11,9
+	.half	.L114-.L113
+	.byte	3,2,1,5,46,9
+	.half	.L115-.L114
+	.byte	3,1,1,5,11,9
+	.half	.L116-.L115
+	.byte	1,5,17,9
+	.half	.L117-.L116
+	.byte	3,3,1,5,1,7,9
+	.half	.L42-.L117
+	.byte	3,1,0,1,1
+.L110:
+	.sdecl	'.debug_ranges',debug,cluster('FuncMID_priority_task')
+	.sect	'.debug_ranges'
+.L41:
+	.word	-1,.L8,0,.L42-.L8,0,0
+.L71:
+	.word	-1,.L8,0,.L70-.L8,-1,.L10,0,.L62-.L10,0,0
+	.sdecl	'.debug_info',debug,cluster('idle_hook_core0')
+	.sect	'.debug_info'
+.L43:
+	.word	260
+	.half	3
+	.word	.L44
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/master.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\',0,12,1
+	.word	.L46,.L45
+	.byte	2
+	.word	.L19
+	.byte	3
+	.byte	'idle_hook_core0',0,1,106,6,1,1,1
+	.word	.L16,.L72,.L15
+	.byte	4
+	.word	.L16,.L72
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('idle_hook_core0')
+	.sect	'.debug_abbrev'
+.L44:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('idle_hook_core0')
+	.sect	'.debug_line'
+.L45:
+	.word	.L119-.L118
+.L118:
+	.half	3
+	.word	.L121-.L120
+.L120:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee',0,0
+	.byte	'master.c',0,1,0,0,0
+.L121:
+	.byte	5,17,7,0,5,2
+	.word	.L16
+	.byte	3,235,0,1,5,1,7,9
+	.half	.L47-.L16
+	.byte	3,1,0,1,1
+.L119:
+	.sdecl	'.debug_ranges',debug,cluster('idle_hook_core0')
+	.sect	'.debug_ranges'
+.L46:
+	.word	-1,.L16,0,.L47-.L16,0,0
+	.sdecl	'.debug_info',debug,cluster('idle_hook_body')
+	.sect	'.debug_info'
+.L48:
+	.word	258
+	.half	3
+	.word	.L49
+	.byte	4,1
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\shared.h',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\',0,12,1
+	.word	.L51,.L50
+	.byte	2
+	.word	.L19
+	.byte	3
+	.byte	'idle_hook_body',0,1,48,13,1,1
+	.word	.L4,.L73,.L3
+	.byte	4
+	.word	.L4,.L73
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('idle_hook_body')
+	.sect	'.debug_abbrev'
+.L49:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,54,15
+	.byte	39,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('idle_hook_body')
+	.sect	'.debug_line'
+.L50:
+	.word	.L123-.L122
+.L122:
+	.half	3
+	.word	.L125-.L124
+.L124:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee',0,0
+	.byte	'shared.h',0,1,0,0,0
+.L125:
+	.byte	5,3,7,0,5,2
+	.word	.L4
+	.byte	3,48,1,5,1,9
+	.half	.L126-.L4
+	.byte	3,3,1,7,9
+	.half	.L52-.L126
+	.byte	0,1,1
+.L123:
+	.sdecl	'.debug_ranges',debug,cluster('idle_hook_body')
+	.sect	'.debug_ranges'
+.L51:
+	.word	-1,.L4,0,.L52-.L4,0,0
+	.sdecl	'.debug_info',debug,cluster('main')
+	.sect	'.debug_info'
+.L53:
+	.word	253
+	.half	3
+	.word	.L54
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/master.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\',0,12,1
+	.word	.L56,.L55
+	.byte	2
+	.word	.L19
+	.byte	3
+	.byte	'main',0,1,120,5
+	.word	.L74
+	.byte	1,1,1
+	.word	.L18,.L75,.L17
+	.byte	4
+	.word	.L18,.L75
+	.byte	0,0
+	.sdecl	'.debug_abbrev',debug,cluster('main')
+	.sect	'.debug_abbrev'
+.L54:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,1,3,8,58,15,59,15,57,15,73,16
+	.byte	54,15,39,12,63,12,17,1,18,1,64,6,0,0,4,11,0,17,1,18,1,0,0,0
+	.sdecl	'.debug_line',debug,cluster('main')
+	.sect	'.debug_line'
+.L55:
+	.word	.L128-.L127
+.L127:
+	.half	3
+	.word	.L130-.L129
+.L129:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee',0,0
+	.byte	'master.c',0,1,0,0,0
+.L130:
+	.byte	5,11,7,0,5,2
+	.word	.L18
+	.byte	3,252,0,1,5,10,9
+	.half	.L131-.L18
+	.byte	3,2,1,5,1,3,1,1,7,9
+	.half	.L57-.L131
+	.byte	0,1,1
+.L128:
+	.sdecl	'.debug_ranges',debug,cluster('main')
+	.sect	'.debug_ranges'
+.L56:
+	.word	-1,.L18,0,.L57-.L18,0,0
+	.sdecl	'.debug_info',debug,cluster('.cocofun_8')
+	.sect	'.debug_info'
+.L58:
+	.word	243
+	.half	3
+	.word	.L59
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/master.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\',0,12,1
+	.word	.L61,.L60
+	.byte	2
+	.word	.L19
+	.byte	3
+	.byte	'.cocofun_8',0,1,74,1,1
+	.word	.L10,.L62,.L9
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('.cocofun_8')
+	.sect	'.debug_abbrev'
+.L59:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,85,6,16,6,0,0,2,61,0,24,16,0,0,3,46,0,3,8,58,15,59,15,57,15,54,15
+	.byte	17,1,18,1,64,6,0,0,0
+	.sdecl	'.debug_line',debug,cluster('.cocofun_8')
+	.sect	'.debug_line'
+.L60:
+	.word	.L133-.L132
+.L132:
+	.half	3
+	.word	.L135-.L134
+.L134:
+	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee',0,0
+	.byte	'master.c',0,1,0,0,0
+.L135:
+	.byte	5,13,7,0,5,2
+	.word	.L10
+	.byte	3,205,0,1,9
+	.half	.L62-.L10
+	.byte	0,1,1,5,14,0,5,2
+	.word	.L10
+	.byte	3,218,0,1,5,13,9
+	.half	.L136-.L10
+	.byte	3,115,1,7,9
+	.half	.L62-.L136
+	.byte	0,1,1,5,13,0,5,2
+	.word	.L10
+	.byte	3,228,0,1,9
+	.half	.L136-.L10
+	.byte	3,105,1,7,9
+	.half	.L62-.L136
+	.byte	0,1,1
+.L133:
+	.sdecl	'.debug_ranges',debug,cluster('.cocofun_8')
+	.sect	'.debug_ranges'
+.L61:
+	.word	-1,.L10,0,.L62-.L10,0,0
+	.sdecl	'.debug_info',debug,cluster('myErrorCounter')
+	.sect	'.debug_info'
+.L63:
+	.word	237
+	.half	3
+	.word	.L64
+	.byte	4,1
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/master.c',0
+	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\',0,12,1,2
+	.word	.L19
+	.byte	3
+	.byte	'myErrorCounter',0,9,55,10
+	.word	.L76
+	.byte	1,5,3
+	.word	myErrorCounter
+	.byte	0
+	.sdecl	'.debug_abbrev',debug,cluster('myErrorCounter')
+	.sect	'.debug_abbrev'
+.L64:
+	.byte	1,17,1,3,8,37,8,27,8,19,15,128,70,12,0,0,2,61,0,24,16,0,0,3,52,0,3,8,58,15,59,15,57,15,73,16,63,12,2,9
+	.byte	0,0,0
+	.sdecl	'.debug_loc',debug,cluster('.cocofun_8')
+	.sect	'.debug_loc'
+.L9:
+	.word	-1,.L10,0,.L62-.L10
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('ErrorHook')
+	.sect	'.debug_loc'
+.L67:
+	.word	-1,.L6,0,.L65-.L6
+	.half	1
+	.byte	84
+	.word	0,0
+.L5:
+	.word	-1,.L6,0,.L65-.L6
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('FuncHIGH_priority_task')
+	.sect	'.debug_loc'
+.L13:
+	.word	-1,.L14,0,.L79-.L14
+	.half	2
+	.byte	138,0
+	.word	.L79-.L14,.L68-.L14
+	.half	2
+	.byte	138,8
+	.word	.L68-.L14,.L68-.L14
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('FuncLOW_priority_task')
+	.sect	'.debug_loc'
+.L11:
+	.word	-1,.L12,0,.L78-.L12
+	.half	2
+	.byte	138,0
+	.word	.L78-.L12,.L69-.L12
+	.half	2
+	.byte	138,8
+	.word	.L69-.L12,.L69-.L12
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('FuncMID_priority_task')
+	.sect	'.debug_loc'
+.L7:
+	.word	-1,.L8,0,.L77-.L8
+	.half	2
+	.byte	138,0
+	.word	.L77-.L8,.L70-.L8
+	.half	2
+	.byte	138,8
+	.word	.L70-.L8,.L70-.L8
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('idle_hook_body')
+	.sect	'.debug_loc'
+.L3:
+	.word	-1,.L4,0,.L73-.L4
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('idle_hook_core0')
+	.sect	'.debug_loc'
+.L15:
+	.word	-1,.L16,0,.L72-.L16
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_loc',debug,cluster('main')
+	.sect	'.debug_loc'
+.L17:
+	.word	-1,.L18,0,.L75-.L18
+	.half	2
+	.byte	138,0
+	.word	0,0
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L137:
+	.word	48
+	.word	-1
+	.byte	3,0,2,1,27,12,26,0,8,26,8,27,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36,8,37,8,38
+	.byte	8,39
+	.sdecl	'.debug_frame',debug,cluster('idle_hook_body')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L137,.L4,.L73-.L4
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('ErrorHook')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L137,.L6,.L65-.L6
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	.sdecl	'.debug_frame',debug,cluster('FuncMID_priority_task')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L137,.L8,.L70-.L8
+	.byte	4
+	.word	(.L77-.L8)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L70-.L77)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('FuncLOW_priority_task')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L137,.L12,.L69-.L12
+	.byte	4
+	.word	(.L78-.L12)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L69-.L78)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('FuncHIGH_priority_task')
+	.sect	'.debug_frame'
+	.word	36
+	.word	.L137,.L14,.L68-.L14
+	.byte	4
+	.word	(.L79-.L14)/2
+	.byte	19,8,22,26,3,19,138,8,4
+	.word	(.L68-.L79)/2
+	.byte	19,0,8,26,0,0
+	.sdecl	'.debug_frame',debug,cluster('idle_hook_core0')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L137,.L16,.L72-.L16
+	.sdecl	'.debug_frame',debug,cluster('main')
+	.sect	'.debug_frame'
+	.word	12
+	.word	.L137,.L18,.L75-.L18
+	.sdecl	'.debug_frame',debug
+	.sect	'.debug_frame'
+.L138:
+	.word	52
+	.word	-1
+	.byte	3,0,2,1,40,12,26,0,7,26,9,40,27,155,0,8,30,8,29,8,28,8,16,8,17,8,24,8,25,8,31,8,32,8,33,8,34,8,35,8,36
+	.byte	8,37,8,38,8,39,0
+	.sdecl	'.debug_frame',debug,cluster('.cocofun_8')
+	.sect	'.debug_frame'
+	.word	24
+	.word	.L138,.L10,.L62-.L10
+	.byte	8,18,8,19,8,20,8,21,8,22,8,23
+	; Module end

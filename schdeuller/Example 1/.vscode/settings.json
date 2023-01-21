@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.pre": "c",
+        "ee_applcfg.h": "c"
+    }
+}

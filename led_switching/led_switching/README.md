@@ -1,0 +1,3 @@
+# Description
+
+This example can be used to determine how accurate systems timers are. 2 tasks are configured, one of them is switching LED on and the second task switching LED off. Tasks get called each second by ALARM that is connected to it. Timings can be changed in config.oil using COUNTER and ALARM settings. First of all counter parameter SECONDSPERTICK determines the period of counter tick itself. In ALARM configuration ALARMTIME determine the start time of the alarm and CYCLETIME parameter determine the period of alarm. In Default example LED must turn off and on each 500ms.
