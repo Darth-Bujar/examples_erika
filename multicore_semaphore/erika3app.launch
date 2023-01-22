@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.tasking.cdt.launch.localCLaunch">
+    <booleanAttribute key="com.tasking.debug.cdt.core.BREAK_ON_EXIT" value="true"/>
+    <stringAttribute key="com.tasking.debug.cdt.core.COMMUNICATION" value="Universal Debug Access Server"/>
+    <stringAttribute key="com.tasking.debug.cdt.core.CONFIGURATION" value="TC38x"/>
+    <booleanAttribute key="com.tasking.debug.cdt.core.DOWNLOAD" value="true"/>
+    <booleanAttribute key="com.tasking.debug.cdt.core.FLASH_ALLOW_CUSTOMIZATION" value="false"/>
+    <stringAttribute key="com.tasking.debug.cdt.core.FSS_ROOT" value="${project_loc}\${build_config}"/>
+    <booleanAttribute key="com.tasking.debug.cdt.core.GOTO_MAIN" value="true"/>
+    <booleanAttribute key="com.tasking.debug.cdt.core.INIT_TARGET" value="false"/>
+    <booleanAttribute key="com.tasking.debug.cdt.core.INTERRUPT_AWARE_STEPPING" value="false"/>
+    <booleanAttribute key="com.tasking.debug.cdt.core.PROGRAM_FLASH" value="true"/>
+    <booleanAttribute key="com.tasking.debug.cdt.core.RESET_TARGET" value="true"/>
+    <stringAttribute key="com.tasking.debug.cdt.core.TARGET" value="Generic Infineon AURIX Board"/>
+    <booleanAttribute key="com.tasking.debug.cdt.core.TARGET_POLLING" value="false"/>
+    <booleanAttribute key="com.tasking.debug.cdt.core.VERIFY" value="true"/>
+    <stringAttribute key="com.tasking.debug.cdt.core.global_variables" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;global_variables/&gt;"/>
+    <booleanAttribute key="com.tasking.debug.cdt.core.linkToProject" value="true"/>
+    <stringAttribute key="com.tasking.debug.cdt.core.pins" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#13;&#10;&lt;pins/&gt;"/>
+    <stringAttribute key="debugger_configuration.debug_instrument_module" value="gdi2mcdtc"/>
+    <stringAttribute key="debugger_configuration.gdi.DiGdiInitIO" value="tcpip"/>
+    <stringAttribute key="debugger_configuration.gdi.DiGdiInitIO.tcpip.host" value="localhost"/>
+    <stringAttribute key="debugger_configuration.gdi.DiGdiInitIO.tcpip.port" value="23"/>
+    <stringAttribute key="debugger_configuration.gdi.resource.AccessPort" value="JTAG0"/>
+    <stringAttribute key="debugger_configuration.gdi.resource.DASserver" value="UDAS"/>
+    <stringAttribute key="debugger_configuration.gdi.resource.DasTimeOut" value="0x4000"/>
+    <stringAttribute key="debugger_configuration.gdi.resource.Frequency" value="30000000"/>
+    <stringAttribute key="debugger_configuration.gdi.resource.TerminateServer" value="1"/>
+    <stringAttribute key="debugger_configuration.gdi.resource.gdi2mcd.reset.class_vector" value="0x1"/>
+    <stringAttribute key="debugger_configuration.gdi.resource.user.ConnectedServerName" value="DAS JDS miniWiggler V3.1 MW3SQL84"/>
+    <stringAttribute key="debugger_configuration.goto_label" value="core0_main"/>
+    <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="dwn"/>
+    <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+    <booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="false"/>
+    <booleanAttribute key="org.eclipse.cdt.launch.ENABLE_REGISTER_BOOKKEEPING" value="false"/>
+    <booleanAttribute key="org.eclipse.cdt.launch.ENABLE_VARIABLE_BOOKKEEPING" value="false"/>
+    <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="ee\out\erika3app.elf"/>
+    <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="tc38_led"/>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/tc38_led"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="4"/>
+    </listAttribute>
+    <stringAttribute key="org.eclipse.debug.core.source_locator_id" value="org.eclipse.cdt.debug.core.sourceLocator"/>
+    <stringAttribute key="org.eclipse.debug.core.source_locator_memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;sourceLookupDirector&gt;&#13;&#10;    &lt;sourceContainers duplicates=&quot;false&quot;&gt;&#13;&#10;        &lt;container memento=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; standalone=&amp;quot;no&amp;quot;?&amp;gt;&amp;#13;&amp;#10;&amp;lt;directory nest=&amp;quot;false&amp;quot; path=&amp;quot;E:\Projects\Erika\aurix_workspace\examples_erika\multicore_semaphore&amp;quot;/&amp;gt;&amp;#13;&amp;#10;&quot; typeId=&quot;org.eclipse.debug.core.containerType.directory&quot;/&gt;&#13;&#10;        &lt;container memento=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; standalone=&amp;quot;no&amp;quot;?&amp;gt;&amp;#13;&amp;#10;&amp;lt;default/&amp;gt;&amp;#13;&amp;#10;&quot; typeId=&quot;org.eclipse.debug.core.containerType.default&quot;/&gt;&#13;&#10;        &lt;container memento=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; standalone=&amp;quot;no&amp;quot;?&amp;gt;&amp;#13;&amp;#10;&amp;lt;mapping backend_enabled=&amp;quot;true&amp;quot; name=&amp;quot;Found Mappings&amp;quot;&amp;gt;&amp;#13;&amp;#10;    &amp;lt;mapEntry memento=&amp;quot;&amp;amp;lt;?xml version=&amp;amp;quot;1.0&amp;amp;quot; encoding=&amp;amp;quot;UTF-8&amp;amp;quot; standalone=&amp;amp;quot;no&amp;amp;quot;?&amp;amp;gt;&amp;amp;#13;&amp;amp;#10;&amp;amp;lt;mapEntry backendPath=&amp;amp;quot;D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src\&amp;amp;quot; localPath=&amp;amp;quot;E:\Projects\Erika\aurix_workspace\examples_erika\multicore_semaphore\ee\erika\src\&amp;amp;quot;/&amp;amp;gt;&amp;amp;#13;&amp;amp;#10;&amp;quot;/&amp;gt;&amp;#13;&amp;#10;    &amp;lt;mapEntry memento=&amp;quot;&amp;amp;lt;?xml version=&amp;amp;quot;1.0&amp;amp;quot; encoding=&amp;amp;quot;UTF-8&amp;amp;quot; standalone=&amp;amp;quot;no&amp;amp;quot;?&amp;amp;gt;&amp;amp;#13;&amp;amp;#10;&amp;amp;lt;mapEntry backendPath=&amp;amp;quot;E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee\&amp;amp;quot; localPath=&amp;amp;quot;E:\Projects\Erika\aurix_workspace\examples_erika\multicore_semaphore\ee\&amp;amp;quot;/&amp;amp;gt;&amp;amp;#13;&amp;amp;#10;&amp;quot;/&amp;gt;&amp;#13;&amp;#10;    &amp;lt;mapEntry memento=&amp;quot;&amp;amp;lt;?xml version=&amp;amp;quot;1.0&amp;amp;quot; encoding=&amp;amp;quot;UTF-8&amp;amp;quot; standalone=&amp;amp;quot;no&amp;amp;quot;?&amp;amp;gt;&amp;amp;#13;&amp;amp;#10;&amp;amp;lt;mapEntry backendPath=&amp;amp;quot;D:\RTOS_PROJEKT\erica\aurix_workspace\tc38_led\ee\erika\inc\&amp;amp;quot; localPath=&amp;amp;quot;E:\Projects\Erika\aurix_workspace\examples_erika\multicore_semaphore\ee\erika\inc\&amp;amp;quot;/&amp;amp;gt;&amp;amp;#13;&amp;amp;#10;&amp;quot;/&amp;gt;&amp;#13;&amp;#10;&amp;lt;/mapping&amp;gt;&amp;#13;&amp;#10;&quot; typeId=&quot;org.eclipse.cdt.debug.core.containerType.mapping&quot;/&gt;&#13;&#10;    &lt;/sourceContainers&gt;&#13;&#10;&lt;/sourceLookupDirector&gt;&#13;&#10;"/>
+    <stringAttribute key="org.eclipse.dsf.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;memoryBlockExpressionList context=&quot;reserved-for-future-use&quot;/&gt;&#13;&#10;"/>
+</launchConfiguration>

@@ -61,21 +61,6 @@ CPU test_application {
       };
     };
 
-//   CPU_DATA = TRICORE {
-//      ID = 0x1;
-//      MULTI_STACK = TRUE;
-//      IDLEHOOK = TRUE {
-//        HOOKNAME = "idle_hook_core1";
-//      };
-//    };
-
-//    CPU_DATA = TRICORE {
-//      ID = 0x2;
-//      IDLEHOOK = TRUE {
-//        HOOKNAME = "idle_hook_core2";
-//      };
-//    };
-
     MCU_DATA = TC39X {
       DERIVATIVE = "tc397xe";
       //DERIVATIVE = "tc399xe-Astep";
@@ -153,19 +138,19 @@ CPU test_application {
   };
   
   
- ALARM AlarmMaster_100ms{
+ ALARM AlarmMaster_3000ms{
    COUNTER = system_timer_master;
    ACTION = ACTIVATETASK { TASK = LOW_priority_task; };
    AUTOSTART = TRUE { ALARMTIME = 0 ; CYCLETIME = 300;};
  };
  
-  ALARM AlarmMaster_75ms {
+  ALARM AlarmMaster_1000ms {
     COUNTER = system_timer_master;
     ACTION = ACTIVATETASK { TASK = MID_priority_task; };
     AUTOSTART = TRUE { ALARMTIME = 10 ; CYCLETIME = 100; };
   };
 
-  ALARM AlarmMaster_50ms {
+  ALARM AlarmMaster_2000ms {
     COUNTER = system_timer_master;
     ACTION = ACTIVATETASK { TASK = HIGH_priority_task; };
     AUTOSTART = TRUE { ALARMTIME = 0; CYCLETIME = 200; };

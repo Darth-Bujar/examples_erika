@@ -78,10 +78,8 @@ CPU test_application {
     ERRORHOOK = TRUE;
     USERESSCHEDULER = FALSE;
     USEORTI = TRUE;
-    //	USEDYNAMICAPI = TRUE;
     KERNEL_TYPE = OSEK {
       CLASS = ECC2;
-//      RQ    = MQ;
     };
   };
 
@@ -142,7 +140,7 @@ CPU test_application {
     SECONDSPERTICK = 0.01;
   };
 
-  ALARM AlarmMaster_50ms {
+  ALARM AlarmMaster_500ms {
     COUNTER = system_timer_master;
     ACTION = ACTIVATETASK { TASK = HIGH_priority_task; };
     AUTOSTART = TRUE { ALARMTIME = 0; CYCLETIME = 50; };
