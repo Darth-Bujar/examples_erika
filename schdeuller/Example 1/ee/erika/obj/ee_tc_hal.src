@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc8268b --dep-file=obj/ee_tc_hal.c.d_tmp -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -DOS_EE_BUILD -D__CPU__=tc38x -D__CPU_TC38X__ -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src -g2 --make-target=obj/ee_tc_hal.c.o --language=+gcc,-volatile,+strings --default-near-size=0 -O1 -o obj\\ee_tc_hal.src D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_hal.c"
+	.compiler_invocation	"ctc -f cc14472b --dep-file=obj/ee_tc_hal.c.d_tmp -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -DOS_EE_BUILD -D__CPU__=tc38x -D__CPU_TC38X__ -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src -g2 --make-target=obj/ee_tc_hal.c.o --language=+gcc,-volatile,+strings --default-near-size=0 -O1 -o obj\\ee_tc_hal.src D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_hal.c"
 	.compiler_name		"ctc"
 	;source	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_hal.c'
 
@@ -2896,23 +2896,23 @@ __osEE_cpu_startos_function_end:
 	.word	0,0
 .L50:
 	.word	0,0
-.L61:
-	.word	-1,.L18,.L108-.L18,.L109-.L18
-	.half	1
-	.byte	95
-	.word	0,0
 .L59:
 	.word	-1,.L18,.L106-.L18,.L107-.L18
 	.half	1
 	.byte	95
 	.word	0,0
-.L56:
-	.word	-1,.L18,.L104-.L18,.L105-.L18
+.L74:
+	.word	-1,.L18,.L114-.L18,.L115-.L18
 	.half	1
 	.byte	95
 	.word	0,0
-.L74:
-	.word	-1,.L18,.L114-.L18,.L115-.L18
+.L61:
+	.word	-1,.L18,.L108-.L18,.L109-.L18
+	.half	1
+	.byte	95
+	.word	0,0
+.L56:
+	.word	-1,.L18,.L104-.L18,.L105-.L18
 	.half	1
 	.byte	95
 	.word	0,0

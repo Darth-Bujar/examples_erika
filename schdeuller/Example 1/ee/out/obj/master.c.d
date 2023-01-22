@@ -74,8 +74,6 @@ obj/master.c.o :	/cygdrive/lD/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/eri
 /cygdrive/lD/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc/ee_os_mem_map_tasking_ctc.h :
 obj/master.c.o :	/cygdrive/lD/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/out/ee_declcfg.h
 /cygdrive/lD/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/out/ee_declcfg.h :
-obj/master.c.o :	/cygdrive/lD/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/Blinky_LED.h
-/cygdrive/lD/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/Blinky_LED.h :
 obj/master.c.o :	/cygdrive/lD/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc/Os_MemMap.h
 /cygdrive/lD/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc/Os_MemMap.h :
 obj/master.c.o :	/cygdrive/lD/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc/ee_os_mem_map_tasking_ctc.h

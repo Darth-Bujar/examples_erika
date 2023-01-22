@@ -20,15 +20,9 @@ CPU test_application {
 		CPU_DATA = TRICORE {
 			ID = 0x1;
 			MULTI_STACK = TRUE;
-			IDLEHOOK = TRUE {
-				HOOKNAME = "idle_hook_core1";
-			};
 		};
 		CPU_DATA = TRICORE {
 			ID = 0x2;
-			IDLEHOOK = TRUE {
-				HOOKNAME = "idle_hook_core2";
-			};
 		};
 		MCU_DATA = TC39X {
 			DERIVATIVE = "tc397xe";

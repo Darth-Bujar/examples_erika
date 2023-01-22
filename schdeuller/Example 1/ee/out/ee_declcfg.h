@@ -44,8 +44,6 @@ DeclareTask(LOW_priority_task);
  *
  **************************************************************************/
 extern void idle_hook_core0 (void);
-extern void idle_hook_core1 (void);
-extern void idle_hook_core2 (void);
 
 
 /***************************************************************************

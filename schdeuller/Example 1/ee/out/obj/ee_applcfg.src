@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc4116b --dep-file=obj/ee_applcfg.c.d_tmp -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc38x -D__CPU_TC38X__ -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Configurations -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Libraries/Infra/Platform -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Libraries/Infra/Sfr/TC38A/_Reg -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Libraries/iLLD/TC38A/Tricore -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Libraries/Service/CpuGeneric -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/out -g2 --make-target=obj/ee_applcfg.c.o --language=+gcc,-volatile,+strings --default-near-size=0 -O2 -o obj\\ee_applcfg.src ee_applcfg.c"
+	.compiler_invocation	"ctc -f cc18604b --dep-file=obj/ee_applcfg.c.d_tmp -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -D__CPU__=tc38x -D__CPU_TC38X__ -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Configurations -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Libraries/Infra/Platform -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Libraries/Infra/Sfr/TC38A/_Reg -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Libraries/iLLD/TC38A/Tricore -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/Libraries/Service/CpuGeneric -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/out -g2 --make-target=obj/ee_applcfg.c.o --language=+gcc,-volatile,+strings --default-near-size=0 -O2 -o obj\\ee_applcfg.src ee_applcfg.c"
 	.compiler_name		"ctc"
 	;source	'ee_applcfg.c'
 
@@ -366,8 +366,11 @@ osEE_lock_core1:	.type	object
 	.align	4
 osEE_cdb_var_core1:	.type	object
 	.size	osEE_cdb_var_core1,52
-	.word	osEE_sdb_array_core1,osEE_scb_array_core1,1,osEE_ccb_var_core1,osEE_lock_core1,idle_hook_core1,osEE_tdb_array_core1+32,osEE_counter_db_array_core1
-	.word	osEE_autostart_tdb_array_core1,1,osEE_autostart_trigger_db_core1,1
+	.word	osEE_sdb_array_core1,osEE_scb_array_core1,1,osEE_ccb_var_core1
+	.word	osEE_lock_core1
+	.space	4
+	.word	osEE_tdb_array_core1+32,osEE_counter_db_array_core1,osEE_autostart_tdb_array_core1,1
+	.word	osEE_autostart_trigger_db_core1,1
 	.byte	1
 	.space	3
 	.sdecl	'.data.private2',data,cluster('osEE_ccb_var_core2')
@@ -396,8 +399,11 @@ osEE_lock_core2:	.type	object
 	.align	4
 osEE_cdb_var_core2:	.type	object
 	.size	osEE_cdb_var_core2,52
-	.word	osEE_sdb_array_core2,osEE_scb_array_core2,1,osEE_ccb_var_core2,osEE_lock_core2,idle_hook_core2,osEE_tdb_array_core2+32,osEE_counter_db_array_core2
-	.word	osEE_autostart_tdb_array_core2,1,osEE_autostart_trigger_db_core2,1
+	.word	osEE_sdb_array_core2,osEE_scb_array_core2,1,osEE_ccb_var_core2
+	.word	osEE_lock_core2
+	.space	4
+	.word	osEE_tdb_array_core2+32,osEE_counter_db_array_core2,osEE_autostart_tdb_array_core2,1
+	.word	osEE_autostart_trigger_db_core2,1
 	.byte	2
 	.space	3
 	.sdecl	'.data.ee_kernel_data',data,cluster('osEE_kcb_var')
@@ -434,14 +440,10 @@ osEE_kdb_var:	.type	object
 	.calls	'__INDIRECT__','FuncHIGH_priority_task'
 	.calls	'__INDIRECT__','FuncLOW_priority_task'
 	.calls	'__INDIRECT__','idle_hook_core0'
-	.calls	'__INDIRECT__','idle_hook_core1'
-	.calls	'__INDIRECT__','idle_hook_core2'
 	.extern	osEE_tricore_system_timer_handler
 	.extern	FuncHIGH_priority_task
 	.extern	FuncLOW_priority_task
 	.extern	idle_hook_core0
-	.extern	idle_hook_core1
-	.extern	idle_hook_core2
 	.extern	osEE_idle_hook_wrapper
 	.extern	_lc_ub_ustack_tc0
 	.extern	_lc_ub_ustack_tc1
@@ -451,7 +453,7 @@ osEE_kdb_var:	.type	object
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
 .L3:
-	.word	12423
+	.word	12375
 	.half	3
 	.word	.L4
 	.byte	4
@@ -1186,8 +1188,6 @@ osEE_kdb_var:	.type	object
 	.byte	'FuncHIGH_priority_task',0,11,35,1,1,1,1,1,24
 	.byte	'FuncLOW_priority_task',0,11,36,1,1,1,1,1,24
 	.byte	'idle_hook_core0',0,11,46,13,1,1,1,1,24
-	.byte	'idle_hook_core1',0,11,47,13,1,1,1,1,24
-	.byte	'idle_hook_core2',0,11,48,13,1,1,1,1,24
 	.byte	'osEE_idle_hook_wrapper',0,6,190,8,3,1,1,1,1,25
 	.word	3757
 	.byte	3,0,25
@@ -1216,22 +1216,22 @@ osEE_kdb_var:	.type	object
 	.byte	'__INDIRECT__',0,12,1,1,1,1,1,7
 	.byte	'short int',0,2,5,19
 	.byte	'__wchar_t',0,12,1,1
-	.word	6608
+	.word	6560
 	.byte	19
 	.byte	'__size_t',0,12,1,1
 	.word	359
 	.byte	7
 	.byte	'int',0,4,5,19
 	.byte	'__ptrdiff_t',0,12,1,1
-	.word	6656
+	.word	6608
 	.byte	31,1,10
-	.word	6683
+	.word	6635
 	.byte	19
 	.byte	'__codeptr',0,12,1,1
-	.word	6685
+	.word	6637
 	.byte	19
 	.byte	'__intptr_t',0,12,1,1
-	.word	6656
+	.word	6608
 	.byte	19
 	.byte	'__uintptr_t',0,12,1,1
 	.word	359
@@ -1246,7 +1246,7 @@ osEE_kdb_var:	.type	object
 	.word	337
 	.byte	19
 	.byte	'int32_t',0,14,253,1,41
-	.word	6656
+	.word	6608
 	.byte	19
 	.byte	'uint32_t',0,14,254,1,41
 	.word	359
@@ -1258,7 +1258,7 @@ osEE_kdb_var:	.type	object
 	.word	359
 	.byte	19
 	.byte	'OsEE_sreg',0,2,92,31
-	.word	6656
+	.word	6608
 	.byte	19
 	.byte	'OsEE_stack',0,2,93,31
 	.word	359
@@ -1275,7 +1275,7 @@ osEE_kdb_var:	.type	object
 	.word	359
 	.byte	19
 	.byte	'OsEE_spin_lock',0,2,155,1,27
-	.word	6970
+	.word	6922
 	.byte	19
 	.byte	'OsEE_barrier',0,2,160,1,3
 	.word	1657
@@ -1335,7 +1335,7 @@ osEE_kdb_var:	.type	object
 	.word	359
 	.byte	4,2,35,56,0,19
 	.byte	'OsEE_uctx',0,8,153,1,3
-	.word	7084
+	.word	7036
 	.byte	13,8,156,1,9,60,14
 	.byte	'a11',0
 	.word	1838
@@ -1383,25 +1383,25 @@ osEE_kdb_var:	.type	object
 	.word	359
 	.byte	4,2,35,56,0,19
 	.byte	'OsEE_lctx',0,8,172,1,3
-	.word	7303
+	.word	7255
 	.byte	17,8,175,1,9,60,14
 	.byte	'uctx',0
-	.word	7084
+	.word	7036
 	.byte	60,2,35,0,14
 	.byte	'lctx',0
-	.word	7303
+	.word	7255
 	.byte	60,2,35,0,0,19
 	.byte	'OsEE_csa_ctx',0,8,178,1,3
-	.word	7510
+	.word	7462
 	.byte	13,8,181,1,9,64,14
 	.byte	'l_next',0
 	.word	1794
 	.byte	4,2,35,0,14
 	.byte	'ctx',0
-	.word	7510
+	.word	7462
 	.byte	60,2,35,4,0,19
 	.byte	'OsEE_csa',0,8,184,1,3
-	.word	7567
+	.word	7519
 	.byte	19
 	.byte	'OsEE_CTX',0,8,248,1,3
 	.word	1856
@@ -1412,17 +1412,17 @@ osEE_kdb_var:	.type	object
 	.word	1937
 	.byte	19
 	.byte	'OsEE_SDB',0,8,134,2,16
-	.word	7657
+	.word	7609
 	.byte	11
 	.word	2016
 	.byte	19
 	.byte	'OsEE_HDB',0,8,145,2,14
-	.word	7680
+	.word	7632
 	.byte	11
 	.word	3840
 	.byte	19
 	.byte	'OsEE_CHDB',0,8,154,2,14
-	.word	7703
+	.word	7655
 	.byte	20
 	.byte	'OsEE_tc_SCU_WDTCPU_CON0_bits_tag',0,3,155,1,16,4,15
 	.byte	'endinit',0,1
@@ -1438,10 +1438,10 @@ osEE_kdb_var:	.type	object
 	.word	337
 	.byte	16,0,2,35,2,0,19
 	.byte	'OsEE_tc_SCU_WDTCPU_CON0_bits',0,3,165,1,3
-	.word	7727
+	.word	7679
 	.byte	19
 	.byte	'OsEE_tc_SCU_WDTS_CON0_bits',0,3,168,1,38
-	.word	7727
+	.word	7679
 	.byte	20
 	.byte	'OsEE_tc_SCU_WDTCPU_CON1_bits_tag',0,3,171,1,16,4,16,1
 	.word	872
@@ -1472,7 +1472,7 @@ osEE_kdb_var:	.type	object
 	.word	337
 	.byte	16,0,2,35,2,0,19
 	.byte	'OsEE_tc_SCU_WDTCPU_CON1_bits',0,3,193,1,3
-	.word	7904
+	.word	7856
 	.byte	20
 	.byte	'OsEE_tc_SCU_WDTS_CON1_bits_tag',0,3,196,1,16,4,15
 	.byte	'clrif',0,1
@@ -1506,7 +1506,7 @@ osEE_kdb_var:	.type	object
 	.word	337
 	.byte	16,0,2,35,2,0,19
 	.byte	'OsEE_tc_SCU_WDTS_CON1_bits',0,3,220,1,3
-	.word	8119
+	.word	8071
 	.byte	20
 	.byte	'OsEE_tc_SCU_WDTCPU_SR_bits_tag',0,3,223,1,16,4,15
 	.byte	'ae',0,1
@@ -1543,70 +1543,70 @@ osEE_kdb_var:	.type	object
 	.word	337
 	.byte	16,0,2,35,2,0,19
 	.byte	'OsEE_tc_SCU_WDTCPU_SR_bits',0,3,247,1,3
-	.word	8347
+	.word	8299
 	.byte	19
 	.byte	'OsEE_tc_SCU_WDTS_SR_bits',0,3,250,1,36
-	.word	8347
+	.word	8299
 	.byte	32
 	.byte	'OsEE_tc_SCU_WDTCPU_CON0_tag',0,3,253,1,15,4,14
 	.byte	'reg',0
 	.word	359
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	7727
+	.word	7679
 	.byte	4,2,35,0,0,19
 	.byte	'OsEE_tc_SCU_WDTCPU_CON0',0,3,131,2,3
-	.word	8615
+	.word	8567
 	.byte	32
 	.byte	'OsEE_tc_SCU_WDTCPU_CON1_tag',0,3,134,2,15,4,14
 	.byte	'reg',0
 	.word	359
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	7904
+	.word	7856
 	.byte	4,2,35,0,0,19
 	.byte	'OsEE_tc_SCU_WDTCPU_CON1',0,3,140,2,3
-	.word	8710
+	.word	8662
 	.byte	32
 	.byte	'OsEE_tc_SCU_WDTCPU_SR_tag',0,3,143,2,15,4,14
 	.byte	'reg',0
 	.word	359
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	8347
+	.word	8299
 	.byte	4,2,35,0,0,19
 	.byte	'OsEE_tc_SCU_WDTCPU_SR',0,3,149,2,3
-	.word	8805
+	.word	8757
 	.byte	32
 	.byte	'OsEE_tc_SCU_WDTS_CON0_tag',0,3,152,2,15,4,14
 	.byte	'reg',0
 	.word	359
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	7727
+	.word	7679
 	.byte	4,2,35,0,0,19
 	.byte	'OsEE_tc_SCU_WDTS_CON0',0,3,158,2,3
-	.word	8896
+	.word	8848
 	.byte	32
 	.byte	'OsEE_tc_SCU_WDTS_CON1_tag',0,3,161,2,15,4,14
 	.byte	'reg',0
 	.word	359
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	8119
+	.word	8071
 	.byte	4,2,35,0,0,19
 	.byte	'OsEE_tc_SCU_WDTS_CON1',0,3,167,2,3
-	.word	8987
+	.word	8939
 	.byte	32
 	.byte	'OsEE_tc_SCU_WDTS_SR_tag',0,3,170,2,15,4,14
 	.byte	'reg',0
 	.word	359
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	8347
+	.word	8299
 	.byte	4,2,35,0,0,19
 	.byte	'OsEE_tc_SCU_WDTS_SR',0,3,176,2,3
-	.word	9078
+	.word	9030
 	.byte	20
 	.byte	'OsEE_tc_STM_CMCON_bits_tag',0,3,225,6,16,4,15
 	.byte	'msize0',0,1
@@ -1630,7 +1630,7 @@ osEE_kdb_var:	.type	object
 	.word	872
 	.byte	3,0,2,35,3,0,19
 	.byte	'OsEE_tc_STM_CMCON_bits',0,3,243,6,3
-	.word	9165
+	.word	9117
 	.byte	20
 	.byte	'OsEE_tc_STM_ICR_bits_tag',0,3,135,7,16,4,15
 	.byte	'cmp0en',0,1
@@ -1656,7 +1656,7 @@ osEE_kdb_var:	.type	object
 	.word	359
 	.byte	25,0,2,35,0,0,19
 	.byte	'OsEE_tc_STM_ICR_bits',0,3,153,7,3
-	.word	9349
+	.word	9301
 	.byte	13,3,185,11,9,4,16,1
 	.word	872
 	.byte	1,7,2,35,0,15
@@ -1712,7 +1712,7 @@ osEE_kdb_var:	.type	object
 	.word	872
 	.byte	4,0,2,35,3,0,19
 	.byte	'OsEE_tc_SCU_OSCCON_bits',0,3,225,11,3
-	.word	9541
+	.word	9493
 	.byte	13,3,228,11,9,4,16,1
 	.word	872
 	.byte	2,6,2,35,0,15
@@ -1743,7 +1743,7 @@ osEE_kdb_var:	.type	object
 	.word	872
 	.byte	2,0,2,35,3,0,19
 	.byte	'OsEE_tc_SYSPLLCON0_bits',0,3,252,11,3
-	.word	9888
+	.word	9840
 	.byte	13,3,147,12,9,4,15
 	.byte	'k2div',0,1
 	.word	872
@@ -1751,7 +1751,7 @@ osEE_kdb_var:	.type	object
 	.word	359
 	.byte	29,0,2,35,0,0,19
 	.byte	'OsEE_tc_SYSPLLCON1_bits',0,3,153,12,3
-	.word	10084
+	.word	10036
 	.byte	13,3,168,12,9,4,16,1
 	.word	872
 	.byte	1,7,2,35,0,15
@@ -1774,7 +1774,7 @@ osEE_kdb_var:	.type	object
 	.word	359
 	.byte	24,0,2,35,0,0,19
 	.byte	'OsEE_tc_SCU_SYSPLLSTAT_bits',0,3,186,12,3
-	.word	10152
+	.word	10104
 	.byte	13,3,201,12,9,4,16,1
 	.word	872
 	.byte	1,7,2,35,0,15
@@ -1797,7 +1797,7 @@ osEE_kdb_var:	.type	object
 	.word	359
 	.byte	25,0,2,35,0,0,19
 	.byte	'OsEE_tc_SCU_PERPLLSTAT_bits',0,3,219,12,3
-	.word	10310
+	.word	10262
 	.byte	13,3,142,13,9,4,15
 	.byte	'stmdiv',0,1
 	.word	872
@@ -1835,7 +1835,7 @@ osEE_kdb_var:	.type	object
 	.word	872
 	.byte	1,0,2,35,3,0,19
 	.byte	'OsEE_tc_SCU_CCUCON0_bits',0,3,168,13,4
-	.word	10467
+	.word	10419
 	.byte	13,3,171,13,9,4,15
 	.byte	'mcandiv',0,1
 	.word	872
@@ -1873,7 +1873,7 @@ osEE_kdb_var:	.type	object
 	.word	872
 	.byte	1,0,2,35,3,0,19
 	.byte	'OsEE_tc_SCU_CCUCON1_bits',0,3,199,13,3
-	.word	10710
+	.word	10662
 	.byte	19
 	.byte	'AppModeType',0,7,96,49
 	.word	872
@@ -1956,7 +1956,7 @@ osEE_kdb_var:	.type	object
 	.word	2539
 	.byte	19
 	.byte	'OsEE_TDB',0,6,162,2,14
-	.word	11538
+	.word	11490
 	.byte	19
 	.byte	'OsEE_CounterCB',0,6,222,2,3
 	.word	3295
@@ -1964,7 +1964,7 @@ osEE_kdb_var:	.type	object
 	.word	3417
 	.byte	19
 	.byte	'OsEE_CounterDB',0,6,252,2,14
-	.word	11585
+	.word	11537
 	.byte	19
 	.byte	'OsEE_action_type',0,6,132,3,3
 	.word	3044
@@ -1975,7 +1975,7 @@ osEE_kdb_var:	.type	object
 	.word	3135
 	.byte	19
 	.byte	'OsEE_action',0,6,157,3,14
-	.word	11667
+	.word	11619
 	.byte	19
 	.byte	'OsEE_trigger_status',0,6,184,4,3
 	.word	2754
@@ -1986,7 +1986,7 @@ osEE_kdb_var:	.type	object
 	.word	3176
 	.byte	19
 	.byte	'OsEE_TriggerDB',0,6,151,5,14
-	.word	11746
+	.word	11698
 	.byte	19
 	.byte	'OsEE_AlarmCB',0,6,155,5,24
 	.word	2879
@@ -1994,22 +1994,22 @@ osEE_kdb_var:	.type	object
 	.word	3176
 	.byte	19
 	.byte	'OsEE_AlarmDB',0,6,156,5,24
-	.word	11797
+	.word	11749
 	.byte	11
 	.word	5598
 	.byte	19
 	.byte	'OsEE_autostart_trigger_info',0,6,191,5,14
-	.word	11824
+	.word	11776
 	.byte	11
 	.word	5705
 	.byte	19
 	.byte	'OsEE_autostart_trigger',0,6,199,5,14
-	.word	11866
+	.word	11818
 	.byte	11
 	.word	5492
 	.byte	19
 	.byte	'OsEE_autostart_tdb',0,6,211,5,14
-	.word	11903
+	.word	11855
 	.byte	19
 	.byte	'OsEE_CCB',0,6,193,6,3
 	.word	5158
@@ -2017,7 +2017,7 @@ osEE_kdb_var:	.type	object
 	.word	5786
 	.byte	19
 	.byte	'OsEE_CDB',0,6,241,6,14
-	.word	11954
+	.word	11906
 	.byte	19
 	.byte	'OsEE_KCB',0,6,186,7,3
 	.word	1464
@@ -2025,7 +2025,7 @@ osEE_kdb_var:	.type	object
 	.word	3531
 	.byte	19
 	.byte	'OsEE_KDB',0,6,131,8,14
-	.word	11995
+	.word	11947
 .L100:
 	.byte	11
 	.word	3531
@@ -2042,13 +2042,13 @@ osEE_kdb_var:	.type	object
 	.word	1856
 	.byte	23,0,33
 	.byte	'_lc_ub_ustack_tc0',0,12,33,38
-	.word	12038
+	.word	11990
 	.byte	1,1,33
 	.byte	'_lc_ub_ustack_tc1',0,12,41,38
-	.word	12038
+	.word	11990
 	.byte	1,1,33
 	.byte	'_lc_ub_ustack_tc2',0,12,49,38
-	.word	12038
+	.word	11990
 	.byte	1,1
 .L106:
 	.byte	34,4
@@ -2058,13 +2058,13 @@ osEE_kdb_var:	.type	object
 	.byte	35,0,0
 .L107:
 	.byte	11
-	.word	12138
+	.word	12090
 .L108:
 	.byte	11
-	.word	12138
+	.word	12090
 .L109:
 	.byte	11
-	.word	12138
+	.word	12090
 .L110:
 	.byte	34,64
 	.word	2278
@@ -2077,22 +2077,22 @@ osEE_kdb_var:	.type	object
 	.byte	35,3,0
 .L112:
 	.byte	11
-	.word	12180
+	.word	12132
 	.byte	34,64
 	.word	2539
 	.byte	35,1,0
 .L113:
 	.byte	11
-	.word	12195
+	.word	12147
 .L114:
 	.byte	11
-	.word	12195
+	.word	12147
 	.byte	34,32
 	.word	2732
 	.byte	35,7,0
 .L115:
 	.byte	11
-	.word	12214
+	.word	12166
 .L116:
 	.byte	34,24
 	.word	2224
@@ -2105,19 +2105,19 @@ osEE_kdb_var:	.type	object
 	.byte	35,1,0
 .L118:
 	.byte	11
-	.word	12246
+	.word	12198
 	.byte	34,8
 	.word	5492
 	.byte	35,0,0
 .L119:
 	.byte	11
-	.word	12260
+	.word	12212
 .L120:
 	.byte	11
-	.word	12260
+	.word	12212
 .L121:
 	.byte	11
-	.word	12260
+	.word	12212
 .L122:
 	.byte	34,8
 	.word	3295
@@ -2126,19 +2126,19 @@ osEE_kdb_var:	.type	object
 	.byte	35,0,0
 .L123:
 	.byte	11
-	.word	12293
+	.word	12245
 .L124:
 	.byte	11
-	.word	12293
+	.word	12245
 .L125:
 	.byte	11
-	.word	12293
+	.word	12245
 	.byte	34,12
 	.word	3482
 	.byte	35,2,0
 .L126:
 	.byte	11
-	.word	12317
+	.word	12269
 .L127:
 	.byte	34,16
 	.word	2879
@@ -2147,31 +2147,31 @@ osEE_kdb_var:	.type	object
 	.byte	35,0,0
 .L128:
 	.byte	11
-	.word	12340
+	.word	12292
 	.byte	34,4
 	.word	3509
 	.byte	35,0,0
 .L129:
 	.byte	11
-	.word	12354
+	.word	12306
 	.byte	34,12
 	.word	5598
 	.byte	35,0,0
 .L130:
 	.byte	11
-	.word	12368
+	.word	12320
 	.byte	34,8
 	.word	5705
 	.byte	35,0,0
 .L131:
 	.byte	11
-	.word	12382
+	.word	12334
 .L132:
 	.byte	11
-	.word	12382
+	.word	12334
 .L133:
 	.byte	11
-	.word	12382
+	.word	12334
 .L134:
 	.byte	9
 	.word	359

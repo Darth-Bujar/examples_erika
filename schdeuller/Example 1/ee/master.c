@@ -50,8 +50,6 @@
 
 /* ERIKA Enterprise. */
 #include "shared.h"
-#include "Blinky_LED.h"
-
 OsEE_reg myErrorCounter;
 
 void ErrorHook(StatusType Error)
@@ -67,56 +65,6 @@ void ErrorHook(StatusType Error)
 #endif /* __TASKING__ */
 
 #include <stdio.h>
-
-//extern SemType S;
-//TASK(LOW_priority_task)
-//{
-//
-//    while(1)
-//    {
-//
-//        int i = 0;
-//        for(i = 0; i <= 99999; i++)
-//        {
-//            __asm__ volatile("nop\n\t");
-//        }
-//        printf(" * ");
-//    }
-//}
-// ------------- Tasks example 3 ------------------
-//TASK(HIGH_priority_task)
-//{
-//   printf(" X |");
-//   switch_LED((unsigned int)1);
-//   TerminateTask();
-//}
-
-//TASK(MID_priority_task)
-//{
-//   printf(" Y |");
-//   switch_LED((unsigned int)1);
-//   TerminateTask();
-//}
-//TASK(LOW_priority_task)
-//{
-//   printf(" Z |");
-//   switch_LED((unsigned int)1);
-//   TerminateTask();
-//}
-// --------------------- Tasks example 2 -----------
-//TASK(HIGH_priority_task)
-//{
-//   printf(" X |");
-//   switch_LED((unsigned int)1);
-//   TerminateTask();
-//}
-
-//TASK(LOW_priority_task)
-//{
-//     printf(" Y |");
-//     switch_LED((unsigned int)0);
-//     TerminateTask();
-//}
 
 //------------ Task example 1 ----------------
 TASK(HIGH_priority_task)
@@ -149,7 +97,6 @@ void idle_hook_core0(void)
 #include "Os_MemMap.h"
 #endif /* __TASKING__ */
 
-#include "Blinky_LED.h"
 /*
  * MAIN TASK
  */
@@ -159,9 +106,7 @@ int main(void)
   AppModeType      mode = OSDEFAULTAPPMODE;
   CoreIdType const core_id = GetCoreID();
 
-  initLED();
-  //PostSem(&S);
-  if(core_id == OS_CORE_ID_MASTER)
+ if(core_id == OS_CORE_ID_MASTER)
   {
     StartCore(OS_CORE_ID_0, &status);
     mode = OSDEFAULTAPPMODE;

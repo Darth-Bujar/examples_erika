@@ -14507,8 +14507,6 @@ extern void  FuncLOW_priority_task ( void );
  *
  **************************************************************************/
 extern void idle_hook_core0 (void);
-extern void idle_hook_core1 (void);
-extern void idle_hook_core2 (void);
 
 
 /***************************************************************************
@@ -139679,7 +139677,7 @@ OsEE_CDB  osEE_cdb_var_core1 = {
   },
   /* .p_ccb                         = */ &osEE_ccb_var_core1,
   /* .p_lock                        = */ &osEE_lock_core1,
-  /* .p_idle_hook                   = */ idle_hook_core1,
+  /* .p_idle_hook                   = */ ((void *) 0),
   /* .p_idle_task                   = */ &osEE_tdb_array_core1[1U],
   /* .p_sys_counter_db              = */ &osEE_counter_db_array_core1[0U],
   /* .p_autostart_tdb_array         = */ (OsEE_autostart_tdb (*  )[])&osEE_autostart_tdb_array_core1,
@@ -147323,7 +147321,7 @@ OsEE_CDB  osEE_cdb_var_core2 = {
   },
   /* .p_ccb                         = */ &osEE_ccb_var_core2,
   /* .p_lock                        = */ &osEE_lock_core2,
-  /* .p_idle_hook                   = */ idle_hook_core2,
+  /* .p_idle_hook                   = */ ((void *) 0),
   /* .p_idle_task                   = */ &osEE_tdb_array_core2[1U],
   /* .p_sys_counter_db              = */ &osEE_counter_db_array_core2[0U],
   /* .p_autostart_tdb_array         = */ (OsEE_autostart_tdb (*  )[])&osEE_autostart_tdb_array_core2,

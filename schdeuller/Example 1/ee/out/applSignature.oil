@@ -20,15 +20,9 @@ CPU test_application {
 		CPU_DATA = TRICORE {
 			ID = 0x1;
 			MULTI_STACK = TRUE;
-			IDLEHOOK = TRUE {
-				HOOKNAME = "idle_hook_core1";
-			};
 		};
 		CPU_DATA = TRICORE {
 			ID = 0x2;
-			IDLEHOOK = TRUE {
-				HOOKNAME = "idle_hook_core2";
-			};
 		};
 		MCU_DATA = TC39X {
 			DERIVATIVE = "tc397xe";
@@ -43,9 +37,6 @@ CPU test_application {
 	};
 	APPDATA tricore_2G_mc_blink {
 		APP_SRC = "master.c";
-		APP_SRC = "slave1.c";
-		APP_SRC = "slave2.c";
-		APP_SRC = "Blinky_LED.c";
 	};
 	TASK HIGH_priority_task {
 		CPU_ID = 0x0;

@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc8236b --dep-file=obj/ee_oo_sched_entry_points.c.d_tmp -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -DOS_EE_BUILD -D__CPU__=tc38x -D__CPU_TC38X__ -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src -g2 --make-target=obj/ee_oo_sched_entry_points.c.o --language=+gcc,-volatile,+strings --default-near-size=0 -O1 -o obj\\ee_oo_sched_entry_points.src D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_oo_sched_entry_points.c"
+	.compiler_invocation	"ctc -f cc1164b --dep-file=obj/ee_oo_sched_entry_points.c.d_tmp -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -DOS_EE_BUILD -D__CPU__=tc38x -D__CPU_TC38X__ -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src -g2 --make-target=obj/ee_oo_sched_entry_points.c.o --language=+gcc,-volatile,+strings --default-near-size=0 -O1 -o obj\\ee_oo_sched_entry_points.src D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_oo_sched_entry_points.c"
 	.compiler_name		"ctc"
 	;source	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_oo_sched_entry_points.c'
 
@@ -3072,15 +3072,15 @@ __osEE_idle_hook_wrapper_function_end:
 	.word	0,0
 .L105:
 	.word	0,0
-.L76:
-	.word	-1,.L25,.L71-.L25,.L50-.L25
-	.half	1
-	.byte	88
-	.word	0,0
 .L111:
 	.word	-1,.L25,.L197-.L25,.L16-.L25
 	.half	5
 	.byte	144,32,157,32,0
+	.word	0,0
+.L76:
+	.word	-1,.L25,.L71-.L25,.L50-.L25
+	.half	1
+	.byte	88
 	.word	0,0
 .L90:
 	.word	0,0

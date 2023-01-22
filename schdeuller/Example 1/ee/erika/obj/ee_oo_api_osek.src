@@ -1,6 +1,6 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc10628b --dep-file=obj/ee_oo_api_osek.c.d_tmp -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -DOS_EE_BUILD -D__CPU__=tc38x -D__CPU_TC38X__ -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src -g2 --make-target=obj/ee_oo_api_osek.c.o --language=+gcc,-volatile,+strings --default-near-size=0 -O1 -o obj\\ee_oo_api_osek.src D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_oo_api_osek.c"
+	.compiler_invocation	"ctc -f cc18320b --dep-file=obj/ee_oo_api_osek.c.d_tmp -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -DOS_EE_BUILD -D__CPU__=tc38x -D__CPU_TC38X__ -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src -g2 --make-target=obj/ee_oo_api_osek.c.o --language=+gcc,-volatile,+strings --default-near-size=0 -O1 -o obj\\ee_oo_api_osek.src D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_oo_api_osek.c"
 	.compiler_name		"ctc"
 	;source	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_oo_api_osek.c'
 
@@ -19456,12 +19456,12 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1106:
 	.word	0,0
-.L1122:
-	.word	0,0
 .L1097:
 	.word	0,0
-.L1086:
-	.word	-1,.L417,.L1082-.L417,.L71-.L417
+.L1122:
+	.word	0,0
+.L1112:
+	.word	-1,.L417,.L1108-.L417,.L77-.L417
 	.half	1
 	.byte	88
 	.word	0,0
@@ -19470,33 +19470,33 @@ __ShutdownAllCores_function_end:
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
+.L1086:
+	.word	-1,.L417,.L1082-.L417,.L71-.L417
+	.half	1
+	.byte	88
+	.word	0,0
 .L1103:
 	.word	-1,.L417,.L2705-.L417,.L71-.L417
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L1112:
-	.word	-1,.L417,.L1108-.L417,.L77-.L417
-	.half	1
-	.byte	88
-	.word	0,0
 .L1094:
 	.word	0,0
-.L1081:
-	.word	0,0
 .L1107:
+	.word	0,0
+.L1081:
 	.word	0,0
 .L1123:
 	.word	0,0
 .L1098:
 	.word	0,0
-.L1090:
-	.word	-1,.L417,.L1091-.L417,.L73-.L417
+.L1115:
+	.word	-1,.L417,.L1116-.L417,.L78-.L417
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L1115:
-	.word	-1,.L417,.L1116-.L417,.L78-.L417
+.L1090:
+	.word	-1,.L417,.L1091-.L417,.L73-.L417
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
@@ -19594,13 +19594,8 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1854:
 	.word	0,0
-.L1860:
-	.word	-1,.L435,.L2833-.L435,.L204-.L435
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
-.L1844:
-	.word	-1,.L435,.L1840-.L435,.L204-.L435
+.L1817:
+	.word	-1,.L435,.L1813-.L435,.L201-.L435
 	.half	1
 	.byte	88
 	.word	0,0
@@ -19609,10 +19604,15 @@ __ShutdownAllCores_function_end:
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L1817:
-	.word	-1,.L435,.L1813-.L435,.L201-.L435
+.L1844:
+	.word	-1,.L435,.L1840-.L435,.L204-.L435
 	.half	1
 	.byte	88
+	.word	0,0
+.L1860:
+	.word	-1,.L435,.L2833-.L435,.L204-.L435
+	.half	5
+	.byte	144,32,157,32,0
 	.word	0,0
 .L1825:
 	.word	0,0
@@ -19620,17 +19620,17 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1839:
 	.word	0,0
-.L1830:
-	.word	0,0
 .L1855:
 	.word	0,0
-.L1847:
-	.word	-1,.L435,.L1848-.L435,.L205-.L435
-	.half	5
-	.byte	144,32,157,32,0
+.L1830:
 	.word	0,0
 .L1821:
 	.word	-1,.L435,.L1822-.L435,.L202-.L435
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L1847:
+	.word	-1,.L435,.L1848-.L435,.L205-.L435
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
@@ -19729,16 +19729,6 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1192:
 	.word	0,0
-.L1223:
-	.word	-1,.L419,.L2729-.L419,.L96-.L419
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
-.L1198:
-	.word	-1,.L419,.L2724-.L419,.L85-.L419
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
 .L1169:
 	.word	-1,.L419,.L1165-.L419,.L85-.L419
 	.half	1
@@ -19748,6 +19738,16 @@ __ShutdownAllCores_function_end:
 	.word	-1,.L419,.L1203-.L419,.L96-.L419
 	.half	1
 	.byte	88
+	.word	0,0
+.L1223:
+	.word	-1,.L419,.L2729-.L419,.L96-.L419
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L1198:
+	.word	-1,.L419,.L2724-.L419,.L85-.L419
+	.half	5
+	.byte	144,32,157,32,0
 	.word	0,0
 .L1162:
 	.word	0,0
@@ -19764,13 +19764,13 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1193:
 	.word	0,0
-.L1173:
-	.word	-1,.L419,.L1174-.L419,.L89-.L419
+.L1210:
+	.word	-1,.L419,.L1211-.L419,.L97-.L419
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L1210:
-	.word	-1,.L419,.L1211-.L419,.L97-.L419
+.L1173:
+	.word	-1,.L419,.L1174-.L419,.L89-.L419
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
@@ -19887,14 +19887,19 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L2162:
 	.word	0,0
-.L2153:
-	.word	0,0
 .L2178:
+	.word	0,0
+.L2153:
 	.word	0,0
 .L2184:
 	.word	-1,.L447,.L2922-.L447,.L305-.L447
 	.half	5
 	.byte	144,32,157,32,0
+	.word	0,0
+.L2168:
+	.word	-1,.L447,.L2164-.L447,.L305-.L447
+	.half	1
+	.byte	89
 	.word	0,0
 .L2159:
 	.word	-1,.L447,.L2918-.L447,.L297-.L447
@@ -19905,11 +19910,6 @@ __ShutdownAllCores_function_end:
 	.word	-1,.L447,.L2123-.L447,.L297-.L447
 	.half	1
 	.byte	83
-	.word	0,0
-.L2168:
-	.word	-1,.L447,.L2164-.L447,.L305-.L447
-	.half	1
-	.byte	89
 	.word	0,0
 .L2135:
 	.word	0,0
@@ -20129,13 +20129,8 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1692:
 	.word	0,0
-.L1723:
-	.word	-1,.L437,.L2846-.L437,.L216-.L437
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
-.L1707:
-	.word	-1,.L437,.L1703-.L437,.L216-.L437
+.L1680:
+	.word	-1,.L437,.L1676-.L437,.L211-.L437
 	.half	1
 	.byte	88
 	.word	0,0
@@ -20144,28 +20139,33 @@ __ShutdownAllCores_function_end:
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L1680:
-	.word	-1,.L437,.L1676-.L437,.L211-.L437
+.L1707:
+	.word	-1,.L437,.L1703-.L437,.L216-.L437
 	.half	1
 	.byte	88
 	.word	0,0
-.L1688:
-	.word	0,0
-.L1702:
-	.word	0,0
-.L1675:
-	.word	0,0
-.L1693:
-	.word	0,0
-.L1718:
-	.word	0,0
-.L1710:
-	.word	-1,.L437,.L1711-.L437,.L217-.L437
+.L1723:
+	.word	-1,.L437,.L2846-.L437,.L216-.L437
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
+.L1688:
+	.word	0,0
+.L1675:
+	.word	0,0
+.L1702:
+	.word	0,0
+.L1718:
+	.word	0,0
+.L1693:
+	.word	0,0
 .L1684:
 	.word	-1,.L437,.L1685-.L437,.L214-.L437
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L1710:
+	.word	-1,.L437,.L1711-.L437,.L217-.L437
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
@@ -20293,15 +20293,15 @@ __ShutdownAllCores_function_end:
 	.half	1
 	.byte	108
 	.word	0,0
-.L1772:
-	.word	-1,.L439,.L2858-.L439,.L1771-.L439
-	.half	1
-	.byte	111
-	.word	0,0
 .L1740:
 	.word	-1,.L439,.L2852-.L439,.L226-.L439
 	.half	1
 	.byte	98
+	.word	0,0
+.L1772:
+	.word	-1,.L439,.L2858-.L439,.L1771-.L439
+	.half	1
+	.byte	111
 	.word	0,0
 .L1735:
 	.word	0,0
@@ -20630,15 +20630,15 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L2091:
 	.word	0,0
-.L2097:
-	.word	-1,.L445,.L2908-.L445,.L287-.L445
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
 .L2077:
 	.word	-1,.L445,.L2073-.L445,.L287-.L445
 	.half	1
 	.byte	89
+	.word	0,0
+.L2097:
+	.word	-1,.L445,.L2908-.L445,.L287-.L445
+	.half	5
+	.byte	144,32,157,32,0
 	.word	0,0
 .L2085:
 	.word	0,0
@@ -20885,15 +20885,15 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1401:
 	.word	0,0
-.L1407:
-	.word	-1,.L429,.L2785-.L429,.L163-.L429
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
 .L1387:
 	.word	-1,.L429,.L1383-.L429,.L163-.L429
 	.half	1
 	.byte	89
+	.word	0,0
+.L1407:
+	.word	-1,.L429,.L2785-.L429,.L163-.L429
+	.half	5
+	.byte	144,32,157,32,0
 	.word	0,0
 .L1395:
 	.word	0,0
@@ -21004,18 +21004,13 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L2385:
 	.word	0,0
-.L2391:
-	.word	-1,.L453,.L2964-.L453,.L347-.L453
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
 .L2345:
 	.word	-1,.L453,.L2341-.L453,.L341-.L453
 	.half	1
 	.byte	88
 	.word	0,0
-.L2366:
-	.word	-1,.L453,.L2959-.L453,.L341-.L453
+.L2391:
+	.word	-1,.L453,.L2964-.L453,.L347-.L453
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
@@ -21024,25 +21019,30 @@ __ShutdownAllCores_function_end:
 	.half	1
 	.byte	89
 	.word	0,0
+.L2366:
+	.word	-1,.L453,.L2959-.L453,.L341-.L453
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
 .L2353:
 	.word	0,0
-.L2370:
-	.word	0,0
 .L2340:
+	.word	0,0
+.L2370:
 	.word	0,0
 .L2386:
 	.word	0,0
 .L2361:
 	.word	0,0
-.L2349:
-	.word	-1,.L453,.L2350-.L453,.L344-.L453
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
 .L2378:
 	.word	-1,.L453,.L2379-.L453,.L348-.L453
 	.half	1
 	.byte	81
+	.word	0,0
+.L2349:
+	.word	-1,.L453,.L2350-.L453,.L344-.L453
+	.half	5
+	.byte	144,32,157,32,0
 	.word	0,0
 .L2327:
 	.word	0,0
@@ -21200,9 +21200,14 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1458:
 	.word	0,0
+.L1474:
+	.word	0,0
 .L1449:
 	.word	0,0
-.L1474:
+.L1480:
+	.word	-1,.L423,.L2746-.L423,.L118-.L423
+	.half	5
+	.byte	144,32,157,32,0
 	.word	0,0
 .L1435:
 	.word	-1,.L423,.L1431-.L423,.L115-.L423
@@ -21219,30 +21224,25 @@ __ShutdownAllCores_function_end:
 	.half	1
 	.byte	89
 	.word	0,0
-.L1480:
-	.word	-1,.L423,.L2746-.L423,.L118-.L423
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
 .L1443:
 	.word	0,0
 .L1430:
 	.word	0,0
 .L1459:
 	.word	0,0
-.L1450:
-	.word	0,0
 .L1475:
 	.word	0,0
-.L1467:
-	.word	-1,.L423,.L1468-.L423,.L119-.L423
-	.half	1
-	.byte	81
+.L1450:
 	.word	0,0
 .L1439:
 	.word	-1,.L423,.L1440-.L423,.L116-.L423
 	.half	5
 	.byte	144,32,157,32,0
+	.word	0,0
+.L1467:
+	.word	-1,.L423,.L1468-.L423,.L119-.L423
+	.half	1
+	.byte	81
 	.word	0,0
 .L1425:
 	.word	0,0
@@ -21338,19 +21338,14 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1622:
 	.word	0,0
-.L1638:
-	.word	0,0
 .L1613:
+	.word	0,0
+.L1638:
 	.word	0,0
 .L1601:
 	.word	-1,.L433,.L1597-.L433,.L186-.L433
 	.half	1
 	.byte	88
-	.word	0,0
-.L1644:
-	.word	-1,.L433,.L2821-.L433,.L194-.L433
-	.half	5
-	.byte	144,32,157,32,0
 	.word	0,0
 .L1619:
 	.word	-1,.L433,.L2816-.L433,.L186-.L433
@@ -21362,23 +21357,28 @@ __ShutdownAllCores_function_end:
 	.half	1
 	.byte	88
 	.word	0,0
+.L1644:
+	.word	-1,.L433,.L2821-.L433,.L194-.L433
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
 .L1609:
 	.word	0,0
-.L1623:
-	.word	0,0
 .L1596:
+	.word	0,0
+.L1623:
 	.word	0,0
 .L1614:
 	.word	0,0
 .L1639:
 	.word	0,0
-.L1631:
-	.word	-1,.L433,.L1632-.L433,.L195-.L433
+.L1605:
+	.word	-1,.L433,.L1606-.L433,.L192-.L433
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L1605:
-	.word	-1,.L433,.L1606-.L433,.L192-.L433
+.L1631:
+	.word	-1,.L433,.L1632-.L433,.L195-.L433
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
@@ -21477,19 +21477,14 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L2013:
 	.word	0,0
-.L2004:
-	.word	0,0
 .L2030:
+	.word	0,0
+.L2004:
 	.word	0,0
 .L2010:
 	.word	-1,.L443,.L2888-.L443,.L261-.L443
 	.half	5
 	.byte	144,32,157,32,0
-	.word	0,0
-.L2019:
-	.word	-1,.L443,.L2015-.L443,.L266-.L443
-	.half	1
-	.byte	88
 	.word	0,0
 .L2036:
 	.word	-1,.L443,.L2891-.L443,.L266-.L443
@@ -21501,23 +21496,28 @@ __ShutdownAllCores_function_end:
 	.half	1
 	.byte	88
 	.word	0,0
+.L2019:
+	.word	-1,.L443,.L2015-.L443,.L266-.L443
+	.half	1
+	.byte	88
+	.word	0,0
 .L2001:
 	.word	0,0
 .L1988:
 	.word	0,0
 .L2014:
 	.word	0,0
-.L2005:
-	.word	0,0
 .L2031:
 	.word	0,0
-.L2022:
-	.word	-1,.L443,.L2023-.L443,.L267-.L443
-	.half	5
-	.byte	144,32,157,32,0
+.L2005:
 	.word	0,0
 .L1997:
 	.word	-1,.L443,.L1998-.L443,.L262-.L443
+	.half	5
+	.byte	144,32,157,32,0
+	.word	0,0
+.L2022:
+	.word	-1,.L443,.L2023-.L443,.L267-.L443
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
@@ -21638,13 +21638,18 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1533:
 	.word	0,0
-.L1548:
-	.word	-1,.L431,.L1544-.L431,.L179-.L431
-	.half	1
-	.byte	88
+.L1564:
+	.word	-1,.L431,.L2803-.L431,.L179-.L431
+	.half	5
+	.byte	144,32,157,32,0
 	.word	0,0
 .L1521:
 	.word	-1,.L431,.L1517-.L431,.L170-.L431
+	.half	1
+	.byte	88
+	.word	0,0
+.L1548:
+	.word	-1,.L431,.L1544-.L431,.L179-.L431
 	.half	1
 	.byte	88
 	.word	0,0
@@ -21653,28 +21658,23 @@ __ShutdownAllCores_function_end:
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L1564:
-	.word	-1,.L431,.L2803-.L431,.L179-.L431
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
 .L1529:
 	.word	0,0
-.L1543:
-	.word	0,0
 .L1516:
+	.word	0,0
+.L1543:
 	.word	0,0
 .L1559:
 	.word	0,0
 .L1534:
 	.word	0,0
-.L1551:
-	.word	-1,.L431,.L1552-.L431,.L180-.L431
+.L1525:
+	.word	-1,.L431,.L1526-.L431,.L177-.L431
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L1525:
-	.word	-1,.L431,.L1526-.L431,.L177-.L431
+.L1551:
+	.word	-1,.L431,.L1552-.L431,.L180-.L431
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
@@ -21924,15 +21924,15 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1029:
 	.word	0,0
-.L1001:
-	.word	-1,.L425,.L997-.L425,.L983-.L425
-	.half	1
-	.byte	88
-	.word	0,0
 .L1035:
 	.word	-1,.L425,.L2758-.L425,.L983-.L425
 	.half	5
 	.byte	144,32,157,32,0
+	.word	0,0
+.L1001:
+	.word	-1,.L425,.L997-.L425,.L983-.L425
+	.half	1
+	.byte	88
 	.word	0,0
 .L1009:
 	.word	0,0
@@ -22316,15 +22316,15 @@ __ShutdownAllCores_function_end:
 	.half	1
 	.byte	89
 	.word	0,0
-.L982:
-	.word	-1,.L413,.L2693-.L413,.L62-.L413
-	.half	5
-	.byte	144,32,157,32,0
-	.word	0,0
 .L833:
 	.word	-1,.L413,.L829-.L413,.L799-.L413
 	.half	1
 	.byte	92
+	.word	0,0
+.L982:
+	.word	-1,.L413,.L2693-.L413,.L62-.L413
+	.half	5
+	.byte	144,32,157,32,0
 	.word	0,0
 .L841:
 	.word	0,0
@@ -22635,11 +22635,6 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1290:
 	.word	0,0
-.L1271:
-	.word	-1,.L421,.L2733-.L421,.L103-.L421
-	.half	1
-	.byte	95
-	.word	0,0
 .L1296:
 	.word	-1,.L421,.L2736-.L421,.L107-.L421
 	.half	5
@@ -22649,6 +22644,11 @@ __ShutdownAllCores_function_end:
 	.word	-1,.L421,.L1276-.L421,.L107-.L421
 	.half	1
 	.byte	89
+	.word	0,0
+.L1271:
+	.word	-1,.L421,.L2733-.L421,.L103-.L421
+	.half	1
+	.byte	95
 	.word	0,0
 .L1253:
 	.word	-1,.L421,.L1249-.L421,.L103-.L421
@@ -22662,13 +22662,13 @@ __ShutdownAllCores_function_end:
 	.half	1
 	.byte	95
 	.word	0,0
-.L1275:
-	.word	0,0
 .L1248:
 	.word	0,0
-.L1291:
+.L1275:
 	.word	0,0
 .L1269:
+	.word	0,0
+.L1291:
 	.word	0,0
 .L1257:
 	.word	-1,.L421,.L1258-.L421,.L106-.L421
@@ -22791,21 +22791,21 @@ __ShutdownAllCores_function_end:
 	.word	0,0
 .L1901:
 	.word	0,0
-.L1888:
-	.word	0,0
 .L1932:
+	.word	0,0
+.L1888:
 	.word	0,0
 .L1948:
 	.word	0,0
 .L1923:
 	.word	0,0
-.L1940:
-	.word	-1,.L441,.L1941-.L441,.L248-.L441
+.L1897:
+	.word	-1,.L441,.L1898-.L441,.L242-.L441
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
-.L1897:
-	.word	-1,.L441,.L1898-.L441,.L242-.L441
+.L1940:
+	.word	-1,.L441,.L1941-.L441,.L248-.L441
 	.half	5
 	.byte	144,32,157,32,0
 	.word	0,0
