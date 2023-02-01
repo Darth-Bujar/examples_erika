@@ -1,0 +1,3 @@
+# Description
+
+This example shows the basic counting semaphore example. One task is a producer and the other 2 tasks are consumers. Consumer tasks has different priorities. Semaphore name can be configured in a config.oil file and after can be used in program after adding it as external variable. Initial value can be configured in config.oil. Task need to be configured as extended task private task). If task configured as a general task type, then it will take the semaphore and not substract anything from it

@@ -80,10 +80,6 @@ CPU test_application {
       //DERIVATIVE = "tc399xe-Astep";
       //REVISION = "AA";
     };
-    
- //   USEEXTENSIONAPI = TRUE {
- //     SEMAPHORE = DEFAULT { NAME = "S"; COUNT=0; };
- //   };
 
     STATUS = EXTENDED;
     ERRORHOOK = TRUE;
@@ -92,7 +88,6 @@ CPU test_application {
     //	USEDYNAMICAPI = TRUE;
     KERNEL_TYPE = OSEK {
       CLASS = ECC2;
-//      RQ    = MQ;
     };
   };
 
@@ -119,14 +114,6 @@ CPU test_application {
     SCHEDULE = FULL;
   };
   
- // TASK MID_priority_task {
- //   CPU_ID = 0x0;
- //   PRIORITY = 4;
- //   AUTOSTART = TRUE;
- //   ACTIVATION = 1;
- //   SCHEDULE = FULL;
- // };
-  
   COUNTER system_timer_master {
     CPU_ID = 0x0;
     MINCYCLE = 1;
@@ -151,6 +138,7 @@ CPU test_application {
     };
     SECONDSPERTICK = 0.01;
   };
+  
   COUNTER system_timer3 {
     CPU_ID = 0x2;
     MINCYCLE = 1;
@@ -169,11 +157,7 @@ CPU test_application {
    ACTION = ACTIVATETASK { TASK = LOW_priority_task; };
   AUTOSTART = TRUE { ALARMTIME = 50 ; CYCLETIME = 100;};
  };
-//  ALARM AlarmMaster_75ms {
-//    COUNTER = system_timer_master;
-//    ACTION = ACTIVATETASK { TASK = MID_priority_task; };
-//    AUTOSTART = TRUE { ALARMTIME = 0 ; CYCLETIME = 75; };
-//  };
+
   ALARM AlarmMaster_50ms {
     COUNTER = system_timer_master;
     ACTION = ACTIVATETASK { TASK = HIGH_priority_task; };

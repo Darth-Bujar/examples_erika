@@ -68,55 +68,20 @@ void ErrorHook(StatusType Error)
 
 #include <stdio.h>
 
-//extern SemType S;
-//TASK(LOW_priority_task)
-//{
-//
-//    while(1)
-//    {
-//
-//        int i = 0;
-//        for(i = 0; i <= 99999; i++)
-//        {
-//            __asm__ volatile("nop\n\t");
-//        }
-//        printf(" * ");
-//    }
-//}
-// ------------- Tasks example 3 ------------------
-//TASK(HIGH_priority_task)
-//{
-//   printf(" X |");
-//   switch_LED((unsigned int)1);
-//   TerminateTask();
-//}
-
-//TASK(MID_priority_task)
-//{
-//   printf(" Y |");
-//   switch_LED((unsigned int)1);
-//   TerminateTask();
-//}
-//TASK(LOW_priority_task)
-//{
-//   printf(" Z |");
-//   switch_LED((unsigned int)1);
-//   TerminateTask();
-//}
 
 // --------------------- Tasks example 2 -----------
 TASK(HIGH_priority_task)
 {
-   printf(" X |");
-   switch_LED((unsigned int)1);
-   TerminateTask();
+  printf(" X |");
+  switch_LED((unsigned int)1);
+  TerminateTask();
 }
 
 TASK(LOW_priority_task)
 {
-     printf(" Y |");
-     switch_LED((unsigned int)0);
-     TerminateTask();
+  printf(" Y |");
+  switch_LED((unsigned int)0);
+  TerminateTask();
 }
 
 void idle_hook_core0(void);
