@@ -1,8 +1,8 @@
 	; Module start
 	.compiler_version	"TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler v1.1r8 Build 22011964"
-	.compiler_invocation	"ctc -f cc5692b --dep-file=obj/ee_tc_cstart.c.d_tmp -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -DOS_EE_BUILD -D__CPU__=tc38x -D__CPU_TC38X__ -IE:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/inc -IE:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src -g2 --make-target=obj/ee_tc_cstart.c.o --language=+gcc,-volatile,+strings --default-near-size=0 -O1 -o obj\\ee_tc_cstart.src E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src/ee_tc_cstart.c"
+	.compiler_invocation	"ctc -f cc8472b --dep-file=obj/ee_tc_cstart.c.d_tmp -c99 --fp-model=3cflnrSTz -D__CPU__=tc38x -D__CPU_TC38X__ --core=tc1.6.2 --fp-model=+float -DOS_EE_BUILD -D__CPU__=tc38x -D__CPU_TC38X__ -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/inc -ID:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src -g2 --make-target=obj/ee_tc_cstart.c.o --language=+gcc,-volatile,+strings --default-near-size=0 -O1 -o obj\\ee_tc_cstart.src D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_cstart.c"
 	.compiler_name		"ctc"
-	;source	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src/ee_tc_cstart.c'
+	;source	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_cstart.c'
 
 	
 $TC162
@@ -1135,24 +1135,24 @@ __osEE_tc_core2_start_function_end:
 	.sdecl	'.debug_info',debug
 	.sect	'.debug_info'
 .L59:
-	.word	14785
+	.word	14741
 	.half	3
 	.word	.L60
 	.byte	4
 .L58:
 	.byte	1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src/ee_tc_cstart.c',0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_cstart.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\',0,12,1
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
 	.word	.L61
 .L98:
 	.byte	2
 	.byte	'unsigned int',0,4,7,3
 	.byte	'osEE_tc_clz',0,3,1,186,1,48
-	.word	271
+	.word	227
 	.byte	1,1,4
 	.byte	'reg',0,1,186,1,69
-	.word	271
+	.word	227
 	.byte	5,0
 .L109:
 	.byte	6
@@ -1166,7 +1166,7 @@ __osEE_tc_core2_start_function_end:
 	.byte	'OS_CORE_ID_2',0,2,8
 	.byte	'OS_CORE_ID_ARR_SIZE',0,3,0,3
 	.byte	'osEE_get_curr_core_id',0,3,1,237,2,52
-	.word	350
+	.word	306
 	.byte	1,1,5,0
 .L106:
 	.byte	2
@@ -1174,18 +1174,18 @@ __osEE_tc_core2_start_function_end:
 .L100:
 	.byte	3
 	.byte	'osEE_tc_get_cpu_wdt_pw',0,3,3,238,2,3
-	.word	500
+	.word	456
 	.byte	1,1
 .L103:
 	.byte	4
 	.byte	'core_index',0,3,238,2,35
-	.word	271
+	.word	227
 .L105:
 	.byte	5,0
 .L269:
 	.byte	3
 	.byte	'osEE_tc_get_safety_wdt_pw',0,3,3,254,2,3
-	.word	500
+	.word	456
 	.byte	1,1
 .L270:
 	.byte	5,0
@@ -1195,11 +1195,11 @@ __osEE_tc_core2_start_function_end:
 .L116:
 	.byte	4
 	.byte	'core_index',0,3,143,3,37
-	.word	271
+	.word	227
 .L118:
 	.byte	4
 	.byte	'pw',0,3,143,3,58
-	.word	500
+	.word	456
 .L120:
 	.byte	5,0
 .L140:
@@ -1208,11 +1208,11 @@ __osEE_tc_core2_start_function_end:
 .L143:
 	.byte	4
 	.byte	'core_index',0,3,182,3,36
-	.word	271
+	.word	227
 .L145:
 	.byte	4
 	.byte	'pw',0,3,182,3,57
-	.word	500
+	.word	456
 .L147:
 	.byte	5,0
 .L169:
@@ -1221,11 +1221,11 @@ __osEE_tc_core2_start_function_end:
 .L172:
 	.byte	4
 	.byte	'core_index',0,3,223,3,36
-	.word	271
+	.word	227
 .L174:
 	.byte	4
 	.byte	'pw',0,3,223,3,57
-	.word	500
+	.word	456
 .L176:
 	.byte	9,5,5,0,0
 .L334:
@@ -1234,7 +1234,7 @@ __osEE_tc_core2_start_function_end:
 .L336:
 	.byte	4
 	.byte	'pw',0,3,249,3,41
-	.word	500
+	.word	456
 .L338:
 	.byte	5,0
 .L341:
@@ -1243,7 +1243,7 @@ __osEE_tc_core2_start_function_end:
 .L343:
 	.byte	4
 	.byte	'pw',0,3,157,4,39
-	.word	500
+	.word	456
 .L345:
 	.byte	5,0
 .L329:
@@ -1252,7 +1252,7 @@ __osEE_tc_core2_start_function_end:
 .L331:
 	.byte	4
 	.byte	'pw',0,3,195,4,39
-	.word	500
+	.word	456
 .L333:
 	.byte	9,5,5,0,0,7,2,72,9,1,8
 	.byte	'OSEE_FALSE',0,0,8
@@ -1263,7 +1263,7 @@ __osEE_tc_core2_start_function_end:
 .L128:
 	.byte	4
 	.byte	'enable',0,3,161,5,43
-	.word	974
+	.word	930
 .L130:
 	.byte	5,0
 .L133:
@@ -1272,198 +1272,198 @@ __osEE_tc_core2_start_function_end:
 .L135:
 	.byte	4
 	.byte	'enable',0,3,183,5,43
-	.word	974
+	.word	930
 .L137:
 	.byte	5,0,2
 	.byte	'unsigned char',0,1,8,10,4,116,3,4,11
 	.byte	'pcxo',0,2
-	.word	500
+	.word	456
 	.byte	16,0,2,35,0,11
 	.byte	'pcxs',0,1
-	.word	1117
+	.word	1073
 	.byte	4,4,2,35,2,11
 	.byte	'ul',0,1
-	.word	1117
+	.word	1073
 	.byte	1,3,2,35,2,11
 	.byte	'pie',0,1
-	.word	1117
+	.word	1073
 	.byte	1,2,2,35,2,11
 	.byte	'pcpn',0,2
-	.word	500
+	.word	456
 	.byte	8,2,2,35,2,12,1
-	.word	1117
+	.word	1073
 	.byte	1,1,2,35,3,12,1
-	.word	1117
+	.word	1073
 	.byte	1,0,2,35,3,0,13,4,114,9,4,14
 	.byte	'reg',0
-	.word	271
+	.word	227
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	1134
+	.word	1090
 	.byte	4,2,35,0,0,15
 	.byte	'void',0,16
-	.word	1272
+	.word	1228
 	.byte	17
 	.byte	'OsEE_addr',0,2,90,31
-	.word	1278
+	.word	1234
 	.byte	10,4,137,1,9,60,14
 	.byte	'psw',0
-	.word	271
+	.word	227
 	.byte	4,2,35,0,14
 	.byte	'a10',0
-	.word	1283
+	.word	1239
 	.byte	4,2,35,4,14
 	.byte	'a11',0
-	.word	1283
+	.word	1239
 	.byte	4,2,35,8,14
 	.byte	'd8',0
-	.word	271
+	.word	227
 	.byte	4,2,35,12,14
 	.byte	'd9',0
-	.word	271
+	.word	227
 	.byte	4,2,35,16,14
 	.byte	'd10',0
-	.word	271
+	.word	227
 	.byte	4,2,35,20,14
 	.byte	'd11',0
-	.word	271
+	.word	227
 	.byte	4,2,35,24,14
 	.byte	'a12',0
-	.word	1283
+	.word	1239
 	.byte	4,2,35,28,14
 	.byte	'a13',0
-	.word	1283
+	.word	1239
 	.byte	4,2,35,32,14
 	.byte	'a14',0
-	.word	1283
+	.word	1239
 	.byte	4,2,35,36,14
 	.byte	'a15',0
-	.word	1283
+	.word	1239
 	.byte	4,2,35,40,14
 	.byte	'd12',0
-	.word	271
+	.word	227
 	.byte	4,2,35,44,14
 	.byte	'd13',0
-	.word	271
+	.word	227
 	.byte	4,2,35,48,14
 	.byte	'd14',0
-	.word	271
+	.word	227
 	.byte	4,2,35,52,14
 	.byte	'd15',0
-	.word	271
+	.word	227
 	.byte	4,2,35,56,0,10,4,156,1,9,60,14
 	.byte	'a11',0
-	.word	1283
-	.byte	4,2,35,0,14
-	.byte	'a2',0
-	.word	1283
-	.byte	4,2,35,4,14
-	.byte	'a3',0
-	.word	1283
-	.byte	4,2,35,8,14
-	.byte	'd0',0
-	.word	271
-	.byte	4,2,35,12,14
-	.byte	'd1',0
-	.word	271
-	.byte	4,2,35,16,14
-	.byte	'd2',0
-	.word	271
-	.byte	4,2,35,20,14
-	.byte	'd3',0
-	.word	271
-	.byte	4,2,35,24,14
-	.byte	'a4',0
-	.word	1283
-	.byte	4,2,35,28,14
-	.byte	'a5',0
-	.word	1283
-	.byte	4,2,35,32,14
-	.byte	'a6',0
-	.word	1283
-	.byte	4,2,35,36,14
-	.byte	'a7',0
-	.word	1283
-	.byte	4,2,35,40,14
-	.byte	'd4',0
-	.word	271
-	.byte	4,2,35,44,14
-	.byte	'd5',0
-	.word	271
-	.byte	4,2,35,48,14
-	.byte	'd6',0
-	.word	271
-	.byte	4,2,35,52,14
-	.byte	'd7',0
-	.word	271
-	.byte	4,2,35,56,0,13,4,175,1,9,60,14
-	.byte	'uctx',0
-	.word	1301
-	.byte	60,2,35,0,14
-	.byte	'lctx',0
-	.word	1501
-	.byte	60,2,35,0,0,10,4,181,1,9,64,14
-	.byte	'l_next',0
 	.word	1239
 	.byte	4,2,35,0,14
+	.byte	'a2',0
+	.word	1239
+	.byte	4,2,35,4,14
+	.byte	'a3',0
+	.word	1239
+	.byte	4,2,35,8,14
+	.byte	'd0',0
+	.word	227
+	.byte	4,2,35,12,14
+	.byte	'd1',0
+	.word	227
+	.byte	4,2,35,16,14
+	.byte	'd2',0
+	.word	227
+	.byte	4,2,35,20,14
+	.byte	'd3',0
+	.word	227
+	.byte	4,2,35,24,14
+	.byte	'a4',0
+	.word	1239
+	.byte	4,2,35,28,14
+	.byte	'a5',0
+	.word	1239
+	.byte	4,2,35,32,14
+	.byte	'a6',0
+	.word	1239
+	.byte	4,2,35,36,14
+	.byte	'a7',0
+	.word	1239
+	.byte	4,2,35,40,14
+	.byte	'd4',0
+	.word	227
+	.byte	4,2,35,44,14
+	.byte	'd5',0
+	.word	227
+	.byte	4,2,35,48,14
+	.byte	'd6',0
+	.word	227
+	.byte	4,2,35,52,14
+	.byte	'd7',0
+	.word	227
+	.byte	4,2,35,56,0,13,4,175,1,9,60,14
+	.byte	'uctx',0
+	.word	1257
+	.byte	60,2,35,0,14
+	.byte	'lctx',0
+	.word	1457
+	.byte	60,2,35,0,0,10,4,181,1,9,64,14
+	.byte	'l_next',0
+	.word	1195
+	.byte	4,2,35,0,14
 	.byte	'ctx',0
-	.word	1689
+	.word	1645
 	.byte	60,2,35,4,0,16
-	.word	1724
+	.word	1680
 	.byte	18
-	.word	1760
+	.word	1716
 	.byte	18
-	.word	1724
+	.word	1680
 	.byte	16
-	.word	1770
+	.word	1726
 	.byte	18
-	.word	1775
+	.word	1731
 .L151:
 	.byte	6
 	.byte	'osEE_tc_csa_init_inline',0,3,3,205,5,3,1,1
 .L154:
 	.byte	4
 	.byte	'p_csa_begin',0,3,207,5,26
-	.word	1765
+	.word	1721
 .L156:
 	.byte	4
 	.byte	'p_csa_end',0,3,208,5,26
-	.word	1780
+	.word	1736
 .L158:
 	.byte	9
 .L164:
 	.byte	5,0,0,16
-	.word	1272
+	.word	1228
 	.byte	19
-	.word	271
+	.word	227
 	.byte	16
-	.word	1866
+	.word	1822
 	.byte	18
-	.word	1871
+	.word	1827
 	.byte	3
 	.byte	'osEE_tc_cmpswapw',0,3,5,184,1,48
-	.word	271
+	.word	227
 	.byte	1,1,4
 	.byte	'p_var',0,5,185,1,29
-	.word	1876
+	.word	1832
 	.byte	4
 	.byte	'new_val',0,5,185,1,45
-	.word	271
+	.word	227
 	.byte	4
 	.byte	'expected_val',0,5,185,1,63
-	.word	271
+	.word	227
 	.byte	5,0,19
-	.word	271
+	.word	227
 	.byte	16
-	.word	1966
+	.word	1922
 	.byte	6
 	.byte	'osEE_hal_spin_lock',0,3,5,150,2,3,1,1,4
 	.byte	'p_lock',0,5,150,2,39
-	.word	1971
+	.word	1927
 	.byte	9,5,0,0,6
 	.byte	'osEE_hal_spin_unlock',0,3,5,160,2,3,1,1,4
 	.byte	'p_lock',0,5,160,2,41
-	.word	1971
+	.word	1927
 	.byte	9,5,0,0,7,8,177,5,9,1,8
 	.byte	'E_OK',0,0,8
 	.byte	'E_OS_ACCESS',0,1,8
@@ -1495,75 +1495,75 @@ __osEE_tc_core2_start_function_end:
 	.byte	'E_OS_SYS_STACK',0,27,8
 	.byte	'E_OS_SYS_ACT',0,28,0,10,7,246,6,9,16,14
 	.byte	'ar_core_mask',0
-	.word	271
+	.word	227
 	.byte	4,2,35,0,14
 	.byte	'not_ar_core_mask',0
-	.word	271
+	.word	227
 	.byte	4,2,35,4,14
 	.byte	'ar_shutdown_mask',0
-	.word	271
+	.word	227
 	.byte	4,2,35,8,14
 	.byte	'ar_num_core_started',0
-	.word	1117
+	.word	1073
 	.byte	1,2,35,12,14
 	.byte	'ar_shutdown_all_cores_error',0
-	.word	2072
+	.word	2028
 	.byte	1,2,35,13,14
 	.byte	'ar_shutdown_all_cores_flag',0
-	.word	974
+	.word	930
 	.byte	1,2,35,14,0,16
-	.word	2616
+	.word	2572
 	.byte	19
-	.word	271
+	.word	227
 	.byte	10,2,158,1,9,4,14
 	.byte	'value',0
-	.word	2804
+	.word	2760
 	.byte	4,2,35,0,0,16
-	.word	2809
+	.word	2765
 	.byte	16
 	.word	.L418-.L59
 .L418:
 	.byte	20
 	.byte	'OsEE_CTX_tag',0,4,243,1,16,16,14
 	.byte	'p_ctx',0
-	.word	2836
+	.word	2792
 	.byte	4,2,35,0,14
 	.byte	'dummy',0
-	.word	271
+	.word	227
 	.byte	4,2,35,4,14
 	.byte	'pcxi',0
-	.word	1239
+	.word	1195
 	.byte	4,2,35,8,14
 	.byte	'ra',0
-	.word	1283
+	.word	1239
 	.byte	4,2,35,12,0,16
-	.word	2841
+	.word	2797
 	.byte	10,4,128,2,9,8,14
 	.byte	'p_bos',0
-	.word	2917
+	.word	2873
 	.byte	4,2,35,0,14
 	.byte	'stack_size',0
-	.word	271
+	.word	227
 	.byte	4,2,35,4,0,18
-	.word	2922
+	.word	2878
 	.byte	16
-	.word	2964
+	.word	2920
 	.byte	10,4,251,1,9,4,14
 	.byte	'p_tos',0
-	.word	2917
+	.word	2873
 	.byte	4,2,35,0,0,16
-	.word	2974
+	.word	2930
 	.byte	10,4,139,2,9,12,14
 	.byte	'p_sdb',0
-	.word	2969
+	.word	2925
 	.byte	4,2,35,0,14
 	.byte	'p_scb',0
-	.word	2996
+	.word	2952
 	.byte	4,2,35,4,14
 	.byte	'isr2_src',0
-	.word	500
+	.word	456
 	.byte	2,2,35,8,0,18
-	.word	3001
+	.word	2957
 	.byte	7,8,221,2,9,1,8
 	.byte	'OSEE_TASK_SUSPENDED',0,0,8
 	.byte	'OSEE_TASK_READY',0,1,8
@@ -1575,85 +1575,85 @@ __osEE_tc_core2_start_function_end:
 	.byte	18
 	.word	.L420-.L59
 	.byte	16
-	.word	3199
+	.word	3155
 .L419:
 	.byte	20
 	.byte	'OsEE_SN_tag',0,9,75,16,8,14
 	.byte	'p_next',0
-	.word	3194
+	.word	3150
 	.byte	4,2,35,0,14
 	.byte	'p_tdb',0
-	.word	3204
+	.word	3160
 	.byte	4,2,35,4,0,16
-	.word	3209
+	.word	3165
 	.byte	10,7,224,1,9,16,14
 	.byte	'current_num_of_act',0
-	.word	1117
+	.word	1073
 	.byte	1,2,35,0,14
 	.byte	'current_prio',0
-	.word	1117
+	.word	1073
 	.byte	1,2,35,1,14
 	.byte	'status',0
-	.word	3061
+	.word	3017
 	.byte	1,2,35,2,14
 	.byte	'wait_mask',0
-	.word	271
+	.word	227
 	.byte	4,2,35,4,14
 	.byte	'event_mask',0
-	.word	271
+	.word	227
 	.byte	4,2,35,8,14
 	.byte	'p_own_sn',0
-	.word	3258
+	.word	3214
 	.byte	4,2,35,12,0,16
-	.word	3263
+	.word	3219
 	.byte	7,8,197,2,9,1,8
 	.byte	'OSEE_TASK_TYPE_BASIC',0,0,8
 	.byte	'OSEE_TASK_TYPE_EXTENDED',0,1,8
 	.byte	'OSEE_TASK_TYPE_ISR2',0,2,8
 	.byte	'OSEE_TASK_TYPE_IDLE',0,3,0,21,1,1,16
-	.word	3498
+	.word	3454
 	.byte	17
 	.byte	'TaskFunc',0,8,186,2,9
-	.word	3501
+	.word	3457
 .L420:
 	.byte	20
 	.byte	'OsEE_TDB_tag',0,7,136,2,16,32,14
 	.byte	'hdb',0
-	.word	3056
+	.word	3012
 	.byte	12,2,35,0,14
 	.byte	'p_tcb',0
-	.word	3393
+	.word	3349
 	.byte	4,2,35,12,14
 	.byte	'tid',0
-	.word	271
+	.word	227
 	.byte	4,2,35,16,14
 	.byte	'task_type',0
-	.word	3398
+	.word	3354
 	.byte	1,2,35,20,14
 	.byte	'task_func',0
-	.word	3506
+	.word	3462
 	.byte	4,2,35,24,14
 	.byte	'ready_prio',0
-	.word	1117
+	.word	1073
 	.byte	1,2,35,28,14
 	.byte	'dispatch_prio',0
-	.word	1117
+	.word	1073
 	.byte	1,2,35,29,14
 	.byte	'max_num_of_act',0
-	.word	1117
+	.word	1073
 	.byte	1,2,35,30,14
 	.byte	'orig_core_id',0
-	.word	350
+	.word	306
 	.byte	1,2,35,31,0,18
-	.word	3524
+	.word	3480
 	.byte	16
-	.word	3712
+	.word	3668
 	.byte	22
-	.word	3717
+	.word	3673
 	.byte	23,0,18
-	.word	3722
+	.word	3678
 	.byte	16
-	.word	3729
+	.word	3685
 	.byte	7,7,178,4,9,1,8
 	.byte	'OSEE_TRIGGER_INACTIVE',0,0,8
 	.byte	'OSEE_TRIGGER_CANCELED',0,1,8
@@ -1664,190 +1664,190 @@ __osEE_tc_core2_start_function_end:
 	.word	.L421-.L59
 	.byte	4,2,35,0,14
 	.byte	'when',0
-	.word	271
+	.word	227
 	.byte	4,2,35,4,14
 	.byte	'status',0
-	.word	3739
+	.word	3695
 	.byte	1,2,35,8,14
 	.byte	'cycle',0
-	.word	271
+	.word	227
 	.byte	4,2,35,10,0,16
-	.word	3864
+	.word	3820
 	.byte	17
 	.byte	'OsEE_kernel_cb',0,7,81,9
-	.word	3501
+	.word	3457
 	.byte	10,7,137,3,9,16,14
 	.byte	'f',0
-	.word	3937
+	.word	3893
 	.byte	4,2,35,0,14
 	.byte	'p_tdb',0
-	.word	3717
+	.word	3673
 	.byte	4,2,35,4,14
 	.byte	'p_counter_db',0
 	.word	.L422-.L59
 	.byte	4,2,35,8,14
 	.byte	'mask',0
-	.word	271
+	.word	227
 	.byte	4,2,35,12,0,7,7,255,2,9,1,8
 	.byte	'OSEE_ACTION_TASK',0,0,8
 	.byte	'OSEE_ACTION_EVENT',0,1,8
 	.byte	'OSEE_ACTION_COUNTER',0,2,8
 	.byte	'OSEE_ACTION_CALLBACK',0,3,0,10,7,152,3,9,20,14
 	.byte	'param',0
-	.word	3960
+	.word	3916
 	.byte	16,2,35,0,14
 	.byte	'type',0
-	.word	4029
+	.word	3985
 	.byte	1,2,35,16,0,18
-	.word	4120
+	.word	4076
 	.byte	20
 	.byte	'OsEE_TriggerDB_tag',0,7,240,4,16,28,14
 	.byte	'p_trigger_cb',0
-	.word	3932
+	.word	3888
 	.byte	4,2,35,0,14
 	.byte	'p_counter_db',0
 	.word	.L422-.L59
 	.byte	4,2,35,4,14
 	.byte	'action',0
-	.word	4156
+	.word	4112
 	.byte	20,2,35,8,0,18
-	.word	4161
+	.word	4117
 .L421:
 	.byte	16
-	.word	4247
+	.word	4203
 	.byte	17
 	.byte	'OsEE_TriggerQ',0,7,209,2,3
-	.word	4252
+	.word	4208
 	.byte	10,7,213,2,9,8,14
 	.byte	'trigger_queue',0
-	.word	4257
+	.word	4213
 	.byte	4,2,35,0,14
 	.byte	'value',0
-	.word	271
+	.word	227
 	.byte	4,2,35,4,0,16
-	.word	4280
+	.word	4236
 	.byte	10,8,183,3,9,12,14
 	.byte	'maxallowedvalue',0
-	.word	271
+	.word	227
 	.byte	4,2,35,0,14
 	.byte	'ticksperbase',0
-	.word	271
+	.word	227
 	.byte	4,2,35,4,14
 	.byte	'mincycle',0
-	.word	271
+	.word	227
 	.byte	4,2,35,8,0,10,7,239,2,9,20,14
 	.byte	'p_counter_cb',0
-	.word	4325
+	.word	4281
 	.byte	4,2,35,0,14
 	.byte	'info',0
-	.word	4330
+	.word	4286
 	.byte	12,2,35,4,14
 	.byte	'core_id',0
-	.word	350
+	.word	306
 	.byte	1,2,35,16,0,18
-	.word	4402
+	.word	4358
 .L422:
 	.byte	16
-	.word	4462
+	.word	4418
 	.byte	22
-	.word	4467
+	.word	4423
 	.byte	23,0,18
-	.word	4472
+	.word	4428
 	.byte	16
-	.word	4479
+	.word	4435
 	.byte	18
-	.word	4161
+	.word	4117
 	.byte	16
-	.word	4489
+	.word	4445
 	.byte	22
-	.word	4494
+	.word	4450
 	.byte	23,0,18
-	.word	4499
+	.word	4455
 	.byte	16
-	.word	4506
+	.word	4462
 	.byte	10,7,202,7,9,36,14
 	.byte	'p_kcb',0
-	.word	2799
+	.word	2755
 	.byte	4,2,35,0,14
 	.byte	'p_lock',0
-	.word	1971
+	.word	1927
 	.byte	4,2,35,4,14
 	.byte	'p_barrier',0
-	.word	2831
+	.word	2787
 	.byte	4,2,35,8,14
 	.byte	'p_tdb_ptr_array',0
-	.word	3734
+	.word	3690
 	.byte	4,2,35,12,14
 	.byte	'tdb_array_size',0
-	.word	271
+	.word	227
 	.byte	4,2,35,16,14
 	.byte	'p_counter_ptr_array',0
-	.word	4484
+	.word	4440
 	.byte	4,2,35,20,14
 	.byte	'counter_array_size',0
-	.word	271
+	.word	227
 	.byte	4,2,35,24,14
 	.byte	'p_alarm_ptr_array',0
-	.word	4511
+	.word	4467
 	.byte	4,2,35,28,14
 	.byte	'alarm_array_size',0
-	.word	271
+	.word	227
 	.byte	4,2,35,32,0,18
-	.word	4516
+	.word	4472
 	.byte	16
-	.word	4732
+	.word	4688
 	.byte	3
 	.byte	'osEE_get_kernel',0,3,6,85,50
-	.word	4737
+	.word	4693
 	.byte	1,1,5,0,16
-	.word	3498
+	.word	3454
 	.byte	18
-	.word	4161
+	.word	4117
 	.byte	16
-	.word	4776
+	.word	4732
 	.byte	16
-	.word	3498
+	.word	3454
 	.byte	22
-	.word	2922
+	.word	2878
 	.byte	23,0,18
-	.word	4791
+	.word	4747
 	.byte	16
-	.word	4798
+	.word	4754
 	.byte	22
-	.word	2974
+	.word	2930
 	.byte	23,0,16
-	.word	4808
+	.word	4764
 	.byte	10,4,150,2,9,12,14
 	.byte	'p_sdb_array',0
-	.word	4803
+	.word	4759
 	.byte	4,2,35,0,14
 	.byte	'p_scb_array',0
-	.word	4815
+	.word	4771
 	.byte	4,2,35,4,14
 	.byte	'stack_num',0
-	.word	271
+	.word	227
 	.byte	4,2,35,8,0,18
-	.word	4820
+	.word	4776
 	.byte	10,9,193,1,9,8,14
 	.byte	'p_head',0
-	.word	3258
+	.word	3214
 	.byte	4,2,35,0,14
 	.byte	'p_tail',0
-	.word	3258
+	.word	3214
 	.byte	4,2,35,4,0,24,24
-	.word	4893
+	.word	4849
 	.byte	25,2,0,10,9,198,1,9,28,14
 	.byte	'queue',0
-	.word	4932
+	.word	4888
 	.byte	24,2,35,0,14
 	.byte	'mask',0
-	.word	1117
+	.word	1073
 	.byte	1,2,35,24,0,7,7,115,9,1,8
 	.byte	'OSEE_KERNEL_INITIALIZED',0,0,8
 	.byte	'OSEE_KERNEL_STARTING',0,1,8
 	.byte	'OSEE_KERNEL_STARTED',0,2,8
 	.byte	'OSEE_KERNEL_SHUTDOWN',0,3,0,19
-	.word	4977
+	.word	4933
 	.byte	7,8,244,5,9,1,8
 	.byte	'OSServiceId_ActivateTask',0,0,8
 	.byte	'OSServiceId_TerminateTask',0,2,8
@@ -1894,671 +1894,671 @@ __osEE_tc_core2_start_function_end:
 	.byte	'OSEE_SHUTDOWNHOOK_CTX',0,9,8
 	.byte	'OSEE_ALARMCALLBACK_CTX',0,10,0,10,7,224,5,9,60,14
 	.byte	'p_curr',0
-	.word	3717
+	.word	3673
 	.byte	4,2,35,0,14
 	.byte	'rq',0
-	.word	4941
+	.word	4897
 	.byte	28,2,35,4,14
 	.byte	'p_free_sn',0
-	.word	3258
+	.word	3214
 	.byte	4,2,35,32,14
 	.byte	'p_stk_sn',0
-	.word	3258
+	.word	3214
 	.byte	4,2,35,36,14
 	.byte	'os_status',0
-	.word	5077
+	.word	5033
 	.byte	1,2,35,40,14
 	.byte	'app_mode',0
-	.word	1117
+	.word	1073
 	.byte	1,2,35,41,14
 	.byte	'last_error',0
-	.word	2072
+	.word	2028
 	.byte	1,2,35,42,14
 	.byte	'service_id',0
-	.word	5082
+	.word	5038
 	.byte	1,2,35,43,14
 	.byte	'os_context',0
-	.word	5962
+	.word	5918
 	.byte	1,2,35,44,14
 	.byte	'prev_s_isr_all_status',0
-	.word	271
+	.word	227
 	.byte	4,2,35,46,14
 	.byte	'prev_s_isr_os_status',0
-	.word	271
+	.word	227
 	.byte	4,2,35,50,14
 	.byte	's_isr_all_cnt',0
-	.word	1117
+	.word	1073
 	.byte	1,2,35,54,14
 	.byte	's_isr_os_cnt',0
-	.word	1117
+	.word	1073
 	.byte	1,2,35,55,14
 	.byte	'd_isr_all_cnt',0
-	.word	1117
+	.word	1073
 	.byte	1,2,35,56,14
 	.byte	'orti_service_id_valid',0
-	.word	974
+	.word	930
 	.byte	1,2,35,57,0,16
-	.word	6205
+	.word	6161
 	.byte	20
 	.byte	'OsEE_autostart_tdb_tag',0,7,206,5,16,8,14
 	.byte	'p_tdb_ptr_array',0
-	.word	3734
+	.word	3690
 	.byte	4,2,35,0,14
 	.byte	'tdb_array_size',0
-	.word	271
+	.word	227
 	.byte	4,2,35,4,0,22
-	.word	6539
+	.word	6495
 	.byte	23,0,18
-	.word	6618
+	.word	6574
 	.byte	16
-	.word	6625
+	.word	6581
 	.byte	18
-	.word	4161
+	.word	4117
 	.byte	16
-	.word	6635
+	.word	6591
 	.byte	10,7,176,5,9,12,14
 	.byte	'p_trigger_db',0
-	.word	6640
+	.word	6596
 	.byte	4,2,35,0,14
 	.byte	'first_tick_parameter',0
-	.word	271
+	.word	227
 	.byte	4,2,35,4,14
 	.byte	'second_tick_parameter',0
-	.word	271
+	.word	227
 	.byte	4,2,35,8,0,22
-	.word	6645
+	.word	6601
 	.byte	23,0,18
-	.word	6735
+	.word	6691
 	.byte	16
-	.word	6742
+	.word	6698
 	.byte	10,7,194,5,9,8,14
 	.byte	'p_trigger_ptr_array',0
-	.word	6747
+	.word	6703
 	.byte	4,2,35,0,14
 	.byte	'trigger_array_size',0
-	.word	271
+	.word	227
 	.byte	4,2,35,4,0,22
-	.word	6752
+	.word	6708
 	.byte	23,0,18
-	.word	6816
+	.word	6772
 	.byte	16
-	.word	6823
+	.word	6779
 	.byte	10,7,203,6,9,52,14
 	.byte	'chdb',0
-	.word	4888
+	.word	4844
 	.byte	12,2,35,0,14
 	.byte	'p_ccb',0
-	.word	6534
+	.word	6490
 	.byte	4,2,35,12,14
 	.byte	'p_lock',0
-	.word	1971
+	.word	1927
 	.byte	4,2,35,16,14
 	.byte	'p_idle_hook',0
-	.word	3506
+	.word	3462
 	.byte	4,2,35,20,14
 	.byte	'p_idle_task',0
-	.word	3717
+	.word	3673
 	.byte	4,2,35,24,14
 	.byte	'p_sys_counter_db',0
-	.word	4467
+	.word	4423
 	.byte	4,2,35,28,14
 	.byte	'p_autostart_tdb_array',0
-	.word	6630
+	.word	6586
 	.byte	4,2,35,32,14
 	.byte	'autostart_tdb_array_size',0
-	.word	271
+	.word	227
 	.byte	4,2,35,36,14
 	.byte	'p_autostart_trigger_array',0
-	.word	6828
+	.word	6784
 	.byte	4,2,35,40,14
 	.byte	'autostart_trigger_array_size',0
-	.word	271
+	.word	227
 	.byte	4,2,35,44,14
 	.byte	'core_id',0
-	.word	350
+	.word	306
 	.byte	1,2,35,48,0,18
-	.word	6833
+	.word	6789
 	.byte	16
-	.word	7108
+	.word	7064
 	.byte	3
 	.byte	'osEE_get_curr_core',0,3,6,165,3,50
-	.word	7113
+	.word	7069
 	.byte	1,1,5,0,6
 	.byte	'osEE_lock_kernel',0,3,6,177,3,44,1,1,9,5,0,0,3
 	.byte	'osEE_lock_and_get_kernel',0,3,6,189,3,50
-	.word	4737
+	.word	4693
 	.byte	1,1,9,5,5,0,0,6
 	.byte	'osEE_unlock_kernel',0,3,6,200,3,44,1,1,9,5,0,0,16
-	.word	271
+	.word	227
 	.byte	6
 	.byte	'osEE_set_SP',0,3,10,148,1,44,1,1,4
 	.byte	'sp',0,10,148,1,69
-	.word	7253
+	.word	7209
 	.byte	5,0,3
 	.byte	'osEE_tc_csa_link_to_pointer',0,3,10,190,1,3
-	.word	1760
+	.word	1716
 	.byte	1,1,4
 	.byte	'l_csa',0,10,190,1,45
-	.word	1239
+	.word	1195
 	.byte	5,0,10,4,190,1,3,4,11
 	.byte	'ccpn',0,1
-	.word	1117
+	.word	1073
 	.byte	8,0,2,35,0,12,1
-	.word	1117
+	.word	1073
 	.byte	7,1,2,35,1,11
 	.byte	'ie',0,1
-	.word	1117
+	.word	1073
 	.byte	1,0,2,35,1,11
 	.byte	'pipn',0,1
-	.word	1117
+	.word	1073
 	.byte	8,0,2,35,2,12,1
-	.word	1117
+	.word	1073
 	.byte	8,0,2,35,3,0,13,4,188,1,9,4,14
 	.byte	'reg',0
-	.word	271
+	.word	227
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	7349
+	.word	7305
 	.byte	4,2,35,0,0,3
 	.byte	'osEE_tc_get_icr',0,3,10,128,2,48
-	.word	7424
+	.word	7380
 	.byte	1,1,5,0,6
 	.byte	'osEE_tc_set_icr',0,3,10,135,2,44,1,1,4
 	.byte	'icr',0,10,135,2,69
-	.word	7424
+	.word	7380
 	.byte	5,0,6
 	.byte	'osEE_hal_disableIRQ',0,3,10,146,2,44,1,1,5,0,3
 	.byte	'OSEE_ISR2_VIRT_TO_HW_PRIO',0,3,10,173,2,1
-	.word	1117
+	.word	1073
 	.byte	1,1,4
 	.byte	'virt_prio',0,10,173,2,36
-	.word	1117
+	.word	1073
 	.byte	5,0,3
 	.byte	'osEE_hal_begin_nested_primitive',0,3,10,233,2,3
-	.word	271
+	.word	227
 	.byte	1,1,9,5,5,5,5,5,0,0,6
 	.byte	'osEE_hal_end_nested_primitive',0,3,10,250,2,3,1,1,4
 	.byte	'flags',0,10,250,2,42
-	.word	271
+	.word	227
 	.byte	9,5,5,0,0,6
 	.byte	'osEE_tc_conf_src',0,3,10,170,3,3,1,1,4
 	.byte	'tos',0,10,170,3,31
-	.word	350
+	.word	306
 	.byte	4
 	.byte	'src_offset',0,10,170,3,45
-	.word	271
+	.word	227
 	.byte	4
 	.byte	'prio',0,10,170,3,67
-	.word	1117
+	.word	1073
 	.byte	5,0,2
 	.byte	'int',0,4,5,26
 	.byte	'__mtcr',0,1,1,1,1,27
-	.word	7800
+	.word	7756
 	.byte	27
-	.word	7800
+	.word	7756
 	.byte	0,19
-	.word	7800
+	.word	7756
 	.byte	28
 	.byte	'__mfcr',0
-	.word	7830
+	.word	7786
 	.byte	1,1,1,1,27
-	.word	7800
+	.word	7756
 	.byte	0,29
 	.byte	'__dsync',0,1,1,1,1,26
 	.byte	'__set_sp',0,1,1,1,1,27
-	.word	1278
+	.word	1234
 	.byte	0,30
-	.word	287
+	.word	243
 	.byte	31
-	.word	311
+	.word	267
 	.byte	5,0,30
-	.word	326
+	.word	282
 	.byte	5,0,30
-	.word	464
+	.word	420
 	.byte	5,0,30
-	.word	522
+	.word	478
 	.byte	31
-	.word	557
+	.word	513
 	.byte	5,0,30
-	.word	579
+	.word	535
 	.byte	5,0,30
-	.word	619
+	.word	575
 	.byte	31
-	.word	653
+	.word	609
 	.byte	31
-	.word	673
+	.word	629
 	.byte	5,0,30
-	.word	687
+	.word	643
 	.byte	31
-	.word	719
+	.word	675
 	.byte	31
-	.word	739
+	.word	695
 	.byte	5,0,30
-	.word	753
+	.word	709
 	.byte	31
-	.word	785
+	.word	741
 	.byte	31
-	.word	805
+	.word	761
 	.byte	9,32
-	.word	619
+	.word	575
 	.byte	31
-	.word	653
+	.word	609
 	.byte	31
-	.word	673
+	.word	629
 	.byte	33
-	.word	685
+	.word	641
 	.byte	0,5,32
-	.word	687
+	.word	643
 	.byte	31
-	.word	719
+	.word	675
 	.byte	31
-	.word	739
+	.word	695
 	.byte	33
-	.word	751
+	.word	707
 	.byte	0,5,0,0,30
-	.word	822
+	.word	778
 	.byte	31
-	.word	859
+	.word	815
 	.byte	5,0,30
-	.word	873
+	.word	829
 	.byte	31
-	.word	908
+	.word	864
 	.byte	5,0,30
-	.word	922
+	.word	878
 	.byte	31
-	.word	957
+	.word	913
 	.byte	9,32
-	.word	822
+	.word	778
 	.byte	31
-	.word	859
+	.word	815
 	.byte	33
-	.word	871
+	.word	827
 	.byte	0,5,32
-	.word	873
+	.word	829
 	.byte	31
-	.word	908
+	.word	864
 	.byte	33
-	.word	920
+	.word	876
 	.byte	0,5,0,0,30
-	.word	1005
+	.word	961
 	.byte	31
-	.word	1043
+	.word	999
 	.byte	5,0,30
-	.word	1061
+	.word	1017
 	.byte	31
-	.word	1099
+	.word	1055
 	.byte	5,0,30
-	.word	1785
+	.word	1741
 	.byte	31
-	.word	1817
+	.word	1773
 	.byte	31
-	.word	1838
+	.word	1794
 	.byte	9,5,0,0,20
 	.byte	'OsEE_tc_SCU_WDTCPU_CON0_bits_tag',0,3,155,1,16,4,11
 	.byte	'endinit',0,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,0,11
 	.byte	'lck',0,1
-	.word	1117
+	.word	1073
 	.byte	1,6,2,35,0,11
 	.byte	'pw',0,2
-	.word	500
+	.word	456
 	.byte	14,0,2,35,0,11
 	.byte	'rel',0,2
-	.word	500
+	.word	456
 	.byte	16,0,2,35,2,0
 .L121:
 	.byte	34
 	.byte	'OsEE_tc_SCU_WDTCPU_CON0_tag',0,3,253,1,15,4,14
 	.byte	'reg',0
-	.word	271
+	.word	227
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	8145
+	.word	8101
 	.byte	4,2,35,0,0,20
 	.byte	'OsEE_tc_SCU_WDTCPU_CON1_bits_tag',0,3,171,1,16,4,12,1
-	.word	1117
+	.word	1073
 	.byte	2,6,2,35,0,11
 	.byte	'ir0',0,1
-	.word	1117
+	.word	1073
 	.byte	1,5,2,35,0,11
 	.byte	'dr',0,1
-	.word	1117
+	.word	1073
 	.byte	1,4,2,35,0,12,1
-	.word	1117
+	.word	1073
 	.byte	1,3,2,35,0,11
 	.byte	'ir1',0,1
-	.word	1117
+	.word	1073
 	.byte	1,2,2,35,0,11
 	.byte	'ur',0,1
-	.word	1117
+	.word	1073
 	.byte	1,1,2,35,0,11
 	.byte	'par',0,1
-	.word	1117
+	.word	1073
 	.byte	1,0,2,35,0,11
 	.byte	'tcr',0,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,1,11
 	.byte	'tctr',0,1
-	.word	1117
+	.word	1073
 	.byte	7,0,2,35,1,12,2
-	.word	500
+	.word	456
 	.byte	16,0,2,35,2,0,34
 	.byte	'OsEE_tc_SCU_WDTCPU_CON1_tag',0,3,134,2,15,4,14
 	.byte	'reg',0
-	.word	271
+	.word	227
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	8310
+	.word	8266
 	.byte	4,2,35,0,0,20
 	.byte	'OsEE_tc_SCU_WDTCPU_SR_bits_tag',0,3,223,1,16,4,11
 	.byte	'ae',0,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,0,11
 	.byte	'oe',0,1
-	.word	1117
+	.word	1073
 	.byte	1,6,2,35,0,11
 	.byte	'is0',0,1
-	.word	1117
+	.word	1073
 	.byte	1,5,2,35,0,11
 	.byte	'ds',0,1
-	.word	1117
+	.word	1073
 	.byte	1,4,2,35,0,11
 	.byte	'to',0,1
-	.word	1117
+	.word	1073
 	.byte	1,3,2,35,0,11
 	.byte	'is1',0,1
-	.word	1117
+	.word	1073
 	.byte	1,2,2,35,0,11
 	.byte	'us',0,1
-	.word	1117
+	.word	1073
 	.byte	1,1,2,35,0,11
 	.byte	'pas',0,1
-	.word	1117
+	.word	1073
 	.byte	1,0,2,35,0,11
 	.byte	'tcs',0,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,1,11
 	.byte	'tct',0,1
-	.word	1117
+	.word	1073
 	.byte	7,0,2,35,1,11
 	.byte	'tim',0,2
-	.word	500
+	.word	456
 	.byte	16,0,2,35,2,0,34
 	.byte	'OsEE_tc_SCU_WDTCPU_SR_tag',0,3,143,2,15,4,14
 	.byte	'reg',0
-	.word	271
+	.word	227
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	8549
+	.word	8505
 	.byte	4,2,35,0,0,20
 	.byte	'OsEE_tc_SCU_WDTCPU_tag',0,3,179,2,16,12,14
 	.byte	'con0',0
-	.word	8248
+	.word	8204
 	.byte	4,2,35,0,14
 	.byte	'con1',0
-	.word	8487
+	.word	8443
 	.byte	4,2,35,4,14
 	.byte	'sr',0
-	.word	8747
+	.word	8703
 	.byte	4,2,35,8,0,19
-	.word	8807
+	.word	8763
 	.byte	16
-	.word	8877
+	.word	8833
 .L123:
 	.byte	18
-	.word	8882
+	.word	8838
 .L131:
 	.byte	18
-	.word	271
+	.word	227
 .L138:
 	.byte	18
-	.word	271
+	.word	227
 .L149:
 	.byte	18
-	.word	8882
+	.word	8838
 .L159:
 	.byte	18
-	.word	271
+	.word	227
 .L167:
 	.byte	18
-	.word	1760
+	.word	1716
 .L179:
 	.byte	18
-	.word	8882
+	.word	8838
 .L188:
 	.byte	18
-	.word	8882
+	.word	8838
 .L204:
 	.byte	18
-	.word	8882
+	.word	8838
 .L209:
 	.byte	18
-	.word	271
+	.word	227
 .L214:
 	.byte	18
-	.word	271
+	.word	227
 .L221:
 	.byte	18
-	.word	8882
+	.word	8838
 .L227:
 	.byte	18
-	.word	271
+	.word	227
 .L234:
 	.byte	18
-	.word	1760
+	.word	1716
 .L242:
 	.byte	18
-	.word	8882
+	.word	8838
 .L251:
 	.byte	18
-	.word	8882
+	.word	8838
 	.byte	30
+	.word	1837
+	.byte	31
+	.word	1866
+	.byte	31
 	.word	1881
 	.byte	31
-	.word	1910
-	.byte	31
-	.word	1925
-	.byte	31
-	.word	1942
+	.word	1898
 	.byte	5,0,30
-	.word	1976
+	.word	1932
 	.byte	31
-	.word	2003
+	.word	1959
 	.byte	9,32
+	.word	1837
+	.byte	31
+	.word	1866
+	.byte	31
 	.word	1881
 	.byte	31
-	.word	1910
-	.byte	31
-	.word	1925
-	.byte	31
-	.word	1942
+	.word	1898
 	.byte	33
-	.word	1964
+	.word	1920
 	.byte	0,5,0,0,30
-	.word	2023
+	.word	1979
 	.byte	31
-	.word	2052
+	.word	2008
 	.byte	9,32
-	.word	326
+	.word	282
 	.byte	33
-	.word	348
+	.word	304
 	.byte	0,5,0,0,30
-	.word	4742
+	.word	4698
 	.byte	5,0,30
-	.word	7118
+	.word	7074
 	.byte	5,0,30
-	.word	7151
+	.word	7107
 	.byte	9,32
-	.word	1976
+	.word	1932
 	.byte	31
-	.word	2003
+	.word	1959
 	.byte	35
-	.word	2019
+	.word	1975
 	.byte	32
+	.word	1837
+	.byte	31
+	.word	1866
+	.byte	31
 	.word	1881
 	.byte	31
-	.word	1910
-	.byte	31
-	.word	1925
-	.byte	31
-	.word	1942
+	.word	1898
 	.byte	33
-	.word	1964
+	.word	1920
 	.byte	0,33
-	.word	2020
+	.word	1976
 	.byte	0,0,5,0,0,30
-	.word	7180
+	.word	7136
 	.byte	9,32
-	.word	4742
+	.word	4698
 	.byte	33
-	.word	4769
+	.word	4725
 	.byte	0,5,32
-	.word	7151
+	.word	7107
 	.byte	35
-	.word	7176
+	.word	7132
 	.byte	32
-	.word	1976
+	.word	1932
 	.byte	31
-	.word	2003
+	.word	1959
 	.byte	35
-	.word	2019
+	.word	1975
 	.byte	32
+	.word	1837
+	.byte	31
+	.word	1866
+	.byte	31
 	.word	1881
 	.byte	31
-	.word	1910
-	.byte	31
-	.word	1925
-	.byte	31
-	.word	1942
+	.word	1898
 	.byte	33
-	.word	1964
+	.word	1920
 	.byte	0,33
-	.word	2020
+	.word	1976
 	.byte	0,0,33
-	.word	7177
+	.word	7133
 	.byte	0,0,5,0,0,30
-	.word	7222
+	.word	7178
 	.byte	9,32
-	.word	2023
+	.word	1979
 	.byte	31
-	.word	2052
+	.word	2008
 	.byte	35
-	.word	2068
+	.word	2024
 	.byte	32
-	.word	326
+	.word	282
 	.byte	33
-	.word	348
+	.word	304
 	.byte	0,33
-	.word	2069
+	.word	2025
 	.byte	0,0,5,0,0,30
-	.word	7258
+	.word	7214
 	.byte	31
-	.word	7278
+	.word	7234
 	.byte	5,0,30
-	.word	7292
+	.word	7248
 	.byte	31
-	.word	7332
+	.word	7288
 	.byte	5,0,30
-	.word	7458
+	.word	7414
 	.byte	5,0,30
-	.word	7488
+	.word	7444
 	.byte	31
-	.word	7512
+	.word	7468
 	.byte	5,0,30
-	.word	7527
+	.word	7483
 	.byte	5,0,30
-	.word	7557
+	.word	7513
 	.byte	31
-	.word	7595
+	.word	7551
 	.byte	5,0,30
-	.word	7616
+	.word	7572
 	.byte	9,9,32
-	.word	7557
+	.word	7513
 	.byte	31
-	.word	7595
+	.word	7551
 	.byte	33
-	.word	7614
+	.word	7570
 	.byte	0,32
-	.word	7488
+	.word	7444
 	.byte	31
-	.word	7512
+	.word	7468
 	.byte	33
-	.word	7525
+	.word	7481
 	.byte	0,0,32
-	.word	7557
+	.word	7513
 	.byte	31
-	.word	7595
+	.word	7551
 	.byte	33
-	.word	7614
+	.word	7570
 	.byte	0,5,5,5,32
-	.word	7458
+	.word	7414
 	.byte	33
-	.word	7486
+	.word	7442
 	.byte	0,5,0,0,30
-	.word	7668
+	.word	7624
 	.byte	31
-	.word	7706
+	.word	7662
 	.byte	9,32
-	.word	7488
+	.word	7444
 	.byte	31
-	.word	7512
+	.word	7468
 	.byte	33
-	.word	7525
+	.word	7481
 	.byte	0,5,32
-	.word	7458
+	.word	7414
 	.byte	33
-	.word	7486
+	.word	7442
 	.byte	0,5,0,0,30
-	.word	7726
+	.word	7682
 	.byte	31
-	.word	7751
+	.word	7707
 	.byte	31
-	.word	7764
+	.word	7720
 	.byte	31
-	.word	7784
+	.word	7740
 	.byte	5,0,36
 	.byte	'exit',0,11,102,33,1,1,1,1,37,11,102,44
-	.word	7800
+	.word	7756
 	.byte	0,38
 	.byte	'_c_init',0,12,184,1,13,1,1,1,1,38
 	.byte	'_c_init_tc1',0,12,186,1,13,1,1,1,1,38
 	.byte	'_c_init_tc2',0,12,189,1,13,1,1,1,1,39
 	.byte	'main',0,12,226,1,12
-	.word	7800
+	.word	7756
 	.byte	1,1,1,1
 .L281:
 	.byte	18
-	.word	8882
+	.word	8838
 .L286:
 	.byte	18
-	.word	271
+	.word	227
 .L291:
 	.byte	18
-	.word	271
+	.word	227
 .L298:
 	.byte	18
-	.word	8882
+	.word	8838
 .L304:
 	.byte	18
-	.word	271
+	.word	227
 .L311:
 	.byte	18
-	.word	1760
+	.word	1716
 .L318:
 	.byte	18
-	.word	8882
+	.word	8838
 .L327:
 	.byte	18
-	.word	8882
+	.word	8838
 .L339:
 	.byte	34
 	.byte	'OsEE_tc_SCU_WDTS_CON0_tag',0,3,152,2,15,4,14
 	.byte	'reg',0
-	.word	271
+	.word	227
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	8145
+	.word	8101
 	.byte	4,2,35,0,0,38
 	.byte	'_lc_u_trap_tab_tc0',0,12,154,4,13,1,1,1,1,38
 	.byte	'_lc_u_int_tab_tc0',0,12,155,4,13,1,1,1,1,38
@@ -2569,703 +2569,703 @@ __osEE_tc_core2_start_function_end:
 	.byte	'__INDIRECT__',0,12,1,1,1,1,1,2
 	.byte	'short int',0,2,5,17
 	.byte	'__wchar_t',0,12,1,1
-	.word	9836
+	.word	9792
 	.byte	17
 	.byte	'__size_t',0,12,1,1
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'__ptrdiff_t',0,12,1,1
-	.word	7800
+	.word	7756
 	.byte	41,1,16
-	.word	9904
+	.word	9860
 	.byte	17
 	.byte	'__codeptr',0,12,1,1
-	.word	9906
+	.word	9862
 	.byte	17
 	.byte	'__intptr_t',0,12,1,1
-	.word	7800
+	.word	7756
 	.byte	17
 	.byte	'__uintptr_t',0,12,1,1
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'size_t',0,13,24,25
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'uint8_t',0,14,242,1,41
-	.word	1117
+	.word	1073
 	.byte	17
 	.byte	'uint16_t',0,14,246,1,41
-	.word	500
+	.word	456
 	.byte	17
 	.byte	'int32_t',0,14,253,1,41
-	.word	7800
+	.word	7756
 	.byte	17
 	.byte	'uint32_t',0,14,254,1,41
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'OsEE_bool',0,2,75,3
-	.word	974
+	.word	930
 	.byte	17
 	.byte	'OsEE_reg',0,2,91,31
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'OsEE_sreg',0,2,92,31
-	.word	7800
+	.word	7756
 	.byte	17
 	.byte	'OsEE_stack',0,2,93,31
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'OsEE_core_id',0,2,130,1,3
-	.word	350
+	.word	306
 	.byte	17
 	.byte	'OsEE_prio',0,2,141,1,31
-	.word	1117
+	.word	1073
 	.byte	17
 	.byte	'OsEE_isr_src_id',0,2,146,1,31
-	.word	500
+	.word	456
 	.byte	19
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'OsEE_spin_lock',0,2,155,1,27
-	.word	10191
+	.word	10147
 	.byte	17
 	.byte	'OsEE_barrier',0,2,160,1,3
-	.word	2809
+	.word	2765
 	.byte	17
 	.byte	'OsEE_tc_tin',0,15,208,1,17
-	.word	1117
+	.word	1073
 	.byte	17
 	.byte	'OsEE_pcxi',0,4,131,1,3
-	.word	1239
+	.word	1195
 	.byte	17
 	.byte	'OsEE_csa_link',0,4,134,1,19
-	.word	1239
+	.word	1195
 	.byte	17
 	.byte	'OsEE_uctx',0,4,153,1,3
-	.word	1301
+	.word	1257
 	.byte	17
 	.byte	'OsEE_lctx',0,4,172,1,3
-	.word	1501
+	.word	1457
 	.byte	17
 	.byte	'OsEE_csa_ctx',0,4,178,1,3
-	.word	1689
+	.word	1645
 	.byte	17
 	.byte	'OsEE_csa',0,4,184,1,3
-	.word	1724
+	.word	1680
 	.byte	17
 	.byte	'OsEE_icr',0,4,197,1,3
-	.word	7424
+	.word	7380
 	.byte	17
 	.byte	'OsEE_CTX',0,4,248,1,3
-	.word	2841
+	.word	2797
 	.byte	17
 	.byte	'OsEE_SCB',0,4,253,1,3
-	.word	2974
+	.word	2930
 	.byte	18
-	.word	2922
+	.word	2878
 	.byte	17
 	.byte	'OsEE_SDB',0,4,134,2,16
-	.word	10437
+	.word	10393
 	.byte	18
-	.word	3001
+	.word	2957
 	.byte	17
 	.byte	'OsEE_HDB',0,4,145,2,14
-	.word	10460
+	.word	10416
 	.byte	18
-	.word	4820
+	.word	4776
 	.byte	17
 	.byte	'OsEE_CHDB',0,4,154,2,14
-	.word	10483
+	.word	10439
 	.byte	17
 	.byte	'OsEE_tc_SCU_WDTCPU_CON0_bits',0,3,165,1,3
-	.word	8145
+	.word	8101
 	.byte	17
 	.byte	'OsEE_tc_SCU_WDTS_CON0_bits',0,3,168,1,38
-	.word	8145
+	.word	8101
 	.byte	17
 	.byte	'OsEE_tc_SCU_WDTCPU_CON1_bits',0,3,193,1,3
-	.word	8310
+	.word	8266
 	.byte	20
 	.byte	'OsEE_tc_SCU_WDTS_CON1_bits_tag',0,3,196,1,16,4,11
 	.byte	'clrif',0,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,0,12,1
-	.word	1117
+	.word	1073
 	.byte	1,6,2,35,0,11
 	.byte	'ir0',0,1
-	.word	1117
+	.word	1073
 	.byte	1,5,2,35,0,11
 	.byte	'dr',0,1
-	.word	1117
+	.word	1073
 	.byte	1,4,2,35,0,12,1
-	.word	1117
+	.word	1073
 	.byte	1,3,2,35,0,11
 	.byte	'ir1',0,1
-	.word	1117
+	.word	1073
 	.byte	1,2,2,35,0,11
 	.byte	'ur',0,1
-	.word	1117
+	.word	1073
 	.byte	1,1,2,35,0,11
 	.byte	'par',0,1
-	.word	1117
+	.word	1073
 	.byte	1,0,2,35,0,11
 	.byte	'tcr',0,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,1,11
 	.byte	'tctr',0,1
-	.word	1117
+	.word	1073
 	.byte	7,0,2,35,1,12,2
-	.word	500
+	.word	456
 	.byte	16,0,2,35,2,0,17
 	.byte	'OsEE_tc_SCU_WDTS_CON1_bits',0,3,220,1,3
-	.word	10619
+	.word	10575
 	.byte	17
 	.byte	'OsEE_tc_SCU_WDTCPU_SR_bits',0,3,247,1,3
-	.word	8549
+	.word	8505
 	.byte	17
 	.byte	'OsEE_tc_SCU_WDTS_SR_bits',0,3,250,1,36
-	.word	8549
+	.word	8505
 	.byte	17
 	.byte	'OsEE_tc_SCU_WDTCPU_CON0',0,3,131,2,3
-	.word	8248
+	.word	8204
 	.byte	17
 	.byte	'OsEE_tc_SCU_WDTCPU_CON1',0,3,140,2,3
-	.word	8487
+	.word	8443
 	.byte	17
 	.byte	'OsEE_tc_SCU_WDTCPU_SR',0,3,149,2,3
-	.word	8747
+	.word	8703
 	.byte	17
 	.byte	'OsEE_tc_SCU_WDTS_CON0',0,3,158,2,3
-	.word	9591
+	.word	9547
 	.byte	34
 	.byte	'OsEE_tc_SCU_WDTS_CON1_tag',0,3,161,2,15,4,14
 	.byte	'reg',0
-	.word	271
+	.word	227
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	10619
+	.word	10575
 	.byte	4,2,35,0,0,17
 	.byte	'OsEE_tc_SCU_WDTS_CON1',0,3,167,2,3
-	.word	11045
+	.word	11001
 	.byte	34
 	.byte	'OsEE_tc_SCU_WDTS_SR_tag',0,3,170,2,15,4,14
 	.byte	'reg',0
-	.word	271
+	.word	227
 	.byte	4,2,35,0,14
 	.byte	'bits',0
-	.word	8549
+	.word	8505
 	.byte	4,2,35,0,0,17
 	.byte	'OsEE_tc_SCU_WDTS_SR',0,3,176,2,3
-	.word	11136
+	.word	11092
 	.byte	20
 	.byte	'OsEE_tc_STM_CMCON_bits_tag',0,3,225,6,16,4,11
 	.byte	'msize0',0,1
-	.word	1117
+	.word	1073
 	.byte	5,3,2,35,0,12,1
-	.word	1117
+	.word	1073
 	.byte	3,0,2,35,0,11
 	.byte	'mstart0',0,1
-	.word	1117
+	.word	1073
 	.byte	5,3,2,35,1,12,1
-	.word	1117
+	.word	1073
 	.byte	3,0,2,35,1,11
 	.byte	'msize1',0,1
-	.word	1117
+	.word	1073
 	.byte	5,3,2,35,2,12,1
-	.word	1117
+	.word	1073
 	.byte	3,0,2,35,2,11
 	.byte	'mstart1',0,1
-	.word	1117
+	.word	1073
 	.byte	5,3,2,35,3,12,1
-	.word	1117
+	.word	1073
 	.byte	3,0,2,35,3,0,17
 	.byte	'OsEE_tc_STM_CMCON_bits',0,3,243,6,3
-	.word	11223
+	.word	11179
 	.byte	20
 	.byte	'OsEE_tc_STM_ICR_bits_tag',0,3,135,7,16,4,11
 	.byte	'cmp0en',0,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,0,11
 	.byte	'cmp0ir',0,1
-	.word	1117
+	.word	1073
 	.byte	1,6,2,35,0,11
 	.byte	'cmp0os',0,1
-	.word	1117
+	.word	1073
 	.byte	1,5,2,35,0,12,1
-	.word	1117
+	.word	1073
 	.byte	1,4,2,35,0,11
 	.byte	'cmp1en',0,1
-	.word	1117
+	.word	1073
 	.byte	1,3,2,35,0,11
 	.byte	'cmp1ir',0,1
-	.word	1117
+	.word	1073
 	.byte	1,2,2,35,0,11
 	.byte	'cmp1os',0,1
-	.word	1117
+	.word	1073
 	.byte	1,1,2,35,0,12,4
-	.word	271
+	.word	227
 	.byte	25,0,2,35,0,0,17
 	.byte	'OsEE_tc_STM_ICR_bits',0,3,153,7,3
-	.word	11407
+	.word	11363
 	.byte	10,3,185,11,9,4,12,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,0,11
 	.byte	'plllv',0,1
-	.word	1117
+	.word	1073
 	.byte	1,6,2,35,0,11
 	.byte	'oscres',0,1
-	.word	1117
+	.word	1073
 	.byte	1,5,2,35,0,11
 	.byte	'gainsel',0,1
-	.word	1117
+	.word	1073
 	.byte	2,3,2,35,0,11
 	.byte	'mode',0,1
-	.word	1117
+	.word	1073
 	.byte	2,1,2,35,0,11
 	.byte	'shby',0,1
-	.word	1117
+	.word	1073
 	.byte	1,0,2,35,0,11
 	.byte	'pllhv',0,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,1,11
 	.byte	'hysen',0,1
-	.word	1117
+	.word	1073
 	.byte	1,6,2,35,1,11
 	.byte	'hysctl',0,1
-	.word	1117
+	.word	1073
 	.byte	2,4,2,35,1,11
 	.byte	'ampctl',0,1
-	.word	1117
+	.word	1073
 	.byte	2,2,2,35,1,12,1
-	.word	1117
+	.word	1073
 	.byte	2,0,2,35,1,11
 	.byte	'oscval',0,1
-	.word	1117
+	.word	1073
 	.byte	5,3,2,35,2,12,1
-	.word	1117
+	.word	1073
 	.byte	2,1,2,35,2,11
 	.byte	'apren',0,1
-	.word	1117
+	.word	1073
 	.byte	1,0,2,35,2,11
 	.byte	'cap0en',0,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,3,11
 	.byte	'cap1en',0,1
-	.word	1117
+	.word	1073
 	.byte	1,6,2,35,3,11
 	.byte	'cap2en',0,1
-	.word	1117
+	.word	1073
 	.byte	1,5,2,35,3,11
 	.byte	'cap3en',0,1
-	.word	1117
+	.word	1073
 	.byte	1,4,2,35,3,12,1
-	.word	1117
+	.word	1073
 	.byte	4,0,2,35,3,0,17
 	.byte	'OsEE_tc_SCU_OSCCON_bits',0,3,225,11,3
-	.word	11599
+	.word	11555
 	.byte	10,3,228,11,9,4,12,1
-	.word	1117
+	.word	1073
 	.byte	2,6,2,35,0,11
 	.byte	'moden',0,1
-	.word	1117
+	.word	1073
 	.byte	1,5,2,35,0,12,2
-	.word	500
+	.word	456
 	.byte	6,7,2,35,0,11
 	.byte	'ndiv',0,1
-	.word	1117
+	.word	1073
 	.byte	7,0,2,35,1,11
 	.byte	'pllpwd',0,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,2,12,1
-	.word	1117
+	.word	1073
 	.byte	1,6,2,35,2,11
 	.byte	'resld',0,1
-	.word	1117
+	.word	1073
 	.byte	1,5,2,35,2,12,1
-	.word	1117
+	.word	1073
 	.byte	5,0,2,35,2,11
 	.byte	'pdiv',0,1
-	.word	1117
+	.word	1073
 	.byte	3,5,2,35,3,12,1
-	.word	1117
+	.word	1073
 	.byte	3,2,2,35,3,11
 	.byte	'insel',0,1
-	.word	1117
+	.word	1073
 	.byte	2,0,2,35,3,0,17
 	.byte	'OsEE_tc_SYSPLLCON0_bits',0,3,252,11,3
-	.word	11946
+	.word	11902
 	.byte	10,3,147,12,9,4,11
 	.byte	'k2div',0,1
-	.word	1117
+	.word	1073
 	.byte	3,5,2,35,0,12,4
-	.word	271
+	.word	227
 	.byte	29,0,2,35,0,0,17
 	.byte	'OsEE_tc_SYSPLLCON1_bits',0,3,153,12,3
-	.word	12142
+	.word	12098
 	.byte	10,3,168,12,9,4,12,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,0,11
 	.byte	'pwdstat',0,1
-	.word	1117
+	.word	1073
 	.byte	1,6,2,35,0,11
 	.byte	'lock',0,1
-	.word	1117
+	.word	1073
 	.byte	1,5,2,35,0,12,1
-	.word	1117
+	.word	1073
 	.byte	2,3,2,35,0,11
 	.byte	'k2rdy',0,1
-	.word	1117
+	.word	1073
 	.byte	1,2,2,35,0,12,1
-	.word	1117
+	.word	1073
 	.byte	1,1,2,35,0,11
 	.byte	'modrun',0,1
-	.word	1117
+	.word	1073
 	.byte	1,0,2,35,0,12,4
-	.word	271
+	.word	227
 	.byte	24,0,2,35,0,0,17
 	.byte	'OsEE_tc_SCU_SYSPLLSTAT_bits',0,3,186,12,3
-	.word	12210
+	.word	12166
 	.byte	10,3,201,12,9,4,12,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,0,11
 	.byte	'pwdstat',0,1
-	.word	1117
+	.word	1073
 	.byte	1,6,2,35,0,11
 	.byte	'lock',0,1
-	.word	1117
+	.word	1073
 	.byte	1,5,2,35,0,12,1
-	.word	1117
+	.word	1073
 	.byte	1,4,2,35,0,11
 	.byte	'k3rdy',0,1
-	.word	1117
+	.word	1073
 	.byte	1,3,2,35,0,11
 	.byte	'k2rdy',0,1
-	.word	1117
+	.word	1073
 	.byte	1,2,2,35,0,12,1
-	.word	1117
+	.word	1073
 	.byte	1,1,2,35,0,12,4
-	.word	271
+	.word	227
 	.byte	25,0,2,35,0,0,17
 	.byte	'OsEE_tc_SCU_PERPLLSTAT_bits',0,3,219,12,3
-	.word	12368
+	.word	12324
 	.byte	10,3,142,13,9,4,11
 	.byte	'stmdiv',0,1
-	.word	1117
+	.word	1073
 	.byte	4,4,2,35,0,11
 	.byte	'gtmdiv',0,1
-	.word	1117
+	.word	1073
 	.byte	4,0,2,35,0,11
 	.byte	'sridiv',0,1
-	.word	1117
+	.word	1073
 	.byte	4,4,2,35,1,11
 	.byte	'lpdiv',0,1
-	.word	1117
+	.word	1073
 	.byte	3,1,2,35,1,12,1
-	.word	1117
+	.word	1073
 	.byte	1,0,2,35,1,11
 	.byte	'spbdiv',0,1
-	.word	1117
+	.word	1073
 	.byte	4,4,2,35,2,11
 	.byte	'bbbdiv',0,1
-	.word	1117
+	.word	1073
 	.byte	4,0,2,35,2,11
 	.byte	'fsidiv',0,1
-	.word	1117
+	.word	1073
 	.byte	2,6,2,35,3,11
 	.byte	'fsi2div',0,1
-	.word	1117
+	.word	1073
 	.byte	2,4,2,35,3,11
 	.byte	'clksel',0,1
-	.word	1117
+	.word	1073
 	.byte	2,2,2,35,3,11
 	.byte	'up',0,1
-	.word	1117
+	.word	1073
 	.byte	1,1,2,35,3,11
 	.byte	'lck',0,1
-	.word	1117
+	.word	1073
 	.byte	1,0,2,35,3,0,17
 	.byte	'OsEE_tc_SCU_CCUCON0_bits',0,3,168,13,4
-	.word	12525
+	.word	12481
 	.byte	10,3,171,13,9,4,11
 	.byte	'mcandiv',0,1
-	.word	1117
+	.word	1073
 	.byte	4,4,2,35,0,11
 	.byte	'clkselmcan',0,1
-	.word	1117
+	.word	1073
 	.byte	2,2,2,35,0,12,1
-	.word	1117
+	.word	1073
 	.byte	1,1,2,35,0,11
 	.byte	'pll1divdis',0,1
-	.word	1117
+	.word	1073
 	.byte	1,0,2,35,0,11
 	.byte	'i2cdiv',0,1
-	.word	1117
+	.word	1073
 	.byte	4,4,2,35,1,12,1
-	.word	1117
+	.word	1073
 	.byte	4,0,2,35,1,11
 	.byte	'mscdiv',0,1
-	.word	1117
+	.word	1073
 	.byte	4,4,2,35,2,11
 	.byte	'clkselmsc',0,1
-	.word	1117
+	.word	1073
 	.byte	2,2,2,35,2,12,1
-	.word	1117
+	.word	1073
 	.byte	2,0,2,35,2,11
 	.byte	'qspidiv',0,1
-	.word	1117
+	.word	1073
 	.byte	4,4,2,35,3,11
 	.byte	'clkselqspi',0,1
-	.word	1117
+	.word	1073
 	.byte	2,2,2,35,3,12,1
-	.word	1117
+	.word	1073
 	.byte	1,1,2,35,3,11
 	.byte	'lck',0,1
-	.word	1117
+	.word	1073
 	.byte	1,0,2,35,3,0,17
 	.byte	'OsEE_tc_SCU_CCUCON1_bits',0,3,199,13,3
-	.word	12768
+	.word	12724
 	.byte	17
 	.byte	'AppModeType',0,8,96,49
-	.word	1117
+	.word	1073
 	.byte	17
 	.byte	'TaskType',0,8,120,49
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'TaskPrio',0,8,200,1,49
-	.word	1117
+	.word	1073
 	.byte	17
 	.byte	'TaskActivation',0,8,244,1,49
-	.word	1117
+	.word	1073
 	.byte	17
 	.byte	'CoreIdType',0,8,131,2,49
-	.word	350
+	.word	306
 	.byte	17
 	.byte	'CoreNumType',0,8,154,2,49
-	.word	1117
+	.word	1073
 	.byte	17
 	.byte	'CoreMaskType',0,8,170,2,49
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'OsEE_task_type',0,8,211,2,3
-	.word	3398
+	.word	3354
 	.byte	17
 	.byte	'TaskExecutionType',0,8,215,2,53
-	.word	3398
+	.word	3354
 	.byte	17
 	.byte	'OsEE_task_status',0,8,238,2,3
-	.word	3061
+	.word	3017
 	.byte	17
 	.byte	'TaskStateType',0,8,254,2,53
-	.word	3061
+	.word	3017
 	.byte	17
 	.byte	'CounterType',0,8,143,3,53
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'TickType',0,8,158,3,53
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'AlarmBaseType',0,8,194,3,3
-	.word	4330
+	.word	4286
 	.byte	17
 	.byte	'AlarmType',0,8,214,3,53
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'EventMaskType',0,8,183,4,53
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'ObjectIDType',0,8,151,5,53
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'MemSize',0,8,163,5,53
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'OsEE_status_type',0,8,212,5,3
-	.word	2072
+	.word	2028
 	.byte	17
 	.byte	'StatusType',0,8,217,5,53
-	.word	2072
+	.word	2028
 	.byte	17
 	.byte	'OsEE_service_id_type',0,8,182,6,3
-	.word	5082
+	.word	5038
 	.byte	17
 	.byte	'OSServiceIdType',0,8,185,6,53
-	.word	5082
+	.word	5038
 	.byte	17
 	.byte	'CountType',0,16,81,39
-	.word	271
+	.word	227
 	.byte	17
 	.byte	'OsEE_SN',0,9,80,3
-	.word	3209
+	.word	3165
 	.byte	17
 	.byte	'OsEE_rq_mask',0,9,184,1,37
-	.word	1117
+	.word	1073
 	.byte	17
 	.byte	'OsEE_rq_queue',0,9,196,1,3
-	.word	4893
+	.word	4849
 	.byte	17
 	.byte	'OsEE_RQ',0,9,201,1,3
-	.word	4941
+	.word	4897
 	.byte	17
 	.byte	'OsEE_byte',0,7,83,31
-	.word	1117
+	.word	1073
 	.byte	17
 	.byte	'OsEE_os_context',0,7,109,3
-	.word	5962
+	.word	5918
 	.byte	17
 	.byte	'OsEE_kernel_status',0,7,125,3
-	.word	4977
+	.word	4933
 	.byte	17
 	.byte	'OsEE_TCB',0,7,129,2,3
-	.word	3263
+	.word	3219
 	.byte	18
-	.word	3524
+	.word	3480
 	.byte	17
 	.byte	'OsEE_TDB',0,7,162,2,14
-	.word	13698
+	.word	13654
 	.byte	17
 	.byte	'OsEE_CounterCB',0,7,222,2,3
-	.word	4280
+	.word	4236
 	.byte	18
-	.word	4402
+	.word	4358
 	.byte	17
 	.byte	'OsEE_CounterDB',0,7,252,2,14
-	.word	13745
+	.word	13701
 	.byte	17
 	.byte	'OsEE_action_type',0,7,132,3,3
-	.word	4029
+	.word	3985
 	.byte	17
 	.byte	'OsEE_action_param',0,7,148,3,3
-	.word	3960
+	.word	3916
 	.byte	18
-	.word	4120
+	.word	4076
 	.byte	17
 	.byte	'OsEE_action',0,7,157,3,14
-	.word	13827
+	.word	13783
 	.byte	17
 	.byte	'OsEE_trigger_status',0,7,184,4,3
-	.word	3739
+	.word	3695
 	.byte	17
 	.byte	'OsEE_TriggerCB',0,7,229,4,3
-	.word	3864
+	.word	3820
 	.byte	18
-	.word	4161
+	.word	4117
 	.byte	17
 	.byte	'OsEE_TriggerDB',0,7,151,5,14
-	.word	13906
+	.word	13862
 	.byte	17
 	.byte	'OsEE_AlarmCB',0,7,155,5,24
-	.word	3864
+	.word	3820
 	.byte	18
-	.word	4161
+	.word	4117
 	.byte	17
 	.byte	'OsEE_AlarmDB',0,7,156,5,24
-	.word	13957
+	.word	13913
 	.byte	18
-	.word	6645
+	.word	6601
 	.byte	17
 	.byte	'OsEE_autostart_trigger_info',0,7,191,5,14
-	.word	13984
+	.word	13940
 	.byte	18
-	.word	6752
+	.word	6708
 	.byte	17
 	.byte	'OsEE_autostart_trigger',0,7,199,5,14
-	.word	14026
+	.word	13982
 	.byte	18
-	.word	6539
+	.word	6495
 	.byte	17
 	.byte	'OsEE_autostart_tdb',0,7,211,5,14
-	.word	14063
+	.word	14019
 	.byte	17
 	.byte	'OsEE_CCB',0,7,193,6,3
-	.word	6205
+	.word	6161
 	.byte	18
-	.word	6833
+	.word	6789
 	.byte	17
 	.byte	'OsEE_CDB',0,7,241,6,14
-	.word	14114
+	.word	14070
 	.byte	17
 	.byte	'OsEE_KCB',0,7,186,7,3
-	.word	2616
+	.word	2572
 	.byte	18
-	.word	4516
+	.word	4472
 	.byte	17
 	.byte	'OsEE_KDB',0,7,131,8,14
-	.word	14155
+	.word	14111
 	.byte	18
-	.word	6833
+	.word	6789
 	.byte	42
 	.byte	'osEE_cdb_var_core0',0,6,156,2,17
-	.word	14178
+	.word	14134
 	.byte	1,1,18
-	.word	6833
+	.word	6789
 	.byte	42
 	.byte	'osEE_cdb_var_core1',0,6,174,2,17
-	.word	14213
+	.word	14169
 	.byte	1,1,18
-	.word	6833
+	.word	6789
 	.byte	42
 	.byte	'osEE_cdb_var_core2',0,6,193,2,17
-	.word	14248
+	.word	14204
 	.byte	1,1,20
 	.byte	'OsEE_tc_CPU_PC_bits_tag',0,17,86,16,4,12,1
-	.word	1117
+	.word	1073
 	.byte	1,7,2,35,0,11
 	.byte	'pc',0,4
-	.word	271
+	.word	227
 	.byte	31,0,2,35,0,0,17
 	.byte	'OsEE_tc_CPU_PC_bits',0,17,92,3
-	.word	14283
+	.word	14239
 	.byte	22
-	.word	271
+	.word	227
 	.byte	23,0,42
 	.byte	'_lc_ue_ustack_tc0',0,12,151,4,28
-	.word	14366
+	.word	14322
 	.byte	1,1,42
 	.byte	'_lc_ue_istack_tc0',0,12,152,4,28
-	.word	14366
+	.word	14322
 	.byte	1,1,22
-	.word	1117
+	.word	1073
 	.byte	23,0,42
 	.byte	'_SMALL_DATA_',0,12,157,4,25
-	.word	14431
+	.word	14387
 	.byte	1,1,42
 	.byte	'_LITERAL_DATA_',0,12,158,4,25
-	.word	14431
+	.word	14387
 	.byte	1,1,42
 	.byte	'_A8_DATA_',0,12,159,4,25
-	.word	14431
+	.word	14387
 	.byte	1,1,22
-	.word	1724
+	.word	1680
 	.byte	23,0,42
 	.byte	'_lc_ub_csa_tc0',0,12,162,4,26
-	.word	14509
+	.word	14465
 	.byte	1,1,42
 	.byte	'_lc_ue_csa_tc0',0,12,163,4,26
-	.word	14509
+	.word	14465
 	.byte	1,1,42
 	.byte	'_lc_ue_ustack_tc1',0,12,134,5,28
-	.word	14366
+	.word	14322
 	.byte	1,1,42
 	.byte	'_lc_ue_istack_tc1',0,12,135,5,28
-	.word	14366
+	.word	14322
 	.byte	1,1,42
 	.byte	'_lc_ub_csa_tc1',0,12,140,5,26
-	.word	14509
+	.word	14465
 	.byte	1,1,42
 	.byte	'_lc_ue_csa_tc1',0,12,141,5,26
-	.word	14509
+	.word	14465
 	.byte	1,1,42
 	.byte	'_lc_ue_ustack_tc2',0,12,224,5,28
-	.word	14366
+	.word	14322
 	.byte	1,1,42
 	.byte	'_lc_ue_istack_tc2',0,12,225,5,28
-	.word	14366
+	.word	14322
 	.byte	1,1,42
 	.byte	'_lc_ub_csa_tc2',0,12,230,5,26
-	.word	14509
+	.word	14465
 	.byte	1,1,42
 	.byte	'_lc_ue_csa_tc2',0,12,231,5,26
-	.word	14509
+	.word	14465
 	.byte	1,1,0
 	.sdecl	'.debug_abbrev',debug
 	.sect	'.debug_abbrev'
@@ -3293,10 +3293,10 @@ __osEE_tc_core2_start_function_end:
 	.word	.L426-.L425
 .L425:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc',0
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src',0
 	.byte	'C:\\Infineon\\AURIX-Studio-1.8.0\\plugins\\com.infineon.aurix.tools_1.8.0\\build_system\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\',0
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src',0,0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0,0
 	.byte	'ee_hal.h',0,1,0,0
 	.byte	'ee_platform_types.h',0,1,0,0
 	.byte	'ee_tc_system.h',0,1,0,0
@@ -3319,13 +3319,13 @@ __osEE_tc_core2_start_function_end:
 	.sdecl	'.debug_info',debug,cluster('osEE_tc_core1_start')
 	.sect	'.debug_info'
 .L62:
-	.word	1256
+	.word	1212
 	.half	3
 	.word	.L63
 	.byte	4,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src/ee_tc_cstart.c',0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_cstart.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\',0,12,1
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
 	.word	.L65,.L64
 	.byte	2
 	.word	.L58
@@ -3495,8 +3495,8 @@ __osEE_tc_core2_start_function_end:
 	.word	.L430-.L429
 .L429:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src',0
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc',0,0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
 	.byte	'ee_tc_cstart.c',0,1,0,0
 	.byte	'ee_tc_system.h',0,2,0,0
 	.byte	'ee_hal.h',0,2,0,0,0
@@ -3738,13 +3738,13 @@ __osEE_tc_core2_start_function_end:
 	.sdecl	'.debug_info',debug,cluster('osEE_tc_core2_start')
 	.sect	'.debug_info'
 .L67:
-	.word	1256
+	.word	1212
 	.half	3
 	.word	.L68
 	.byte	4,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src/ee_tc_cstart.c',0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_cstart.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\',0,12,1
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
 	.word	.L70,.L69
 	.byte	2
 	.word	.L58
@@ -3914,8 +3914,8 @@ __osEE_tc_core2_start_function_end:
 	.word	.L496-.L495
 .L495:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src',0
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc',0,0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
 	.byte	'ee_tc_cstart.c',0,1,0,0
 	.byte	'ee_tc_system.h',0,2,0,0
 	.byte	'ee_hal.h',0,2,0,0,0
@@ -4159,13 +4159,13 @@ __osEE_tc_core2_start_function_end:
 	.sdecl	'.debug_info',debug,cluster('_START')
 	.sect	'.debug_info'
 .L72:
-	.word	314
+	.word	270
 	.half	3
 	.word	.L73
 	.byte	4,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src/ee_tc_cstart.c',0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_cstart.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\',0,12,1
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
 	.word	.L75,.L74
 	.byte	2
 	.word	.L58
@@ -4189,7 +4189,7 @@ __osEE_tc_core2_start_function_end:
 	.word	.L562-.L561
 .L561:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src',0,0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0,0
 	.byte	'ee_tc_cstart.c',0,1,0,0,0
 .L562:
 	.byte	5,3,7,0,5,2
@@ -4207,13 +4207,13 @@ __osEE_tc_core2_start_function_end:
 	.sdecl	'.debug_info',debug,cluster('osEE_tc_core0_start')
 	.sect	'.debug_info'
 .L77:
-	.word	1563
+	.word	1519
 	.half	3
 	.word	.L78
 	.byte	4,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src/ee_tc_cstart.c',0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_cstart.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\',0,12,1
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
 	.word	.L80,.L79
 	.byte	2
 	.word	.L58
@@ -4431,8 +4431,8 @@ __osEE_tc_core2_start_function_end:
 	.word	.L567-.L566
 .L566:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src',0
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc',0,0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc',0,0
 	.byte	'ee_tc_cstart.c',0,1,0,0
 	.byte	'ee_tc_system.h',0,2,0,0
 	.byte	'ee_hal.h',0,2,0,0,0
@@ -4742,13 +4742,13 @@ __osEE_tc_core2_start_function_end:
 	.sdecl	'.debug_info',debug,cluster('.cocofun_1')
 	.sect	'.debug_info'
 .L82:
-	.word	306
+	.word	262
 	.half	3
 	.word	.L83
 	.byte	4,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src/ee_tc_cstart.c',0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_cstart.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\',0,12,1
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
 	.word	.L85,.L84
 	.byte	2
 	.word	.L58
@@ -4770,7 +4770,7 @@ __osEE_tc_core2_start_function_end:
 	.word	.L650-.L649
 .L649:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src',0,0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0,0
 	.byte	'ee_tc_cstart.c',0,1,0,0,0
 .L650:
 	.byte	5,3,7,0,5,2
@@ -4798,13 +4798,13 @@ __osEE_tc_core2_start_function_end:
 	.sdecl	'.debug_info',debug,cluster('.cocofun_2')
 	.sect	'.debug_info'
 .L87:
-	.word	306
+	.word	262
 	.half	3
 	.word	.L88
 	.byte	4,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src/ee_tc_cstart.c',0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_cstart.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\',0,12,1
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
 	.word	.L90,.L89
 	.byte	2
 	.word	.L58
@@ -4826,7 +4826,7 @@ __osEE_tc_core2_start_function_end:
 	.word	.L655-.L654
 .L654:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src',0,0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0,0
 	.byte	'ee_tc_cstart.c',0,1,0,0,0
 .L655:
 	.byte	5,3,7,0,5,2
@@ -4854,13 +4854,13 @@ __osEE_tc_core2_start_function_end:
 	.sdecl	'.debug_info',debug,cluster('.cocofun_3')
 	.sect	'.debug_info'
 .L92:
-	.word	306
+	.word	262
 	.half	3
 	.word	.L93
 	.byte	4,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src/ee_tc_cstart.c',0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_cstart.c',0
 	.byte	'TASKING VX-toolset for AURIX Development Studio (non-commercial): C compiler',0
-	.byte	'E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\',0,12,1
+	.byte	'D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\',0,12,1
 	.word	.L95,.L94
 	.byte	2
 	.word	.L58
@@ -4882,7 +4882,7 @@ __osEE_tc_core2_start_function_end:
 	.word	.L660-.L659
 .L659:
 	.byte	2,1,-4,9,10,0,1,1,1,1,0,0,0,1
-	.byte	'E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src',0,0
+	.byte	'D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src',0,0
 	.byte	'ee_tc_cstart.c',0,1,0,0,0
 .L660:
 	.byte	5,3,7,0,5,2
@@ -4997,13 +4997,18 @@ __osEE_tc_core2_start_function_end:
 	.half	2
 	.byte	138,0
 	.word	0,0
+.L319:
+	.word	-1,.L47,.L368-.L47,.L369-.L47
+	.half	1
+	.byte	111
+	.word	0,0
 .L282:
 	.word	-1,.L47,.L352-.L47,.L353-.L47
 	.half	1
 	.byte	111
 	.word	0,0
-.L319:
-	.word	-1,.L47,.L368-.L47,.L369-.L47
+.L328:
+	.word	-1,.L47,.L324-.L47,.L370-.L47
 	.half	1
 	.byte	111
 	.word	0,0
@@ -5012,11 +5017,6 @@ __osEE_tc_core2_start_function_end:
 	.half	1
 	.byte	111
 	.word	.L53-.L47,.L356-.L47
-	.half	1
-	.byte	111
-	.word	0,0
-.L328:
-	.word	-1,.L47,.L324-.L47,.L370-.L47
 	.half	1
 	.byte	111
 	.word	0,0
@@ -5326,13 +5326,13 @@ __osEE_tc_core2_start_function_end:
 	.half	2
 	.byte	138,0
 	.word	0,0
-.L243:
-	.word	-1,.L57,.L415-.L57,.L416-.L57
+.L205:
+	.word	-1,.L57,.L400-.L57,.L401-.L57
 	.half	1
 	.byte	111
 	.word	0,0
-.L205:
-	.word	-1,.L57,.L400-.L57,.L401-.L57
+.L243:
+	.word	-1,.L57,.L415-.L57,.L416-.L57
 	.half	1
 	.byte	111
 	.word	0,0

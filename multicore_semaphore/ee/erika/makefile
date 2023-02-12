@@ -48,7 +48,7 @@ export OS_EE_OPT
 ############################################################################
 # Overwrite the ERIKA_FILES variable (if set) with the value
 # configured in RT-druid.
-ERIKA_FILES := $(shell cygpath `cygpath -ms "E:\Projects\Erika\erika3-tc38x"`)
+ERIKA_FILES := $(shell cygpath `cygpath -ms "D:\RTOS_PROJEKT\erica\erika3"`)
 export ERIKA_FILES
 
 $(info ERIKA_FILES=$(ERIKA_FILES))

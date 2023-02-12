@@ -19,7 +19,7 @@
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_conf.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_conf.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -75,7 +75,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -131,7 +131,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_cfg.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_cfg.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -190,7 +190,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\out\\ee_applcfg.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\ee_applcfg.h"
 /* ###*B*###
  *
  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
@@ -219,7 +219,7 @@
  *
  **************************************************************************/
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_oscfg.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_oscfg.h"
 /* ###*B*###
  *
  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
@@ -367,7 +367,7 @@
  **************************************************************************/
 
 
-#line 29 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\out\\ee_applcfg.h"
+#line 29 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\ee_applcfg.h"
 
 
 
@@ -425,6 +425,8 @@
  **************************************************************************/
 
 
+
+
 /***************************************************************************
  *
  * CPU0 Schedule Tables Declaration
@@ -462,7 +464,6 @@
  * CPU1 ALARMs Declaration
  *
  **************************************************************************/
-
 
 /***************************************************************************
  *
@@ -502,7 +503,6 @@
  *
  **************************************************************************/
 
-
 /***************************************************************************
  *
  * CPU2 Schedule Tables Declaration
@@ -533,13 +533,13 @@
  **************************************************************************/
 
 
-#line 59 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_cfg.h"
+#line 59 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_cfg.h"
 
 
 
-#line 56 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 56 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_arch_override.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_arch_override.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -622,9 +622,9 @@
 
 
 
-#line 57 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 57 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_platform_types.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_platform_types.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -685,7 +685,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_utils.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_utils.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -985,9 +985,9 @@
 
 
 
-#line 61 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_platform_types.h"
+#line 61 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_platform_types.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_compiler.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_compiler.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -1047,7 +1047,7 @@
  =============================================================================*/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_compiler_cfg.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_compiler_cfg.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -1112,7 +1112,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_compiler_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_compiler_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -1171,7 +1171,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_arch_compiler_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_arch_compiler_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -1234,7 +1234,7 @@
 
 
 
-#line 59 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_compiler_tasking_ctc.h"
+#line 59 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_compiler_tasking_ctc.h"
 
 
 
@@ -1328,7 +1328,7 @@
 
 
 
-#line 65 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_compiler_cfg.h"
+#line 65 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_compiler_cfg.h"
 
 
 
@@ -1426,7 +1426,7 @@
 
 
 
-#line 60 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_compiler.h"
+#line 60 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_compiler.h"
 
 
 
@@ -1626,7 +1626,7 @@
 
 
 
-#line 62 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_platform_types.h"
+#line 62 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_platform_types.h"
 
 #line 1 "C:\\Infineon\\AURIX-Studio-1.8.0\\plugins\\com.infineon.aurix.tools_1.8.0\\build_system\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\limits.h"
 /**************************************************************************
@@ -1788,7 +1788,7 @@
 
 
 
-#line 63 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_platform_types.h"
+#line 63 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_platform_types.h"
 
 #line 1 "C:\\Infineon\\AURIX-Studio-1.8.0\\plugins\\com.infineon.aurix.tools_1.8.0\\build_system\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\stddef.h"
 /**************************************************************************
@@ -1840,7 +1840,7 @@ typedef __ptrdiff_t     ptrdiff_t;
 #pragma nomisrac restore
 
 
-#line 64 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_platform_types.h"
+#line 64 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_platform_types.h"
 
 #line 1 "C:\\Infineon\\AURIX-Studio-1.8.0\\plugins\\com.infineon.aurix.tools_1.8.0\\build_system\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\stdint.h"
 /**************************************************************************
@@ -2372,7 +2372,7 @@ typedef unsigned long long int     uintmax_t;
 
 
 
-#line 65 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_platform_types.h"
+#line 65 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_platform_types.h"
 
 
 
@@ -2478,11 +2478,11 @@ typedef struct {
 
 
 
-#line 58 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 58 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_hal.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_hal.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -2545,7 +2545,7 @@ typedef struct {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_hal_irq.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_hal_irq.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -2904,9 +2904,9 @@ extern void osEE_tricore_system_timer_handler(void);
 
 
 
-#line 63 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_hal.h"
+#line 63 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_hal.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_trapvec.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_trapvec.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -3147,7 +3147,7 @@ static inline OsEE_tc_tin osEE_tc_get_tin(void)
 
 
 
-#line 64 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_hal.h"
+#line 64 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_hal.h"
 
 
 
@@ -3332,7 +3332,7 @@ static inline OsEE_reg __attribute__((always_inline))
   /* This is the extr.u assembler instruction */
   __asm volatile (
     "extr.u %0,%1,%2,%3":
-      "=d" (res): "d" (reg), "i" (start), "i" (size): "memory"
+      "=d" (res): "d" (reg), "i"     (start), "i" (size): "memory"
   );
   return res;
 }
@@ -3459,10 +3459,10 @@ static inline OsEE_core_id __attribute__((always_inline)) osEE_get_curr_core_id(
 
 
 
-#line 61 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 61 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_system.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_system.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -3518,7 +3518,7 @@ static inline OsEE_core_id __attribute__((always_inline)) osEE_get_curr_core_id(
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_csfr.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_csfr.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -3801,9 +3801,9 @@ static inline OsEE_core_id __attribute__((always_inline)) osEE_get_curr_core_id(
 
 
 
-#line 56 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_system.h"
+#line 56 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_system.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_hal_internal_types.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_hal_internal_types.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -4112,9 +4112,9 @@ typedef struct {
 
 
 
-#line 57 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_system.h"
+#line 57 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_system.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_src.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_src.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -5961,7 +5961,7 @@ typedef struct {
 /******************************************************************************/
 
 
-#line 58 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_system.h"
+#line 58 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_system.h"
 
 
 
@@ -7820,10 +7820,10 @@ typedef struct
 
 
 
-#line 63 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 63 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_hal_mc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_hal_mc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -8133,9 +8133,9 @@ static inline OsEE_bool __attribute__((always_inline))
 
 
 
-#line 65 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 65 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -8195,7 +8195,7 @@ static inline OsEE_bool __attribute__((always_inline))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api_types.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api_types.h"
 
 /* ###*B*###
  * Erika Enterprise, version 3
@@ -9099,9 +9099,9 @@ typedef OsEE_service_id_type                        OSServiceIdType;
 
 
 
-#line 60 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api.h"
+#line 60 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_oo_api_osek.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_oo_api_osek.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -11071,9 +11071,9 @@ void
 
 
 
-#line 61 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api.h"
+#line 61 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_oo_api_dynamic.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_oo_api_dynamic.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -11178,9 +11178,9 @@ void
 
 
 
-#line 62 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api.h"
+#line 62 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_oo_api_extension.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_oo_api_extension.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -11342,9 +11342,9 @@ StatusType
 
 
 
-#line 63 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api.h"
+#line 63 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_scheduler_types.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_scheduler_types.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  *
@@ -11583,13 +11583,13 @@ typedef struct OsEE_sem_tag SemType;
 
 
 
-#line 64 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api.h"
+#line 64 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api.h"
 
 
-#line 66 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 66 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_assert.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_assert.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -11707,7 +11707,7 @@ typedef struct OsEE_sem_tag SemType;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -11781,7 +11781,7 @@ typedef struct OsEE_sem_tag SemType;
 
 
 
-#line 118 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_assert.h"
+#line 118 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_assert.h"
 
 
 
@@ -11821,7 +11821,7 @@ typedef struct OsEE_sem_tag SemType;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -11915,7 +11915,7 @@ typedef struct OsEE_sem_tag SemType;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -13080,11 +13080,11 @@ typedef struct OsEE_sem_tag SemType;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 157 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_assert.h"
+#line 157 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_assert.h"
 
 
 /** the assertion array storing all the assertions value */
@@ -13194,7 +13194,7 @@ uint8_t osEE_assert_last(void);
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -13288,7 +13288,7 @@ uint8_t osEE_assert_last(void);
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -14453,11 +14453,11 @@ uint8_t osEE_assert_last(void);
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 266 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_assert.h"
+#line 266 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_assert.h"
 
 
 
@@ -14465,11 +14465,11 @@ uint8_t osEE_assert_last(void);
 
 
 
-#line 68 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 68 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\out\\ee_declcfg.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\ee_declcfg.h"
 /* ###*B*###
  *
  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
@@ -14535,7 +14535,7 @@ extern void idle_hook_core2 (void);
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -14629,7 +14629,7 @@ extern void idle_hook_core2 (void);
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -15794,17 +15794,17 @@ extern void idle_hook_core2 (void);
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 66 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\out\\ee_declcfg.h"
+#line 66 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\ee_declcfg.h"
 
 extern SemType S;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -15898,7 +15898,7 @@ extern SemType S;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -17063,11 +17063,11 @@ extern SemType S;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 71 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\out\\ee_declcfg.h"
+#line 71 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\out\\ee_declcfg.h"
 
 
 
@@ -17080,15 +17080,15 @@ extern SemType S;
  **************************************************************************/
 
 
-#line 71 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 71 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
 
 
-#line 56 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_conf.h"
+#line 56 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_conf.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_kernel_types.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_kernel_types.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  *
@@ -18213,9 +18213,9 @@ extern void
 
 
 
-#line 59 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_conf.h"
+#line 59 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_conf.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -18280,7 +18280,7 @@ extern void
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -18374,7 +18374,7 @@ extern void
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -19539,16 +19539,16 @@ extern void
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 65 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 65 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** The Kernel Descriptor Block */
 extern OsEE_KDB osEE_kdb_var;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -19642,7 +19642,7 @@ extern OsEE_KDB osEE_kdb_var;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -20807,15 +20807,15 @@ extern OsEE_KDB osEE_kdb_var;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 69 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 69 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -20909,7 +20909,7 @@ extern OsEE_KDB osEE_kdb_var;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -22074,16 +22074,16 @@ extern OsEE_KDB osEE_kdb_var;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 72 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 72 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** The Kernel Control Block */
 extern OsEE_KCB osEE_kcb_var;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -22177,7 +22177,7 @@ extern OsEE_KCB osEE_kcb_var;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -23342,11 +23342,11 @@ extern OsEE_KCB osEE_kcb_var;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 76 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 76 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 /**
  *  \brief Returns the pointer to the Kernel descriptor Block
@@ -23554,7 +23554,7 @@ static inline OsEE_KDB * __attribute__((always_inline)) osEE_get_kernel(void) {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -23648,7 +23648,7 @@ static inline OsEE_KDB * __attribute__((always_inline)) osEE_get_kernel(void) {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -24813,11 +24813,11 @@ static inline OsEE_KDB * __attribute__((always_inline)) osEE_get_kernel(void) {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 283 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 283 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** Core 0 Descriptor block */
 extern OsEE_CDB osEE_cdb_var_core0;
 
@@ -24825,7 +24825,7 @@ extern OsEE_CDB osEE_cdb_var_core0;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -24919,7 +24919,7 @@ extern OsEE_CDB osEE_cdb_var_core0;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -26084,15 +26084,15 @@ extern OsEE_CDB osEE_cdb_var_core0;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 290 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 290 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -26186,7 +26186,7 @@ extern OsEE_CDB osEE_cdb_var_core0;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -27351,16 +27351,16 @@ extern OsEE_CDB osEE_cdb_var_core0;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 293 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 293 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** Core 0 Control block */
 extern OsEE_CCB osEE_ccb_var_core0;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -27454,7 +27454,7 @@ extern OsEE_CCB osEE_ccb_var_core0;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -28619,16 +28619,16 @@ extern OsEE_CCB osEE_ccb_var_core0;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 297 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 297 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -28722,7 +28722,7 @@ extern OsEE_CCB osEE_ccb_var_core0;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -29887,11 +29887,11 @@ extern OsEE_CCB osEE_ccb_var_core0;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 301 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 301 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** Core 1 Descriptor block */
 extern OsEE_CDB osEE_cdb_var_core1;
 
@@ -29899,7 +29899,7 @@ extern OsEE_CDB osEE_cdb_var_core1;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -29993,7 +29993,7 @@ extern OsEE_CDB osEE_cdb_var_core1;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -31158,15 +31158,15 @@ extern OsEE_CDB osEE_cdb_var_core1;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 308 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 308 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -31260,7 +31260,7 @@ extern OsEE_CDB osEE_cdb_var_core1;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -32425,16 +32425,16 @@ extern OsEE_CDB osEE_cdb_var_core1;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 311 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 311 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** Core 1 Control block */
 extern OsEE_CCB osEE_ccb_var_core1;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -32528,7 +32528,7 @@ extern OsEE_CCB osEE_ccb_var_core1;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -33693,17 +33693,17 @@ extern OsEE_CCB osEE_ccb_var_core1;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 315 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 315 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -33797,7 +33797,7 @@ extern OsEE_CCB osEE_ccb_var_core1;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -34962,11 +34962,11 @@ extern OsEE_CCB osEE_ccb_var_core1;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 320 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 320 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** Core 2 Descriptor block */
 extern OsEE_CDB osEE_cdb_var_core2;
 
@@ -34974,7 +34974,7 @@ extern OsEE_CDB osEE_cdb_var_core2;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -35068,7 +35068,7 @@ extern OsEE_CDB osEE_cdb_var_core2;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -36233,15 +36233,15 @@ extern OsEE_CDB osEE_cdb_var_core2;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 327 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 327 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -36335,7 +36335,7 @@ extern OsEE_CDB osEE_cdb_var_core2;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -37500,16 +37500,16 @@ extern OsEE_CDB osEE_cdb_var_core2;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 330 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 330 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** Core 2 Control block */
 extern OsEE_CCB osEE_ccb_var_core2;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -37603,7 +37603,7 @@ extern OsEE_CCB osEE_ccb_var_core2;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -38768,11 +38768,11 @@ extern OsEE_CCB osEE_ccb_var_core2;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 334 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 334 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
@@ -39040,7 +39040,7 @@ static inline void __attribute__((always_inline))
 
 
 
-#line 60 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_conf.h"
+#line 60 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_conf.h"
 
 
 #line 21 "ee_applcfg.c"
@@ -39054,7 +39054,7 @@ static inline void __attribute__((always_inline))
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -39148,7 +39148,7 @@ static inline void __attribute__((always_inline))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -40313,20 +40313,20 @@ static inline void __attribute__((always_inline))
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
 #line 31 "ee_applcfg.c"
 
 SemType S = {
-        /* .spin_lock = */ 0,
+  /* .spin_lock = */ 0,
   /* .blocked_queue = */ ((void *) 0),
   /* .count = */         0U
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -40420,7 +40420,7 @@ SemType S = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -41585,7 +41585,7 @@ SemType S = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -41600,7 +41600,7 @@ SemType S = {
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -41694,7 +41694,7 @@ SemType S = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -42859,7 +42859,7 @@ SemType S = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -42873,7 +42873,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -42967,7 +42967,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -44132,14 +44132,14 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
 #line 58 "ee_applcfg.c"
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -44233,7 +44233,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -45398,7 +45398,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -45412,7 +45412,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -45506,7 +45506,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -46671,14 +46671,14 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
 #line 69 "ee_applcfg.c"
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -46772,7 +46772,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -47937,7 +47937,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -47951,7 +47951,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -48045,7 +48045,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -49210,7 +49210,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -49224,7 +49224,7 @@ static OsEE_stack __attribute__((__align((8U))))
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -49318,7 +49318,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -50483,7 +50483,7 @@ static OsEE_stack __attribute__((__align((8U))))
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -50496,7 +50496,7 @@ static OsEE_SCB  osEE_scb_array_core0[(2U)] =
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -50590,7 +50590,7 @@ static OsEE_SCB  osEE_scb_array_core0[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -51755,7 +51755,7 @@ static OsEE_SCB  osEE_scb_array_core0[(2U)] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -51763,7 +51763,7 @@ static OsEE_SCB  osEE_scb_array_core0[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -51857,7 +51857,7 @@ static OsEE_SCB  osEE_scb_array_core0[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -53022,7 +53022,7 @@ static OsEE_SCB  osEE_scb_array_core0[(2U)] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -53035,7 +53035,7 @@ static OsEE_SCB  osEE_scb_array_core1[(2U)] =
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -53129,7 +53129,7 @@ static OsEE_SCB  osEE_scb_array_core1[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -54294,7 +54294,7 @@ static OsEE_SCB  osEE_scb_array_core1[(2U)] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -54302,7 +54302,7 @@ static OsEE_SCB  osEE_scb_array_core1[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -54396,7 +54396,7 @@ static OsEE_SCB  osEE_scb_array_core1[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -55561,7 +55561,7 @@ static OsEE_SCB  osEE_scb_array_core1[(2U)] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -55574,7 +55574,7 @@ static OsEE_SCB  osEE_scb_array_core2[(2U)] =
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -55668,7 +55668,7 @@ static OsEE_SCB  osEE_scb_array_core2[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -56833,7 +56833,7 @@ static OsEE_SCB  osEE_scb_array_core2[(2U)] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -56847,7 +56847,7 @@ static OsEE_SCB  osEE_scb_array_core2[(2U)] =
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -56941,7 +56941,7 @@ static OsEE_SCB  osEE_scb_array_core2[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -58106,7 +58106,7 @@ static OsEE_SCB  osEE_scb_array_core2[(2U)] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -58125,7 +58125,7 @@ static OsEE_SDB  osEE_sdb_array_core0[(2U)] =
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -58219,7 +58219,7 @@ static OsEE_SDB  osEE_sdb_array_core0[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -59384,7 +59384,7 @@ static OsEE_SDB  osEE_sdb_array_core0[(2U)] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -59392,7 +59392,7 @@ static OsEE_SDB  osEE_sdb_array_core0[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -59486,7 +59486,7 @@ static OsEE_SDB  osEE_sdb_array_core0[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -60651,7 +60651,7 @@ static OsEE_SDB  osEE_sdb_array_core0[(2U)] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -60670,7 +60670,7 @@ static OsEE_SDB  osEE_sdb_array_core1[(2U)] =
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -60764,7 +60764,7 @@ static OsEE_SDB  osEE_sdb_array_core1[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -61929,7 +61929,7 @@ static OsEE_SDB  osEE_sdb_array_core1[(2U)] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -61937,7 +61937,7 @@ static OsEE_SDB  osEE_sdb_array_core1[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -62031,7 +62031,7 @@ static OsEE_SDB  osEE_sdb_array_core1[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -63196,7 +63196,7 @@ static OsEE_SDB  osEE_sdb_array_core1[(2U)] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -63215,7 +63215,7 @@ static OsEE_SDB  osEE_sdb_array_core2[(2U)] =
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -63309,7 +63309,7 @@ static OsEE_SDB  osEE_sdb_array_core2[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -64474,7 +64474,7 @@ static OsEE_SDB  osEE_sdb_array_core2[(2U)] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -64488,7 +64488,7 @@ static OsEE_SDB  osEE_sdb_array_core2[(2U)] =
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -64582,7 +64582,7 @@ static OsEE_SDB  osEE_sdb_array_core2[(2U)] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -65747,7 +65747,7 @@ static OsEE_SDB  osEE_sdb_array_core2[(2U)] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -65781,7 +65781,7 @@ static OsEE_TCB
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -65875,7 +65875,7 @@ static OsEE_TCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -67040,7 +67040,7 @@ static OsEE_TCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -67048,7 +67048,7 @@ static OsEE_TCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -67142,7 +67142,7 @@ static OsEE_TCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -68307,7 +68307,7 @@ static OsEE_TCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -68341,7 +68341,7 @@ static OsEE_TCB
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -68435,7 +68435,7 @@ static OsEE_TCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -69600,7 +69600,7 @@ static OsEE_TCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -69608,7 +69608,7 @@ static OsEE_TCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -69702,7 +69702,7 @@ static OsEE_TCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -70867,7 +70867,7 @@ static OsEE_TCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -70901,7 +70901,7 @@ static OsEE_TCB
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -70995,7 +70995,7 @@ static OsEE_TCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -72160,7 +72160,7 @@ static OsEE_TCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -72173,7 +72173,7 @@ static OsEE_TCB
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -72267,7 +72267,7 @@ static OsEE_TCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -73432,7 +73432,7 @@ static OsEE_TCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -73488,7 +73488,7 @@ static OsEE_TDB
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -73582,7 +73582,7 @@ static OsEE_TDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -74747,7 +74747,7 @@ static OsEE_TDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -74755,7 +74755,7 @@ static OsEE_TDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -74849,7 +74849,7 @@ static OsEE_TDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -76014,7 +76014,7 @@ static OsEE_TDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -76070,7 +76070,7 @@ static OsEE_TDB
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -76164,7 +76164,7 @@ static OsEE_TDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -77329,7 +77329,7 @@ static OsEE_TDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -77337,7 +77337,7 @@ static OsEE_TDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -77431,7 +77431,7 @@ static OsEE_TDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -78596,7 +78596,7 @@ static OsEE_TDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -78652,7 +78652,7 @@ static OsEE_TDB
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -78746,7 +78746,7 @@ static OsEE_TDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -79911,7 +79911,7 @@ static OsEE_TDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -79919,7 +79919,7 @@ static OsEE_TDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -80013,7 +80013,7 @@ static OsEE_TDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -81178,7 +81178,7 @@ static OsEE_TDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -81198,7 +81198,7 @@ static OsEE_TDB  * const
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -81292,7 +81292,7 @@ static OsEE_TDB  * const
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -82457,7 +82457,7 @@ static OsEE_TDB  * const
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -82465,7 +82465,7 @@ static OsEE_TDB  * const
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -82559,7 +82559,7 @@ static OsEE_TDB  * const
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -83724,7 +83724,7 @@ static OsEE_TDB  * const
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -83741,7 +83741,7 @@ static OsEE_SN   osEE_sn_array_core0[2] = {
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -83835,7 +83835,7 @@ static OsEE_SN   osEE_sn_array_core0[2] = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -85000,7 +85000,7 @@ static OsEE_SN   osEE_sn_array_core0[2] = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -85008,7 +85008,7 @@ static OsEE_SN   osEE_sn_array_core0[2] = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -85102,7 +85102,7 @@ static OsEE_SN   osEE_sn_array_core0[2] = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -86267,7 +86267,7 @@ static OsEE_SN   osEE_sn_array_core0[2] = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -86284,7 +86284,7 @@ static OsEE_SN   osEE_sn_array_core1[2] = {
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -86378,7 +86378,7 @@ static OsEE_SN   osEE_sn_array_core1[2] = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -87543,7 +87543,7 @@ static OsEE_SN   osEE_sn_array_core1[2] = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -87551,7 +87551,7 @@ static OsEE_SN   osEE_sn_array_core1[2] = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -87645,7 +87645,7 @@ static OsEE_SN   osEE_sn_array_core1[2] = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -88810,7 +88810,7 @@ static OsEE_SN   osEE_sn_array_core1[2] = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -88827,7 +88827,7 @@ static OsEE_SN   osEE_sn_array_core2[2] = {
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -88921,7 +88921,7 @@ static OsEE_SN   osEE_sn_array_core2[2] = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -90086,7 +90086,7 @@ static OsEE_SN   osEE_sn_array_core2[2] = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -90100,7 +90100,7 @@ static OsEE_SN   osEE_sn_array_core2[2] = {
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -90194,7 +90194,7 @@ static OsEE_SN   osEE_sn_array_core2[2] = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -91359,7 +91359,7 @@ static OsEE_SN   osEE_sn_array_core2[2] = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -91377,7 +91377,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core0[1U] =
   }};
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -91471,7 +91471,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core0[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -92636,7 +92636,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core0[1U] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -92649,7 +92649,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core0[1U] =
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -92743,7 +92743,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core0[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -93908,7 +93908,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core0[1U] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -93926,7 +93926,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core1[1U] =
   }};
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -94020,7 +94020,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core1[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -95185,7 +95185,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core1[1U] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -95198,7 +95198,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core1[1U] =
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -95292,7 +95292,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core1[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -96457,7 +96457,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core1[1U] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -96475,7 +96475,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core2[1U] =
   }};
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -96569,7 +96569,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core2[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -97734,7 +97734,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core2[1U] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -97747,7 +97747,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core2[1U] =
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -97841,7 +97841,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core2[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -99006,7 +99006,7 @@ static OsEE_autostart_tdb  osEE_autostart_tdb_array_core2[1U] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -99015,7 +99015,7 @@ static OsEE_CounterCB
   osEE_counter_cb_array_core0[1];
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -99109,7 +99109,7 @@ static OsEE_CounterCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -100274,7 +100274,7 @@ static OsEE_CounterCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -100282,7 +100282,7 @@ static OsEE_CounterCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -100376,7 +100376,7 @@ static OsEE_CounterCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -101541,7 +101541,7 @@ static OsEE_CounterCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -101560,7 +101560,7 @@ static OsEE_CounterDB
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -101654,7 +101654,7 @@ static OsEE_CounterDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -102819,7 +102819,7 @@ static OsEE_CounterDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -102832,7 +102832,7 @@ static OsEE_CounterDB
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -102926,7 +102926,7 @@ static OsEE_CounterDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -104091,7 +104091,7 @@ static OsEE_CounterDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -104100,7 +104100,7 @@ static OsEE_CounterCB
   osEE_counter_cb_array_core1[1];
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -104194,7 +104194,7 @@ static OsEE_CounterCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -105359,7 +105359,7 @@ static OsEE_CounterCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -105367,7 +105367,7 @@ static OsEE_CounterCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -105461,7 +105461,7 @@ static OsEE_CounterCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -106626,7 +106626,7 @@ static OsEE_CounterCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -106645,7 +106645,7 @@ static OsEE_CounterDB
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -106739,7 +106739,7 @@ static OsEE_CounterDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -107904,7 +107904,7 @@ static OsEE_CounterDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -107917,7 +107917,7 @@ static OsEE_CounterDB
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -108011,7 +108011,7 @@ static OsEE_CounterDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -109176,7 +109176,7 @@ static OsEE_CounterDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -109185,7 +109185,7 @@ static OsEE_CounterCB
   osEE_counter_cb_array_core2[1];
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -109279,7 +109279,7 @@ static OsEE_CounterCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -110444,7 +110444,7 @@ static OsEE_CounterCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -110452,7 +110452,7 @@ static OsEE_CounterCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -110546,7 +110546,7 @@ static OsEE_CounterCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -111711,7 +111711,7 @@ static OsEE_CounterCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -111730,7 +111730,7 @@ static OsEE_CounterDB
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -111824,7 +111824,7 @@ static OsEE_CounterDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -112989,7 +112989,7 @@ static OsEE_CounterDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -112997,7 +112997,7 @@ static OsEE_CounterDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -113091,7 +113091,7 @@ static OsEE_CounterDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -114256,7 +114256,7 @@ static OsEE_CounterDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -114270,7 +114270,7 @@ static OsEE_CounterDB  * const
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -114364,7 +114364,7 @@ static OsEE_CounterDB  * const
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -115529,7 +115529,7 @@ static OsEE_CounterDB  * const
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -115542,7 +115542,7 @@ static OsEE_CounterDB  * const
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -115636,7 +115636,7 @@ static OsEE_CounterDB  * const
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -116801,16 +116801,16 @@ static OsEE_CounterDB  * const
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
 #line 679 "ee_applcfg.c"
 static OsEE_AlarmCB 
-  osEE_alarm_cb_array_core0[1];
+  osEE_alarm_cb_array_core0[3];
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -116904,7 +116904,7 @@ static OsEE_AlarmCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -118069,7 +118069,7 @@ static OsEE_AlarmCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
@@ -118077,7 +118077,7 @@ static OsEE_AlarmCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -118171,7 +118171,7 @@ static OsEE_AlarmCB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -119336,13 +119336,13 @@ static OsEE_AlarmCB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
 #line 686 "ee_applcfg.c"
 static OsEE_AlarmDB 
-  osEE_alarm_db_array_core0[1] = {
+  osEE_alarm_db_array_core0[3] = {
   {
     /* .p_trigger_cb = */ &osEE_alarm_cb_array_core0[0U],
     /* .p_counter_db = */ &osEE_counter_db_array_core0[0U],
@@ -119354,10174 +119354,22 @@ static OsEE_AlarmDB
         /* .mask         = */ 0U},
       /* .type       = */ OSEE_ACTION_TASK
     }
-  }
-};
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** @file   Os_MemMap.h
-  *  @brief  AUTOSAR Compliant OS MemMap.h
-  *  @author Errico Guidieri
-  *  @date 2018
-  */
-/*******************************************************************************
-                                    Requirements
- ******************************************************************************/
-
-/* [SWS_MemMap_00032] For each basic software module description which is part
-    of the input configuration a basic software module specific memory mapping
-    header file {Mip}_MemMap.h shall be provided by the Memory Mapping if the
-    BSW Module descriptions is NOT describing a DependencyOnArtifact as
-    requiredArtifact.
-    DependencyOnArtifact.category = MEMMAP. Hereby {Mip} is composed
-    according <Msn>[_<vi>_<ai>] for basic software modules where:
-      * <Msn> is the shortName (case sensitive) of the BswModuleDescription
-      * <vi> is the vendorId of the BSW module
-      * <ai> is the vendorApiInfix of the BSW module
-    The sub part in squared brackets [_<vi>_<ai>] is omitted if no
-    vendorApiInfix is defined for the Basic Software Module which indicates
-    that it does not use multiple instantiation.
-    (SRS_BSW_00465, SRS_BSW_00415, SRS_BSW_00351, SRS_BSW_00464) */
-
-/*******************************************************************************
-                            INFORMATION MACROS
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-/** Evidence S.r.l Vendor ID */
-
-
-/* AUTOSAR Software Specification Version Information */
-
-
-
-
-
-
-
-
-
-
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** \file   ee_os_mem_map_tasking_ctc.h
-  *  \brief  OS part for TASKING CTC compiler of MemMap.h
-  *  \author Errico Guidieri
-  *  \date  2019
-  */
-/* I need configuration for this MemMap even without OS-Applications */
-
-/* MUST NOT be guards here because this file is supposed to be included
-   multiple time in a single compilation unit */
-
-/* Flag Error until we are sure that we are correct */
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-            ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping const section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                  ERIKA API memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA API memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                ERIKA API memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-  ERIKA OS core specific ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-    ERIKA OS core specific ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping const data section
- ******************************************************************************/
-
-  
-  
-    
-    
-    
-    
-      #pragma section farrom  restore
-      #pragma section nearrom restore
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping code section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Check if the "command macro" has been acknowledged */
-
-
-
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-
-
-
-#line 703 "ee_applcfg.c"
-
-/***************************************************************************
- *
- * Alarms Core1
- *
- **************************************************************************/
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** @file   Os_MemMap.h
-  *  @brief  AUTOSAR Compliant OS MemMap.h
-  *  @author Errico Guidieri
-  *  @date 2018
-  */
-/*******************************************************************************
-                                    Requirements
- ******************************************************************************/
-
-/* [SWS_MemMap_00032] For each basic software module description which is part
-    of the input configuration a basic software module specific memory mapping
-    header file {Mip}_MemMap.h shall be provided by the Memory Mapping if the
-    BSW Module descriptions is NOT describing a DependencyOnArtifact as
-    requiredArtifact.
-    DependencyOnArtifact.category = MEMMAP. Hereby {Mip} is composed
-    according <Msn>[_<vi>_<ai>] for basic software modules where:
-      * <Msn> is the shortName (case sensitive) of the BswModuleDescription
-      * <vi> is the vendorId of the BSW module
-      * <ai> is the vendorApiInfix of the BSW module
-    The sub part in squared brackets [_<vi>_<ai>] is omitted if no
-    vendorApiInfix is defined for the Basic Software Module which indicates
-    that it does not use multiple instantiation.
-    (SRS_BSW_00465, SRS_BSW_00415, SRS_BSW_00351, SRS_BSW_00464) */
-
-/*******************************************************************************
-                            INFORMATION MACROS
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-/** Evidence S.r.l Vendor ID */
-
-
-/* AUTOSAR Software Specification Version Information */
-
-
-
-
-
-
-
-
-
-
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** \file   ee_os_mem_map_tasking_ctc.h
-  *  \brief  OS part for TASKING CTC compiler of MemMap.h
-  *  \author Errico Guidieri
-  *  \date  2019
-  */
-/* I need configuration for this MemMap even without OS-Applications */
-
-/* MUST NOT be guards here because this file is supposed to be included
-   multiple time in a single compilation unit */
-
-/* Flag Error until we are sure that we are correct */
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-            ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping const section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                  ERIKA API memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA API memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                ERIKA API memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-  ERIKA OS core specific ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-    
-    #pragma section farbss  "private1"
-    #pragma section nearbss "private1"
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-    ERIKA OS core specific ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping const data section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping code section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Check if the "command macro" has been acknowledged */
-
-
-
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-
-
-
-#line 711 "ee_applcfg.c"
-static OsEE_AlarmCB 
-  osEE_alarm_cb_array_core1[1];
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** @file   Os_MemMap.h
-  *  @brief  AUTOSAR Compliant OS MemMap.h
-  *  @author Errico Guidieri
-  *  @date 2018
-  */
-/*******************************************************************************
-                                    Requirements
- ******************************************************************************/
-
-/* [SWS_MemMap_00032] For each basic software module description which is part
-    of the input configuration a basic software module specific memory mapping
-    header file {Mip}_MemMap.h shall be provided by the Memory Mapping if the
-    BSW Module descriptions is NOT describing a DependencyOnArtifact as
-    requiredArtifact.
-    DependencyOnArtifact.category = MEMMAP. Hereby {Mip} is composed
-    according <Msn>[_<vi>_<ai>] for basic software modules where:
-      * <Msn> is the shortName (case sensitive) of the BswModuleDescription
-      * <vi> is the vendorId of the BSW module
-      * <ai> is the vendorApiInfix of the BSW module
-    The sub part in squared brackets [_<vi>_<ai>] is omitted if no
-    vendorApiInfix is defined for the Basic Software Module which indicates
-    that it does not use multiple instantiation.
-    (SRS_BSW_00465, SRS_BSW_00415, SRS_BSW_00351, SRS_BSW_00464) */
-
-/*******************************************************************************
-                            INFORMATION MACROS
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-/** Evidence S.r.l Vendor ID */
-
-
-/* AUTOSAR Software Specification Version Information */
-
-
-
-
-
-
-
-
-
-
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** \file   ee_os_mem_map_tasking_ctc.h
-  *  \brief  OS part for TASKING CTC compiler of MemMap.h
-  *  \author Errico Guidieri
-  *  \date  2019
-  */
-/* I need configuration for this MemMap even without OS-Applications */
-
-/* MUST NOT be guards here because this file is supposed to be included
-   multiple time in a single compilation unit */
-
-/* Flag Error until we are sure that we are correct */
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-            ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping const section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                  ERIKA API memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA API memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                ERIKA API memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-  ERIKA OS core specific ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-    
-    
-
-    #pragma section farbss  restore
-    #pragma section nearbss restore
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-    ERIKA OS core specific ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping const data section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping code section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Check if the "command macro" has been acknowledged */
-
-
-
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-
-
-
-#line 715 "ee_applcfg.c"
-
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** @file   Os_MemMap.h
-  *  @brief  AUTOSAR Compliant OS MemMap.h
-  *  @author Errico Guidieri
-  *  @date 2018
-  */
-/*******************************************************************************
-                                    Requirements
- ******************************************************************************/
-
-/* [SWS_MemMap_00032] For each basic software module description which is part
-    of the input configuration a basic software module specific memory mapping
-    header file {Mip}_MemMap.h shall be provided by the Memory Mapping if the
-    BSW Module descriptions is NOT describing a DependencyOnArtifact as
-    requiredArtifact.
-    DependencyOnArtifact.category = MEMMAP. Hereby {Mip} is composed
-    according <Msn>[_<vi>_<ai>] for basic software modules where:
-      * <Msn> is the shortName (case sensitive) of the BswModuleDescription
-      * <vi> is the vendorId of the BSW module
-      * <ai> is the vendorApiInfix of the BSW module
-    The sub part in squared brackets [_<vi>_<ai>] is omitted if no
-    vendorApiInfix is defined for the Basic Software Module which indicates
-    that it does not use multiple instantiation.
-    (SRS_BSW_00465, SRS_BSW_00415, SRS_BSW_00351, SRS_BSW_00464) */
-
-/*******************************************************************************
-                            INFORMATION MACROS
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-/** Evidence S.r.l Vendor ID */
-
-
-/* AUTOSAR Software Specification Version Information */
-
-
-
-
-
-
-
-
-
-
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** \file   ee_os_mem_map_tasking_ctc.h
-  *  \brief  OS part for TASKING CTC compiler of MemMap.h
-  *  \author Errico Guidieri
-  *  \date  2019
-  */
-/* I need configuration for this MemMap even without OS-Applications */
-
-/* MUST NOT be guards here because this file is supposed to be included
-   multiple time in a single compilation unit */
-
-/* Flag Error until we are sure that we are correct */
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-            ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping const section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                  ERIKA API memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA API memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                ERIKA API memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-  ERIKA OS core specific ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-    ERIKA OS core specific ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping const data section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-    
-    
-      #pragma section farrom  "CPU1.ee_kernel_const"
-      #pragma section nearrom "CPU1.ee_kernel_const"
-    
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping code section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Check if the "command macro" has been acknowledged */
-
-
-
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-
-
-
-#line 718 "ee_applcfg.c"
-static OsEE_AlarmDB 
-  osEE_alarm_db_array_core1[1] = {
+  },
   {
-    /* .p_trigger_cb = */ &osEE_alarm_cb_array_core1[0U],
-    /* .p_counter_db = */ &osEE_counter_db_array_core1[0U],
+    /* .p_trigger_cb = */ &osEE_alarm_cb_array_core0[1U],
+    /* .p_counter_db = */ &osEE_counter_db_array_core0[0U],
     /* .action       = */ {
       /* .param      = */   {
         /* .f            = */ ((void *) 0),
-        /* .p_tdb        = */ &osEE_tdb_array_core1[1U],
+        /* .p_tdb        = */ &osEE_tdb_array_core2[1U],
         /* .p_counter_db = */ ((void *) 0),
         /* .mask         = */ 0U},
       /* .type       = */ OSEE_ACTION_TASK
     }
-  }
-};
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** @file   Os_MemMap.h
-  *  @brief  AUTOSAR Compliant OS MemMap.h
-  *  @author Errico Guidieri
-  *  @date 2018
-  */
-/*******************************************************************************
-                                    Requirements
- ******************************************************************************/
-
-/* [SWS_MemMap_00032] For each basic software module description which is part
-    of the input configuration a basic software module specific memory mapping
-    header file {Mip}_MemMap.h shall be provided by the Memory Mapping if the
-    BSW Module descriptions is NOT describing a DependencyOnArtifact as
-    requiredArtifact.
-    DependencyOnArtifact.category = MEMMAP. Hereby {Mip} is composed
-    according <Msn>[_<vi>_<ai>] for basic software modules where:
-      * <Msn> is the shortName (case sensitive) of the BswModuleDescription
-      * <vi> is the vendorId of the BSW module
-      * <ai> is the vendorApiInfix of the BSW module
-    The sub part in squared brackets [_<vi>_<ai>] is omitted if no
-    vendorApiInfix is defined for the Basic Software Module which indicates
-    that it does not use multiple instantiation.
-    (SRS_BSW_00465, SRS_BSW_00415, SRS_BSW_00351, SRS_BSW_00464) */
-
-/*******************************************************************************
-                            INFORMATION MACROS
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-/** Evidence S.r.l Vendor ID */
-
-
-/* AUTOSAR Software Specification Version Information */
-
-
-
-
-
-
-
-
-
-
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** \file   ee_os_mem_map_tasking_ctc.h
-  *  \brief  OS part for TASKING CTC compiler of MemMap.h
-  *  \author Errico Guidieri
-  *  \date  2019
-  */
-/* I need configuration for this MemMap even without OS-Applications */
-
-/* MUST NOT be guards here because this file is supposed to be included
-   multiple time in a single compilation unit */
-
-/* Flag Error until we are sure that we are correct */
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-            ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping const section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                  ERIKA API memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA API memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                ERIKA API memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-  ERIKA OS core specific ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-    ERIKA OS core specific ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping const data section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-    
-    
-    
-      #pragma section farrom  restore
-      #pragma section nearrom restore
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping code section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Check if the "command macro" has been acknowledged */
-
-
-
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-
-
-
-#line 735 "ee_applcfg.c"
-
-/***************************************************************************
- *
- * Alarms Core2
- *
- **************************************************************************/
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** @file   Os_MemMap.h
-  *  @brief  AUTOSAR Compliant OS MemMap.h
-  *  @author Errico Guidieri
-  *  @date 2018
-  */
-/*******************************************************************************
-                                    Requirements
- ******************************************************************************/
-
-/* [SWS_MemMap_00032] For each basic software module description which is part
-    of the input configuration a basic software module specific memory mapping
-    header file {Mip}_MemMap.h shall be provided by the Memory Mapping if the
-    BSW Module descriptions is NOT describing a DependencyOnArtifact as
-    requiredArtifact.
-    DependencyOnArtifact.category = MEMMAP. Hereby {Mip} is composed
-    according <Msn>[_<vi>_<ai>] for basic software modules where:
-      * <Msn> is the shortName (case sensitive) of the BswModuleDescription
-      * <vi> is the vendorId of the BSW module
-      * <ai> is the vendorApiInfix of the BSW module
-    The sub part in squared brackets [_<vi>_<ai>] is omitted if no
-    vendorApiInfix is defined for the Basic Software Module which indicates
-    that it does not use multiple instantiation.
-    (SRS_BSW_00465, SRS_BSW_00415, SRS_BSW_00351, SRS_BSW_00464) */
-
-/*******************************************************************************
-                            INFORMATION MACROS
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-/** Evidence S.r.l Vendor ID */
-
-
-/* AUTOSAR Software Specification Version Information */
-
-
-
-
-
-
-
-
-
-
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** \file   ee_os_mem_map_tasking_ctc.h
-  *  \brief  OS part for TASKING CTC compiler of MemMap.h
-  *  \author Errico Guidieri
-  *  \date  2019
-  */
-/* I need configuration for this MemMap even without OS-Applications */
-
-/* MUST NOT be guards here because this file is supposed to be included
-   multiple time in a single compilation unit */
-
-/* Flag Error until we are sure that we are correct */
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-            ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping const section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                  ERIKA API memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA API memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                ERIKA API memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-  ERIKA OS core specific ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-    
-    #pragma section farbss  "private2"
-    #pragma section nearbss "private2"
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-    ERIKA OS core specific ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping const data section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping code section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Check if the "command macro" has been acknowledged */
-
-
-
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-
-
-
-#line 743 "ee_applcfg.c"
-static OsEE_AlarmCB 
-  osEE_alarm_cb_array_core2[1];
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** @file   Os_MemMap.h
-  *  @brief  AUTOSAR Compliant OS MemMap.h
-  *  @author Errico Guidieri
-  *  @date 2018
-  */
-/*******************************************************************************
-                                    Requirements
- ******************************************************************************/
-
-/* [SWS_MemMap_00032] For each basic software module description which is part
-    of the input configuration a basic software module specific memory mapping
-    header file {Mip}_MemMap.h shall be provided by the Memory Mapping if the
-    BSW Module descriptions is NOT describing a DependencyOnArtifact as
-    requiredArtifact.
-    DependencyOnArtifact.category = MEMMAP. Hereby {Mip} is composed
-    according <Msn>[_<vi>_<ai>] for basic software modules where:
-      * <Msn> is the shortName (case sensitive) of the BswModuleDescription
-      * <vi> is the vendorId of the BSW module
-      * <ai> is the vendorApiInfix of the BSW module
-    The sub part in squared brackets [_<vi>_<ai>] is omitted if no
-    vendorApiInfix is defined for the Basic Software Module which indicates
-    that it does not use multiple instantiation.
-    (SRS_BSW_00465, SRS_BSW_00415, SRS_BSW_00351, SRS_BSW_00464) */
-
-/*******************************************************************************
-                            INFORMATION MACROS
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-/** Evidence S.r.l Vendor ID */
-
-
-/* AUTOSAR Software Specification Version Information */
-
-
-
-
-
-
-
-
-
-
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** \file   ee_os_mem_map_tasking_ctc.h
-  *  \brief  OS part for TASKING CTC compiler of MemMap.h
-  *  \author Errico Guidieri
-  *  \date  2019
-  */
-/* I need configuration for this MemMap even without OS-Applications */
-
-/* MUST NOT be guards here because this file is supposed to be included
-   multiple time in a single compilation unit */
-
-/* Flag Error until we are sure that we are correct */
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-            ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping const section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                  ERIKA API memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA API memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                ERIKA API memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-  ERIKA OS core specific ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-    
-    
-
-    #pragma section farbss  restore
-    #pragma section nearbss restore
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-    ERIKA OS core specific ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping const data section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping code section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Check if the "command macro" has been acknowledged */
-
-
-
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-
-
-
-#line 747 "ee_applcfg.c"
-
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** @file   Os_MemMap.h
-  *  @brief  AUTOSAR Compliant OS MemMap.h
-  *  @author Errico Guidieri
-  *  @date 2018
-  */
-/*******************************************************************************
-                                    Requirements
- ******************************************************************************/
-
-/* [SWS_MemMap_00032] For each basic software module description which is part
-    of the input configuration a basic software module specific memory mapping
-    header file {Mip}_MemMap.h shall be provided by the Memory Mapping if the
-    BSW Module descriptions is NOT describing a DependencyOnArtifact as
-    requiredArtifact.
-    DependencyOnArtifact.category = MEMMAP. Hereby {Mip} is composed
-    according <Msn>[_<vi>_<ai>] for basic software modules where:
-      * <Msn> is the shortName (case sensitive) of the BswModuleDescription
-      * <vi> is the vendorId of the BSW module
-      * <ai> is the vendorApiInfix of the BSW module
-    The sub part in squared brackets [_<vi>_<ai>] is omitted if no
-    vendorApiInfix is defined for the Basic Software Module which indicates
-    that it does not use multiple instantiation.
-    (SRS_BSW_00465, SRS_BSW_00415, SRS_BSW_00351, SRS_BSW_00464) */
-
-/*******************************************************************************
-                            INFORMATION MACROS
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-/** Evidence S.r.l Vendor ID */
-
-
-/* AUTOSAR Software Specification Version Information */
-
-
-
-
-
-
-
-
-
-
-
-
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
-
- /** \file   ee_os_mem_map_tasking_ctc.h
-  *  \brief  OS part for TASKING CTC compiler of MemMap.h
-  *  \author Errico Guidieri
-  *  \date  2019
-  */
-/* I need configuration for this MemMap even without OS-Applications */
-
-/* MUST NOT be guards here because this file is supposed to be included
-   multiple time in a single compilation unit */
-
-/* Flag Error until we are sure that we are correct */
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-            ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping const section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-          ERIKA OS global memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                  ERIKA API memory mapping code section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-              ERIKA API memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                ERIKA API memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-  ERIKA OS core specific ERIKA OS memory mapping not initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-    ERIKA OS core specific ERIKA OS memory mapping initialized data section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping const data section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-    
-    
-      #pragma section farrom  "CPU2.ee_kernel_const"
-      #pragma section nearrom "CPU2.ee_kernel_const"
-    
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-      ERIKA OS core specific ERIKA OS memory mapping code section
- ******************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************************************************************
-                    ERIKA OS memory mapping stack section
- *****************************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Check if the "command macro" has been acknowledged */
-
-
-
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
-
-
-
-#line 750 "ee_applcfg.c"
-static OsEE_AlarmDB 
-  osEE_alarm_db_array_core2[1] = {
+  },
   {
-    /* .p_trigger_cb = */ &osEE_alarm_cb_array_core2[0U],
-    /* .p_counter_db = */ &osEE_counter_db_array_core2[0U],
+    /* .p_trigger_cb = */ &osEE_alarm_cb_array_core0[2U],
+    /* .p_counter_db = */ &osEE_counter_db_array_core0[0U],
     /* .action       = */ {
       /* .param      = */   {
         /* .f            = */ ((void *) 0),
@@ -129534,7 +119382,7 @@ static OsEE_AlarmDB
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -129628,7 +119476,7 @@ static OsEE_AlarmDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -130286,62 +120134,6 @@ static OsEE_AlarmDB
       ERIKA OS core specific ERIKA OS memory mapping const data section
  ******************************************************************************/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
   
     
@@ -130352,6 +120144,62 @@ static OsEE_AlarmDB
       #pragma section nearrom restore
     
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -130793,15 +120641,27 @@ static OsEE_AlarmDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 767 "ee_applcfg.c"
+#line 727 "ee_applcfg.c"
+
+/***************************************************************************
+ *
+ * Alarms Core1
+ *
+ **************************************************************************/
+
+/***************************************************************************
+ *
+ * Alarms Core2
+ *
+ **************************************************************************/
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -130895,7 +120755,7 @@ static OsEE_AlarmDB
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -132060,21 +121920,23 @@ static OsEE_AlarmDB
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 770 "ee_applcfg.c"
+#line 742 "ee_applcfg.c"
 static OsEE_AlarmDB  * const 
   osEE_alarm_db_ptr_array[(3U)] =
 {
   &osEE_alarm_db_array_core0[0],
-  &osEE_alarm_db_array_core1[0],
-  &osEE_alarm_db_array_core2[0] 
+  &osEE_alarm_db_array_core0[1],
+  &osEE_alarm_db_array_core0[2],
+
+
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -132168,7 +122030,7 @@ static OsEE_AlarmDB  * const
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -133333,11 +123195,11 @@ static OsEE_AlarmDB  * const
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 779 "ee_applcfg.c"
+#line 753 "ee_applcfg.c"
 
 /***************************************************************************
  *
@@ -133346,7 +123208,7 @@ static OsEE_AlarmDB  * const
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -133440,7 +123302,7 @@ static OsEE_AlarmDB  * const
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -134605,18 +124467,28 @@ static OsEE_AlarmDB  * const
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 787 "ee_applcfg.c"
+#line 761 "ee_applcfg.c"
 static OsEE_autostart_trigger_info 
-  osEE_trigger_autostart_info_core0_OSDEFAULTAPPMODE[1U] =
+  osEE_trigger_autostart_info_core0_OSDEFAULTAPPMODE[3U] =
 {
   {
     /* .p_trigger_db          = */  &osEE_alarm_db_array_core0[0U],
     /* .first_tick_parameter  = */  (1U),
-    /* .first_tick_parameter  = */  (50U)
+    /* .first_tick_parameter  = */  (300U)
+  },
+  {
+    /* .p_trigger_db          = */  &osEE_alarm_db_array_core0[1U],
+    /* .first_tick_parameter  = */  (10U),
+    /* .first_tick_parameter  = */  (100U)
+  },
+  {
+    /* .p_trigger_db          = */  &osEE_alarm_db_array_core0[2U],
+    /* .first_tick_parameter  = */  (1U),
+    /* .first_tick_parameter  = */  (200U)
   }
 };
 
@@ -134629,7 +124501,7 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core0[1U] =
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -134723,7 +124595,7 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core0[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -135888,11 +125760,11 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core0[1U] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 806 "ee_applcfg.c"
+#line 790 "ee_applcfg.c"
 
 /***************************************************************************
  *
@@ -135901,7 +125773,7 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core0[1U] =
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -135995,7 +125867,7 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core0[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -137160,31 +127032,22 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core0[1U] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 814 "ee_applcfg.c"
-static OsEE_autostart_trigger_info 
-  osEE_trigger_autostart_info_core1_OSDEFAULTAPPMODE[1U] =
-{
-  {
-    /* .p_trigger_db          = */  &osEE_alarm_db_array_core1[0U],
-    /* .first_tick_parameter  = */  (10U),
-    /* .first_tick_parameter  = */  (100U)
-  }
-};
+#line 798 "ee_applcfg.c"
 
 static OsEE_autostart_trigger  osEE_autostart_trigger_db_core1[1U] =
 {
   {
-    /* .p_trigger_ptr_array = */  (OsEE_autostart_trigger_info (*  )[])&osEE_trigger_autostart_info_core1_OSDEFAULTAPPMODE,
-    /* .trigger_array_size  = */  (sizeof(osEE_trigger_autostart_info_core1_OSDEFAULTAPPMODE)/sizeof(0[(osEE_trigger_autostart_info_core1_OSDEFAULTAPPMODE)]))
+    /* .p_trigger_ptr_array = */  ((void *) 0),
+    /* .trigger_array_size  = */  (0U)
   }
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -137278,7 +127141,7 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core1[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -138443,11 +128306,11 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core1[1U] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 833 "ee_applcfg.c"
+#line 808 "ee_applcfg.c"
 
 /***************************************************************************
  *
@@ -138456,7 +128319,7 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core1[1U] =
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -138550,7 +128413,7 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core1[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -139715,31 +129578,22 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core1[1U] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 841 "ee_applcfg.c"
-static OsEE_autostart_trigger_info 
-  osEE_trigger_autostart_info_core2_OSDEFAULTAPPMODE[1U] =
-{
-  {
-    /* .p_trigger_db          = */  &osEE_alarm_db_array_core2[0U],
-    /* .first_tick_parameter  = */  (1U),
-    /* .first_tick_parameter  = */  (200U)
-  }
-};
+#line 816 "ee_applcfg.c"
 
 static OsEE_autostart_trigger  osEE_autostart_trigger_db_core2[1U] =
 {
   {
-    /* .p_trigger_ptr_array = */  (OsEE_autostart_trigger_info (*  )[])&osEE_trigger_autostart_info_core2_OSDEFAULTAPPMODE,
-    /* .trigger_array_size  = */  (sizeof(osEE_trigger_autostart_info_core2_OSDEFAULTAPPMODE)/sizeof(0[(osEE_trigger_autostart_info_core2_OSDEFAULTAPPMODE)]))
+    /* .p_trigger_ptr_array = */  ((void *) 0),
+    /* .trigger_array_size  = */  (0U)
   }
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -139833,7 +129687,7 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core2[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -140998,11 +130852,11 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core2[1U] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 860 "ee_applcfg.c"
+#line 826 "ee_applcfg.c"
 /***************************************************************************
  *
  * Init Cpu Control Block Core0
@@ -141011,7 +130865,7 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core2[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -141105,7 +130959,7 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core2[1U] =
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -142270,11 +132124,11 @@ static OsEE_autostart_trigger  osEE_autostart_trigger_db_core2[1U] =
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 868 "ee_applcfg.c"
+#line 834 "ee_applcfg.c"
 OsEE_CCB  osEE_ccb_var_core0 = {
   /* .p_curr      = */  &osEE_tdb_array_core0[2U],
   /* .rq          = */  {{{((void *) 0),((void *) 0)},{((void *) 0),((void *) 0)},{((void *) 0),((void *) 0)}},0U},
@@ -142294,7 +132148,7 @@ OsEE_CCB  osEE_ccb_var_core0 = {
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -142388,7 +132242,7 @@ OsEE_CCB  osEE_ccb_var_core0 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -143553,15 +133407,15 @@ OsEE_CCB  osEE_ccb_var_core0 = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 887 "ee_applcfg.c"
+#line 853 "ee_applcfg.c"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -143655,7 +133509,7 @@ OsEE_CCB  osEE_ccb_var_core0 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -144820,15 +134674,15 @@ OsEE_CCB  osEE_ccb_var_core0 = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 890 "ee_applcfg.c"
+#line 856 "ee_applcfg.c"
 static OsEE_spin_lock  osEE_lock_core0;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -144922,7 +134776,7 @@ static OsEE_spin_lock  osEE_lock_core0;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -146087,11 +135941,11 @@ static OsEE_spin_lock  osEE_lock_core0;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 893 "ee_applcfg.c"
+#line 859 "ee_applcfg.c"
 /***************************************************************************
  *
  * Init Cpu Descriptor Block
@@ -146099,7 +135953,7 @@ static OsEE_spin_lock  osEE_lock_core0;
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -146193,7 +136047,7 @@ static OsEE_spin_lock  osEE_lock_core0;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -147358,11 +137212,11 @@ static OsEE_spin_lock  osEE_lock_core0;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 900 "ee_applcfg.c"
+#line 866 "ee_applcfg.c"
 OsEE_CDB  osEE_cdb_var_core0 = {
   {
     /* .p_sdb_array = */ (OsEE_SDB (*  )[])&osEE_sdb_array_core0,
@@ -147382,7 +137236,7 @@ OsEE_CDB  osEE_cdb_var_core0 = {
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -147476,7 +137330,7 @@ OsEE_CDB  osEE_cdb_var_core0 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -148641,11 +138495,11 @@ OsEE_CDB  osEE_cdb_var_core0 = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 919 "ee_applcfg.c"
+#line 885 "ee_applcfg.c"
 
 /***************************************************************************
  *
@@ -148655,7 +138509,7 @@ OsEE_CDB  osEE_cdb_var_core0 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -148749,7 +138603,7 @@ OsEE_CDB  osEE_cdb_var_core0 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -149914,11 +139768,11 @@ OsEE_CDB  osEE_cdb_var_core0 = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 928 "ee_applcfg.c"
+#line 894 "ee_applcfg.c"
 OsEE_CCB  osEE_ccb_var_core1 = {
   /* .p_curr      = */  &osEE_tdb_array_core1[2U],
   /* .rq          = */  {{{((void *) 0),((void *) 0)},{((void *) 0),((void *) 0)},{((void *) 0),((void *) 0)}},0U},
@@ -149938,7 +139792,7 @@ OsEE_CCB  osEE_ccb_var_core1 = {
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -150032,7 +139886,7 @@ OsEE_CCB  osEE_ccb_var_core1 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -151197,15 +141051,15 @@ OsEE_CCB  osEE_ccb_var_core1 = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 947 "ee_applcfg.c"
+#line 913 "ee_applcfg.c"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -151299,7 +141153,7 @@ OsEE_CCB  osEE_ccb_var_core1 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -152464,15 +142318,15 @@ OsEE_CCB  osEE_ccb_var_core1 = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 950 "ee_applcfg.c"
+#line 916 "ee_applcfg.c"
 static OsEE_spin_lock  osEE_lock_core1;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -152566,7 +142420,7 @@ static OsEE_spin_lock  osEE_lock_core1;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -153731,11 +143585,11 @@ static OsEE_spin_lock  osEE_lock_core1;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 953 "ee_applcfg.c"
+#line 919 "ee_applcfg.c"
 /***************************************************************************
  *
  * Init Cpu Descriptor Block
@@ -153743,7 +143597,7 @@ static OsEE_spin_lock  osEE_lock_core1;
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -153837,7 +143691,7 @@ static OsEE_spin_lock  osEE_lock_core1;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -155002,11 +144856,11 @@ static OsEE_spin_lock  osEE_lock_core1;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 960 "ee_applcfg.c"
+#line 926 "ee_applcfg.c"
 OsEE_CDB  osEE_cdb_var_core1 = {
   {
     /* .p_sdb_array = */ (OsEE_SDB (*  )[])&osEE_sdb_array_core1,
@@ -155026,7 +144880,7 @@ OsEE_CDB  osEE_cdb_var_core1 = {
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -155120,7 +144974,7 @@ OsEE_CDB  osEE_cdb_var_core1 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -156285,11 +146139,11 @@ OsEE_CDB  osEE_cdb_var_core1 = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 979 "ee_applcfg.c"
+#line 945 "ee_applcfg.c"
 
 /***************************************************************************
  *
@@ -156299,7 +146153,7 @@ OsEE_CDB  osEE_cdb_var_core1 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -156393,7 +146247,7 @@ OsEE_CDB  osEE_cdb_var_core1 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -157558,11 +147412,11 @@ OsEE_CDB  osEE_cdb_var_core1 = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 988 "ee_applcfg.c"
+#line 954 "ee_applcfg.c"
 OsEE_CCB  osEE_ccb_var_core2 = {
   /* .p_curr      = */  &osEE_tdb_array_core2[2U],
   /* .rq          = */  {{{((void *) 0),((void *) 0)},{((void *) 0),((void *) 0)},{((void *) 0),((void *) 0)}},0U},
@@ -157582,7 +147436,7 @@ OsEE_CCB  osEE_ccb_var_core2 = {
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -157676,7 +147530,7 @@ OsEE_CCB  osEE_ccb_var_core2 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -158841,15 +148695,15 @@ OsEE_CCB  osEE_ccb_var_core2 = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 1007 "ee_applcfg.c"
+#line 973 "ee_applcfg.c"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -158943,7 +148797,7 @@ OsEE_CCB  osEE_ccb_var_core2 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -160108,15 +149962,15 @@ OsEE_CCB  osEE_ccb_var_core2 = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 1010 "ee_applcfg.c"
+#line 976 "ee_applcfg.c"
 static OsEE_spin_lock  osEE_lock_core2;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -160210,7 +150064,7 @@ static OsEE_spin_lock  osEE_lock_core2;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -161375,11 +151229,11 @@ static OsEE_spin_lock  osEE_lock_core2;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 1013 "ee_applcfg.c"
+#line 979 "ee_applcfg.c"
 /***************************************************************************
  *
  * Init Cpu Descriptor Block
@@ -161387,7 +151241,7 @@ static OsEE_spin_lock  osEE_lock_core2;
  **************************************************************************/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -161481,7 +151335,7 @@ static OsEE_spin_lock  osEE_lock_core2;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -162646,11 +152500,11 @@ static OsEE_spin_lock  osEE_lock_core2;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 1020 "ee_applcfg.c"
+#line 986 "ee_applcfg.c"
 OsEE_CDB  osEE_cdb_var_core2 = {
   {
     /* .p_sdb_array = */ (OsEE_SDB (*  )[])&osEE_sdb_array_core2,
@@ -162670,7 +152524,7 @@ OsEE_CDB  osEE_cdb_var_core2 = {
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -162764,7 +152618,7 @@ OsEE_CDB  osEE_cdb_var_core2 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -163929,15 +153783,15 @@ OsEE_CDB  osEE_cdb_var_core2 = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 1039 "ee_applcfg.c"
+#line 1005 "ee_applcfg.c"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -164031,7 +153885,7 @@ OsEE_CDB  osEE_cdb_var_core2 = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -165196,11 +155050,11 @@ OsEE_CDB  osEE_cdb_var_core2 = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 1042 "ee_applcfg.c"
+#line 1008 "ee_applcfg.c"
 OsEE_KCB  osEE_kcb_var = {
   /* .ar_core_mask                = */ 0x1U,
   /* .not_ar_core_mask            = */ 0x0U,
@@ -165211,7 +155065,7 @@ OsEE_KCB  osEE_kcb_var = {
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -165305,7 +155159,7 @@ OsEE_KCB  osEE_kcb_var = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -166470,15 +156324,15 @@ OsEE_KCB  osEE_kcb_var = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 1052 "ee_applcfg.c"
+#line 1018 "ee_applcfg.c"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -166572,7 +156426,7 @@ OsEE_KCB  osEE_kcb_var = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -167737,16 +157591,16 @@ OsEE_KCB  osEE_kcb_var = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 1055 "ee_applcfg.c"
+#line 1021 "ee_applcfg.c"
 static OsEE_spin_lock  osEE_kernel_lock;
 static OsEE_barrier    osEE_kernel_barrier;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -167840,7 +157694,7 @@ static OsEE_barrier    osEE_kernel_barrier;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -169005,15 +158859,15 @@ static OsEE_barrier    osEE_kernel_barrier;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 1059 "ee_applcfg.c"
+#line 1025 "ee_applcfg.c"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -169107,7 +158961,7 @@ static OsEE_barrier    osEE_kernel_barrier;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -170272,11 +160126,11 @@ static OsEE_barrier    osEE_kernel_barrier;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 1062 "ee_applcfg.c"
+#line 1028 "ee_applcfg.c"
 OsEE_KDB  osEE_kdb_var = {
   /* .p_kcb               = */ &osEE_kcb_var,
   /* .p_lock              = */ &osEE_kernel_lock,
@@ -170290,7 +160144,7 @@ OsEE_KDB  osEE_kdb_var = {
 };
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -170384,7 +160238,7 @@ OsEE_KDB  osEE_kdb_var = {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -171549,11 +161403,11 @@ OsEE_KDB  osEE_kdb_var = {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 1075 "ee_applcfg.c"
+#line 1041 "ee_applcfg.c"
 
 /***************************************************************************
  *

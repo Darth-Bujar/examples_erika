@@ -50,6 +50,7 @@
 
 /* ERIKA Enterprise. */
 #include "shared.h"
+#include "Blinky_LED.h"
 
 OsEE_reg myErrorCounter;
 
@@ -76,9 +77,8 @@ TASK(producer_task)
    printf(" Z posting one semaphore\n");
    PostSem(&S);
    printf("         Semaphore value: %d\n", S.count);
-   //TerminateTask();
+   TerminateTask();
 }
-
 void idle_hook_core0(void);
 void idle_hook_core0(void)
 {
@@ -90,6 +90,7 @@ void idle_hook_core0(void)
 #include "Os_MemMap.h"
 #endif /* __TASKING__ */
 
+#include "Blinky_LED.h"
 /*
  * MAIN TASK
  */
@@ -102,15 +103,13 @@ int main(void)
   if(core_id == OS_CORE_ID_MASTER)
   {
     StartCore(OS_CORE_ID_0, &status);
-    StartCore(OS_CORE_ID_1, &status);
-    StartCore(OS_CORE_ID_2, &status);
     mode = OSDEFAULTAPPMODE;
 
   }else
   {
     mode = DONOTCARE;
   }
-  initLED();
+
   StartOS(mode);
 
   return 0;

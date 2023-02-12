@@ -41,14 +41,22 @@
 
 
 #include "shared.h"
-
 extern SemType S;
 #if (defined(__TASKING__))
 #define OS_CORE2_START_SEC_CODE
 #include "Os_MemMap.h"
 #endif /* __TASKING__ */
 //Consumer
-
+TASK(LOW_priority_task)
+{
+    printf(" Y Waiting for semaphore\n");
+    //task safe zone
+    WaitSem(&S);
+    printf(" Y get the semaphore\n");
+    printf("        Semaphore value: %d\n", S.count);
+    //task safe zone end
+    TerminateTask();
+}
 void idle_hook_core2(void);
 void idle_hook_core2(void)
 {
@@ -56,18 +64,17 @@ void idle_hook_core2(void)
 }
 
 //Consumer
-TASK(Slave_task_2)
+TASK(Slave_task_1)
 {
 
-   //printf(" Y Waiting for semaphore\n");
+   printf(" X Waiting for semaphore\n");
    WaitSem(&S);
-   switch_LED((unsigned int)0);
    //task safe zone
-   //printf(" Y get the semaphore\n");
-   //printf("         Semaphore value: %d\n", S.count);
+   printf(" X get the semaphore\n");
+   printf("         Semaphore value: %d\n", S.count);
    //task safe zone end
 
-   //TerminateTask();
+   TerminateTask();
 }
 
 #if (defined(__TASKING__))

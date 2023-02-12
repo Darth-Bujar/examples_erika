@@ -1,4 +1,4 @@
-#line 1 "E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src/ee_tc_intvec.c"
+#line 1 "D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_intvec.c"
 /* ###*B*###
  * Erika Enterprise, version 3
  *
@@ -48,7 +48,7 @@
  */
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_internal.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_internal.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -104,7 +104,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_conf.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_conf.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -160,7 +160,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -216,7 +216,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_cfg.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_cfg.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -273,7 +273,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_oscfg.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_oscfg.h"
 /* ###*B*###
  *
  * ERIKA Enterprise - a tiny RTOS for small microcontrollers
@@ -421,15 +421,15 @@
  **************************************************************************/
 
 
-#line 57 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_cfg.h"
+#line 57 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_cfg.h"
 
 
 
 
 
-#line 56 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 56 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_arch_override.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_arch_override.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -512,9 +512,9 @@
 
 
 
-#line 57 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 57 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_platform_types.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_platform_types.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -575,7 +575,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_utils.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_utils.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -875,9 +875,9 @@
 
 
 
-#line 61 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_platform_types.h"
+#line 61 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_platform_types.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_compiler.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_compiler.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -937,7 +937,7 @@
  =============================================================================*/
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_compiler_cfg.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_compiler_cfg.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -1002,7 +1002,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_compiler_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_compiler_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -1061,7 +1061,7 @@
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_arch_compiler_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_arch_compiler_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -1124,7 +1124,7 @@
 
 
 
-#line 59 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_compiler_tasking_ctc.h"
+#line 59 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_compiler_tasking_ctc.h"
 
 
 
@@ -1218,7 +1218,7 @@
 
 
 
-#line 65 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_compiler_cfg.h"
+#line 65 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_compiler_cfg.h"
 
 
 
@@ -1316,7 +1316,7 @@
 
 
 
-#line 60 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_compiler.h"
+#line 60 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_compiler.h"
 
 
 
@@ -1516,7 +1516,7 @@
 
 
 
-#line 62 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_platform_types.h"
+#line 62 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_platform_types.h"
 
 #line 1 "C:\\Infineon\\AURIX-Studio-1.8.0\\plugins\\com.infineon.aurix.tools_1.8.0\\build_system\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\limits.h"
 /**************************************************************************
@@ -1678,7 +1678,7 @@
 
 
 
-#line 63 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_platform_types.h"
+#line 63 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_platform_types.h"
 
 #line 1 "C:\\Infineon\\AURIX-Studio-1.8.0\\plugins\\com.infineon.aurix.tools_1.8.0\\build_system\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\stddef.h"
 /**************************************************************************
@@ -1730,7 +1730,7 @@ typedef __ptrdiff_t     ptrdiff_t;
 #pragma nomisrac restore
 
 
-#line 64 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_platform_types.h"
+#line 64 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_platform_types.h"
 
 #line 1 "C:\\Infineon\\AURIX-Studio-1.8.0\\plugins\\com.infineon.aurix.tools_1.8.0\\build_system\\tools\\Compilers\\Tasking_1.1r8\\ctc\\include\\stdint.h"
 /**************************************************************************
@@ -2262,7 +2262,7 @@ typedef unsigned long long int     uintmax_t;
 
 
 
-#line 65 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_platform_types.h"
+#line 65 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_platform_types.h"
 
 
 
@@ -2368,11 +2368,11 @@ typedef struct {
 
 
 
-#line 58 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 58 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_hal.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_hal.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -2435,7 +2435,7 @@ typedef struct {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_hal_irq.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_hal_irq.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -2794,9 +2794,9 @@ extern void osEE_tricore_system_timer_handler(void);
 
 
 
-#line 63 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_hal.h"
+#line 63 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_hal.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_trapvec.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_trapvec.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -3037,7 +3037,7 @@ static inline OsEE_tc_tin osEE_tc_get_tin(void)
 
 
 
-#line 64 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_hal.h"
+#line 64 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_hal.h"
 
 
 
@@ -3349,10 +3349,10 @@ static inline OsEE_core_id __attribute__((always_inline)) osEE_get_curr_core_id(
 
 
 
-#line 61 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 61 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_system.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_system.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -3408,7 +3408,7 @@ static inline OsEE_core_id __attribute__((always_inline)) osEE_get_curr_core_id(
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_csfr.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_csfr.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -3691,9 +3691,9 @@ static inline OsEE_core_id __attribute__((always_inline)) osEE_get_curr_core_id(
 
 
 
-#line 56 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_system.h"
+#line 56 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_system.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_hal_internal_types.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_hal_internal_types.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -4002,9 +4002,9 @@ typedef struct {
 
 
 
-#line 57 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_system.h"
+#line 57 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_system.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_src.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_src.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -5851,7 +5851,7 @@ typedef struct {
 /******************************************************************************/
 
 
-#line 58 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_tc_system.h"
+#line 58 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_tc_system.h"
 
 
 
@@ -7710,10 +7710,10 @@ typedef struct
 
 
 
-#line 63 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 63 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_hal_mc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_hal_mc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -8023,9 +8023,9 @@ static inline OsEE_bool __attribute__((always_inline))
 
 
 
-#line 65 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 65 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -8085,7 +8085,7 @@ static inline OsEE_bool __attribute__((always_inline))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api_types.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api_types.h"
 
 /* ###*B*###
  * Erika Enterprise, version 3
@@ -8989,9 +8989,9 @@ typedef OsEE_service_id_type                        OSServiceIdType;
 
 
 
-#line 60 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api.h"
+#line 60 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_oo_api_osek.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_oo_api_osek.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -10961,9 +10961,9 @@ void
 
 
 
-#line 61 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api.h"
+#line 61 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_oo_api_dynamic.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_oo_api_dynamic.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -11068,9 +11068,9 @@ void
 
 
 
-#line 62 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api.h"
+#line 62 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_oo_api_extension.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_oo_api_extension.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -11232,9 +11232,9 @@ StatusType
 
 
 
-#line 63 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api.h"
+#line 63 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_scheduler_types.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_scheduler_types.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  *
@@ -11473,13 +11473,13 @@ typedef struct OsEE_sem_tag SemType;
 
 
 
-#line 64 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_api.h"
+#line 64 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_api.h"
 
 
-#line 66 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 66 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_assert.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_assert.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -11597,7 +11597,7 @@ typedef struct OsEE_sem_tag SemType;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -11671,7 +11671,7 @@ typedef struct OsEE_sem_tag SemType;
 
 
 
-#line 118 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_assert.h"
+#line 118 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_assert.h"
 
 
 
@@ -11711,7 +11711,7 @@ typedef struct OsEE_sem_tag SemType;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -11805,7 +11805,7 @@ typedef struct OsEE_sem_tag SemType;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -12970,11 +12970,11 @@ typedef struct OsEE_sem_tag SemType;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 157 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_assert.h"
+#line 157 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_assert.h"
 
 
 /** the assertion array storing all the assertions value */
@@ -13084,7 +13084,7 @@ uint8_t osEE_assert_last(void);
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -13178,7 +13178,7 @@ uint8_t osEE_assert_last(void);
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -14343,30 +14343,30 @@ uint8_t osEE_assert_last(void);
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 266 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_assert.h"
-
-
-
-
-
-
-
-#line 68 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee.h"
+#line 266 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_assert.h"
 
 
 
 
 
 
-#line 56 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_conf.h"
+
+#line 68 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_kernel_types.h"
+
+
+
+#line 56 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_conf.h"
+
+
+
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_kernel_types.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  *
@@ -15491,9 +15491,9 @@ extern void
 
 
 
-#line 59 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_conf.h"
+#line 59 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_conf.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -15558,7 +15558,7 @@ extern void
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -15652,7 +15652,7 @@ extern void
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -16817,16 +16817,16 @@ extern void
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 65 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 65 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** The Kernel Descriptor Block */
 extern OsEE_KDB osEE_kdb_var;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -16920,7 +16920,7 @@ extern OsEE_KDB osEE_kdb_var;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -18085,15 +18085,15 @@ extern OsEE_KDB osEE_kdb_var;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 69 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 69 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -18187,7 +18187,7 @@ extern OsEE_KDB osEE_kdb_var;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -19352,16 +19352,16 @@ extern OsEE_KDB osEE_kdb_var;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 72 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 72 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** The Kernel Control Block */
 extern OsEE_KCB osEE_kcb_var;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -19455,7 +19455,7 @@ extern OsEE_KCB osEE_kcb_var;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -20620,11 +20620,11 @@ extern OsEE_KCB osEE_kcb_var;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 76 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 76 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 /**
  *  \brief Returns the pointer to the Kernel descriptor Block
@@ -20832,7 +20832,7 @@ static inline OsEE_KDB * __attribute__((always_inline)) osEE_get_kernel(void) {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -20926,7 +20926,7 @@ static inline OsEE_KDB * __attribute__((always_inline)) osEE_get_kernel(void) {
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -22091,11 +22091,11 @@ static inline OsEE_KDB * __attribute__((always_inline)) osEE_get_kernel(void) {
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 283 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 283 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** Core 0 Descriptor block */
 extern OsEE_CDB osEE_cdb_var_core0;
 
@@ -22103,7 +22103,7 @@ extern OsEE_CDB osEE_cdb_var_core0;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -22197,7 +22197,7 @@ extern OsEE_CDB osEE_cdb_var_core0;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -23362,15 +23362,15 @@ extern OsEE_CDB osEE_cdb_var_core0;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 290 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 290 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -23464,7 +23464,7 @@ extern OsEE_CDB osEE_cdb_var_core0;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -24629,16 +24629,16 @@ extern OsEE_CDB osEE_cdb_var_core0;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 293 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 293 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** Core 0 Control block */
 extern OsEE_CCB osEE_ccb_var_core0;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -24732,7 +24732,7 @@ extern OsEE_CCB osEE_ccb_var_core0;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -25897,16 +25897,16 @@ extern OsEE_CCB osEE_ccb_var_core0;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 297 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 297 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -26000,7 +26000,7 @@ extern OsEE_CCB osEE_ccb_var_core0;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -27165,11 +27165,11 @@ extern OsEE_CCB osEE_ccb_var_core0;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 301 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 301 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** Core 1 Descriptor block */
 extern OsEE_CDB osEE_cdb_var_core1;
 
@@ -27177,7 +27177,7 @@ extern OsEE_CDB osEE_cdb_var_core1;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -27271,7 +27271,7 @@ extern OsEE_CDB osEE_cdb_var_core1;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -28436,15 +28436,15 @@ extern OsEE_CDB osEE_cdb_var_core1;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 308 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 308 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -28538,7 +28538,7 @@ extern OsEE_CDB osEE_cdb_var_core1;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -29703,16 +29703,16 @@ extern OsEE_CDB osEE_cdb_var_core1;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 311 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 311 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** Core 1 Control block */
 extern OsEE_CCB osEE_ccb_var_core1;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -29806,7 +29806,7 @@ extern OsEE_CCB osEE_ccb_var_core1;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -30971,17 +30971,17 @@ extern OsEE_CCB osEE_ccb_var_core1;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 315 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 315 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -31075,7 +31075,7 @@ extern OsEE_CCB osEE_ccb_var_core1;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -32240,11 +32240,11 @@ extern OsEE_CCB osEE_ccb_var_core1;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 320 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 320 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** Core 2 Descriptor block */
 extern OsEE_CDB osEE_cdb_var_core2;
 
@@ -32252,7 +32252,7 @@ extern OsEE_CDB osEE_cdb_var_core2;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -32346,7 +32346,7 @@ extern OsEE_CDB osEE_cdb_var_core2;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -33511,15 +33511,15 @@ extern OsEE_CDB osEE_cdb_var_core2;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 327 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 327 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -33613,7 +33613,7 @@ extern OsEE_CDB osEE_cdb_var_core2;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -34778,16 +34778,16 @@ extern OsEE_CDB osEE_cdb_var_core2;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 330 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 330 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /** Core 2 Control block */
 extern OsEE_CCB osEE_ccb_var_core2;
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -34881,7 +34881,7 @@ extern OsEE_CCB osEE_ccb_var_core2;
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_os_mem_map_tasking_ctc.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -36046,11 +36046,11 @@ extern OsEE_CCB osEE_ccb_var_core2;
 
 
 
-#line 94 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\Os_MemMap.h"
+#line 94 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\Os_MemMap.h"
 
 
 
-#line 334 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 334 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 
 
 
@@ -36318,13 +36318,13 @@ static inline void __attribute__((always_inline))
 
 
 
-#line 60 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_conf.h"
+#line 60 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_conf.h"
 
 
-#line 56 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_internal.h"
+#line 56 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_internal.h"
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_hal_internal.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_hal_internal.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -36392,7 +36392,7 @@ static inline void __attribute__((always_inline))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_std_change_context.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_std_change_context.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -36609,10 +36609,10 @@ static inline MemSize
 
 
 
-#line 68 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_hal_internal.h"
+#line 68 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_hal_internal.h"
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -37213,7 +37213,7 @@ static inline MemSize
 
 
 
-#line 70 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_hal_internal.h"
+#line 70 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_hal_internal.h"
 
 
 
@@ -37648,9 +37648,9 @@ extern void osEE_tc_initialize_system_timer(OsEE_TDB * p_tdb);
 
 
 
-#line 58 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_internal.h"
+#line 58 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_internal.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_hal_mc_internal.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_hal_mc_internal.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -37710,7 +37710,7 @@ extern void osEE_tc_initialize_system_timer(OsEE_TDB * p_tdb);
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_hal_internal.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_hal_internal.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -38214,7 +38214,7 @@ extern void osEE_tc_initialize_system_timer(OsEE_TDB * p_tdb);
 
 
 
-#line 60 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_hal_mc_internal.h"
+#line 60 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_hal_mc_internal.h"
 
 
 
@@ -38417,9 +38417,9 @@ static inline void __attribute__((always_inline))
 
 
 
-#line 59 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_internal.h"
+#line 59 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_internal.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_kernel.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_kernel.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -38480,7 +38480,7 @@ static inline void __attribute__((always_inline))
 
 
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_hal_internal.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_hal_internal.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -38984,9 +38984,9 @@ static inline void __attribute__((always_inline))
 
 
 
-#line 61 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_kernel.h"
+#line 61 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_kernel.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\inc\\ee_get_kernel_and_core.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -39587,9 +39587,9 @@ static inline void __attribute__((always_inline))
 
 
 
-#line 62 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_kernel.h"
+#line 62 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_kernel.h"
 
-#line 1 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_scheduler.h"
+#line 1 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_scheduler.h"
 /* ###*B*###
  * Erika Enterprise, version 3
  * 
@@ -39773,7 +39773,7 @@ OsEE_TDB *
 
 
 
-#line 63 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_kernel.h"
+#line 63 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_kernel.h"
 
 
 
@@ -40831,10 +40831,10 @@ static inline void  osEE_stack_monitoring
 
 
 
-#line 60 "E:\\Projects\\Erika\\aurix_workspace\\examples_erika\\multicore_semaphore\\ee\\erika\\src\\ee_internal.h"
+#line 60 "D:\\RTOS_PROJEKT\\erica\\aurix_workspace\\tc38_led\\ee\\erika\\src\\ee_internal.h"
 
 
-#line 50 "E:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/src/ee_tc_intvec.c"
+#line 50 "D:/RTOS_PROJEKT/erica/aurix_workspace/tc38_led/ee/erika/src/ee_tc_intvec.c"
 
 static void __attribute__((used)) __attribute__((protect)) osEE_tc_isr2_wrapper(TaskType isr2_tid);
 

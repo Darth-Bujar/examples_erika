@@ -21,8 +21,6 @@ CPU test_application {
 		CPU_DATA = TRICORE {
 			ID = 0x1;
 			MULTI_STACK = TRUE;
-			CPU_CLOCK = 200.0;
-			COMPILER = TASKING;
 			IDLEHOOK = TRUE {
 				HOOKNAME = "idle_hook_core1";
 			};
@@ -30,8 +28,6 @@ CPU test_application {
 		CPU_DATA = TRICORE {
 			ID = 0x2;
 			MULTI_STACK = TRUE;
-			CPU_CLOCK = 200.0;
-			COMPILER = TASKING;
 			IDLEHOOK = TRUE {
 				HOOKNAME = "idle_hook_core2";
 			};
@@ -58,7 +54,6 @@ CPU test_application {
 		APP_SRC = "master.c";
 		APP_SRC = "slave1.c";
 		APP_SRC = "slave2.c";
-		APP_SRC = "Blinky_LED.c";
 	};
 	TASK Slave_task_1 {
 		CPU_ID = 0x1;
@@ -136,13 +131,13 @@ CPU test_application {
 		};
 		AUTOSTART = TRUE {
 			ALARMTIME = 0;
-			CYCLETIME = 50;
+			CYCLETIME = 300;
 		};
 	};
 	ALARM AlarmMaster_75ms {
-		COUNTER = system_timer_slave1;
+		COUNTER = system_timer_master;
 		ACTION = ACTIVATETASK {
-			TASK = Slave_task_1;
+			TASK = Slave_task_2;
 		};
 		AUTOSTART = TRUE {
 			ALARMTIME = 10;
@@ -150,7 +145,7 @@ CPU test_application {
 		};
 	};
 	ALARM AlarmMaster_50ms {
-		COUNTER = system_timer_slave2;
+		COUNTER = system_timer_master;
 		ACTION = ACTIVATETASK {
 			TASK = Slave_task_2;
 		};

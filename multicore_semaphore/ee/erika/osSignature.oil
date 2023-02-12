@@ -21,8 +21,6 @@ CPU test_application {
 		CPU_DATA = TRICORE {
 			ID = 0x1;
 			MULTI_STACK = TRUE;
-			CPU_CLOCK = 200.0;
-			COMPILER = TASKING;
 			IDLEHOOK = TRUE {
 				HOOKNAME = "idle_hook_core1";
 			};
@@ -30,8 +28,6 @@ CPU test_application {
 		CPU_DATA = TRICORE {
 			ID = 0x2;
 			MULTI_STACK = TRUE;
-			CPU_CLOCK = 200.0;
-			COMPILER = TASKING;
 			IDLEHOOK = TRUE {
 				HOOKNAME = "idle_hook_core2";
 			};

@@ -43,7 +43,7 @@
 #define SHARED_H
 
 #include "ee.h"
-#include "Blinky_LED.h"
+
 /* Used to enhance tracing */
 static void idle_hook_body(void) {
   __asm__ volatile(

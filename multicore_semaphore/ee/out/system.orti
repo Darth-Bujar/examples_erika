@@ -340,21 +340,23 @@ ALARM AlarmMaster_100ms {
 };
 
 ALARM AlarmMaster_75ms {
-  CORE_ID   = "(1)";
-  ALARMTIME = "osEE_alarm_cb_array_core1[0].when";
-  CYCLETIME = "osEE_alarm_cb_array_core1[0].cycle";
-  STATE = "osEE_alarm_cb_array_core1[0].status";
-  ACTION = "Activate TASK Slave_task_1";
-  COUNTER = "system_timer_slave1";
-  COUNTERVALUE = "osEE_alarm_db_array_core1[0].p_counter_db->p_counter_cb->value";
+  CORE_ID   = "(0)";
+  ALARMTIME = "osEE_alarm_cb_array_core0[1].when";
+  CYCLETIME = "osEE_alarm_cb_array_core0[1].cycle";
+  STATE = "osEE_alarm_cb_array_core0[1].status";
+  ACTION = "Activate TASK Slave_task_2";
+  COUNTER = "system_timer_master";
+  COUNTERVALUE = "osEE_alarm_db_array_core0[1].p_counter_db->p_counter_cb->value";
 };
 
 ALARM AlarmMaster_50ms {
-  CORE_ID   = "(2)";
-  ALARMTIME = "osEE_alarm_cb_array_core2[0].when";
-  CYCLETIME = "osEE_alarm_cb_array_core2[0].cycle";
-  STATE = "osEE_alarm_cb_array_core2[0].status";
+  CORE_ID   = "(0)";
+  ALARMTIME = "osEE_alarm_cb_array_core0[2].when";
+  CYCLETIME = "osEE_alarm_cb_array_core0[2].cycle";
+  STATE = "osEE_alarm_cb_array_core0[2].status";
   ACTION = "Activate TASK Slave_task_2";
-  COUNTER = "system_timer_slave2";
-  COUNTERVALUE = "osEE_alarm_db_array_core2[0].p_counter_db->p_counter_cb->value";
+  COUNTER = "system_timer_master";
+  COUNTERVALUE = "osEE_alarm_db_array_core0[2].p_counter_db->p_counter_cb->value";
 };
+
+
