@@ -255,44 +255,10 @@ INCLUDE_PATH += $(call short_native_path, $(abspath $(wildcard ../../Libraries/I
 INCLUDE_PATH += $(call short_native_path, $(abspath $(wildcard ../../Libraries/iLLD/TC38A/Tricore)))
 INCLUDE_PATH += $(call short_native_path, $(abspath $(wildcard ../../Libraries/Service/CpuGeneric)))
 
-
-
 # Add a subset of iLLD drivers to application build.
 OS_EE_APP_CFG_SRCS += \
   ../Libraries/iLLD/TC38A/Tricore/Port/Std/IfxPort.c \
   ../Libraries/iLLD/TC38A/Tricore/Port/Std/IfxPort.c \
   ../Libraries/iLLD/TC38A/Tricore/_Impl/IfxPort_cfg.c \
-  ../Libraries/iLLD/TC38A/Tricore/Scu/Std/IfxScuWdt.c \
-  # ../Libraries/iLLD/TC38A/Tricore/Asclin/Asc/IfxAsclin_Asc.c \
-  # ../Libraries/Service/CpuGeneric/SysSe/Comm/Ifx_Console.c \
-  # ../Libraries/Service/CpuGeneric/SysSe/Comm/Ifx_Shell.c \
-  # ../Libraries/iLLD/TC38A/Tricore/Asclin/Asc/IfxAsclin_Asc.c \
-  # ../Libraries/iLLD/TC38A/Tricore/_Lib/DataHandling/Ifx_Fifo.c \
-  # ../Libraries/Service/CpuGeneric/StdIf/IfxStdIf_DPipe.c \
-  # ../Libraries/iLLD/TC38A/Tricore/Asclin/Asc/IfxAsclin_Asc.c \
-  # ../Libraries/iLLD/TC38A/Tricore/Asclin/Std/IfxAsclin.c \
-  # ../Libraries/iLLD/TC38A/Tricore/_Impl/IfxAsclin_cfg.c \
-  # ../Libraries/iLLD/TC38A/Tricore/Scu/Std/IfxScuCcu.c \
-  # ../Libraries/iLLD/TC38A/Tricore/_Lib/DataHandling/Ifx_CircularBuffer.c \
-  # ../Libraries/iLLD/TC38A/Tricore/_PinMap/IfxAsclin_PinMap.c \
-  # ../ee/ASCLIN_Shell_UART.c
-
-
+  ../Libraries/iLLD/TC38A/Tricore/Scu/Std/IfxScuWdt.c
 endif # OS_EE_BUILD
-
-# ltc E106: unresolved external: Ifx_Fifo_canReadCount - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: Ifx_Fifo_write - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: IfxAsclin_getSrcPointerTx - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: IfxAsclin_getSrcPointerRx - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: Ifx_Fifo_canWriteCount - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: Ifx_Fifo_clear - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: IfxAsclin_setBitTiming - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: IfxAsclin_enableModule - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: Ifx_Fifo_create - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: Ifx_Fifo_init - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: IfxAsclin_setClockSource - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: IfxAsclin_getSrcPointerEr - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: Ifx_Fifo_read - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: IfxAsclin_write8 - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: IfxAsclin_read8 - (IfxAsclin_Asc.c.o)
-# ltc E106: unresolved external: initShellInterface - (master.c.o)

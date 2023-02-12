@@ -48,10 +48,9 @@ CPU test_application {
     EE_OPT = "OS_EE_APPL_BUILD_DEBUG";
     EE_OPT = "OS_EE_BUILD_DEBUG";
     EE_OPT = "OSEE_API_EXTENSION";
-    //EE_OPT = "OSEE_TC_LINK_BMHD";
-    //EE_OPT = "OSEE_TC_CLONE_OS";
 
     CPU_DATA = TRICORE {
+    	
       ID = 0x0;
       CPU_CLOCK = 200.0;
       COMPILER = TASKING;
@@ -59,28 +58,35 @@ CPU test_application {
       IDLEHOOK = TRUE {
         HOOKNAME = "idle_hook_core0";
       };
+      
     };
 
    CPU_DATA = TRICORE {
+   	
       ID = 0x1;
       MULTI_STACK = TRUE;
+      CPU_CLOCK = 200.0;
+      COMPILER = TASKING;
       IDLEHOOK = TRUE {
         HOOKNAME = "idle_hook_core1";
       };
+      
     };
 
     CPU_DATA = TRICORE {
+    	
       ID = 0x2;
       MULTI_STACK =TRUE;
+      CPU_CLOCK = 200.0;
+      COMPILER = TASKING;
       IDLEHOOK = TRUE {
         HOOKNAME = "idle_hook_core2";
       };
+      
     };
 
     MCU_DATA = TC39X {
       DERIVATIVE = "tc397xe";
-      //DERIVATIVE = "tc399xe-Astep";
-      //REVISION = "AA";
     };
     
    USEEXTENSIONAPI = TRUE {
@@ -91,7 +97,6 @@ CPU test_application {
     ERRORHOOK = TRUE;
     USERESSCHEDULER = FALSE;
     USEORTI = TRUE;
-    //	USEDYNAMICAPI = TRUE;
     KERNEL_TYPE = OSEK {
       CLASS = ECC2;
       RQ    = MQ;
@@ -102,6 +107,7 @@ CPU test_application {
     APP_SRC="master.c";
     APP_SRC="slave1.c";
     APP_SRC="slave2.c";
+    APP_SRC="Blinky_LED.c";
   };
 
   TASK Slave_task_1 {
@@ -181,17 +187,17 @@ CPU test_application {
  ALARM AlarmMaster_100ms{
    COUNTER = system_timer_master;
    ACTION = ACTIVATETASK { TASK = producer_task; };
-   AUTOSTART = TRUE { ALARMTIME = 0 ; CYCLETIME = 300;};
+   AUTOSTART = TRUE { ALARMTIME = 0 ; CYCLETIME = 50;};
  };
  
   ALARM AlarmMaster_75ms {
-    COUNTER = system_timer_master;
-    ACTION = ACTIVATETASK { TASK = Slave_task_2; };
+    COUNTER = system_timer_slave1;
+    ACTION = ACTIVATETASK { TASK = Slave_task_1; };
     AUTOSTART = TRUE { ALARMTIME = 10 ; CYCLETIME = 100; };
   };
 
   ALARM AlarmMaster_50ms {
-    COUNTER = system_timer_master;
+    COUNTER = system_timer_slave2;
     ACTION = ACTIVATETASK { TASK = Slave_task_2; };
     AUTOSTART = TRUE { ALARMTIME = 0; CYCLETIME = 200; };
   };

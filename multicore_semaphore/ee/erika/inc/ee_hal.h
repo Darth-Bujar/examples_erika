@@ -245,7 +245,7 @@ OSEE_STATIC_INLINE OsEE_reg OSEE_ALWAYS_INLINE
   /* This is the extr.u assembler instruction */
   __asm__ volatile (
     "extr.u %0,%1,%2,%3":
-      "=d" (res): "d" (reg), "i"     (start), "i" (size): "memory"
+      "=d" (res): "d" (reg), "i" (start), "i" (size): "memory"
   );
   return res;
 }
