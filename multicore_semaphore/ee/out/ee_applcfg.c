@@ -30,7 +30,7 @@
 #include "Os_MemMap.h"
 
 SemType S = {
-  /* .spin_lock = */ 0,
+        /* .spin_lock = */ 0,
   /* .blocked_queue = */ NULL,
   /* .count = */         0U
 };
@@ -677,14 +677,14 @@ static CONSTP2VAR(OsEE_CounterDB, OS_CONST, OS_APPL_DATA)
 #define OS_CORE0_START_SEC_VAR_CLEARED
 #include "Os_MemMap.h"
 static VAR(OsEE_AlarmCB, OS_VAR_CLEARED)
-  osEE_alarm_cb_array_core0[3];
+  osEE_alarm_cb_array_core0[1];
 #define OS_CORE0_STOP_SEC_VAR_CLEARED
 #include "Os_MemMap.h"
 
 #define OS_CORE0_START_SEC_CONST
 #include "Os_MemMap.h"
 static VAR(OsEE_AlarmDB, OS_CONST)
-  osEE_alarm_db_array_core0[3] = {
+  osEE_alarm_db_array_core0[1] = {
   {
     /* .p_trigger_cb = */ &osEE_alarm_cb_array_core0[0U],
     /* .p_counter_db = */ &osEE_counter_db_array_core0[0U],
@@ -692,30 +692,6 @@ static VAR(OsEE_AlarmDB, OS_CONST)
       /* .param      = */   {
         /* .f            = */ NULL,
         /* .p_tdb        = */ &osEE_tdb_array_core0[1U],
-        /* .p_counter_db = */ NULL,
-        /* .mask         = */ 0U},
-      /* .type       = */ OSEE_ACTION_TASK
-    }
-  },
-  {
-    /* .p_trigger_cb = */ &osEE_alarm_cb_array_core0[1U],
-    /* .p_counter_db = */ &osEE_counter_db_array_core0[0U],
-    /* .action       = */ {
-      /* .param      = */   {
-        /* .f            = */ NULL,
-        /* .p_tdb        = */ &osEE_tdb_array_core2[1U],
-        /* .p_counter_db = */ NULL,
-        /* .mask         = */ 0U},
-      /* .type       = */ OSEE_ACTION_TASK
-    }
-  },
-  {
-    /* .p_trigger_cb = */ &osEE_alarm_cb_array_core0[2U],
-    /* .p_counter_db = */ &osEE_counter_db_array_core0[0U],
-    /* .action       = */ {
-      /* .param      = */   {
-        /* .f            = */ NULL,
-        /* .p_tdb        = */ &osEE_tdb_array_core2[1U],
         /* .p_counter_db = */ NULL,
         /* .mask         = */ 0U},
       /* .type       = */ OSEE_ACTION_TASK
@@ -730,12 +706,64 @@ static VAR(OsEE_AlarmDB, OS_CONST)
  * Alarms Core1
  *
  **************************************************************************/
+#define OS_CORE1_START_SEC_VAR_CLEARED
+#include "Os_MemMap.h"
+static VAR(OsEE_AlarmCB, OS_VAR_CLEARED)
+  osEE_alarm_cb_array_core1[1];
+#define OS_CORE1_STOP_SEC_VAR_CLEARED
+#include "Os_MemMap.h"
+
+#define OS_CORE1_START_SEC_CONST
+#include "Os_MemMap.h"
+static VAR(OsEE_AlarmDB, OS_CONST)
+  osEE_alarm_db_array_core1[1] = {
+  {
+    /* .p_trigger_cb = */ &osEE_alarm_cb_array_core1[0U],
+    /* .p_counter_db = */ &osEE_counter_db_array_core1[0U],
+    /* .action       = */ {
+      /* .param      = */   {
+        /* .f            = */ NULL,
+        /* .p_tdb        = */ &osEE_tdb_array_core1[1U],
+        /* .p_counter_db = */ NULL,
+        /* .mask         = */ 0U},
+      /* .type       = */ OSEE_ACTION_TASK
+    }
+  }
+};
+#define OS_CORE1_STOP_SEC_CONST
+#include "Os_MemMap.h"
 
 /***************************************************************************
  *
  * Alarms Core2
  *
  **************************************************************************/
+#define OS_CORE2_START_SEC_VAR_CLEARED
+#include "Os_MemMap.h"
+static VAR(OsEE_AlarmCB, OS_VAR_CLEARED)
+  osEE_alarm_cb_array_core2[1];
+#define OS_CORE2_STOP_SEC_VAR_CLEARED
+#include "Os_MemMap.h"
+
+#define OS_CORE2_START_SEC_CONST
+#include "Os_MemMap.h"
+static VAR(OsEE_AlarmDB, OS_CONST)
+  osEE_alarm_db_array_core2[1] = {
+  {
+    /* .p_trigger_cb = */ &osEE_alarm_cb_array_core2[0U],
+    /* .p_counter_db = */ &osEE_counter_db_array_core2[0U],
+    /* .action       = */ {
+      /* .param      = */   {
+        /* .f            = */ NULL,
+        /* .p_tdb        = */ &osEE_tdb_array_core2[1U],
+        /* .p_counter_db = */ NULL,
+        /* .mask         = */ 0U},
+      /* .type       = */ OSEE_ACTION_TASK
+    }
+  }
+};
+#define OS_CORE2_STOP_SEC_CONST
+#include "Os_MemMap.h"
 
 #define OS_START_SEC_CONST
 #include "Os_MemMap.h"
@@ -743,10 +771,8 @@ static CONSTP2VAR(OsEE_AlarmDB, OS_CONST, OS_APPL_DATA)
   osEE_alarm_db_ptr_array[OSEE_ALARMS_ARRAY_SIZE] =
 {
   &osEE_alarm_db_array_core0[0],
-  &osEE_alarm_db_array_core0[1],
-  &osEE_alarm_db_array_core0[2],
-
-
+  &osEE_alarm_db_array_core1[0],
+  &osEE_alarm_db_array_core2[0] 
 };
 #define OS_STOP_SEC_CONST
 #include "Os_MemMap.h"
@@ -759,22 +785,12 @@ static CONSTP2VAR(OsEE_AlarmDB, OS_CONST, OS_APPL_DATA)
 #define OS_CORE0_START_SEC_CONST
 #include "Os_MemMap.h"
 static VAR(OsEE_autostart_trigger_info, OS_CONST)
-  osEE_trigger_autostart_info_core0_OSDEFAULTAPPMODE[3U] =
+  osEE_trigger_autostart_info_core0_OSDEFAULTAPPMODE[1U] =
 {
   {
     /* .p_trigger_db          = */  &osEE_alarm_db_array_core0[0U],
     /* .first_tick_parameter  = */  (1U),
-    /* .first_tick_parameter  = */  (300U)
-  },
-  {
-    /* .p_trigger_db          = */  &osEE_alarm_db_array_core0[1U],
-    /* .first_tick_parameter  = */  (10U),
-    /* .first_tick_parameter  = */  (100U)
-  },
-  {
-    /* .p_trigger_db          = */  &osEE_alarm_db_array_core0[2U],
-    /* .first_tick_parameter  = */  (1U),
-    /* .first_tick_parameter  = */  (200U)
+    /* .first_tick_parameter  = */  (50U)
   }
 };
 
@@ -795,12 +811,21 @@ static VAR(OsEE_autostart_trigger, OS_CONST) osEE_autostart_trigger_db_core0[1U]
  **************************************************************************/
 #define OS_CORE1_START_SEC_CONST
 #include "Os_MemMap.h"
+static VAR(OsEE_autostart_trigger_info, OS_CONST)
+  osEE_trigger_autostart_info_core1_OSDEFAULTAPPMODE[1U] =
+{
+  {
+    /* .p_trigger_db          = */  &osEE_alarm_db_array_core1[0U],
+    /* .first_tick_parameter  = */  (10U),
+    /* .first_tick_parameter  = */  (100U)
+  }
+};
 
 static VAR(OsEE_autostart_trigger, OS_CONST) osEE_autostart_trigger_db_core1[1U] =
 {
   {
-    /* .p_trigger_ptr_array = */  NULL,
-    /* .trigger_array_size  = */  (0U)
+    /* .p_trigger_ptr_array = */  (P2SYM_VAR(OsEE_autostart_trigger_info, OS_APPL_CONST, TYPEDEF)[])&osEE_trigger_autostart_info_core1_OSDEFAULTAPPMODE,
+    /* .trigger_array_size  = */  OSEE_ARRAY_ELEMENT_COUNT(osEE_trigger_autostart_info_core1_OSDEFAULTAPPMODE)
   }
 };
 #define OS_CORE1_STOP_SEC_CONST
@@ -813,12 +838,21 @@ static VAR(OsEE_autostart_trigger, OS_CONST) osEE_autostart_trigger_db_core1[1U]
  **************************************************************************/
 #define OS_CORE2_START_SEC_CONST
 #include "Os_MemMap.h"
+static VAR(OsEE_autostart_trigger_info, OS_CONST)
+  osEE_trigger_autostart_info_core2_OSDEFAULTAPPMODE[1U] =
+{
+  {
+    /* .p_trigger_db          = */  &osEE_alarm_db_array_core2[0U],
+    /* .first_tick_parameter  = */  (1U),
+    /* .first_tick_parameter  = */  (200U)
+  }
+};
 
 static VAR(OsEE_autostart_trigger, OS_CONST) osEE_autostart_trigger_db_core2[1U] =
 {
   {
-    /* .p_trigger_ptr_array = */  NULL,
-    /* .trigger_array_size  = */  (0U)
+    /* .p_trigger_ptr_array = */  (P2SYM_VAR(OsEE_autostart_trigger_info, OS_APPL_CONST, TYPEDEF)[])&osEE_trigger_autostart_info_core2_OSDEFAULTAPPMODE,
+    /* .trigger_array_size  = */  OSEE_ARRAY_ELEMENT_COUNT(osEE_trigger_autostart_info_core2_OSDEFAULTAPPMODE)
   }
 };
 #define OS_CORE2_STOP_SEC_CONST

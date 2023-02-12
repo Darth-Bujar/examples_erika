@@ -73,12 +73,15 @@ OS_EE_APP_CFG_SRCS += ee_applcfg.c
 OS_EE_APP_CFG_SRCS += master.c
 OS_EE_APP_CFG_SRCS += slave1.c
 OS_EE_APP_CFG_SRCS += slave2.c
+OS_EE_APP_CFG_SRCS += Blinky_LED.c
 OS_EE_APP_CFG_SRCS += master.c
 OS_EE_APP_CFG_SRCS += slave1.c
 OS_EE_APP_CFG_SRCS += slave2.c
+OS_EE_APP_CFG_SRCS += Blinky_LED.c
 OS_EE_APP_CFG_SRCS += master.c
 OS_EE_APP_CFG_SRCS += slave1.c
 OS_EE_APP_CFG_SRCS += slave2.c
+OS_EE_APP_CFG_SRCS += Blinky_LED.c
 
 
 export OS_EE_APP_CFG_SRCS

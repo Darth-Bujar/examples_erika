@@ -1,58 +1,58 @@
 # space <name> <id> <mau size>
+space	mpe:tc0:csa	104	8
 space	mpe:tc0:linear	101	8
 space	mpe:tc0:abs24	102	8
 space	mpe:tc0:abs18	103	8
+space	mpe:tc3:abs18	403	8
+space	mpe:tc3:csa	404	8
+space	mpe:vtc:linear	1	8
+space	mpe:vtc:abs24	2	8
 space	mpe:vtc:abs18	3	8
 space	mpe:tc3:abs24	402	8
-space	mpe:tc3:abs18	403	8
-space	mpe:vtc:linear	1	8
-space	mpe:tc3:csa	404	8
-space	mpe:vtc:abs24	2	8
-space	mpe:tc0:csa	104	8
+space	mpe:tc2:abs18	303	8
+space	mpe:tc2:csa	304	8
+space	mpe:tc3:linear	401	8
 space	mpe:tc1:linear	201	8
 space	mpe:tc1:abs24	202	8
 space	mpe:tc1:abs18	203	8
 space	mpe:tc1:csa	204	8
-space	mpe:tc3:linear	401	8
 space	mpe:tc2:linear	301	8
 space	mpe:tc2:abs24	302	8
-space	mpe:tc2:abs18	303	8
-space	mpe:tc2:csa	304	8
 # chip <name> <id> <mau size> <size> <type>
+chip	mpe:mcs06	33	8	12288	ram
 chip	mpe:mcs01	28	8	12288	ram
 chip	mpe:mcs02	29	8	12288	ram
-chip	mpe:dam0ram0	23	8	32768	ram
-chip	mpe:dlmucpu2	20	8	65536	ram
+chip	mpe:mcs05	32	8	12288	ram
+chip	xram_8_a	0	8	1048576	ram
 chip	mpe:mcs03	30	8	12288	ram
 chip	mpe:mcs04	31	8	12288	ram
-chip	mpe:dlmucpu3	21	8	65536	ram
-chip	mpe:mcs00	27	8	12288	ram
-chip	mpe:mcs05	32	8	12288	ram
-chip	mpe:mcs06	33	8	12288	ram
+chip	mpe:pspr0	2	8	65536	ram
+chip	mpe:dspr1	3	8	245760	ram
+chip	mpe:dam0ram0	23	8	32768	ram
+chip	mpe:dlmucpu1	19	8	65536	ram
+chip	mpe:dlmucpu2	20	8	65536	ram
 chip	mpe:lmuram0	22	8	131072	ram
 chip	mpe:dam0ram1	24	8	32768	ram
-chip	xram_8_a	0	8	1048576	ram
-chip	mpe:dlmucpu1	19	8	65536	ram
 chip	mpe:tram	25	8	8192	ram
+chip	mpe:dlmucpu3	21	8	65536	ram
 chip	mpe:scr_xram	26	8	8192	nvram
+chip	mpe:mcs00	27	8	12288	ram
+chip	mpe:brom	13	8	65536	rom
+chip	mpe:dflash0	14	8	524288	nvram
+chip	mpe:dflash0_ucb	15	8	24576	nvram
+chip	mpe:dflash1	17	8	131072	nvram
+chip	mpe:dflash0_cfs	16	8	65536	nvram
+chip	mpe:pflash3	12	8	1048576	rom
+chip	mpe:dlmucpu0	18	8	65536	ram
+chip	mpe:dspr0	1	8	245760	ram
+chip	mpe:pspr1	4	8	65536	ram
+chip	mpe:dspr2	5	8	98304	ram
+chip	mpe:pspr2	6	8	65536	ram
 chip	mpe:dspr3	7	8	98304	ram
 chip	mpe:pspr3	8	8	65536	ram
 chip	mpe:pflash0	9	8	3145728	rom
 chip	mpe:pflash1	10	8	3145728	rom
 chip	mpe:pflash2	11	8	3145728	rom
-chip	mpe:pflash3	12	8	1048576	rom
-chip	mpe:brom	13	8	65536	rom
-chip	mpe:dflash0	14	8	524288	nvram
-chip	mpe:dflash0_ucb	15	8	24576	nvram
-chip	mpe:dflash0_cfs	16	8	65536	nvram
-chip	mpe:dflash1	17	8	131072	nvram
-chip	mpe:dlmucpu0	18	8	65536	ram
-chip	mpe:dspr0	1	8	245760	ram
-chip	mpe:pspr0	2	8	65536	ram
-chip	mpe:dspr1	3	8	245760	ram
-chip	mpe:pspr1	4	8	65536	ram
-chip	mpe:dspr2	5	8	98304	ram
-chip	mpe:pspr2	6	8	65536	ram
 # map <space id> <start in space> <size in space> <chip id> <start on chip>
 map	101	2281701376	1048576	0	0
 map	201	2281701376	1048576	0	0
