@@ -45,8 +45,11 @@ Tasks in this example will be coonfigured in the next way:
     };
   };
 ```
-As you can se we added new parametr to the task description STACK. That parametr determine what type of stack will be used for that task and what will be the size of it. For task to use the semaphore we need to set the EXTENDED parametr to TRUE. IF it will not be done and WaitSem() function will be called in that task, then task will just ignore semaphore counter and cntineu with the next command.
-Tasks getting triggered by preconfigured ALARMS that you can find in conf.oil. High priority task getting triggered each 2s. Mid priority task getting triggered each 1000ms and the low prioirty task gettting triggered each 3s. Initially semaphore is preset to 0 and consumer tasks will take one only after producer task will produce first sempahore.
+As you can se we added new parametr to the task description STACK. That parametr determine what type of stack will be used for that task and what will be the size of it. For 
+task to use the semaphore we need to set the EXTENDED parametr to TRUE. IF it will not be done and WaitSem() function will be called in that task, then task will just ignore 
+semaphore counter and cntineu with the next command.
+Tasks getting triggered by preconfigured ALARMS that you can find in conf.oil. High priority task getting triggered each 2s. Mid priority task getting triggered each 1000ms and 
+the low prioirty task gettting triggered each 3s. Initially semaphore is preset to 0 and consumer tasks will take one only after producer task will produce first sempahore.
 
 Expected output look like that:
 
