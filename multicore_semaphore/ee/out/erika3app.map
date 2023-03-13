@@ -4,8 +4,8 @@
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | tool          | TASKING VX-toolset for AURIX Development Studio (non-commercial): object linker v1.1r8 Build 22011964                                        |
 | path          | C:\Infineon\AURIX-Studio-1.8.0\plugins\com.infineon.aurix.tools_1.8.0\build_system\tools\Compilers\Tasking_1.1r8\ctc\bin\ltc                 |
-| arguments     | -f cc21340a                                                                                                                                  |
-| file:cc21340a | -o erika3app.elf -dE:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/mk/ee_tc_tasking_flash.lsl -D__CPU__=tc38x  |
+| arguments     | -f cc13344a                                                                                                                                  |
+| file:cc13344a | -o erika3app.elf -dE:/Projects/Erika/aurix_workspace/examples_erika/multicore_semaphore/ee/erika/mk/ee_tc_tasking_flash.lsl -D__CPU__=tc38x  |
 |               | -D__PROC_TC38X__ --core=mpe:vtc -D__PROC_TC38X__ -OtxycL --map-file=erika3app.xml:XML -mcdfiklmnoqrsu --map-file --munch                     |
 |               | obj/../Libraries/iLLD/TC38A/Tricore/Port/Std/IfxPort.c.o obj/../Libraries/iLLD/TC38A/Tricore/Scu/Std/IfxScuWdt.c.o                           |
 |               | obj/../Libraries/iLLD/TC38A/Tricore/_Impl/IfxPort_cfg.c.o obj/Blinky_LED.c.o obj/ee_applcfg.c.o obj/master.c.o obj/slave1.c.o                |
@@ -26695,157 +26695,157 @@ Note:
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Section                                             | File                        | Library     | Symbol                                      | Reason       |
 |==============================================================================================================================================================|
-| _lc__ctors (7522)                                   |                             |             |                                             | unreferenced |
-| _lc__dtors (7523)                                   |                             |             |                                             | unreferenced |
-| .text.IfxPort..cocofun_2 (8)                        | IfxPort.c.o                 |             | .L132                                       | unreferenced |
-| .text.IfxPort.IfxPort_setPinControllerSelection     | IfxPort.c.o                 |             | IfxPort_setPinControllerSelection           | unreferenced |
-| (15)                                                |                             |             |                                             |              |
+| .text.IfxPort.IfxPort_disableEmergencyStop (1)      | IfxPort.c.o                 |             | IfxPort_disableEmergencyStop                | unreferenced |
+| .text.IfxPort.IfxPort_enableEmergencyStop (2)       | IfxPort.c.o                 |             | IfxPort_enableEmergencyStop                 | unreferenced |
+| .text.IfxScuWdt..cocofun_19 (130)                   | IfxScuWdt.c.o               |             | .L96                                        | unreferenced |
+| .text.IfxScuWdt..cocofun_21 (135)                   | IfxScuWdt.c.o               |             | .L106                                       | unreferenced |
 | .text.IfxPort.IfxPort_resetPinControllerSelection   | IfxPort.c.o                 |             | IfxPort_resetPinControllerSelection         | unreferenced |
 | (16)                                                |                             |             |                                             |              |
-| .text.IfxPort.IfxPort_resetESR (5)                  | IfxPort.c.o                 |             | IfxPort_resetESR                            | unreferenced |
-| .text.IfxPort.IfxPort_setGroupModeOutput (10)       | IfxPort.c.o                 |             | IfxPort_setGroupModeOutput                  | unreferenced |
-| .text.IfxPort.IfxPort_setGroupPadDriver (11)        | IfxPort.c.o                 |             | IfxPort_setGroupPadDriver                   | unreferenced |
-| .text.IfxPort.IfxPort_setESR (6)                    | IfxPort.c.o                 |             | IfxPort_setESR                              | unreferenced |
-| .text.IfxPort.IfxPort_getAddress (3)                | IfxPort.c.o                 |             | IfxPort_getAddress                          | unreferenced |
-| .text.IfxPort.IfxPort_disableEmergencyStop (1)      | IfxPort.c.o                 |             | IfxPort_disableEmergencyStop                | unreferenced |
 | .text.IfxPort.IfxPort_getIndex (4)                  | IfxPort.c.o                 |             | IfxPort_getIndex                            | unreferenced |
-| .text.IfxPort.IfxPort_setPinModeLVDS (13)           | IfxPort.c.o                 |             | IfxPort_setPinModeLVDS                      | unreferenced |
-| .text.IfxPort..cocofun_1 (9)                        | IfxPort.c.o                 |             | .L134                                       | unreferenced |
-| .text.IfxPort.IfxPort_setPinPadDriver (14)          | IfxPort.c.o                 |             | IfxPort_setPinPadDriver                     | unreferenced |
 | .text.IfxPort.IfxPort_setGroupModeInput (7)         | IfxPort.c.o                 |             | IfxPort_setGroupModeInput                   | unreferenced |
-| .text.IfxPort.IfxPort_enableEmergencyStop (2)       | IfxPort.c.o                 |             | IfxPort_enableEmergencyStop                 | unreferenced |
-| .text.IfxScuWdt..cocofun_9 (151)                    | IfxScuWdt.c.o               |             | .L138                                       | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_disableCpuWatchdog (152)  | IfxScuWdt.c.o               |             | IfxScuWdt_disableCpuWatchdog                | unreferenced |
-| .text.IfxScuWdt..cocofun_17 (139)                   | IfxScuWdt.c.o               |             | .L114                                       | unreferenced |
-| .text.IfxScuWdt..cocofun_19 (130)                   | IfxScuWdt.c.o               |             | .L96                                        | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_clearGlobalEndinit (147)  | IfxScuWdt.c.o               |             | IfxScuWdt_clearGlobalEndinit                | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_clearGlobalSafetyEndinit  | IfxScuWdt.c.o               |             | IfxScuWdt_clearGlobalSafetyEndinit          | unreferenced |
-| (148)                                               |                             |             |                                             |              |
-| .text.IfxScuWdt.IfxScuWdt_changeSafetyWatchdogPassw | IfxScuWdt.c.o               |             | IfxScuWdt_changeSafetyWatchdogPassword      | unreferenced |
-| ord (138)                                           |                             |             |                                             |              |
-| .text.IfxScuWdt..cocofun_7 (153)                    | IfxScuWdt.c.o               |             | .L142                                       | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_changeGlobalEndinitPasswo | IfxScuWdt.c.o               |             | IfxScuWdt_changeGlobalEndinitPassword       | unreferenced |
-| rd (132)                                            |                             |             |                                             |              |
-| .text.IfxScuWdt..cocofun_21 (135)                   | IfxScuWdt.c.o               |             | .L106                                       | unreferenced |
-| .text.IfxScuWdt..cocofun_5 (155)                    | IfxScuWdt.c.o               |             | .L146                                       | unreferenced |
+| .text.IfxPort.IfxPort_setGroupModeOutput (10)       | IfxPort.c.o                 |             | IfxPort_setGroupModeOutput                  | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_changeCpuWatchdogPassword | IfxScuWdt.c.o               |             | IfxScuWdt_changeCpuWatchdogPassword         | unreferenced |
+|  (125)                                              |                             |             |                                             |              |
+| .text.IfxPort..cocofun_1 (9)                        | IfxPort.c.o                 |             | .L134                                       | unreferenced |
+| .text.IfxPort.IfxPort_setGroupPadDriver (11)        | IfxPort.c.o                 |             | IfxPort_setGroupPadDriver                   | unreferenced |
+| .text.IfxPort.IfxPort_setPinPadDriver (14)          | IfxPort.c.o                 |             | IfxPort_setPinPadDriver                     | unreferenced |
+| .text.IfxScuWdt..cocofun_15 (133)                   | IfxScuWdt.c.o               |             | .L102                                       | unreferenced |
 | .text.IfxScuWdt..cocofun_10 (134)                   | IfxScuWdt.c.o               |             | .L104                                       | unreferenced |
 | .text.IfxScuWdt..cocofun_11 (137)                   | IfxScuWdt.c.o               |             | .L110                                       | unreferenced |
-| .text.IfxScuWdt..cocofun_15 (133)                   | IfxScuWdt.c.o               |             | .L102                                       | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_changeSafetyWatchdogPassw | IfxScuWdt.c.o               |             | IfxScuWdt_changeSafetyWatchdogPassword      | unreferenced |
+| ord (138)                                           |                             |             |                                             |              |
+| .text.IfxScuWdt..cocofun_17 (139)                   | IfxScuWdt.c.o               |             | .L114                                       | unreferenced |
 | .text.IfxScuWdt..cocofun_12 (140)                   | IfxScuWdt.c.o               |             | .L116                                       | unreferenced |
 | .text.IfxScuWdt.IfxScuWdt_changeSafetyWatchdogReloa | IfxScuWdt.c.o               |             | IfxScuWdt_changeSafetyWatchdogReload        | unreferenced |
 | d (141)                                             |                             |             |                                             |              |
-| .text.IfxScuWdt.IfxScuWdt_changeCpuWatchdogPassword | IfxScuWdt.c.o               |             | IfxScuWdt_changeCpuWatchdogPassword         | unreferenced |
-|  (125)                                              |                             |             |                                             |              |
-| .text.IfxScuWdt..cocofun_24 (150)                   | IfxScuWdt.c.o               |             | .L136                                       | unreferenced |
 | .text.IfxScuWdt..cocofun_8 (127)                    | IfxScuWdt.c.o               |             | .L90                                        | unreferenced |
-| .text.IfxPort.IfxPort_modifyPinControllerSelection  | IfxPort.c.o                 |             | IfxPort_modifyPinControllerSelection        | unreferenced |
-| (17)                                                |                             |             |                                             |              |
+| .text.IfxScuWdt.IfxScuWdt_changeGlobalEndinitPasswo | IfxScuWdt.c.o               |             | IfxScuWdt_changeGlobalEndinitPassword       | unreferenced |
+| rd (132)                                            |                             |             |                                             |              |
 | .text.IfxScuWdt.IfxScuWdt_changeCpuWatchdogReload   | IfxScuWdt.c.o               |             | IfxScuWdt_changeCpuWatchdogReload           | unreferenced |
 | (131)                                               |                             |             |                                             |              |
-| .text.IfxScuWdt.IfxScuWdt_clearSafetyEndinit (149)  | IfxScuWdt.c.o               |             | IfxScuWdt_clearSafetyEndinit                | unreferenced |
 | .text.IfxScuWdt.IfxScuWdt_changeGlobalSafetyEndinit | IfxScuWdt.c.o               |             | IfxScuWdt_changeGlobalSafetyEndinitPassword | unreferenced |
 | Password (136)                                      |                             |             |                                             |              |
-| .rodata.IfxPort_cfg.IfxPort_cfg_esrMasks (536)      | IfxPort_cfg.c.o             |             | IfxPort_cfg_esrMasks                        | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_initConfig (169)          | IfxScuWdt.c.o               |             | IfxScuWdt_initConfig                        | unreferenced |
-| .rodata.IfxPort_cfg.IfxPort_cfg_indexMap (537)      | IfxPort_cfg.c.o             |             | IfxPort_cfg_indexMap                        | unreferenced |
-| .text.Blinky_LED.blinkLED (546)                     | Blinky_LED.c.o              |             | blinkLED                                    | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_initSafetyWatchdog (173)  | IfxScuWdt.c.o               |             | IfxScuWdt_initSafetyWatchdog                | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_setGlobalEndinit (177)    | IfxScuWdt.c.o               |             | IfxScuWdt_setGlobalEndinit                  | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_getCpuWatchdogStatus      | IfxScuWdt.c.o               |             | IfxScuWdt_getCpuWatchdogStatus              | unreferenced |
-| (182)                                               |                             |             |                                             |              |
-| .text.IfxScuWdt..cocofun_22 (158)                   | IfxScuWdt.c.o               |             | .L152                                       | unreferenced |
+| .text.IfxPort.IfxPort_resetESR (5)                  | IfxPort.c.o                 |             | IfxPort_resetESR                            | unreferenced |
+| .text.IfxPort.IfxPort_modifyPinControllerSelection  | IfxPort.c.o                 |             | IfxPort_modifyPinControllerSelection        | unreferenced |
+| (17)                                                |                             |             |                                             |              |
+| .text.IfxPort..cocofun_2 (8)                        | IfxPort.c.o                 |             | .L132                                       | unreferenced |
+| .text.IfxPort.IfxPort_getAddress (3)                | IfxPort.c.o                 |             | IfxPort_getAddress                          | unreferenced |
+| .text.IfxPort.IfxPort_setESR (6)                    | IfxPort.c.o                 |             | IfxPort_setESR                              | unreferenced |
+| .text.IfxPort.IfxPort_setPinModeLVDS (13)           | IfxPort.c.o                 |             | IfxPort_setPinModeLVDS                      | unreferenced |
+| .text.IfxPort.IfxPort_setPinControllerSelection     | IfxPort.c.o                 |             | IfxPort_setPinControllerSelection           | unreferenced |
+| (15)                                                |                             |             |                                             |              |
+| .text.IfxScuWdt..cocofun_5 (155)                    | IfxScuWdt.c.o               |             | .L146                                       | unreferenced |
 | .text.IfxScuWdt.IfxScuWdt_getGlobalEndinitPassword  | IfxScuWdt.c.o               |             | IfxScuWdt_getGlobalEndinitPassword          | unreferenced |
 | (166)                                               |                             |             |                                             |              |
-| .text.IfxScuWdt.IfxScuWdt_initCpuWatchdog (170)     | IfxScuWdt.c.o               |             | IfxScuWdt_initCpuWatchdog                   | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_serviceCpuWatchdog (174)  | IfxScuWdt.c.o               |             | IfxScuWdt_serviceCpuWatchdog                | unreferenced |
-| .text.IfxScuWdt..cocofun_2 (172)                    | IfxScuWdt.c.o               |             | .L180                                       | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_disableSafetyWatchdog     | IfxScuWdt.c.o               |             | IfxScuWdt_disableSafetyWatchdog             | unreferenced |
-| (156)                                               |                             |             |                                             |              |
-| .text.IfxScuWdt..cocofun_3 (159)                    | IfxScuWdt.c.o               |             | .L154                                       | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_getSafetyWatchdogPassword | IfxScuWdt.c.o               |             | IfxScuWdt_getSafetyWatchdogPassword         | unreferenced |
-|  (168)                                              |                             |             |                                             |              |
-| .text.IfxScuWdt..cocofun_4 (171)                    | IfxScuWdt.c.o               |             | .L178                                       | unreferenced |
-| .text.IfxScuWdt..cocofun_13 (178)                   | IfxScuWdt.c.o               |             | .L192                                       | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_enableCpuWatchdog (160)   | IfxScuWdt.c.o               |             | IfxScuWdt_enableCpuWatchdog                 | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_setSafetyEndinit (180)    | IfxScuWdt.c.o               |             | IfxScuWdt_setSafetyEndinit                  | unreferenced |
 | .text.IfxScuWdt.IfxScuWdt_enableSafetyWatchdog      | IfxScuWdt.c.o               |             | IfxScuWdt_enableSafetyWatchdog              | unreferenced |
 | (161)                                               |                             |             |                                             |              |
+| .text.IfxScuWdt.IfxScuWdt_initConfig (169)          | IfxScuWdt.c.o               |             | IfxScuWdt_initConfig                        | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_clearSafetyEndinit (149)  | IfxScuWdt.c.o               |             | IfxScuWdt_clearSafetyEndinit                | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_initCpuWatchdog (170)     | IfxScuWdt.c.o               |             | IfxScuWdt_initCpuWatchdog                   | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_disableSafetyWatchdog     | IfxScuWdt.c.o               |             | IfxScuWdt_disableSafetyWatchdog             | unreferenced |
+| (156)                                               |                             |             |                                             |              |
+| .text.IfxScuWdt.IfxScuWdt_getSafetyWatchdogPassword | IfxScuWdt.c.o               |             | IfxScuWdt_getSafetyWatchdogPassword         | unreferenced |
+|  (168)                                              |                             |             |                                             |              |
+| .text.IfxScuWdt.IfxScuWdt_initSafetyWatchdog (173)  | IfxScuWdt.c.o               |             | IfxScuWdt_initSafetyWatchdog                | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_disableCpuWatchdog (152)  | IfxScuWdt.c.o               |             | IfxScuWdt_disableCpuWatchdog                | unreferenced |
 | .text.IfxScuWdt..cocofun_6 (157)                    | IfxScuWdt.c.o               |             | .L150                                       | unreferenced |
-| .text.IfxScuWdt.IfxScuWdt_getGlobalSafetyEndinitPas | IfxScuWdt.c.o               |             | IfxScuWdt_getGlobalSafetyEndinitPassword    | unreferenced |
-| sword (167)                                         |                             |             |                                             |              |
+| .text.IfxScuWdt..cocofun_9 (151)                    | IfxScuWdt.c.o               |             | .L138                                       | unreferenced |
+| .text.IfxScuWdt..cocofun_22 (158)                   | IfxScuWdt.c.o               |             | .L152                                       | unreferenced |
 | .text.IfxScuWdt.IfxScuWdt_getCpuWatchdogEndInit     | IfxScuWdt.c.o               |             | IfxScuWdt_getCpuWatchdogEndInit             | unreferenced |
 | (165)                                               |                             |             |                                             |              |
-| .text.IfxScuWdt.IfxScuWdt_serviceSafetyWatchdog     | IfxScuWdt.c.o               |             | IfxScuWdt_serviceSafetyWatchdog             | unreferenced |
-| (175)                                               |                             |             |                                             |              |
+| .text.IfxScuWdt..cocofun_2 (172)                    | IfxScuWdt.c.o               |             | .L180                                       | unreferenced |
+| .text.IfxScuWdt..cocofun_4 (171)                    | IfxScuWdt.c.o               |             | .L178                                       | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_enableCpuWatchdog (160)   | IfxScuWdt.c.o               |             | IfxScuWdt_enableCpuWatchdog                 | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_getGlobalSafetyEndinitPas | IfxScuWdt.c.o               |             | IfxScuWdt_getGlobalSafetyEndinitPassword    | unreferenced |
+| sword (167)                                         |                             |             |                                             |              |
+| .text.IfxScuWdt..cocofun_24 (150)                   | IfxScuWdt.c.o               |             | .L136                                       | unreferenced |
+| .text.IfxScuWdt..cocofun_7 (153)                    | IfxScuWdt.c.o               |             | .L142                                       | unreferenced |
+| .text.IfxScuWdt..cocofun_3 (159)                    | IfxScuWdt.c.o               |             | .L154                                       | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_clearGlobalEndinit (147)  | IfxScuWdt.c.o               |             | IfxScuWdt_clearGlobalEndinit                | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_clearGlobalSafetyEndinit  | IfxScuWdt.c.o               |             | IfxScuWdt_clearGlobalSafetyEndinit          | unreferenced |
+| (148)                                               |                             |             |                                             |              |
+| .rodata.IfxPort_cfg.IfxPort_cfg_indexMap (537)      | IfxPort_cfg.c.o             |             | IfxPort_cfg_indexMap                        | unreferenced |
 | .text.IfxScuWdt.IfxScuWdt_setGlobalSafetyEndinit    | IfxScuWdt.c.o               |             | IfxScuWdt_setGlobalSafetyEndinit            | unreferenced |
 | (179)                                               |                             |             |                                             |              |
 | .text.IfxScuWdt.IfxScuWdt_enableWatchdogWithDebugge | IfxScuWdt.c.o               |             | IfxScuWdt_enableWatchdogWithDebugger        | unreferenced |
 | r (181)                                             |                             |             |                                             |              |
-| .text.ee_tc_system.osEE_tc_stm_set_sr1 (907)        | ee_tc_system.c.o            | libee.a     | osEE_tc_stm_set_sr1                         | unreferenced |
-| .text.ee_tc_system.osEE_tc_delay (909)              | ee_tc_system.c.o            | libee.a     | osEE_tc_delay                               | unreferenced |
+| .text.IfxScuWdt..cocofun_13 (178)                   | IfxScuWdt.c.o               |             | .L192                                       | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_serviceSafetyWatchdog     | IfxScuWdt.c.o               |             | IfxScuWdt_serviceSafetyWatchdog             | unreferenced |
+| (175)                                               |                             |             |                                             |              |
+| .text.IfxScuWdt.IfxScuWdt_getCpuWatchdogStatus      | IfxScuWdt.c.o               |             | IfxScuWdt_getCpuWatchdogStatus              | unreferenced |
+| (182)                                               |                             |             |                                             |              |
+| .text.IfxScuWdt.IfxScuWdt_serviceCpuWatchdog (174)  | IfxScuWdt.c.o               |             | IfxScuWdt_serviceCpuWatchdog                | unreferenced |
+| .rodata.IfxPort_cfg.IfxPort_cfg_esrMasks (536)      | IfxPort_cfg.c.o             |             | IfxPort_cfg_esrMasks                        | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_setGlobalEndinit (177)    | IfxScuWdt.c.o               |             | IfxScuWdt_setGlobalEndinit                  | unreferenced |
+| .text.Blinky_LED.blinkLED (546)                     | Blinky_LED.c.o              |             | blinkLED                                    | unreferenced |
+| .text.IfxScuWdt.IfxScuWdt_setSafetyEndinit (180)    | IfxScuWdt.c.o               |             | IfxScuWdt_setSafetyEndinit                  | unreferenced |
+| .text.ee_oo_api_osek.SuspendOSInterrupts (1012)     | ee_oo_api_osek.c.o          | libee.a     | SuspendOSInterrupts                         | unreferenced |
 | .text.ee_oo_api_osek.DisableAllInterrupts (1007)    | ee_oo_api_osek.c.o          | libee.a     | DisableAllInterrupts                        | unreferenced |
-| .text.ee_oo_api_osek.EnableAllInterrupts (1008)     | ee_oo_api_osek.c.o          | libee.a     | EnableAllInterrupts                         | unreferenced |
-| .text.ee_oo_api_osek.osEE_suspend_all_interrupts    | ee_oo_api_osek.c.o          | libee.a     | .L403                                       | unreferenced |
-| (1009)                                              |                             |             |                                             |              |
+| .text.ee_tc_system.osEE_tc_stm_set_sr1 (907)        | ee_tc_system.c.o            | libee.a     | osEE_tc_stm_set_sr1                         | unreferenced |
 | .text.ee_tc_system.osEE_tc_stm_set_sr1_next_match   | ee_tc_system.c.o            | libee.a     | osEE_tc_stm_set_sr1_next_match              | unreferenced |
 | (908)                                               |                             |             |                                             |              |
-| .text.ee_oo_api_osek.TerminateTask (1018)           | ee_oo_api_osek.c.o          | libee.a     | TerminateTask                               | unreferenced |
-| .text.ee_oo_api_osek.ShutdownOS (1020)              | ee_oo_api_osek.c.o          | libee.a     | ShutdownOS                                  | unreferenced |
-| .text.ee_oo_api_osek.SetRelAlarm (1023)             | ee_oo_api_osek.c.o          | libee.a     | SetRelAlarm                                 | unreferenced |
-| .text.ee_oo_api_osek.GetAlarm (1026)                | ee_oo_api_osek.c.o          | libee.a     | GetAlarm                                    | unreferenced |
+| .text.ee_oo_api_osek.EnableAllInterrupts (1008)     | ee_oo_api_osek.c.o          | libee.a     | EnableAllInterrupts                         | unreferenced |
+| .text.ee_oo_api_osek.SuspendAllInterrupts (1010)    | ee_oo_api_osek.c.o          | libee.a     | SuspendAllInterrupts                        | unreferenced |
+| .text.ee_oo_api_osek.ResumeAllInterrupts (1011)     | ee_oo_api_osek.c.o          | libee.a     | ResumeAllInterrupts                         | unreferenced |
+| .text.ee_tc_system.osEE_tc_delay (909)              | ee_tc_system.c.o            | libee.a     | osEE_tc_delay                               | unreferenced |
+| .text.ee_oo_api_osek.osEE_suspend_all_interrupts    | ee_oo_api_osek.c.o          | libee.a     | .L403                                       | unreferenced |
+| (1009)                                              |                             |             |                                             |              |
+| .text.ee_oo_api_osek.WaitEvent (1028)               | ee_oo_api_osek.c.o          | libee.a     | WaitEvent                                   | unreferenced |
+| .text.ee_oo_api_osek.ActivateTask (1016)            | ee_oo_api_osek.c.o          | libee.a     | ActivateTask                                | unreferenced |
+| .text.ee_oo_api_osek.SetEvent (1029)                | ee_oo_api_osek.c.o          | libee.a     | SetEvent                                    | unreferenced |
 | .text.ee_oo_api_osek.GetEvent (1030)                | ee_oo_api_osek.c.o          | libee.a     | GetEvent                                    | unreferenced |
 | .text.ee_oo_api_osek.ClearEvent (1031)              | ee_oo_api_osek.c.o          | libee.a     | ClearEvent                                  | unreferenced |
-| .text.ee_oo_api_osek.ResumeAllInterrupts (1011)     | ee_oo_api_osek.c.o          | libee.a     | ResumeAllInterrupts                         | unreferenced |
-| .text.ee_oo_api_osek.GetTaskState (1022)            | ee_oo_api_osek.c.o          | libee.a     | GetTaskState                                | unreferenced |
-| .text.ee_oo_api_osek.ChainTask (1017)               | ee_oo_api_osek.c.o          | libee.a     | ChainTask                                   | unreferenced |
-| .text.ee_oo_api_osek.Schedule (1019)                | ee_oo_api_osek.c.o          | libee.a     | Schedule                                    | unreferenced |
 | .text.ee_oo_api_osek.GetCounterValue (1032)         | ee_oo_api_osek.c.o          | libee.a     | GetCounterValue                             | unreferenced |
 | .text.ee_oo_api_osek.GetElapsedValue (1033)         | ee_oo_api_osek.c.o          | libee.a     | GetElapsedValue                             | unreferenced |
-| .text.ee_oo_api_osek.SuspendAllInterrupts (1010)    | ee_oo_api_osek.c.o          | libee.a     | SuspendAllInterrupts                        | unreferenced |
-| .text.ee_oo_api_osek.SetEvent (1029)                | ee_oo_api_osek.c.o          | libee.a     | SetEvent                                    | unreferenced |
-| .text.ee_oo_api_osek.GetTaskID (1021)               | ee_oo_api_osek.c.o          | libee.a     | GetTaskID                                   | unreferenced |
-| .text.ee_oo_api_osek.GetAlarmBase (1027)            | ee_oo_api_osek.c.o          | libee.a     | GetAlarmBase                                | unreferenced |
-| .text.ee_oo_api_osek.SetAbsAlarm (1024)             | ee_oo_api_osek.c.o          | libee.a     | SetAbsAlarm                                 | unreferenced |
+| .text.ee_oo_api_osek.TerminateTask (1018)           | ee_oo_api_osek.c.o          | libee.a     | TerminateTask                               | unreferenced |
 | .text.ee_oo_api_osek.IncrementCounter (1034)        | ee_oo_api_osek.c.o          | libee.a     | IncrementCounter                            | unreferenced |
-| .text.ee_oo_api_osek.CancelAlarm (1025)             | ee_oo_api_osek.c.o          | libee.a     | CancelAlarm                                 | unreferenced |
+| .text.ee_oo_api_osek.GetISRID (1035)                | ee_oo_api_osek.c.o          | libee.a     | GetISRID                                    | unreferenced |
+| .text.ee_oo_api_osek.ResumeOSInterrupts (1013)      | ee_oo_api_osek.c.o          | libee.a     | ResumeOSInterrupts                          | unreferenced |
 | .text.ee_oo_api_osek.GetNumberOfActivatedCores      | ee_oo_api_osek.c.o          | libee.a     | GetNumberOfActivatedCores                   | unreferenced |
 | (1036)                                              |                             |             |                                             |              |
-| .text.ee_oo_api_osek.ActivateTask (1016)            | ee_oo_api_osek.c.o          | libee.a     | ActivateTask                                | unreferenced |
-| .text.ee_oo_api_osek.WaitEvent (1028)               | ee_oo_api_osek.c.o          | libee.a     | WaitEvent                                   | unreferenced |
-| .text.ee_oo_api_osek.GetISRID (1035)                | ee_oo_api_osek.c.o          | libee.a     | GetISRID                                    | unreferenced |
-| .text.ee_oo_api_osek.ShutdownAllCores (1039)        | ee_oo_api_osek.c.o          | libee.a     | ShutdownAllCores                            | unreferenced |
 | .text.ee_oo_api_osek.StartNonAutosarCore (1038)     | ee_oo_api_osek.c.o          | libee.a     | StartNonAutosarCore                         | unreferenced |
-| .text.ee_oo_api_osek.ResumeOSInterrupts (1013)      | ee_oo_api_osek.c.o          | libee.a     | ResumeOSInterrupts                          | unreferenced |
-| .text.ee_oo_api_osek.SuspendOSInterrupts (1012)     | ee_oo_api_osek.c.o          | libee.a     | SuspendOSInterrupts                         | unreferenced |
 | .text.ee_oo_api_osek.GetActiveApplicationMode       | ee_oo_api_osek.c.o          | libee.a     | GetActiveApplicationMode                    | unreferenced |
 | (1015)                                              |                             |             |                                             |              |
-| .text.ee_oo_alarm.osEE_alarm_cancel (1453)          | ee_oo_alarm.c.o             | libee.a     | osEE_alarm_cancel                           | unreferenced |
+| .text.ee_oo_api_osek.ShutdownAllCores (1039)        | ee_oo_api_osek.c.o          | libee.a     | ShutdownAllCores                            | unreferenced |
+| .text.ee_oo_api_osek.GetTaskID (1021)               | ee_oo_api_osek.c.o          | libee.a     | GetTaskID                                   | unreferenced |
+| .text.ee_oo_api_osek.ChainTask (1017)               | ee_oo_api_osek.c.o          | libee.a     | ChainTask                                   | unreferenced |
+| .text.ee_oo_api_osek.GetTaskState (1022)            | ee_oo_api_osek.c.o          | libee.a     | GetTaskState                                | unreferenced |
+| .text.ee_oo_api_osek.SetRelAlarm (1023)             | ee_oo_api_osek.c.o          | libee.a     | SetRelAlarm                                 | unreferenced |
+| .text.ee_oo_api_osek.Schedule (1019)                | ee_oo_api_osek.c.o          | libee.a     | Schedule                                    | unreferenced |
+| .text.ee_oo_api_osek.CancelAlarm (1025)             | ee_oo_api_osek.c.o          | libee.a     | CancelAlarm                                 | unreferenced |
+| .text.ee_oo_api_osek.SetAbsAlarm (1024)             | ee_oo_api_osek.c.o          | libee.a     | SetAbsAlarm                                 | unreferenced |
+| .text.ee_oo_api_osek.ShutdownOS (1020)              | ee_oo_api_osek.c.o          | libee.a     | ShutdownOS                                  | unreferenced |
+| .text.ee_oo_api_osek.GetAlarm (1026)                | ee_oo_api_osek.c.o          | libee.a     | GetAlarm                                    | unreferenced |
+| .text.ee_oo_api_osek.GetAlarmBase (1027)            | ee_oo_api_osek.c.o          | libee.a     | GetAlarmBase                                | unreferenced |
+| .text.ee_std_change_context.osEE_change_context_fro | ee_std_change_context.c.o   | libee.a     | osEE_change_context_from_task_end           | unreferenced |
+| m_task_end (1484)                                   |                             |             |                                             |              |
 | .text.ee_oo_sched_partitioned.osEE_scheduler_task_a | ee_oo_sched_partitioned.c.o | libee.a     | osEE_scheduler_task_activated               | unreferenced |
 | ctivated (1346)                                     |                             |             |                                             |              |
 | .text.ee_oo_alarm.osEE_alarm_set_abs (1452)         | ee_oo_alarm.c.o             | libee.a     | osEE_alarm_set_abs                          | unreferenced |
-| .text.ee_std_change_context.osEE_change_context_fro | ee_std_change_context.c.o   | libee.a     | osEE_change_context_from_task_end           | unreferenced |
-| m_task_end (1484)                                   |                             |             |                                             |              |
+| .text.ee_oo_alarm.osEE_alarm_cancel (1453)          | ee_oo_alarm.c.o             | libee.a     | osEE_alarm_cancel                           | unreferenced |
 | .text.ee_oo_counter.osEE_counter_cancel_trigger     | ee_oo_counter.c.o           | libee.a     | osEE_counter_cancel_trigger                 | unreferenced |
 | (1407)                                              |                             |             |                                             |              |
 | .text.ee_oo_alarm.osEE_alarm_get (1454)             | ee_oo_alarm.c.o             | libee.a     | osEE_alarm_get                              | unreferenced |
-| .text..cocofun_2.libcs_fpu (7166)                   | clock.o                     | libcs_fpu.a | .cocofun_2                                  | unreferenced |
-| .text.clock.libcs_fpu (7169)                        | clock.o                     | libcs_fpu.a | clock                                       | unreferenced |
-| .text.clock_usec.libcs_fpu (7167)                   | clock.o                     | libcs_fpu.a | clock_usec                                  | unreferenced |
 | .text.clock_usec_fast.libcs_fpu (7168)              | clock.o                     | libcs_fpu.a | clock_usec_fast                             | unreferenced |
+| .text._filbuf.libcs_fpu (7328)                      | _filbuf.o                   | libcs_fpu.a | _filbuf                                     | unreferenced |
+| .text.clock_msec.libcs_fpu (7165)                   | clock.o                     | libcs_fpu.a | clock_msec                                  | unreferenced |
+| .text.getfosc.libcs_fpu (7162)                      | clock.o                     | libcs_fpu.a | getfosc                                     | unreferenced |
+| .text.clock.libcs_fpu (7169)                        | clock.o                     | libcs_fpu.a | clock                                       | unreferenced |
+| .text..cocofun_3.libcs_fpu (7164)                   | clock.o                     | libcs_fpu.a | .cocofun_3                                  | unreferenced |
 | .text.dummy.libcs_fpu (7225)                        | printf_int.o                | libcs_fpu.a | dummy                                       | unreferenced |
+| .text.clock_usec.libcs_fpu (7167)                   | clock.o                     | libcs_fpu.a | clock_usec                                  | unreferenced |
 | .text.fgetc.libcs_fpu (7301)                        | fgetc.o                     | libcs_fpu.a | fgetc                                       | unreferenced |
 | .text.setfosc.libcs_fpu (7161)                      | clock.o                     | libcs_fpu.a | setfosc                                     | unreferenced |
-| .text.getfosc.libcs_fpu (7162)                      | clock.o                     | libcs_fpu.a | getfosc                                     | unreferenced |
-| .text.clock_msec.libcs_fpu (7165)                   | clock.o                     | libcs_fpu.a | clock_msec                                  | unreferenced |
-| .text..cocofun_3.libcs_fpu (7164)                   | clock.o                     | libcs_fpu.a | .cocofun_3                                  | unreferenced |
+| .text..cocofun_2.libcs_fpu (7166)                   | clock.o                     | libcs_fpu.a | .cocofun_2                                  | unreferenced |
 | .text..cocofun_1.libcs_fpu (7163)                   | clock.o                     | libcs_fpu.a | .cocofun_1                                  | unreferenced |
-| .text._host_read.libcs_fpu (7397)                   | dbg.o                       | libcs_fpu.a | _host_read                                  | unreferenced |
-| .text._host_open.libcs_fpu (7395)                   | dbg.o                       | libcs_fpu.a | _host_open                                  | unreferenced |
-| .text._filbuf.libcs_fpu (7328)                      | _filbuf.o                   | libcs_fpu.a | _filbuf                                     | unreferenced |
-| .text.fflush.libcs_fpu (7356)                       | fflush.o                    | libcs_fpu.a | fflush                                      | unreferenced |
 | .text.ungetc.libcs_fpu (7319)                       | ungetc.o                    | libcs_fpu.a | ungetc                                      | unreferenced |
-| .text._argcv.libcs_fpu (7401)                       | dbg.o                       | libcs_fpu.a | _argcv                                      | unreferenced |
+| .text._host_read.libcs_fpu (7397)                   | dbg.o                       | libcs_fpu.a | _host_read                                  | unreferenced |
 | .bss._Errno.libcs_fpu (7387)                        | errno.o                     | libcs_fpu.a | _Errno                                      | unreferenced |
+| .text._argcv.libcs_fpu (7401)                       | dbg.o                       | libcs_fpu.a | _argcv                                      | unreferenced |
+| .text.fflush.libcs_fpu (7356)                       | fflush.o                    | libcs_fpu.a | fflush                                      | unreferenced |
+| .text._host_open.libcs_fpu (7395)                   | dbg.o                       | libcs_fpu.a | _host_open                                  | unreferenced |
 | .text.librt (7519)                                  | ui64_div.o                  | librt.a     | __ll_udiv64                                 | unreferenced |
 | .text.librt (7520)                                  | ui64_mul.o                  | librt.a     | __ll_mul64                                  | unreferenced |
+| _lc__ctors (7522)                                   |                             |             |                                             | unreferenced |
+| _lc__dtors (7523)                                   |                             |             |                                             | unreferenced |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+
