@@ -7,25 +7,29 @@ C_SRCS += \
 ../Cpu0_Main.c \
 ../Cpu1_Main.c \
 ../Cpu2_Main.c \
-../Cpu3_Main.c 
+../Cpu3_Main.c \
+../MSMCAN_FD.c 
 
 OBJS += \
 ./Cpu0_Main.o \
 ./Cpu1_Main.o \
 ./Cpu2_Main.o \
-./Cpu3_Main.o 
+./Cpu3_Main.o \
+./MSMCAN_FD.o 
 
 COMPILED_SRCS += \
 ./Cpu0_Main.src \
 ./Cpu1_Main.src \
 ./Cpu2_Main.src \
-./Cpu3_Main.src 
+./Cpu3_Main.src \
+./MSMCAN_FD.src 
 
 C_DEPS += \
 ./Cpu0_Main.d \
 ./Cpu1_Main.d \
 ./Cpu2_Main.d \
-./Cpu3_Main.d 
+./Cpu3_Main.d \
+./MSMCAN_FD.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
