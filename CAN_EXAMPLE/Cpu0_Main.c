@@ -44,13 +44,9 @@ IfxCan_Can_Node canNode[TESTED_NODES];
 uint32 txData[2];
 uint32 rxData[2];
 
-
 IfxCan_Can_NodeConfig nodeConfig_rx;
 IfxCan_Can_NodeConfig nodeConfig_tx;
 
-void Can_Init(void);
-void config_rx_node(IfxCan_Can_NodeConfig nodeConfig);
-void config_tx_node(IfxCan_Can_NodeConfig nodeConfig);
 
 void core0_main(void)
 {
@@ -65,87 +61,15 @@ void core0_main(void)
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
-    
-    
+    initMcmcan_tx();
+
+
     while(1)
     {
+        transmit_data();
     }
 }
 
-void Can_Init(void)
-{
-   // create module configuration
-   IfxCan_Can_Config canConfig;
-   IfxCan_Can_initModuleConfig(&canConfig, &MODULE_CAN0);
-
-   // choose the interrupt groups configuration
-   // Tx interrupts
-   canConfig.traco.priority = 10;
-   canConfig.traco.typeOfService = IfxSrc_Tos_cpu0;
-   canConfig.traco.interruptLine = IfxCan_InterruptLine_0;
-
-   // Rx interrupts
-   canConfig.reint.priority = 11;
-   canConfig.reint.typeOfService = IfxSrc_Tos_cpu0;
-   canConfig.reint.interruptLine = IfxCan_InterruptLine_1;
-   canConfig.can->
-
-   IfxCan_Can_initModule(&can, &canConfig);
-
-   // create node configuration
-
-   // Node 0 as receive node
-   {
-       IfxCan_Can_NodeConfig nodeConfig;
-       IfxCan_Can_initNodeConfig(&nodeConfig, &can);
-
-       // initialize Node 0
-       nodeConfig.nodeId = IfxCan_NodeId_0;
-       nodeConfig.clockSource = IfxCan_ClockSource_both;
-
-       nodeConfig.frame.type = IfxCan_FrameType_receive;
-
-       nodeConfig.filterConfig.standardListSize = 2;
-
-       nodeConfig.messageRAM.standardFilterListStartAddress = 0x100;
-       nodeConfig.messageRAM.rxBuffersStartAddress          = 0x200;
-       nodeConfig.messageRAM.baseAddress                    = MODULE_CAN0_RAM + NODE0_RAM_OFFSET;
-
-    // enable the required interrupts with respective to group interrupts configuration at module level
-    nodeConfig.interruptConfig.messageStoredToDedicatedRxBufferEnabled = TRUE;
-
-       // initialize Node 0
-       IfxCan_Can_initNode(&canNode[0], &nodeConfig);
-   }
-
-   // Node 1 as transmit node
-   {
-       IfxCan_Can_NodeConfig nodeConfig;
-       IfxCan_Can_initNodeConfig(&nodeConfig, &can);
-
-       nodeConfig.nodeId = IfxCan_NodeId_1;
-       nodeConfig.clockSource = IfxCan_ClockSource_both;
-
-       nodeConfig.frame.type = IfxCan_FrameType_transmit;
-
-       nodeConfig.txConfig.dedicatedTxBuffersNumber = 2;
-
-       nodeConfig.messageRAM.txBuffersStartAddress = 0x400;
-       nodeConfig.messageRAM.baseAddress           = MODULE_CAN0_RAM + NODE1_RAM_OFFSET;
-
-    // enable the required interrupts with respective to group interrupts configuration at module level
-    nodeConfig.interruptConfig.transmissionCompletedEnabled = TRUE;
-
-       // initialize Node 1;
-       IfxCan_Can_initNode(&canNode[1], &nodeConfig);
-   }
-}
-void config_tx_node(IfxCan_Can_NodeConfig nodeConfig){
-
-}
-void config_rx_node(IfxCan_Can_NodeConfig nodeConfig){
-
-}
 
 
 

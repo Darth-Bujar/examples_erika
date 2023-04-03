@@ -29,6 +29,7 @@ Configurations \
 . \
 Libraries/Infra/Platform/Tricore/Compilers \
 Libraries/Infra/Ssw/TC38A/Tricore \
+Libraries \
 Libraries/iLLD/TC38A/Tricore/Can/Can \
 Libraries/iLLD/TC38A/Tricore/Can/Std \
 Libraries/iLLD/TC38A/Tricore/Cpu/Irq \

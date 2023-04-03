@@ -4,43 +4,27 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Cpu0_Main.c \
-../Cpu1_Main.c \
-../Cpu2_Main.c \
-../Cpu3_Main.c \
-../MSMCAN_FD.c 
+../Libraries/aurix_pin_mappings.c 
 
 OBJS += \
-./Cpu0_Main.o \
-./Cpu1_Main.o \
-./Cpu2_Main.o \
-./Cpu3_Main.o \
-./MSMCAN_FD.o 
+./Libraries/aurix_pin_mappings.o 
 
 COMPILED_SRCS += \
-./Cpu0_Main.src \
-./Cpu1_Main.src \
-./Cpu2_Main.src \
-./Cpu3_Main.src \
-./MSMCAN_FD.src 
+./Libraries/aurix_pin_mappings.src 
 
 C_DEPS += \
-./Cpu0_Main.d \
-./Cpu1_Main.d \
-./Cpu2_Main.d \
-./Cpu3_Main.d \
-./MSMCAN_FD.d 
+./Libraries/aurix_pin_mappings.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-%.src: ../%.c subdir.mk
+Libraries/%.src: ../Libraries/%.c Libraries/subdir.mk
 	@echo 'Building file: $<'
 	@echo 'Invoking: TASKING C/C++ Compiler'
 	cctc -D__CPU__=tc38x "-fD:/RTOS_PROJEKT/erica/aurix_workspace/CAN_EXAMPLE/Debug/TASKING_C_C___Compiler-Include_paths.opt" --iso=99 --c++14 --language=+volatile --exceptions --anachronisms --fp-model=3 -O0 --tradeoff=4 --compact-max-size=200 -g -Wc-w544 -Wc-w557 -Ctc38x -o "$@"  "$<"  -cs --dep-file="$(@:.src=.d)" --misrac-version=2012 -N0 -Z0 -Y0 2>&1;
 	@echo 'Finished building: $<'
 	@echo ' '
 
-%.o: ./%.src subdir.mk
+Libraries/%.o: ./Libraries/%.src Libraries/subdir.mk
 	@echo 'Building file: $<'
 	@echo 'Invoking: TASKING Assembler'
 	astc -Og -Os --no-warnings= --error-limit=42 -o  "$@" "$<" --list-format=L1 --optimize=gs

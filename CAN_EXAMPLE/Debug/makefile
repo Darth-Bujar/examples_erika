@@ -23,6 +23,7 @@ RM := rm -rf
 -include Libraries/iLLD/TC38A/Tricore/Can/Can/subdir.mk
 -include Libraries/Infra/Ssw/TC38A/Tricore/subdir.mk
 -include Libraries/Infra/Platform/Tricore/Compilers/subdir.mk
+-include Libraries/subdir.mk
 -include Configurations/Debug/subdir.mk
 -include Configurations/subdir.mk
 -include subdir.mk

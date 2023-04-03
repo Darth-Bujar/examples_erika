@@ -55,6 +55,10 @@
 #define NUMBER_OF_CAN_FD_CASES      4                           /* Define the number of CAN FD use cases             */
 #define MAXIMUM_CAN_FD_DATA_PAYLOAD 64                          /* Define maximum CAN payload in bytes               */
 
+// can0_node0
+#define IFXCFG_P20_7_IO_CONFIG                  { &IfxPort_P20_7, IfxPort_Mode_inputPullUp, IfxPort_PadDriver_cmosAutomotiveSpeed1 }
+#define IFXCFG_P20_8_IO_CONFIG                  { &IfxPort_P20_8, IfxPort_Mode_outputPushPullAlt5, IfxPort_PadDriver_cmosAutomotiveSpeed4 }
+
 /*********************************************************************************************************************/
 /*--------------------------------------------------Data Structures--------------------------------------------------*/
 /*********************************************************************************************************************/
@@ -107,6 +111,7 @@ void verifyCanMessage(void);
 //Added functions
 void init_recieve_note(void);
 void init_transmit_note(void);
-void recieve message(void);
+void transmit_data();
+void initMcmcan_tx(void);
 
 #endif /* MCMCAN_FD_H_ */

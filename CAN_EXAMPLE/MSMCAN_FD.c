@@ -172,6 +172,55 @@ void initMcmcan(void)
     IfxCan_Can_initNode(&g_mcmcan.canDstNode, &g_mcmcan.canNodeConfig);
 }
 
+
+
+void initMcmcan_tx(void)
+{
+    /* ==========================================================================================
+     * CAN module configuration and initialization:
+     * ==========================================================================================
+     *  - load default CAN module configuration into configuration structure
+     *  - initialize CAN module with the default configuration
+     * ==========================================================================================
+     */
+    IfxCan_Can_initModuleConfig(&g_mcmcan.canConfig, &MODULE_CAN0);
+
+    IfxCan_Can_initModule(&g_mcmcan.canModule, &g_mcmcan.canConfig);
+
+    /* ==========================================================================================
+     * Source CAN node configuration and initialization:
+     * ==========================================================================================
+     *  - load default CAN node configuration into configuration structure
+     *
+     *  - set source CAN node in the "Loop-Back" mode (no external pins will be used)
+     *  - assign source CAN node to CAN node 0
+     *
+     *  - define the frame to be the transmitting one
+     *  - define the node to be in the "CAN FD long + fast" frame mode
+     *
+     *  - TX dedicated buffer should be used for transmission
+     *  - the size of the TX dedicated buffer corresponds to the maximum CAN FD payload length
+     *
+     *  - initialize the source CAN node with the modified configuration
+     * ==========================================================================================
+     */
+    IfxCan_Can_initNodeConfig(&g_mcmcan.canNodeConfig, &g_mcmcan.canModule);
+
+    g_mcmcan.canNodeConfig.busLoopbackEnabled = FALSE;
+    g_mcmcan.canNodeConfig.nodeId = IfxCan_NodeId_0;
+
+    IfxCan_Can_Pins pins;
+    pins.txPin
+    pins.txPinM
+
+    g_mcmcan.canNodeConfig.frame.type = IfxCan_FrameType_transmit;
+    g_mcmcan.canNodeConfig.frame.mode = IfxCan_FrameMode_fdLongAndFast;
+
+    g_mcmcan.canNodeConfig.txConfig.txMode = IfxCan_TxMode_dedicatedBuffers;
+    g_mcmcan.canNodeConfig.txConfig.txBufferDataFieldSize = IfxCan_DataFieldSize_64;
+
+    IfxCan_Can_initNode(&g_mcmcan.canSrcNode, &g_mcmcan.canNodeConfig);
+}
 /* Function to initialize both TX and RX messages with the default data values.
  * After initialization of the messages, the TX message will be transmitted.
  */
@@ -331,3 +380,55 @@ void initLed(void)
     IfxPort_setPinPadDriver(g_led1.port, g_led1.pinIndex, g_led1.padDriver);
 }
 
+void transmit_data()
+{
+    //uint8 currentDataPayloadByte;
+    IfxCan_Can_initMessage(&g_mcmcan.txMsg);
+
+
+    g_mcmcan.txData[0] = (uint8)0x0F;
+    g_mcmcan.txData[1] = (uint8)0xFF;
+    g_mcmcan.txData[2] = (uint8)0xF0;
+    g_mcmcan.txData[3] = (uint8)0xAA;
+
+    /* ==========================================================================================
+     * Configuration of the TX message based on the "g_useCaseConf" table:
+     * ==========================================================================================
+     *  - set the message ID value (related to the TxMsgk_T0(k=0-31).ID bit field)
+     *  - set the length of the message ID value (related to the TxMsgk_T0(k=0-31).XTD bit field)
+     *  - define the frame mode that will be used (related to the TxMsgk_T1(k=0-31).FDF/.BRS bit fields)
+     *  - define the data length code (related to the TxMsgk_T1(k=0-31).DLC bit field)
+     * ==========================================================================================
+     */
+    g_mcmcan.txMsg.messageId = STANDARD_MESSAGE_ID_1;
+    g_mcmcan.txMsg.messageIdLength = IfxCan_MessageIdLength_standard;
+    g_mcmcan.txMsg.frameMode = IfxCan_FrameMode_standard;
+    g_mcmcan.txMsg.dataLengthCode = IfxCan_DataLengthCode_8;
+    //g_mcmcan.txMsg.storeInTxFifoQueue = TRUE;
+
+   /* Initialization of the TX message data content */
+   //  for(currentDataPayloadByte = 0;
+   //     currentDataPayloadByte < g_dlcLookUpTable[g_useCaseConf[g_currentCanFdUseCase].messageLen];
+   //     currentDataPayloadByte++)
+   // {
+        /* Each CAN message data payload byte is initialized in the following format:
+         *
+         *            7           6           5           4           3           2           1           0
+         *      | g_currentCanFdUseCase |                        currentDataPayloadByte                         |
+         *      |       ( 0 - 3 )       |                               ( 0 - 63 )                              |
+         */
+   //     g_mcmcan.txData[currentDataPayloadByte] = (g_currentCanFdUseCase << TX_DATA_INIT_SHIFT_OFFSET) |
+   //                                                 currentDataPayloadByte;
+   // }
+
+    /* Send the CAN message with the previously defined TX message configuration and content */
+    while( IfxCan_Status_notSentBusy ==
+           IfxCan_Can_sendMessage(&g_mcmcan.canSrcNode, &g_mcmcan.txMsg, (uint32*)&g_mcmcan.txData[0]) )
+    {
+    }
+
+    /* Wait until previously transmitted data has been received by the destination node */
+    while(g_isrRxCount == g_currentCanFdUseCase)
+    {
+    }
+}
