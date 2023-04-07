@@ -632,20 +632,20 @@ void IfxCan_Can_initNodeConfig(IfxCan_Can_NodeConfig *config, IfxCan_Can *can)
             .mode = IfxCan_FrameMode_standard
         },
         .baudRate                                    = {
-            .baudrate      = 500000,
+            .baudrate      = 1000000,
             .samplePoint   = 8000,
             .syncJumpWidth = 3,
-            .prescaler     = 0,
-            .timeSegment1  = 3,
-            .timeSegment2  = 10
+            .prescaler     = 1,
+            .timeSegment1  = 31,
+            .timeSegment2  = 8
         },
         .fastBaudRate                                = {
-            .baudrate              = 1000000,
+            .baudrate              = 4000000,
             .samplePoint           = 8000,
             .syncJumpWidth         = 3,
             .prescaler             = 1,
-            .timeSegment1          = 3,
-            .timeSegment2          = 10,
+            .timeSegment1          = 7,
+            .timeSegment2          = 2,
             .tranceiverDelayOffset = 0
         },
         .txConfig                                    = {

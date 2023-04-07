@@ -10,6 +10,7 @@ RM := rm -rf
 -include sources.mk
 -include Libraries/iLLD/TC38A/Tricore/_PinMap/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/_Impl/subdir.mk
+-include Libraries/iLLD/TC38A/Tricore/Stm/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Src/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Scu/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Port/Std/subdir.mk
@@ -21,9 +22,9 @@ RM := rm -rf
 -include Libraries/iLLD/TC38A/Tricore/Cpu/Irq/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Can/Std/subdir.mk
 -include Libraries/iLLD/TC38A/Tricore/Can/Can/subdir.mk
+-include Libraries/Service/CpuGeneric/SysSe/Bsp/subdir.mk
 -include Libraries/Infra/Ssw/TC38A/Tricore/subdir.mk
 -include Libraries/Infra/Platform/Tricore/Compilers/subdir.mk
--include Libraries/subdir.mk
 -include Configurations/Debug/subdir.mk
 -include Configurations/subdir.mk
 -include subdir.mk

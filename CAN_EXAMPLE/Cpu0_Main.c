@@ -27,26 +27,15 @@
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
-#include "IfxCan_Can.h"
-#include "IfxCan.h"
+#include "can_control.h"
+#include "bsp.h"
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
 #define TESTED_NODES 2
 #define NODE0_RAM_OFFSET 0x0
 #define NODE1_RAM_OFFSET 0x1000
-// CAN handle
-IfxCan_Can can;
 
-// CAN Node handles
-IfxCan_Can_Node canNode[TESTED_NODES];
-
-// data buffers
-uint32 txData[2];
-uint32 rxData[2];
-
-IfxCan_Can_NodeConfig nodeConfig_rx;
-IfxCan_Can_NodeConfig nodeConfig_tx;
-
+#define TIME_TO_WAIT 1000
 
 void core0_main(void)
 {
@@ -61,12 +50,39 @@ void core0_main(void)
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
-    initMcmcan_tx();
 
+    can_init();
+
+    uint8 data_length = 4;
+    //Creating data set tp send
+    uint8 data_to_transfer[MAXIMUM_CAN_FD_DATA_PAYLOAD];
+    data_to_transfer[0] = (uint8)0xFF;
+    data_to_transfer[1] = (uint8)0xAA;
+    data_to_transfer[2] = (uint8)0xBB;
+    data_to_transfer[3] = (uint8)0xCC;
+
+
+    //configuring a message to send
+    IfxCan_Message msg;
+    can_FD_messages_enum message_type = 2;
+    IfxCan_Can_initMessage(&msg);
+    msg.messageId = can_fd_messages[message_type].messageId;
+    msg.messageIdLength = can_fd_messages[message_type].messageIdLength;
+    msg.frameMode = can_fd_messages[message_type].frameMode;
+    msg.dataLengthCode = can_fd_messages[message_type].messageLen;
 
     while(1)
     {
-        transmit_data();
+        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, TIME_TO_WAIT));
+
+        can_transmit_message(msg, &data_to_transfer, data_length);
+        //if(is_new_message_recieved == TRUE)
+        //{
+            can_recieved_message_show(1);
+            is_new_message_recieved = FALSE;
+        //}
+
+
     }
 }
 
