@@ -1,0 +1,230 @@
+; --------------------------------------------------------------------------------
+; @Title: Demo script for TC397XE on TriBoard-TC3x7 (Flash, sieve app)
+; @Description:
+;   Programs the sieve demo application (single-core) into the processor
+;   internal flash and sets up a demo debug scenario. This script can be used
+;   as a template for flashing an application.
+; @Keywords: AURIX2G, flash, Infineon, TriCore
+; @Author: MOB
+; @Board: TriBoard-TC3x7
+; @Chip: TC397XE
+; @Copyright: (C) 1989-2018 Lauterbach GmbH, licensed for use with TRACE32(R) only
+; --------------------------------------------------------------------------------
+; $Id: demo_flash.cmm 12107 2018-02-09 13:16:14Z meick $
+; N.B: Above original header, needed for copyright fulfillmenet.
+; Script modified to obtain a template to generate scripts to flash ERIKA's
+; application into infineon tc3x MCUs.
+;
+; This script is for tc397xe
+;
+; @Description:
+;   Programs application into the processor internal flash.
+; --------------------------------------------------------------------------------
+; initialize and start the debugger
+
+RESet
+SYStem.CPU tc397xe
+; The TriBoard-TC3x7 comes with a TLF35584 power supply
+; This power supply has integrated watchdog functionality which will cut all
+; power if not served correctly. By default this demo will disable this
+; watchdog functionality. This includes configuring the QSPI controller as
+; well as writing data to the QSPI.
+
+IF !STATE.POWER()
+(
+  DO ~~~~/disable_tlf35584.cmm
+)
+SYStem.Down
+SYStem.Up
+
+; --------------------------------------------------------------------------------
+; Flash programming
+LOCAL &elfFile &progFlash &bmhdResult
+&elfFile="~~~~/erika3app.elf"
+
+; prepare flash programming (declarations)
+DO ~~/demo/tricore/flash/tc39x.cmm CPU=tc397xe PREPAREONLY
+
+; check if application is already in flash and load symbols
+Data.LOAD.Elf "&elfFile"  0x80000000--0xAFC1FFFF /DIFF /SingleLineAdjacent
+IF FOUND()
+(
+  ; ==== Step 1: Program TriCore code ====
+
+  DIALOG.YESNO "Program Lauterbach demo into flash memory?"
+  ENTRY &progFlash
+  IF (&progFlash)
+  (
+    ; enable flash programming
+    FLASH.ReProgram ALL
+
+    ; load demo application
+    ; Limit address ranges to 0x80000000--0xAFC1FFFF to avoid unexpected bus errors
+    Data.LOAD.Elf "&elfFile" 0x80000000--0xAFC1FFFF
+
+    FLASH.ReProgram OFF
+  )
+
+  ; ==== Step 2: Write boot mode header ====
+
+  PRIVATE &progUcb &ucbOrigDiff &ucbCopyDiff &supported &DMU_HF_CONFIRM0 &result
+  &progUcb=FALSE()
+  ; Check if both UCBs are in state UNLOCKED or UNREAD. Other states are not supported by this script
+  &DMU_HF_CONFIRM0=Data.Long(ED:0xF8040020)
+  &supported=(((&DMU_HF_CONFIRM0)&(0x00020002))==0x00000000)
+  IF !&supported
+  (
+	  DIALOG.MESSAGE "UCB_BMHD0_ORIG or UCB_BMHD0_COPY are not in state unlocked or unread"
+  )
+  ; Check if we need to program the BMHD
+  &ucbOrigDiff=FALSE()
+  &ucbCopyDiff=FALSE()
+  IF &supported
+  (
+  	Data.LOAD.Elf "&elfFile" 0xAF400000++0x1FF /DIFF
+  	&ucbOrigDiff=FOUND()
+  	Data.LOAD.Elf "&elfFile" 0xAF401000++0x1FF /DIFF
+  	&ucbCopyDiff=FOUND()
+  )
+  IF (&ucbOrigDiff)||(&ucbCopyDiff)
+  (
+    DIALOG.YESNO "Configure UCB_BMHD0_ORIG and UCB_BMHD0_COPY to start demo application?"
+    ENTRY &progUcb
+  )
+
+  IF (&progUcb)&&(&ucbCopyDiff)
+  (
+    ; enable programming of UCB_BMHD0_COPY
+    DO ~~/demo/tricore/flash/tc3xx-ucb.cmm UCB=BMHD0_COPY PREPAREONLY
+    FLASH.AUTO 0xAF401000++0x1FF
+
+    ; load data of UCB_BMHD0_COPY
+    Data.LOAD.Elf "&elfFile" 0xAF401000++0x1FF
+
+    ; check if we loaded a valid UCB
+    DO ~~/demo/tricore/flash/tc3xx-ucb.cmm UCB=BMHD0_COPY CHECKUCB
+    ENTRY &result
+
+    IF ("&result"=="UCBOK")
+    (
+      FLASH.AUTO.off
+    )
+    ELSE
+    (
+      FLASH.AUTO.CANCEL
+    )
+    ; protect UCB sector against unwanted modification
+    FLASH.CHANGETYPE 0xAF401000++0x1FF NOP
+  )
+
+  IF (&progUcb)&&(&ucbOrigDiff)
+  (
+    ; enable programming of UCB_BMHD0_ORIG
+    DO ~~/demo/tricore/flash/tc3xx-ucb.cmm UCB=BMHD0_ORIG PREPAREONLY
+    FLASH.AUTO 0xAF400000++0x1FF
+
+    ; load data of UCB_BMHD0_ORIG
+    Data.LOAD.Elf "&elfFile" 0xAF400000++0x1FF
+
+    ; check if we loaded a valid UCB
+    DO ~~/demo/tricore/flash/tc3xx-ucb.cmm UCB=BMHD0_ORIG CHECKUCB
+    ENTRY &result
+
+    IF ("&result"=="UCBOK")
+    (
+      FLASH.AUTO.off
+    )
+    ELSE
+    (
+      FLASH.AUTO.CANCEL
+    )
+    ; protect UCB sector against unwanted modification
+    FLASH.CHANGETYPE 0xAF400000++0x1FF NOP
+  )
+
+  ; ==== Step 3: Verify programming ====
+
+  Data.LOAD.Elf "&elfFile" 0x80000000--0xAFC1FFFF /DIFF
+  IF FOUND()
+  (
+    ; maybe some sections are still declared as NOP?
+    PRIVATE &diffAddress
+    &diffAddress=TRACK.ADDRESS()
+    DIALOG.MESSAGE "File &elfFile has not been fully flashed, difference found at address &diffAddress (check flash declaration)"
+  )
+)
+
+; --------------------------------------------------------------------------------
+; start program execution
+;Go.direct main
+
+; --------------------------------------------------------------------------------
+GOSUB OpenWindows
+
+GOSUB OptionalSettings
+
+
+TASK.ORTI system.orti
+
+MCDS.SOURCE.Set CpuMux0.Program OFF
+MCDS.SOURCE.Set CpuMux0.WriteAddr ON
+MCDS.SOURCE.Set CpuMux0.WriteData ON
+
+Break.Set TASK.CONFIG(magic) /Write /TraceEnable
+Break.Set TASK.CONFIG(magic_service) /Write /TraceEnable
+//Break.Set TASK.CONFIG(magic_isr2) /Write /TraceEnable
+
+ENDDO
+
+; open some windows
+OpenWindows:
+(
+  PRIVATE &x &dx &y &dy &core
+
+  WinCLEAR
+  WinPOS 0% 0% 33% 33%
+  TargetSystem.state
+  WinPOS 33% 0% 33% 33%
+  List.auto
+  WinPOS 66% 0% 33% 33%
+  Break.List
+
+  &x=0.
+  &y=33.
+  &dx=100./CORE.NUMBER()
+  &dy=33.
+  &core=0.
+  WHILE (&core<CORE.NUMBER())
+  (
+    GOSUB WinPosRelative "&x" "&y" "&dx" "&dy"
+    List.auto /CORE &core
+    GOSUB WinPosRelative "&x" "&y+&dy" "&dx" "&dy"
+    Register.view /CORE &core
+    &x=&x+&dx
+    &core=&core+1.
+  )
+
+  RETURN
+)
+
+OptionalSettings:
+(
+  SYStem.Option DUALPORT ON
+  SETUP.Var %SpotLight.on
+  MAP.BOnchip 0x0--0xffffffff // force onchip-breakpoints
+
+  RETURN
+)
+
+WinPosRelative:
+(
+  PARAMETERS &x &y &dx &dy
+
+  &x=FORMAT.Decimal(0.,&x)
+  &y=FORMAT.Decimal(0.,&y)
+  &dx=FORMAT.Decimal(0.,&dx)
+  &dy=FORMAT.Decimal(0.,&dy)
+  WinPOS &x% &y% &dx% &dy%
+
+  RETURN
+)
