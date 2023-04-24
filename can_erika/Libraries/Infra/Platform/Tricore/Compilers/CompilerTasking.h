@@ -112,19 +112,19 @@
 #if defined(IFX_USE_SW_MANAGED_INT)
 
 #ifndef IFX_INTERRUPT
-#define IFX_INTERRUPT(isr, vectabNum, prio) void isr(void)
+#define IFX_INTERRUPT(isr, vectabNum, prio) replace_me_with_erika_macro_1 //void isr(void)
 #endif
 
 #else
 /* *INDENT-OFF* */
 #ifndef IFX_INTERRUPT
-#define IFX_INTERRUPT(isr, vectabNum, prio) IFX_INTERRUPT_INTERNAL(isr, vectabNum, prio)
+#define IFX_INTERRUPT(isr, vectabNum, prio) "replace_me_with_erika_macro 2"//IFX_INTERRUPT_INTERNAL(isr, vectabNum, prio)
 #endif
-#define IFX_INTERRUPT_FAST(isr, vectabNum, prio) void __interrupt_fast(prio) __vector_table(vectabNum) isr(void)
+#define IFX_INTERRUPT_FAST(isr, vectabNum, prio) replace_me_with_erika_macro_3// void __interrupt_fast(prio) __vector_table(vectabNum) isr(void)
 
 #endif /*defined(IFX_USE_SW_MANAGED_INT)*/
 
-#define IFX_INTERRUPT_INTERNAL(isr, vectabNum, prio) void __interrupt(prio) __vector_table(vectabNum) isr(void)
+#define IFX_INTERRUPT_INTERNAL(isr, vectabNum, prio) replace_me_with_erika_macro_4 // void __interrupt(prio) __vector_table(vectabNum) isr(void)
 
 /* *INDENT-ON* */
 

@@ -42,12 +42,12 @@
 CPU test_application {
 
   OS EE {
-    EE_OPT = "OS_EE_VERBOSE";
     EE_OPT = "OSEE_DEBUG";
     EE_OPT = "OSEE_ASSERT";
     EE_OPT = "OS_EE_APPL_BUILD_DEBUG";
     EE_OPT = "OS_EE_BUILD_DEBUG";
     EE_OPT = "OSEE_API_EXTENSION";
+    EE_OPT = "OS_EE_VERBOSE";
     //EE_OPT = "OSEE_TC_LINK_BMHD";
     //EE_OPT = "OSEE_TC_CLONE_OS";
 
@@ -101,6 +101,13 @@ CPU test_application {
     };
   };
   
+	ISR can_ISR_RX_handler {
+		CPU_ID = 0x0;
+		CATEGORY = 1;
+		SOURCE = "CAN_CAN0_INT0";
+		PRIORITY = 10;
+	};
+	
   TASK can_init_task {
     CPU_ID = 0x0;
     AUTOSTART = TRUE;
