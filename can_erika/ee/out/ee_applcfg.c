@@ -19,6 +19,34 @@
 
 #include "ee_conf.h"
 
+/***************************************************************************
+ *
+ * Handle ISR1
+ *
+ **************************************************************************/
+#define OS_CORE0_START_SEC_CONST
+#include "Os_MemMap.h"
+
+static VAR(OsEE_isr1_src, OS_CONST) osEE_isr1_src_array[1] = {
+  {
+    /* .isr1_src = */ OSEE_TC_SRC_CAN_CAN0_INT0,
+    /* .isr_prio = */ (10U)
+  }
+};
+
+#define OS_CORE0_STOP_SEC_CONST
+#include "Os_MemMap.h"
+
+#define OS_CORE0_START_SEC_CONST
+#include "Os_MemMap.h"
+
+VAR(OsEE_isr1_db, OS_CONST) osEE_isr1_db_instance = {
+  /* .p_isr1_src_array = */ (P2SYM_VAR(OsEE_isr1_src, OS_APPL_CONST, TYPEDEF)[])&osEE_isr1_src_array,
+  /* .isr1_num         = */ OSEE_ARRAY_ELEMENT_COUNT(osEE_isr1_src_array)
+};
+
+#define OS_CORE0_STOP_SEC_CONST
+#include "Os_MemMap.h"
 
 
 /***************************************************************************

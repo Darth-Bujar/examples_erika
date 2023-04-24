@@ -45,12 +45,12 @@
  * User options
  *
  **************************************************************************/
-#define OS_EE_VERBOSE
 #define OSEE_DEBUG
 #define OSEE_ASSERT
 #define OS_EE_APPL_BUILD_DEBUG
 #define OS_EE_BUILD_DEBUG
 #define OSEE_API_EXTENSION
+#define OS_EE_VERBOSE
 
 /***************************************************************************
  *
@@ -79,6 +79,7 @@
 #define OSEE_TASKING_CTC
 #define OSEE_TC_2G
 #define OSEE_TC_CORE0_ISR_MAX_PRIO  (2U)
+#define OSEE_TC_HAS_ISR1_TO_CONF
 #define OSEE_TC_TC39X
 #define OS_EE_KERNEL_OSEK
 #define OS_EE_RTD_BUILD_ENV_CYGWIN
@@ -103,6 +104,13 @@
  * ISR1 declaration
  *
  **************************************************************************/
+
+
+extern void can_ISR_RX_handler (void);
+
+#define OSEE_TC_CORE0_10_ISR_CAT (1U)
+#define OSEE_TC_CORE0_10_ISR_HND can_ISR_RX_handler
+
 
 /***************************************************************************
  *
