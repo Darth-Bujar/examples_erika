@@ -54,12 +54,6 @@ CPU test_application {
 			EXTENDED = TRUE;
 		};
 	};
-	ISR can_ISR_RX_handler {
-		CPU_ID = 0x0;
-		CATEGORY = 1;
-		SOURCE = "CAN_CAN0_INT0";
-		PRIORITY = 10;
-	};
 	TASK can_init_task {
 		CPU_ID = 0x0;
 		AUTOSTART = TRUE;
@@ -83,6 +77,12 @@ CPU test_application {
 			EXTENDED = TRUE;
 		};
 	};
+	ISR can_ISR_RX_handler {
+		CPU_ID = 0x0;
+		CATEGORY = 1;
+		SOURCE = "CAN_CAN0_INT0";
+		PRIORITY = 10;
+	};
 	COUNTER system_timer_master {
 		CPU_ID = 0x0;
 		MINCYCLE = 1;
@@ -101,7 +101,7 @@ CPU test_application {
 			TASK = can_recieve_task;
 		};
 		AUTOSTART = TRUE {
-			ALARMTIME = 10;
+			ALARMTIME = 100;
 			CYCLETIME = 100;
 		};
 	};
@@ -111,7 +111,7 @@ CPU test_application {
 			TASK = can_send_task;
 		};
 		AUTOSTART = TRUE {
-			ALARMTIME = 0;
+			ALARMTIME = 100;
 			CYCLETIME = 200;
 		};
 	};

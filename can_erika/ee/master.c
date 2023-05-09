@@ -59,13 +59,13 @@ void idle_hook_core0(void);
 TASK(can_recieve_task)
 {
    //acquire semaphore
-   WaitSem(&can_structure_semaphore);
-   SuspendAllInterrupts();
+   //WaitSem(&can_structure_semaphore);
+   // SuspendAllInterrupts();
    printf("RX: Semaphore value: %d\n", can_structure_semaphore.count);
    can_recieved_message_show(1);
    //release semaphore
-   PostSem(&can_structure_semaphore);
-   ResumeAllInterrupts();
+   //PostSem(&can_structure_semaphore);
+   //ResumeAllInterrupts();
 
    TerminateTask();
 }
@@ -73,13 +73,13 @@ TASK(can_recieve_task)
 TASK(can_send_task)
 {
     //acquire semaphore
-    WaitSem(&can_structure_semaphore);
-    SuspendAllInterrupts();
+    //WaitSem(&can_structure_semaphore);
+    //SuspendAllInterrupts();
     printf("TX: Semaphore value: %d\n", can_structure_semaphore.count);
     can_transmit_message(msg, &data_to_transfer, message_data_length);
     //release semaphore
-    PostSem(&can_structure_semaphore);
-    ResumeAllInterrupts();
+    //PostSem(&can_structure_semaphore);
+    //ResumeAllInterrupts();
 
     TerminateTask();
 }
@@ -87,8 +87,9 @@ TASK(can_send_task)
 TASK(can_init_task)
 {
    //acquire semaphore
-   WaitSem(&can_structure_semaphore);
-   SuspendAllInterrupts();
+   //WaitSem(&can_structure_semaphore);
+   //SuspendAllInterrupts();
+   printf("CAN init");
    can_init();
 
    message_data_length = CAN_MESSAGE_MAX_DATA_LENGTH;
@@ -108,8 +109,8 @@ TASK(can_init_task)
    msg.dataLengthCode = can_fd_messages[message_type].messageLen;
 
    //release semaphore
-   PostSem(&can_structure_semaphore);
-   ResumeAllInterrupts();
+   //PostSem(&can_structure_semaphore);
+   //ResumeAllInterrupts();
 
    TerminateTask();
 }

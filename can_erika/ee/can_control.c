@@ -24,9 +24,9 @@
  *  - priority: Interrupt priority. Refer Usage of Interrupt Macro for more details.
  */
 //IFX_INTERRUPT(can_ISR_RX_handler, 0, ISR_PRIORITY_CAN_RX);
-#define OSEE_TC_CORE0_ISR_CAT     1 //support 1 and 2 depends on if you want a task handler or direct handler
-#define OSEE_TC_CORE0_0_ISR_CAT   1
-#define OSEE_TC_CORE0_0_ISR_HND   can_ISR_RX_handler
+//#define OSEE_TC_CORE0_ISR_CAT     1 //support 1 and 2 depends on if you want a task handler or direct handler
+//#define OSEE_TC_CORE0_0_ISR_CAT   1
+//#define OSEE_TC_CORE0_0_ISR_HND   can_ISR_RX_handler
 
 
 // redefine IFX_INTERRUPT will solve the problem with rewriting all the drivers to non tasking verison
