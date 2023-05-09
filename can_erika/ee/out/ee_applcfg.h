@@ -46,7 +46,6 @@ extern "C" {
 #define OSEE_TASK_ARRAY_SIZE      (4U)
 #define OSEE_SN_ARRAY_SIZE        (4U)
 #define OSEE_STACK_ARRAY_SIZE     (4U)
-#define OSEE_RESOURCE_ARRAY_SIZE  (1U)
 #define OSEE_COUNTERS_ARRAY_SIZE  (1U)
 #define OSEE_ALARMS_ARRAY_SIZE    (2U)
 
@@ -65,7 +64,7 @@ extern "C" {
  *
  **************************************************************************/
 #define osEE_task_stack_1_StackSize (512U)
-#define osEE_task_stack_2_StackSize (512U)
+#define osEE_task_stack_2_StackSize (1024U)
 #define osEE_task_stack_3_StackSize (512U)
 
 /***************************************************************************
@@ -73,7 +72,6 @@ extern "C" {
  * RESOURCEs Macro Declaration
  *
  **************************************************************************/
-#define can_mutex (0U)
 
 /***************************************************************************
  *

@@ -57,7 +57,6 @@
  * Automatic options
  *
  **************************************************************************/
-#define OSEE_API_EXTENSION
 #define OSEE_ARCH_TRICORE
 #define OSEE_CPU_CLOCK (200000000U)
 #define OSEE_EXTENDED_STATUS
@@ -69,7 +68,6 @@
 #define OSEE_HAS_EVENTS
 #define OSEE_HAS_IDLEHOOK
 #define OSEE_HAS_ORTI
-#define OSEE_HAS_RESOURCES
 #define OSEE_HAS_SYSTEM_TIMER
 #define OSEE_ISR2_MAX_HW_ASM_PRIO 2
 #define OSEE_ISR2_MAX_PRIO (129U)

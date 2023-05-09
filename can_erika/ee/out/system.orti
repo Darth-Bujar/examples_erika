@@ -47,8 +47,6 @@ IMPLEMENTATION ERIKA3 {
       "ResumeAllInterrupts" = 18,
       "SuspendOSInterrupts" = 20,
       "ResumeOSInterrupts" = 22,
-      "GetResource" = 24,
-      "ReleaseResource" = 26,
       "SetEvent" = 28,
       "ClearEvent" = 30,
       "GetEvent" = 32,
@@ -178,17 +176,6 @@ IMPLEMENTATION ERIKA3 {
     STRING COUNTER, "Counter";
     CTYPE "unsigned int" COUNTERVALUE, "Counter Value";
   }, "Alarms";
-
-  RESOURCE {
-    ENUM "void *" [
-      "invalid" = "&osEE_tdb_array[0U]",
-      "can_send_task" = "&osEE_tdb_array[1U]",
-      "can_init_task" = "&osEE_tdb_array[2U]",
-      "can_recieve_task" = "&osEE_tdb_array[3U]",
-      "Idle" = "&osEE_tdb_array[4U]"
-    ] LOCKER, "Resource Locker";
-    STRING PRIORITY, "Ceiling priority";
-  }, "Resources";
 }; /* END OF IMPLEMENTATION */
 
 /******************************************************************************
@@ -249,7 +236,7 @@ STACK Stack_can_send_task {
 };
 
 STACK Stack_can_init_task {
-  SIZE = "512";
+  SIZE = "1024";
   STACKDIRECTION = "DOWN";
   BASEADDRESS = "&osEE_task_stack_2[0]";
   FILLPATTERN = "0xA5A5A5A5";
@@ -286,10 +273,4 @@ ALARM AlarmMaster_2000ms {
   ACTION = "Activate TASK can_send_task";
   COUNTER = "system_timer_master";
   COUNTERVALUE = "osEE_alarm_db_array[1].p_counter_db->p_counter_cb->value";
-};
-
-/* Resources */
-RESOURCE can_mutex {
-  LOCKER = "osEE_res_cb_array[0U].p_owner";
-  PRIORITY = 3;
 };

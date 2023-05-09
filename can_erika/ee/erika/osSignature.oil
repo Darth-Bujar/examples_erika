@@ -21,12 +21,6 @@ CPU test_application {
 		MCU_DATA = TC39X {
 			DERIVATIVE = "tc387xe";
 		};
-		USEEXTENSIONAPI = TRUE {
-			SEMAPHORE = DEFAULT {
-				NAME = "can_structure_semaphore";
-				COUNT = 0;
-			};
-		};
 		STATUS = EXTENDED;
 		ERRORHOOK = TRUE;
 		USERESSCHEDULER = FALSE;
