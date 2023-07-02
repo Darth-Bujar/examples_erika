@@ -49,22 +49,6 @@ VAR(OsEE_isr1_db, OS_CONST) osEE_isr1_db_instance = {
 #include "Os_MemMap.h"
 
 
-/***************************************************************************
- *
- * Semaphores
- *
- **************************************************************************/
-#define OS_CORE0_START_SEC_VAR_INIT
-#include "Os_MemMap.h"
-
-SemType can_structure_semaphore = {
-  /* .blocked_queue = */ NULL,
-  /* .count = */         0U
-};
-#define OS_CORE0_STOP_SEC_VAR_INIT
-#include "Os_MemMap.h"
-
-
 
 /***************************************************************************
  *
@@ -156,7 +140,6 @@ static VAR(OsEE_TCB, OS_VAR_INIT)
     /* .current_num_of_act = */ 0U,
     /* .current_prio       = */ 129U,
     /* .status             = */ SUSPENDED,
-    /* .p_last_m           = */ NULL,
     /* .wait_mask          = */ 0U,
     /* .event_mask         = */ 0U,
     /* .p_own_sn           = */ NULL
@@ -165,7 +148,6 @@ static VAR(OsEE_TCB, OS_VAR_INIT)
     /* .current_num_of_act = */ 0U,
     /* .current_prio       = */ 3U,
     /* .status             = */ SUSPENDED,
-    /* .p_last_m           = */ NULL,
     /* .wait_mask          = */ 0U,
     /* .event_mask         = */ 0U,
     /* .p_own_sn           = */ NULL
@@ -174,7 +156,6 @@ static VAR(OsEE_TCB, OS_VAR_INIT)
     /* .current_num_of_act = */ 0U,
     /* .current_prio       = */ 1U,
     /* .status             = */ SUSPENDED,
-    /* .p_last_m           = */ NULL,
     /* .wait_mask          = */ 0U,
     /* .event_mask         = */ 0U,
     /* .p_own_sn           = */ NULL
@@ -183,7 +164,6 @@ static VAR(OsEE_TCB, OS_VAR_INIT)
     /* .current_num_of_act = */ 0U,
     /* .current_prio       = */ 2U,
     /* .status             = */ SUSPENDED,
-    /* .p_last_m           = */ NULL,
     /* .wait_mask          = */ 0U,
     /* .event_mask         = */ 0U,
     /* .p_own_sn           = */ NULL
@@ -192,7 +172,6 @@ static VAR(OsEE_TCB, OS_VAR_INIT)
     /* .current_num_of_act = */ 1U,
     /* .current_prio       = */ 0U,
     /* .status             = */ RUNNING,
-    /* .p_last_m           = */ NULL,
     /* .wait_mask          = */ 0U,
     /* .event_mask         = */ 0U,
     /* .p_own_sn           = */ NULL}
@@ -321,32 +300,6 @@ static VAR(OsEE_SN, OS_VAR_INIT)  osEE_sn_array[4] = {
 #define OS_CORE0_STOP_SEC_VAR_INIT
 #include "Os_MemMap.h"
 
-#define OS_CORE0_START_SEC_VAR_CLEARED
-#include "Os_MemMap.h"
-static VAR(OsEE_ResourceCB, OS_VAR_CLEARED) osEE_res_cb_array[1];
-#define OS_CORE0_STOP_SEC_VAR_CLEARED
-#include "Os_MemMap.h"
-
-#define OS_CORE0_START_SEC_CONST
-#include "Os_MemMap.h"
-static VAR(OsEE_ResourceDB, OS_CONST) osEE_res_db_array[1] = {
-  {
-    /* .p_cb              = */ &osEE_res_cb_array[0U],
-    /* .prio              = */ 3U
-  }
-};
-#define OS_CORE0_STOP_SEC_CONST
-#include "Os_MemMap.h"
-
-#define OS_START_SEC_CONST
-#include "Os_MemMap.h"
-static CONSTP2VAR(OsEE_ResourceDB, OS_CONST, OS_APPL_DATA)
-  osEE_res_db_ptr_array[OSEE_RESOURCE_ARRAY_SIZE] =
-{
-  &osEE_res_db_array[0U]
-};
-#define OS_STOP_SEC_CONST
-#include "Os_MemMap.h"
 
 /***************************************************************************
  *
@@ -473,12 +426,12 @@ static VAR(OsEE_autostart_trigger_info, OS_CONST)
 {
   {
     /* .p_trigger_db          = */  &osEE_alarm_db_array[0U],
-    /* .first_tick_parameter  = */  (100U),
+    /* .first_tick_parameter  = */  (1000U),
     /* .first_tick_parameter  = */  (100U)
   },
   {
     /* .p_trigger_db          = */  &osEE_alarm_db_array[1U],
-    /* .first_tick_parameter  = */  (100U),
+    /* .first_tick_parameter  = */  (1000U),
     /* .first_tick_parameter  = */  (200U)
   }
 };
@@ -553,8 +506,6 @@ VAR(OsEE_KDB, OS_CONST) osEE_kdb_var = {
   /* .p_kcb               = */ &osEE_kcb_var,
   /* .p_tdb_ptr_array     = */ (P2SYM_CONSTP2VAR(OsEE_TDB, OS_APPL_CONST, TYPEDEF)[])&osEE_tdb_ptr_array,
   /* .tdb_array_size      = */ OSEE_ARRAY_ELEMENT_COUNT(osEE_tdb_ptr_array),
-  /* .p_res_ptr_array     = */ (P2SYM_CONSTP2VAR(OsEE_ResourceDB, OS_APPL_CONST, TYPEDEF)[])&osEE_res_db_ptr_array,
-  /* .res_array_size      = */ OSEE_ARRAY_ELEMENT_COUNT(osEE_res_db_ptr_array),
   /* .p_counter_ptr_array = */ (P2SYM_CONSTP2VAR(OsEE_CounterDB, OS_APPL_CONST, TYPEDEF)[])&osEE_counter_db_ptr_array,
   /* .counter_array_size  = */ OSEE_ARRAY_ELEMENT_COUNT(osEE_counter_db_ptr_array),
   /* .p_alarm_ptr_array   = */ (P2SYM_CONSTP2VAR(OsEE_AlarmDB, OS_APPL_CONST, TYPEDEF)[])&osEE_alarm_db_ptr_array,

@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "ee_applcfg.h": "c",
+        "ee_tc_system.h": "c",
+        "ifx_ssw_infra.h": "c",
+        "ifx_ssw.h": "c"
+    }
+}

@@ -35,7 +35,6 @@ OS_EE_OPT += OS_EE_VERBOSE
 # Automatic options
 #
 ############################################################################
-OS_EE_OPT += OSEE_API_EXTENSION
 OS_EE_OPT += OSEE_ARCH_TRICORE
 OS_EE_OPT += OSEE_CPU_CLOCK (200000000U)
 OS_EE_OPT += OSEE_EXTENDED_STATUS
@@ -47,7 +46,6 @@ OS_EE_OPT += OSEE_HAS_ERRORHOOK
 OS_EE_OPT += OSEE_HAS_EVENTS
 OS_EE_OPT += OSEE_HAS_IDLEHOOK
 OS_EE_OPT += OSEE_HAS_ORTI
-OS_EE_OPT += OSEE_HAS_RESOURCES
 OS_EE_OPT += OSEE_HAS_SYSTEM_TIMER
 OS_EE_OPT += OSEE_ISR2_MAX_HW_ASM_PRIO 2
 OS_EE_OPT += OSEE_ISR2_MAX_PRIO (129U)
@@ -79,7 +77,7 @@ OS_EE_OPT += OS_EE_RTD_DISABLE_OS_EE_OPT_DEFINES
 # TASKING CTC Compiler path
 #
 ############################################################################
-$(eval $(call check_and_set_cygwin_compiler_path,CCTCBIN,C:\Infineon\AURIX-Studio-1.8.0\plugins\com.infineon.aurix.tools_1.8.0\build_system\tools\Compilers\Tasking_1.1r8/ctc/bin/))
+$(eval $(call check_and_set_cygwin_compiler_path,CCTCBIN,C:\Infineon\AURIX-Studio-1.9.4\plugins\com.infineon.aurix.tools_1.9.4\build_system\tools\Compilers\Tasking_1.1r8/ctc/bin/))
 
 
 OSEE_TRICORE_MCU    := tc39x

@@ -21,12 +21,6 @@ CPU test_application {
 		MCU_DATA = TC39X {
 			DERIVATIVE = "tc387xe";
 		};
-		USEEXTENSIONAPI = TRUE {
-			SEMAPHORE = DEFAULT {
-				NAME = "can_structure_semaphore";
-				COUNT = 0;
-			};
-		};
 		STATUS = EXTENDED;
 		ERRORHOOK = TRUE;
 		USERESSCHEDULER = FALSE;
@@ -35,9 +29,6 @@ CPU test_application {
 			CLASS = ECC2;
 			RQ = MQ;
 		};
-	};
-	RESOURCE can_mutex {
-		RESOURCEPROPERTY = STANDARD;
 	};
 	APPDATA tricore_2G_mc_blink {
 		APP_SRC = "master.c";
@@ -48,7 +39,6 @@ CPU test_application {
 		PRIORITY = 8;
 		ACTIVATION = 1;
 		SCHEDULE = FULL;
-		RESOURCE = can_mutex;
 		STACK = PRIVATE {
 			SIZE = 512;
 			EXTENDED = TRUE;
@@ -60,9 +50,8 @@ CPU test_application {
 		PRIORITY = 1;
 		ACTIVATION = 1;
 		SCHEDULE = NON;
-		RESOURCE = can_mutex;
 		STACK = PRIVATE {
-			SIZE = 512;
+			SIZE = 1024;
 			EXTENDED = TRUE;
 		};
 	};
@@ -71,7 +60,6 @@ CPU test_application {
 		PRIORITY = 4;
 		ACTIVATION = 1;
 		SCHEDULE = FULL;
-		RESOURCE = can_mutex;
 		STACK = PRIVATE {
 			SIZE = 512;
 			EXTENDED = TRUE;
@@ -101,7 +89,7 @@ CPU test_application {
 			TASK = can_recieve_task;
 		};
 		AUTOSTART = TRUE {
-			ALARMTIME = 100;
+			ALARMTIME = 1000;
 			CYCLETIME = 100;
 		};
 	};
@@ -111,7 +99,7 @@ CPU test_application {
 			TASK = can_send_task;
 		};
 		AUTOSTART = TRUE {
-			ALARMTIME = 100;
+			ALARMTIME = 1000;
 			CYCLETIME = 200;
 		};
 	};

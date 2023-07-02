@@ -54,18 +54,6 @@ extern void idle_hook_core0 (void);
  **************************************************************************/
 
 
-/***************************************************************************
- *
- * Semaphores
- *
- **************************************************************************/
-#define OS_CORE0_START_SEC_VAR_INIT
-#include "Os_MemMap.h"
-
-extern SemType can_structure_semaphore;
-
-#define OS_CORE0_STOP_SEC_VAR_INIT
-#include "Os_MemMap.h"
 
 #if (defined(__cplusplus))
 }

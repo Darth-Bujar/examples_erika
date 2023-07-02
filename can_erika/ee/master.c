@@ -11,12 +11,17 @@
 /*-------------------------------------------------INCLUDE-----------------------------------------------------------*/
 /*********************************************************************************************************************/
 /* ERIKA Enterprise. */
+//#include "ee_internal.h"
+
 #include "shared.h"
 #include "can_control.h"
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
-#include "can_control.h"
+
+// #include "Ifx_Ssw.h"
+// #include "Ifx_Ssw_Infra.h"
+// #include "Ifx_Cfg_Ssw.h"
 //#include "bsp.h"
 
 #include "ee.h"
@@ -37,11 +42,11 @@
 #endif /* __TASKING__ */
 
 #define CAN_MESSAGE_MAX_DATA_LENGTH IfxCan_DataLengthCode_8
-
+IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
 /*********************************************************************************************************************/
-extern SemType can_structure_semaphore;
+//extern SemType can_structure_semaphore;
 static uint8 message_data_length;
 static IfxCan_Message msg;
 static can_FD_messages_enum message_type = EXTENDED_MESSAGE_8_byte;
@@ -61,7 +66,7 @@ TASK(can_recieve_task)
    //acquire semaphore
    //WaitSem(&can_structure_semaphore);
    // SuspendAllInterrupts();
-   printf("RX: Semaphore value: %d\n", can_structure_semaphore.count);
+   //printf("RX: Semaphore value: %d\n", can_structure_semaphore.count);
    can_recieved_message_show(1);
    //release semaphore
    //PostSem(&can_structure_semaphore);
@@ -75,7 +80,7 @@ TASK(can_send_task)
     //acquire semaphore
     //WaitSem(&can_structure_semaphore);
     //SuspendAllInterrupts();
-    printf("TX: Semaphore value: %d\n", can_structure_semaphore.count);
+    //printf("TX: Semaphore value: %d\n", can_structure_semaphore.count);
     can_transmit_message(msg, &data_to_transfer, message_data_length);
     //release semaphore
     //PostSem(&can_structure_semaphore);
@@ -90,7 +95,7 @@ TASK(can_init_task)
    //WaitSem(&can_structure_semaphore);
    //SuspendAllInterrupts();
    printf("CAN init");
-   can_init();
+   //can_init();
 
    message_data_length = CAN_MESSAGE_MAX_DATA_LENGTH;
    //Creating data set to send
@@ -125,12 +130,51 @@ TASK(can_init_task)
  */
 int main(void)
 {
-  StatusType       status;
-  AppModeType      mode = OSDEFAULTAPPMODE;
 
-  StartOS(mode);
+    // IfxCpu_enableInterrupts();
+    
+    /* !!WATCHDOG0 AND SAFETY WATCHDOG ARE DISABLED HERE!!
+    * Enable the watchdogs and service them periodically if it is required
+    */
 
-  return 0;
+    // IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
+    // IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
+
+    // {
+    //   /* Update safety and cpu watchdog reload value*/
+    //   unsigned short cpuWdtPassword = (unsigned short)IfxScuWdt_getCpuWatchdogPassword();
+
+    //   unsigned short safetyWdtPassword = (unsigned short)IfxScuWdt_getSafetyWatchdogPassword();
+
+    //   /* servicing watchdog timers */
+    //   Ifx_Ssw_serviceCpuWatchdog(&MODULE_SCU.WDTCPU[0], cpuWdtPassword);
+    //   //Ifx_Ssw_serviceSafetyWatchdog(safetyWdtPassword);
+    // }
+
+    /* Wait for CPU sync event */
+    // IfxCpu_emitEvent(&g_cpuSyncEvent);
+    // IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
+
+    OsEE_reg       pcxi;
+    uint16_t const cpu_wdt_pw     = osEE_tc_get_cpu_wdt_pw(0U);
+    uint16_t const safety_wdt_pw  = osEE_tc_get_safety_wdt_pw();
+
+    osEE_tc_disable_cpu_wdt(0U, cpu_wdt_pw);
+    osEE_tc_disable_safety_wdt(safety_wdt_pw);
+
+    /* Disable SAFETY ENDINIT Protection */
+    osEE_tc_clear_safety_endinit(safety_wdt_pw);
+    can_init();
+
+    /* Re-enable SAFETY ENDINIT Protection */
+    osEE_tc_set_safety_endinit(safety_wdt_pw);
+
+    StatusType       status;
+    AppModeType      mode = OSDEFAULTAPPMODE;
+
+    StartOS(mode);
+
+    return 0;
 }
 
 void ErrorHook(StatusType Error)

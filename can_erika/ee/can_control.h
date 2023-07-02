@@ -264,7 +264,7 @@ const static can_FD_message_type can_fd_messages[PREDEFINED_MESSAGES_NUMBER] =
 /*********************************************************************************************************************/
 static can_communication_status_type com_status;
 static boolean is_new_message_recieved;
-static mcmcan_type can;                                   /* Structure for handling MCMCAN     */
+extern mcmcan_type strange_can;                                   /* Structure for handling MCMCAN     */
 
 /*********************************************************************************************************************/
 /*-----------------------------------------------Function Prototypes-------------------------------------------------*/
