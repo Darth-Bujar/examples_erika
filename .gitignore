@@ -58,16 +58,10 @@ dkms.conf
 # Aurix studio specific
 .metadata/*
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
-
-# Local History for Visual Studio Code
+.ads/*
+.settings/*
 .history/
-
-# Built Visual Studio Code Extensions
 *.vsix
+
 # ERIKA out folder. Generated each time during compilation
 out/*
