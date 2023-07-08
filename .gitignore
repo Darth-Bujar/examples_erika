@@ -4,9 +4,11 @@
 
 # Object files
 *.o
+*.o.*
 *.ko
 *.obj
 *.elf
+*.src
 
 # Linker output
 *.ilk
@@ -15,6 +17,7 @@
 *.c.d
 *.c.i
 *.src
+
 
 # Precompiled Headers
 *.gch
@@ -48,4 +51,24 @@
 
 # Kernel Module Compile Results
 *.mod*
+
 *.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# End of https://mrkandreev.name/snippets/gitignore-generator/#C
+
+# Aurix studio specific
+.metadata/*
+.vscode/*
+.ads/*
+.settings/*
+.history/
+*.vsix
+
+# ERIKA out folder. Generated each time during compilation
+out/*
+
