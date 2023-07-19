@@ -1,5 +1,6 @@
 # Prerequisites
 *.d
+*.mk
 
 # Object files
 *.o
@@ -13,6 +14,10 @@
 *.ilk
 *.map
 *.exp
+*.c.d
+*.c.i
+*.src
+
 
 # Precompiled Headers
 *.gch
@@ -46,6 +51,7 @@
 
 # Kernel Module Compile Results
 *.mod*
+
 *.cmd
 .tmp_versions/
 modules.order
@@ -65,3 +71,4 @@ dkms.conf
 
 # ERIKA out folder. Generated each time during compilation
 out/*
+
