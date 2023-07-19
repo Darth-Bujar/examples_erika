@@ -31,7 +31,8 @@
 
 // redefine IFX_INTERRUPT will solve the problem with rewriting all the drivers to non tasking verison
 mcmcan_type strange_can;
-
+boolean is_new_message_recieved;
+can_communication_status_type com_status;
 /* Interrupt Service Routine (ISR) called once the RX interrupt has been generated.
  * Reads the received CAN message and increments a counter confirming to the source node that the previous message
  * has been received.

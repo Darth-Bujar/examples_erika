@@ -90,17 +90,17 @@ CPU test_application {
     APP_SRC="can_control.c";
   };
 
-  TASK can_send_task {
-    CPU_ID = 0x0;
-    PRIORITY = 8;
-    ACTIVATION = 1;
-    SCHEDULE = FULL;
+//  TASK can_send_task {
+//    CPU_ID = 0x0;
+//    PRIORITY = 8;
+//    ACTIVATION = 1;
+//    SCHEDULE = FULL;
 //    RESOURCE = can_mutex;
-    STACK = PRIVATE {
-      SIZE = 512;
-      EXTENDED = TRUE;
-    };
-  };
+//    STACK = PRIVATE {
+//      SIZE = 512;
+//      EXTENDED = TRUE;
+//    };
+//  };
 	
   TASK can_init_task {
     CPU_ID = 0x0;
@@ -155,10 +155,10 @@ CPU test_application {
     AUTOSTART = TRUE { ALARMTIME = 1000 ; CYCLETIME = 100; };
   };
 
-  ALARM AlarmMaster_2000ms {
-    COUNTER = system_timer_master;
-    ACTION = ACTIVATETASK { TASK = can_send_task; };
-    AUTOSTART = TRUE { ALARMTIME = 1000; CYCLETIME = 200; };
-  };
+//  ALARM AlarmMaster_2000ms {
+//    COUNTER = system_timer_master;
+//    ACTION = ACTIVATETASK { TASK = can_send_task; };
+//    AUTOSTART = TRUE { ALARMTIME = 1000; CYCLETIME = 200; };
+//  };
   
 };

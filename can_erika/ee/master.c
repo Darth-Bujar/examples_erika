@@ -155,7 +155,7 @@ int main(void)
     // IfxCpu_emitEvent(&g_cpuSyncEvent);
     // IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
-    OsEE_reg       pcxi;
+    //OsEE_reg       pcxi;
     uint16_t const cpu_wdt_pw     = osEE_tc_get_cpu_wdt_pw(0U);
     uint16_t const safety_wdt_pw  = osEE_tc_get_safety_wdt_pw();
 
@@ -169,7 +169,7 @@ int main(void)
     /* Re-enable SAFETY ENDINIT Protection */
     osEE_tc_set_safety_endinit(safety_wdt_pw);
 
-    StatusType       status;
+    //StatusType       status;
     AppModeType      mode = OSDEFAULTAPPMODE;
 
     StartOS(mode);

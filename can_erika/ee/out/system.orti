@@ -13,10 +13,9 @@ IMPLEMENTATION ERIKA3 {
     /* Here for each task a small description and its pointer */
     TOTRACE ENUM "void *" [
       "system_timer_master" = "&osEE_tdb_array[0U]",
-      "can_send_task" = "&osEE_tdb_array[1U]",
-      "can_init_task" = "&osEE_tdb_array[2U]",
-      "can_recieve_task" = "&osEE_tdb_array[3U]",
-      "Idle" = "&osEE_tdb_array[4U]"
+      "can_init_task" = "&osEE_tdb_array[1U]",
+      "can_recieve_task" = "&osEE_tdb_array[2U]",
+      "Idle" = "&osEE_tdb_array[3U]"
     ] RUNNINGTASK, "Running Task or ISR2 Identification";
 
     ENUM  [ 
@@ -30,7 +29,6 @@ IMPLEMENTATION ERIKA3 {
       "Not Running (0)" = 0,
       "1" = 1,
       "4" = 4,
-      "8" = 8,
       "ISR2 2" = 129
     ] RUNNINGPRIORITY, "Priority of Running Task";
 
@@ -116,7 +114,6 @@ IMPLEMENTATION ERIKA3 {
       "Idle (0)" = 0,
       "1" = 1,
       "4" = 4,
-      "8" = 8,
       "ISR2 2" = 129
     ] PRIORITY , "Current priority";
     ENUM [
@@ -130,10 +127,9 @@ IMPLEMENTATION ERIKA3 {
     CTYPE "unsigned int" EVENTMASK, "Event Mask";
     CTYPE "unsigned int" WAITMASK, "Wait Mask";
     ENUM "unsigned int" [
-      "Stack can_send_task" : Stack_can_send_task = "1",
-      "Stack can_init_task" : Stack_can_init_task = "2",
-      "Stack can_recieve_task" : Stack_can_recieve_task = "3",
-      "System Stack" : System_Stack = "4"
+      "Stack can_init_task" : Stack_can_init_task = "1",
+      "Stack can_recieve_task" : Stack_can_recieve_task = "2",
+      "System Stack" : System_Stack = "3"
     ] STACK, "Task Stack";
 
     CTYPE "int" CURRENTACTIVATIONS, "Current activations";
@@ -151,7 +147,7 @@ IMPLEMENTATION ERIKA3 {
       "RUNNING"   = 4,
     ] STATE, "Task State";
     ENUM "unsigned int" [
-      "System Stack" : System_Stack = "4"
+      "System Stack" : System_Stack = "3"
     ] STACK, "Task Stack";
   }, "ISR2s";
 
@@ -193,7 +189,7 @@ OS ERIKA3 {
 };
 
 /* TASKs & ISR2 */
-TASK can_send_task {
+TASK can_init_task {
   PRIORITY = "osEE_tcb_array[1].current_prio";
   STATE = "osEE_tcb_array[1].status";
   CURRENTACTIVATIONS = "osEE_tcb_array[1].current_num_of_act";  /* 1 = max activations */
@@ -202,7 +198,7 @@ TASK can_send_task {
   STACK = "(1)";
 };
 
-TASK can_init_task {
+TASK can_recieve_task {
   PRIORITY = "osEE_tcb_array[2].current_prio";
   STATE = "osEE_tcb_array[2].status";
   CURRENTACTIVATIONS = "osEE_tcb_array[2].current_num_of_act";  /* 1 = max activations */
@@ -211,41 +207,25 @@ TASK can_init_task {
   STACK = "(2)";
 };
 
-TASK can_recieve_task {
-  PRIORITY = "osEE_tcb_array[3].current_prio";
-  STATE = "osEE_tcb_array[3].status";
-  CURRENTACTIVATIONS = "osEE_tcb_array[3].current_num_of_act";  /* 1 = max activations */
-  EVENTMASK = "osEE_tcb_array[3].event_mask"
-  WAITMASK = "osEE_tcb_array[3].wait_mask"
-  STACK = "(3)";
-};
-
 ISR2 system_timer_master {
   PRIORITY = "osEE_tcb_array[0].current_prio";
   STATE = "osEE_tcb_array[0].status";
-  STACK = "(4)";
+  STACK = "(3)";
 };
 
 
 /* Stacks */
-STACK Stack_can_send_task {
-  SIZE = "512";
-  STACKDIRECTION = "DOWN";
-  BASEADDRESS = "&osEE_task_stack_1[0]";
-  FILLPATTERN = "0xA5A5A5A5";
-};
-
 STACK Stack_can_init_task {
   SIZE = "1024";
   STACKDIRECTION = "DOWN";
-  BASEADDRESS = "&osEE_task_stack_2[0]";
+  BASEADDRESS = "&osEE_task_stack_1[0]";
   FILLPATTERN = "0xA5A5A5A5";
 };
 
 STACK Stack_can_recieve_task {
   SIZE = "512";
   STACKDIRECTION = "DOWN";
-  BASEADDRESS = "&osEE_task_stack_3[0]";
+  BASEADDRESS = "&osEE_task_stack_2[0]";
   FILLPATTERN = "0xA5A5A5A5";
 };
 
@@ -264,13 +244,4 @@ ALARM AlarmMaster_1000ms {
   ACTION = "Activate TASK can_recieve_task";
   COUNTER = "system_timer_master";
   COUNTERVALUE = "osEE_alarm_db_array[0].p_counter_db->p_counter_cb->value";
-};
-
-ALARM AlarmMaster_2000ms {
-  ALARMTIME = "osEE_alarm_cb_array[1].when";
-  CYCLETIME = "osEE_alarm_cb_array[1].cycle";
-  STATE = "osEE_alarm_cb_array[1].status";
-  ACTION = "Activate TASK can_send_task";
-  COUNTER = "system_timer_master";
-  COUNTERVALUE = "osEE_alarm_db_array[1].p_counter_db->p_counter_cb->value";
 };

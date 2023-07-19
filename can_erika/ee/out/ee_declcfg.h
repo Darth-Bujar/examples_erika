@@ -32,7 +32,6 @@ extern "C" {
  * Declare tasks
  *
  **************************************************************************/
-DeclareTask(can_send_task);
 DeclareTask(can_init_task);
 DeclareTask(can_recieve_task);
 

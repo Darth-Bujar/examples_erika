@@ -77,11 +77,8 @@
 
 #include "ee_internal.h"
 #include <stdlib.h>
-#include "Ifx_Ssw.h"
-#include "Ifx_Ssw_Infra.h"
-#include "Ifx_Cfg_Ssw.h"
 
-#include "can_control.h"
+#include "can_init.h"
 
 /******************************************************************************
                           Default Caches policies
@@ -224,19 +221,6 @@ extern void _exit (int status);
 #define __TRAPTAB6 __TRAPTAB
 #endif
 
-
-#define IFX_SSW_INIT_CONTEXT()                                                   \
-    {                                                                            \
-        /* Load user stack pointer */                                            \
-        Ifx_Ssw_setAddressReg(a10, __USTACK(0));                                 \
-        Ifx_Ssw_DSYNC();                                                         \
-                                                                                 \
-        /*Initialize the context save area for CPU0. Function Calls Possible */  \
-        /* Setup the context save area linked list */                            \
-        Ifx_Ssw_initCSA((unsigned int *)__CSA(0), (unsigned int *)__CSA_END(0)); \
-        /* Clears any instruction buffer */                                      \
-        Ifx_Ssw_ISYNC();                                                         \
-    }
 /******************************************************************************
                           main function declaration
  *****************************************************************************/
@@ -522,7 +506,7 @@ void _start(void)
   osEE_tc_jump_abs(osEE_tc_core0_start);
 }
 
-0/******************************************************************************
+/******************************************************************************
                           Constant Definitions
  ******************************************************************************/
 /* Reset value of PSW.
@@ -641,35 +625,16 @@ void osEE_tc_core0_start(void)
 #if (!defined(OSEE_BYPASS_CLOCK_CONFIGURATION))
 /* If a CPU CLOCK frequency is defined configure the SCU registers */
 #if (defined(OSEE_CPU_CLOCK))
-
 /* Disable SAFETY ENDINIT Protection */
   osEE_tc_clear_safety_endinit(safety_wdt_pw);
-/* Power and EVRC configurations */
-  IFX_CFG_SSW_CALLOUT_PMS_INIT();
 /*===================== Configure CCU Clock Control =========================*/
   osEE_tc_conf_clock_ctrl();
 /*===================== Configure Oscillator Control ========================*/
   osEE_tc_conf_osc_ctrl();
 /*============================ Configure PLL ================================*/
   osEE_tc_set_pll_fsource(OSEE_CPU_CLOCK);
-
-  {
-    /* Update safety and cpu watchdog reload value*/
-    unsigned short cpuWdtPassword    = Ifx_Ssw_getCpuWatchdogPasswordInline(&MODULE_SCU.WDTCPU[0]);
-    unsigned short safetyWdtPassword = Ifx_Ssw_getSafetyWatchdogPasswordInline();
-
-    /* servicing watchdog timers */
-    Ifx_Ssw_serviceCpuWatchdog(&MODULE_SCU.WDTCPU[0], cpuWdtPassword);
-    Ifx_Ssw_serviceSafetyWatchdog(safetyWdtPassword);
-  }
-/*============================ Configure PLL ================================*/
-  // TODO: seems like it doesnt work
-  // At least controller`s memory seems to be invalid
-  // Maybe its just variable access problems. Cuz message itself seems ok but
-  // printed ID is 0 even tho in debug its not
-
-
-  
+/*============================ CAN INIT =====================================*/
+  can_init();
 /* Re-enable SAFETY ENDINIT Protection */
   osEE_tc_set_safety_endinit(safety_wdt_pw);
 #endif /* OSEE_CPU_CLOCK */

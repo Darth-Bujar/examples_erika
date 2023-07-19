@@ -43,29 +43,27 @@ extern "C" {
  * Arrays size
  *
  **************************************************************************/
-#define OSEE_TASK_ARRAY_SIZE      (4U)
-#define OSEE_SN_ARRAY_SIZE        (4U)
-#define OSEE_STACK_ARRAY_SIZE     (4U)
+#define OSEE_TASK_ARRAY_SIZE      (3U)
+#define OSEE_SN_ARRAY_SIZE        (3U)
+#define OSEE_STACK_ARRAY_SIZE     (3U)
 #define OSEE_COUNTERS_ARRAY_SIZE  (1U)
-#define OSEE_ALARMS_ARRAY_SIZE    (2U)
+#define OSEE_ALARMS_ARRAY_SIZE    (1U)
 
 /***************************************************************************
  *
  * TASKs declaration
  *
  **************************************************************************/
-#define can_send_task (1U)
-#define can_init_task (2U)
-#define can_recieve_task (3U)
+#define can_init_task (1U)
+#define can_recieve_task (2U)
 
 /***************************************************************************
  *
  * Stack Size declaration
  *
  **************************************************************************/
-#define osEE_task_stack_1_StackSize (512U)
-#define osEE_task_stack_2_StackSize (1024U)
-#define osEE_task_stack_3_StackSize (512U)
+#define osEE_task_stack_1_StackSize (1024U)
+#define osEE_task_stack_2_StackSize (512U)
 
 /***************************************************************************
  *
@@ -86,7 +84,6 @@ extern "C" {
  *
  **************************************************************************/
 #define AlarmMaster_1000ms (0U)
-#define AlarmMaster_2000ms (1U)
 
 /***************************************************************************
  *
