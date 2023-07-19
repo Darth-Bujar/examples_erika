@@ -249,23 +249,23 @@ void can_init(void)
     // This structure containe all the registers that we need inside
     // add as a pointer
 
-   //can registers rename
-    Ifx_CAN *can_man_config = 0xf0200000 add address from datasheet;
+    // TODO: check that this is correct addres for CAN registers
+    Ifx_CAN *can_man_config = 0xf0200000;
 
     // 2) IfxCan_Can_initModule(&can_struct.canModule, &can_struct.canConfig);
 
 
     // TODO: Check one more time if it is 1 or 0
 
-    if (can_man_config.CLC.B.DISS == 0)
+    if (can_man_config->CLC.B.DISS == 0)
     {
         uint16 passwd = IfxScuWdt_getCpuWatchdogPassword();
         IfxScuWdt_clearCpuEndinit(passwd);
 
         /*Enable module, disregard Sleep Mode request */
-        can_man_config.CLC.B.DISR = 0U;
+        can_man_config->CLC.B.DISR = 0U;
 
-        while (can_man_config.CLC.B.DISS == 0)
+        while (can_man_config->CLC.B.DISS == 0)
         {}
 
         IfxScuWdt_setCpuEndinit(passwd);
@@ -276,48 +276,48 @@ void can_init(void)
     // 3) IfxCan_Can_initNodeConfig(&can_struct.canNodeConfig, &can_struct.canModule);
 
     // node registers
-    IfxCan_Can_NodeConfig node_man_config  = defaultConfig;
+    IfxCan_Can_NodeConfig * node_man_config  = defaultConfig;
 
     // TODO: check that can_man_address is what we need !!!! Yes, it is IfxCan_can ->>>  IFX_CAN *can
-    node_man_config.messageRAM.baseAddress = can_man_config;
+    node_man_config->messageRAM.baseAddress = can_man_config;
 
     //baudrate setup
-    node_man_config.baudRate.baudrate      = 1000000;
-    node_man_config.baudRate.samplePoint   = 8000;
-    node_man_config.baudRate.syncJumpWidth = 3;
-    node_man_config.baudRate.prescaler     = 1;
-    node_man_config.baudRate.timeSegment1  = 31;
-    node_man_config.baudRate.timeSegment2  = 8;
+    node_man_config->baudRate.baudrate      = 1000000;
+    node_man_config->baudRate.samplePoint   = 8000;
+    node_man_config->baudRate.syncJumpWidth = 3;
+    node_man_config->baudRate.prescaler     = 1;
+    node_man_config->baudRate.timeSegment1  = 31;
+    node_man_config->baudRate.timeSegment2  = 8;
 
     //fast baudrate setup
-    node_man_config.fastBaudRate.baudrate      = 4000000;
-    node_man_config.fastBaudRate.samplePoint   = 8000;
-    node_man_config.fastBaudRate.syncJumpWidth = 3;
-    node_man_config.fastBaudRate.prescaler     = 1;
-    node_man_config.fastBaudRate.timeSegment1  = 7;
-    node_man_config.fastBaudRate.timeSegment2  = 2;
-    node_man_config.fastBaudRate.tranceiverDelayOffset = 0;
+    node_man_config->fastBaudRate.baudrate      = 4000000;
+    node_man_config->fastBaudRate.samplePoint   = 8000;
+    node_man_config->fastBaudRate.syncJumpWidth = 3;
+    node_man_config->fastBaudRate.prescaler     = 1;
+    node_man_config->fastBaudRate.timeSegment1  = 7;
+    node_man_config->fastBaudRate.timeSegment2  = 2;
+    node_man_config->fastBaudRate.tranceiverDelayOffset = 0;
 
-    node_man_config.nodeId = IfxCan_NodeId_0;
+    node_man_config->nodeId = IfxCan_NodeId_0;
 
     // Frame setup
-    node_man_config.frame.type = IfxCan_FrameType_transmitAndReceive;
-    node_man_config.frame.mode = IfxCan_FrameMode_fdLongAndFast;
+    node_man_config->frame.type = IfxCan_FrameType_transmitAndReceive;
+    node_man_config->frame.mode = IfxCan_FrameMode_fdLongAndFast;
 
     // TX setup
-    node_man_config.txConfig.txMode = IfxCan_TxMode_dedicatedBuffers;
-    node_man_config.txConfig.txBufferDataFieldSize = IfxCan_DataFieldSize_64;
+    node_man_config->txConfig.txMode = IfxCan_TxMode_dedicatedBuffers;
+    node_man_config->txConfig.txBufferDataFieldSize = IfxCan_DataFieldSize_64;
 
     // RX setup
-    node_man_config.rxConfig.rxMode = IfxCan_RxMode_fifo0;
-    node_man_config.rxConfig.rxFifo0DataFieldSize = IfxCan_DataFieldSize_64;
-    node_man_config.rxConfig.rxFifo0Size = MAGICK_FIFO_CONSTANT;
+    node_man_config->rxConfig.rxMode = IfxCan_RxMode_fifo0;
+    node_man_config->rxConfig.rxFifo0DataFieldSize = IfxCan_DataFieldSize_64;
+    node_man_config->rxConfig.rxFifo0Size = MAGICK_FIFO_CONSTANT;
 
     //Interrupt setup
-    node_man_config.interruptConfig.rxFifo0NewMessageEnabled = TRUE;
-    node_man_config.interruptConfig.rxf0n.priority = ISR_PRIORITY_CAN_RX;
-    node_man_config.interruptConfig.rxf0n.interruptLine = IfxCan_InterruptLine_1;
-    node_man_config.interruptConfig.rxf0n.typeOfService = IfxSrc_Tos_cpu0;
+    node_man_config->interruptConfig.rxFifo0NewMessageEnabled = TRUE;
+    node_man_config->interruptConfig.rxf0n.priority = ISR_PRIORITY_CAN_RX;
+    node_man_config->interruptConfig.rxf0n.interruptLine = IfxCan_InterruptLine_1;
+    node_man_config->interruptConfig.rxf0n.typeOfService = IfxSrc_Tos_cpu0;
 
     //pins setup
     //page 3324
@@ -327,42 +327,46 @@ void can_init(void)
     pins.rxPinMode = IfxPort_InputMode_noPullDevice;
     pins.txPinMode = IfxPort_OutputMode_openDrain;
 
-    node_man_config.pins = &pins;
+    node_man_config->pins = &pins;
 
     IfxCan_Can_initNode(&can_struct.canSrcNode, &can_struct.canNodeConfig);
 
-    // Getting node
-    Ifx_CAN_N nodeSFR = can_man_config.N[node_man_config.nodeId];
-    node_man_config.nodeId = (uint32)&nodeSFR;
+    // TODO: rework implementation of this function. There is something missing
 
-    IfxCan_ClockSelect clockSelect = (IfxCan_ClockSelect)node_man_config.nodeId;
+    // Getting node
+    Ifx_CAN_N nodeSFR = can_man_config->N[node_man_config->nodeId];
+
+
+    //node_man_config = nodeSFR;
+
+    IfxCan_ClockSelect clockSelect = (IfxCan_ClockSelect)node_man_config->nodeId;
 
     //4.2 IfxCan_setClockSource(canSfr, clockSelect, config->clockSource);
 
     // Ifx_CAN_MCR mcr;
 
-    can_man_config.MCR.B.CCCE = 1;
-    can_man_config.MCR.B.CI = 1;
+    can_man_config->MCR.B.CCCE = 1;
+    can_man_config->MCR.B.CI = 1;
 
     /* select clock */
     switch (clockSelect)
     {
     case IfxCan_ClockSelect_0:
-        can_man_config.MCR.B.CLKSEL0 = node_man_config.clockSource;
+        can_man_config->MCR.B.CLKSEL0 = node_man_config->clockSource;
         break;
     case IfxCan_ClockSelect_1:
-        can_man_config.MCR.B.CLKSEL1 = node_man_config.clockSource;
+        can_man_config->MCR.B.CLKSEL1 = node_man_config->clockSource;
         break;
     case IfxCan_ClockSelect_2:
-        can_man_config.MCR.B.CLKSEL2 = node_man_config.clockSource;
+        can_man_config->MCR.B.CLKSEL2 = node_man_config->clockSource;
         break;
     case IfxCan_ClockSelect_3:
-        can_man_config.MCR.B.CLKSEL3 = node_man_config.clockSource;
+        can_man_config->MCR.B.CLKSEL3 = node_man_config->clockSource;
         break;
     }
 
-    can_man_config.MCR.B.CCCE = 0;
-    can_man_config.MCR.B.CI = 0;
+    can_man_config->MCR.B.CCCE = 0;
+    can_man_config->MCR.B.CI = 0;
 
 
     // !!!! TODO: THE MYSTERY FUNCTION
@@ -370,27 +374,27 @@ void can_init(void)
 
     /* If INIT already set, clear it before setting again. */
     /* The module needs some time if INIT was rewritten !*/
-    if (nodeSFR.CCCR.B.INIT == 1)
+    if (nodeSFR->CCCR.B.INIT == 1)
     {
-        nodeSFR.CCCR.B.CCE = 0;
-        while (nodeSFR.CCCR.B.CCE != 0)
+        nodeSFR->CCCR.B.CCE = 0;
+        while (nodeSFR->CCCR.B.CCE != 0)
         {}
 
-        nodeSFR.CCCR.B.INIT = 0;
+        nodeSFR->CCCR.B.INIT = 0;
 
-        while (nodeSFR.CCCR.B.INIT != 0)
+        while (nodeSFR->CCCR.B.INIT != 0)
         {}
     }
 
-    nodeSFR.CCCR.B.INIT = 1;
+    nodeSFR->CCCR.B.INIT = 1;
 
-    while (nodeSFR.CCCR.B.INIT != 1)
+    while (nodeSFR->CCCR.B.INIT != 1)
     {}
 
     {
 
-        nodeSFR.CCCR.B.INIT  = 1;
-        nodeSFR.CCCR.B.CCE  = 1;
+        nodeSFR->CCCR.B.INIT  = 1;
+        nodeSFR->CCCR.B.CCE  = 1;
     }
 
 

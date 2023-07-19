@@ -122,6 +122,7 @@ boolean IfxCan_Can_initNode(IfxCan_Can_Node *node, const IfxCan_Can_NodeConfig *
     /* enable configuration change CCCR.CCE = 1, CCCR.INIT = 1 */
     IfxCan_Node_enableConfigurationChange(nodeSfr);
 
+
     float32 moduleFreq = IfxCan_getModuleFrequency();
 
     /* set baudrate */
