@@ -104,6 +104,8 @@ void IfxCan_Can_initModuleConfig(IfxCan_Can_Config *config, Ifx_CAN *can)
 
 boolean IfxCan_Can_initNode(IfxCan_Can_Node *node, const IfxCan_Can_NodeConfig *config)
 {
+
+    //TODO: Why they are doing it?
     Ifx_CAN   *canSfr  = config->can;
     node->can = canSfr;
     boolean    status  = 0;
