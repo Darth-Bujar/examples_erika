@@ -247,7 +247,10 @@ void can_init(void)
     // 1) IfxCan_Can_initModuleConfig(&can_struct.canConfig, &MODULE_CAN0);
 
     // This structure containe all the registers that we need inside
-    Ifx_CAN can_man_config;
+    // add as a pointer
+
+   //can registers rename
+    Ifx_CAN *can_man_config = 0xf0200000 add address from datasheet;
 
     // 2) IfxCan_Can_initModule(&can_struct.canModule, &can_struct.canConfig);
 
@@ -272,10 +275,11 @@ void can_init(void)
 
     // 3) IfxCan_Can_initNodeConfig(&can_struct.canNodeConfig, &can_struct.canModule);
 
+    // node registers
     IfxCan_Can_NodeConfig node_man_config  = defaultConfig;
 
     // TODO: check that can_man_address is what we need !!!! Yes, it is IfxCan_can ->>>  IFX_CAN *can
-    node_man_config.messageRAM.baseAddress =(uint32)&can_man_config;
+    node_man_config.messageRAM.baseAddress = can_man_config;
 
     //baudrate setup
     node_man_config.baudRate.baudrate      = 1000000;
@@ -325,7 +329,7 @@ void can_init(void)
 
     node_man_config.pins = &pins;
 
-    // 4) FINAL FASE IfxCan_Can_initNode(&can_struct.canSrcNode, &can_struct.canNodeConfig);
+    IfxCan_Can_initNode(&can_struct.canSrcNode, &can_struct.canNodeConfig);
 
     // Getting node
     Ifx_CAN_N nodeSFR = can_man_config.N[node_man_config.nodeId];
