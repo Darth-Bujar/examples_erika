@@ -73955,7 +73955,7 @@ const static can_FD_message_type can_fd_messages[4] =
 /*********************************************************************************************************************/
 extern can_communication_status_type com_status;
 extern boolean is_new_message_recieved;
-extern mcmcan_type strange_can;                                   /* Structure for handling MCMCAN     */
+extern mcmcan_type g_can;                                   /* Structure for handling MCMCAN     */
 
 /*********************************************************************************************************************/
 /*-----------------------------------------------Function Prototypes-------------------------------------------------*/
@@ -75868,6 +75868,285 @@ void can_recieved_message_show(uint8 type);
 
 #line 21 "E:/Projects/Erika/aurix_workspace/can_erika/ee/master.c"
 
+#line 1 "E:\\Projects\\Erika\\aurix_workspace\\can_erika\\ee\\can_control.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 22 "E:/Projects/Erika/aurix_workspace/can_erika/ee/master.c"
 // #include "Ifx_Ssw.h"
 // #include "Ifx_Ssw_Infra.h"
 // #include "Ifx_Cfg_Ssw.h"
@@ -78508,43 +78787,37 @@ void  Funccan_init_task ( void )
 int main(void)
 {
 
-    // IfxCpu_enableInterrupts();
+    IfxCpu_enableInterrupts();
     
     /* !!WATCHDOG0 AND SAFETY WATCHDOG ARE DISABLED HERE!!
     * Enable the watchdogs and service them periodically if it is required
     */
 
-    // IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
-    // IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
-
-    // {
-    //   /* Update safety and cpu watchdog reload value*/
-    //   unsigned short cpuWdtPassword = (unsigned short)IfxScuWdt_getCpuWatchdogPassword();
-
-    //   unsigned short safetyWdtPassword = (unsigned short)IfxScuWdt_getSafetyWatchdogPassword();
-
-    //   /* servicing watchdog timers */
-    //   Ifx_Ssw_serviceCpuWatchdog(&MODULE_SCU.WDTCPU[0], cpuWdtPassword);
-    //   //Ifx_Ssw_serviceSafetyWatchdog(safetyWdtPassword);
-    // }
+    //IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
+    //IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
 
     /* Wait for CPU sync event */
-    // IfxCpu_emitEvent(&g_cpuSyncEvent);
-    // IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
+    IfxCpu_emitEvent(&g_cpuSyncEvent);
+    IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
-    //OsEE_reg       pcxi;
-    uint16_t const cpu_wdt_pw     = osEE_tc_get_cpu_wdt_pw(0U);
-    uint16_t const safety_wdt_pw  = osEE_tc_get_safety_wdt_pw();
-
-    osEE_tc_disable_cpu_wdt(0U, cpu_wdt_pw);
-    osEE_tc_disable_safety_wdt(safety_wdt_pw);
-
-    /* Disable SAFETY ENDINIT Protection */
-    osEE_tc_clear_safety_endinit(safety_wdt_pw);
+    //can_init();
     can_init();
 
-    /* Re-enable SAFETY ENDINIT Protection */
-    osEE_tc_set_safety_endinit(safety_wdt_pw);
+    message_data_length = IfxCan_DataLengthCode_8;
+    //Creating data set to send
+
+    data_to_transfer[0] = (uint8)0xFF;
+    data_to_transfer[1] = (uint8)0xAA;
+    data_to_transfer[2] = (uint8)0xBB;
+    data_to_transfer[3] = (uint8)0xCC;
+
+    //configuring a message to send
+
+    IfxCan_Can_initMessage(&msg);
+    msg.messageId = can_fd_messages[message_type].messageId;
+    msg.messageIdLength = can_fd_messages[message_type].messageIdLength;
+    msg.frameMode = can_fd_messages[message_type].frameMode;
+    msg.dataLengthCode = can_fd_messages[message_type].messageLen;
 
     //StatusType       status;
     AppModeType      mode = ((AppModeType)0U);
