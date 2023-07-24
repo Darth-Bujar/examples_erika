@@ -2,6 +2,7 @@
 
 
 #include "can_control.h"
+#include "ee.h"
 
     
 /*********************************************************************************************************************/
@@ -67,10 +68,10 @@ void can_init(void)
 
     is_new_message_recieved = FALSE;
 
-    IfxCan_Can_initModuleConfig(&strange_can.canConfig, &MODULE_CAN0);
-    IfxCan_Can_initModule(&strange_can.canModule, &strange_can.canConfig);
+    //IfxCan_Can_initModuleConfig(&strange_can.canConfig, &MODULE_CAN0);
+    //IfxCan_Can_initModule(&strange_can.canModule, &strange_can.canConfig);
     IfxCan_Can_Pins pins;
-    IfxCan_Can_initNodeConfig(&strange_can.canNodeConfig, &strange_can.canModule);
+    //IfxCan_Can_initNodeConfig(&strange_can.canNodeConfig, &strange_can.canModule);
 
     //baudrate setup
     strange_can.canNodeConfig.baudRate.baudrate      = 1000000;
@@ -119,7 +120,19 @@ void can_init(void)
     pins.txPinMode = IfxPort_OutputMode_openDrain; 
     strange_can.canNodeConfig.pins = &pins;
 
+
+    osEE_tc_disable_cpu_wdt(0U, cpu_wdt_pw);
+    osEE_tc_disable_safety_wdt(safety_wdt_pw);
+
+    /* Disable SAFETY ENDINIT Protection */
+    osEE_tc_clear_safety_endinit(safety_wdt_pw);
+
+
     IfxCan_Can_initNode(&strange_can.canSrcNode, &strange_can.canNodeConfig);
+
+    /* Re-enable SAFETY ENDINIT Protection */
+    osEE_tc_set_safety_endinit(safety_wdt_pw);
+
 }
 
 /* Function to initialize both TX and RX messages with the default data values.
