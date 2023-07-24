@@ -255,13 +255,12 @@ void initPeripherals(void)
 /* This function starts the data transfer */
 void transferData(void)
 {
-    while(IfxQspi_SpiSlave_getStatus(&g_qspi.spiSlave) == SpiIf_Status_busy ||
-            IfxQspi_SpiMaster_getStatus(&g_qspi.spiMasterChannel) == SpiIf_Status_busy)
+    while(IfxQspi_SpiMaster_getStatus(&g_qspi.spiMasterChannel) == SpiIf_Status_busy)
     {   /* Wait until the previous communication has finished, if any */
     }
 
     /* Instruct the SPI Slave to receive a data stream of defined length */
-    IfxQspi_SpiSlave_exchange(&g_qspi.spiSlave, NULL_PTR, &g_qspi.spiBuffers.spiSlaveRxBuffer[0], SPI_BUFFER_SIZE);
+    //IfxQspi_SpiSlave_exchange(&g_qspi.spiSlave, NULL_PTR, &g_qspi.spiBuffers.spiSlaveRxBuffer[0], SPI_BUFFER_SIZE);
 
     /* Send a data stream through the SPI Master */
     IfxQspi_SpiMaster_exchange(&g_qspi.spiMasterChannel, &g_qspi.spiBuffers.spiMasterTxBuffer[0], NULL_PTR, SPI_BUFFER_SIZE);
@@ -276,23 +275,20 @@ void verifyData(void)
     uint32 error = 0;
 
     /* Wait until the Slave has received all the data */
-    while(IfxQspi_SpiSlave_getStatus(&g_qspi.spiSlave) == SpiIf_Status_busy)
-    {
-    }
+    //while(IfxQspi_SpiMaster_getStatus(&g_qspi.spiMaster) == SpiIf_Status_busy)
+    //{
+    //}
 
     /* Check if the received data match the sent one */
     for(i = 0; i < SPI_BUFFER_SIZE; i++)
     {
-        if(g_qspi.spiBuffers.spiSlaveRxBuffer[i] != g_qspi.spiBuffers.spiMasterTxBuffer[i])
+        if(g_qspi.spiBuffers.spiMasterRxBuffer[i] != g_qspi.spiBuffers.spiMasterTxBuffer[i])
         {
             error++;
         }
     }
-
-    printf("Slave buffer: %u %u %u %u ",g_qspi.spiBuffers.spiSlaveRxBuffer[0],g_qspi.spiBuffers.spiSlaveRxBuffer[1],g_qspi.spiBuffers.spiSlaveRxBuffer[2], g_qspi.spiBuffers.spiSlaveRxBuffer[3] );
+    printf("%u\n ",error);
+    //printf("Slave buffer: %u %u %u %u ",g_qspi.spiBuffers.spiMasterRxBuffer[0],g_qspi.spiBuffers.spiMasterRxBuffer[1],g_qspi.spiBuffers.spiMasterTxBuffer[0], g_qspi.spiBuffers.spiSlaveTxBuffer[1] );
     /* In case of no errors, turn on the LED D110 (LED is low-level active) */
-    if(error == 0)
-    {
-        IfxPort_setPinHigh(LED_D110);
-    }
+
 }

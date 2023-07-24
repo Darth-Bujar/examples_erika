@@ -63,10 +63,11 @@ void core0_main(void)
     initPeripherals();
 
     /* Start data transfer via QSPI */
-    transferData();
+
 
     while(1)
     {
+        transferData();
     }
 }
 

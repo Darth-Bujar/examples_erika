@@ -357,7 +357,7 @@ void IfxQspi_SpiMaster_initModule(IfxQspi_SpiMaster *handle, const IfxQspi_SpiMa
         globalcon.U        = 0;
         globalcon.B.TQ     = IfxQspi_calculateTimeQuantumLength(qspiSFR, config->base.maximumBaudrate);
         globalcon.B.EXPECT = IfxQspi_ExpectTimeout_2097152;  /* 2^(EXPECT+6) : timeout for expect phase in Tqspi */
-        //globalcon.B.LB      = 0 ;                             /* 0 : disable loop-back w*/
+        globalcon.B.LB      = 1 ;                             /* 0 : disable loop-back w*/
         //globalcon.B.DEL0    = 0;                             /* 0 : disable delayed mode for SLSO 0 */
         //globalcon.B.STROBE  = 0;                             /* (STROBE+1) : strobe delay for SLSO 0 in Tq */
         //globalcon.B.SRF     = 0;                             /* 0 : disable stop-on-RXFIFO full feature */
