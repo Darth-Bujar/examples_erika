@@ -78,7 +78,7 @@
 #include "ee_internal.h"
 #include <stdlib.h>
 
-#include "can_init.h"
+//#include "can_control.h"
 
 /******************************************************************************
                           Default Caches policies
@@ -616,7 +616,8 @@ void osEE_tc_core0_start(void)
 
 /* C initialization routine */
   osEE_tc_C_init();
-
+  //asdasdasdasd
+  // TODO:!  random symbols here does not affect compilation
 /* Moved PLL configuration here from osEE_cpu_startos, since TriCore AURIX
    environment trying to access to SCU_PLL registers, at the same time that
    another core try to set ENDINIT password on it's own SCU_CPU_WDT
@@ -634,7 +635,8 @@ void osEE_tc_core0_start(void)
 /*============================ Configure PLL ================================*/
   osEE_tc_set_pll_fsource(OSEE_CPU_CLOCK);
 /*============================ CAN INIT =====================================*/
-  can_init();
+  can_init()
+  // TODO:!  random symbols here does not affect compilation
 /* Re-enable SAFETY ENDINIT Protection */
   osEE_tc_set_safety_endinit(safety_wdt_pw);
 #endif /* OSEE_CPU_CLOCK */

@@ -18,7 +18,7 @@
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
-
+#include "can_control.h"
 // #include "Ifx_Ssw.h"
 // #include "Ifx_Ssw_Infra.h"
 // #include "Ifx_Cfg_Ssw.h"
@@ -131,43 +131,37 @@ TASK(can_init_task)
 int main(void)
 {
 
-    // IfxCpu_enableInterrupts();
+    IfxCpu_enableInterrupts();
     
     /* !!WATCHDOG0 AND SAFETY WATCHDOG ARE DISABLED HERE!!
     * Enable the watchdogs and service them periodically if it is required
     */
 
-    // IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
-    // IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
-
-    // {
-    //   /* Update safety and cpu watchdog reload value*/
-    //   unsigned short cpuWdtPassword = (unsigned short)IfxScuWdt_getCpuWatchdogPassword();
-
-    //   unsigned short safetyWdtPassword = (unsigned short)IfxScuWdt_getSafetyWatchdogPassword();
-
-    //   /* servicing watchdog timers */
-    //   Ifx_Ssw_serviceCpuWatchdog(&MODULE_SCU.WDTCPU[0], cpuWdtPassword);
-    //   //Ifx_Ssw_serviceSafetyWatchdog(safetyWdtPassword);
-    // }
+    //IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
+    //IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
 
     /* Wait for CPU sync event */
-    // IfxCpu_emitEvent(&g_cpuSyncEvent);
-    // IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
+    IfxCpu_emitEvent(&g_cpuSyncEvent);
+    IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
-    //OsEE_reg       pcxi;
-    uint16_t const cpu_wdt_pw     = osEE_tc_get_cpu_wdt_pw(0U);
-    uint16_t const safety_wdt_pw  = osEE_tc_get_safety_wdt_pw();
-
-    osEE_tc_disable_cpu_wdt(0U, cpu_wdt_pw);
-    osEE_tc_disable_safety_wdt(safety_wdt_pw);
-
-    /* Disable SAFETY ENDINIT Protection */
-    osEE_tc_clear_safety_endinit(safety_wdt_pw);
+    //can_init();
     can_init();
 
-    /* Re-enable SAFETY ENDINIT Protection */
-    osEE_tc_set_safety_endinit(safety_wdt_pw);
+    message_data_length = CAN_MESSAGE_MAX_DATA_LENGTH;
+    //Creating data set to send
+
+    data_to_transfer[0] = (uint8)0xFF;
+    data_to_transfer[1] = (uint8)0xAA;
+    data_to_transfer[2] = (uint8)0xBB;
+    data_to_transfer[3] = (uint8)0xCC;
+
+    //configuring a message to send
+
+    IfxCan_Can_initMessage(&msg);
+    msg.messageId = can_fd_messages[message_type].messageId;
+    msg.messageIdLength = can_fd_messages[message_type].messageIdLength;
+    msg.frameMode = can_fd_messages[message_type].frameMode;
+    msg.dataLengthCode = can_fd_messages[message_type].messageLen;
 
     //StatusType       status;
     AppModeType      mode = OSDEFAULTAPPMODE;
