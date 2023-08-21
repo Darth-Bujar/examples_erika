@@ -139,13 +139,16 @@ int main(void)
 
     //IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
     //IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
-
+    for(unsigned long i = 0; i <= 1000000;i++)
+    {
+        __nop();
+    }
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
     //can_init();
-    can_init();
+    //can_init();
 
     message_data_length = CAN_MESSAGE_MAX_DATA_LENGTH;
     //Creating data set to send

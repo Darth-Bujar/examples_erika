@@ -152,7 +152,7 @@ CPU test_application {
   ALARM AlarmMaster_1000ms {
     COUNTER = system_timer_master;
     ACTION = ACTIVATETASK { TASK = can_recieve_task; };
-    AUTOSTART = TRUE { ALARMTIME = 1000 ; CYCLETIME = 100; };
+    AUTOSTART = TRUE { ALARMTIME = 2000 ; CYCLETIME = 100; };
   };
 
 //  ALARM AlarmMaster_2000ms {
