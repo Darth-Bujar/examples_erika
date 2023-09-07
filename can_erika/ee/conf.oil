@@ -48,6 +48,7 @@ CPU test_application {
     EE_OPT = "OS_EE_BUILD_DEBUG";
     EE_OPT = "OSEE_API_EXTENSION";
     EE_OPT = "OS_EE_VERBOSE";
+    EE_OPT = "OSEE_TC_2G";
     //EE_OPT = "OSEE_TRICORE_ILLD";
     //EE_OPT = "OSEE_TC_LINK_BMHD";
     //EE_OPT = "OSEE_TC_CLONE_OS";
@@ -88,6 +89,7 @@ CPU test_application {
   APPDATA tricore_2G_mc_blink {
     APP_SRC="master.c";
     APP_SRC="can_control.c";
+    APP_SRC="slave1.c";
   };
 
 //  TASK can_send_task {
@@ -104,14 +106,13 @@ CPU test_application {
 	
   TASK can_init_task {
     CPU_ID = 0x0;
-    AUTOSTART = TRUE;
     PRIORITY = 1;
     AUTOSTART = TRUE;
     ACTIVATION = 1;
     SCHEDULE = NON;
 //    RESOURCE = can_mutex;
     STACK = PRIVATE {
-      SIZE = 1024;
+      SIZE = 2048;
       EXTENDED = TRUE;
     };
   };
@@ -128,12 +129,12 @@ CPU test_application {
     };
   };
   
-  ISR can_ISR_RX_handler {
-		CPU_ID = 0x0;
-		CATEGORY = 1;
-		SOURCE = "CAN_CAN0_INT0";
-		PRIORITY = 10;
-   };
+//  ISR can_ISR_RX_handler {
+//		CPU_ID = 0x0;
+//		CATEGORY = 1;
+//		SOURCE = "CAN_CAN0_INT0";
+//		PRIORITY = 10;
+//   };
   
   COUNTER system_timer_master {
     CPU_ID = 0x0;

@@ -89,36 +89,6 @@ TASK(can_send_task)
     TerminateTask();
 }
 
-TASK(can_init_task)
-{
-   //acquire semaphore
-   //WaitSem(&can_structure_semaphore);
-   //SuspendAllInterrupts();
-   printf("CAN init");
-   //can_init();
-
-   message_data_length = CAN_MESSAGE_MAX_DATA_LENGTH;
-   //Creating data set to send
-
-   data_to_transfer[0] = (uint8)0xFF;
-   data_to_transfer[1] = (uint8)0xAA;
-   data_to_transfer[2] = (uint8)0xBB;
-   data_to_transfer[3] = (uint8)0xCC;
-
-   //configuring a message to send
-
-   IfxCan_Can_initMessage(&msg);
-   msg.messageId = can_fd_messages[message_type].messageId;
-   msg.messageIdLength = can_fd_messages[message_type].messageIdLength;
-   msg.frameMode = can_fd_messages[message_type].frameMode;
-   msg.dataLengthCode = can_fd_messages[message_type].messageLen;
-
-   //release semaphore
-   //PostSem(&can_structure_semaphore);
-   //ResumeAllInterrupts();
-
-   TerminateTask();
-}
 
 
 
@@ -137,18 +107,11 @@ int main(void)
     * Enable the watchdogs and service them periodically if it is required
     */
 
-    //IfxScuWdt_disableCpuWatchdog(IfxScuWdt_getCpuWatchdogPassword());
-    //IfxScuWdt_disableSafetyWatchdog(IfxScuWdt_getSafetyWatchdogPassword());
-    for(unsigned long i = 0; i <= 1000000;i++)
-    {
-        __nop();
-    }
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
-    //can_init();
-    //can_init();
+    can_init();
 
     message_data_length = CAN_MESSAGE_MAX_DATA_LENGTH;
     //Creating data set to send
@@ -166,12 +129,27 @@ int main(void)
     msg.frameMode = can_fd_messages[message_type].frameMode;
     msg.dataLengthCode = can_fd_messages[message_type].messageLen;
 
-    //StatusType       status;
     AppModeType      mode = OSDEFAULTAPPMODE;
 
     StartOS(mode);
 
     return 0;
+}
+
+TASK(can_init_task)
+{
+   //acquire semaphore
+   //WaitSem(&can_structure_semaphore);
+   //SuspendAllInterrupts();
+
+   printf("CAN init");
+   can_init();
+
+   //release semaphore
+   //PostSem(&can_structure_semaphore);
+   //ResumeAllInterrupts();
+
+   TerminateTask();
 }
 
 void ErrorHook(StatusType Error)

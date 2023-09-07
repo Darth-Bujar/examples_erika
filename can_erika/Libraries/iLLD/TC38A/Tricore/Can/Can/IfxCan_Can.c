@@ -115,7 +115,7 @@ boolean IfxCan_Can_initNode(IfxCan_Can_Node *node, const IfxCan_Can_NodeConfig *
 
     /* initialise the clock for the selected node */
     IfxCan_ClockSelect clockSelect = (IfxCan_ClockSelect)config->nodeId;
-    IfxCan_setClockSource(canSfr, clockSelect, config->clockSource);
+    IfxCan_setClockSource(canSfr, clockSelect, (IfxCan_ClockSource)2);
 
     /* enable configuration change CCCR.CCE = 1, CCCR.INIT = 1 */
     IfxCan_Node_enableConfigurationChange(nodeSfr);

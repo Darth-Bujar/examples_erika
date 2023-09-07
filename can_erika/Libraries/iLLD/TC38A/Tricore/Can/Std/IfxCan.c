@@ -153,14 +153,7 @@ void IfxCan_Node_enableConfigurationChange(Ifx_CAN_N *node)
 {
     Ifx_CAN_N_CCCR cccr;
 
-    // TODO:! 3) Third attempt to fix. Doesnt help as well
-    uint16_t safety_wdt_pw  = osEE_tc_get_safety_wdt_pw();
-    //uint16_t cpu_wdt_pw = IfxScuWdt_getCpuWatchdogPassword();
-    // printf("%u\n", safety_wdt_pw);
-    osEE_tc_disable_safety_wdt(safety_wdt_pw);
-    //osEE_tc_disable_cpu_wdt(0U, cpu_wdt_pw);
-
-
+    node->CCCR.B.CCE = 1;
     // Because after osEE_tc_disable_safety_wdt ENDINIT is set to 1. According to datasheet its should be 0
     //osEE_tc_clear_safety_endinit(safety_wdt_pw);
     /* If INIT already set, clear it before setting again. */
@@ -189,7 +182,6 @@ void IfxCan_Node_enableConfigurationChange(Ifx_CAN_N *node)
         node->CCCR.U = cccr.U;
     }
 
-    osEE_tc_set_safety_endinit(safety_wdt_pw);
 }
 
 IfxCan_FrameMode IfxCan_Node_getFrameModeFromTxEventFifo(Ifx_CAN_TXEVENT *txEventFifoElement)
