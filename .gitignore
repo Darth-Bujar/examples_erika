@@ -89,3 +89,11 @@ can_erika/ee/out/applSignature.oil
 can_erika/ee/out/ee_applcfg.c
 can_erika/ee/out/ee_applcfg.h
 can_erika/ee/out/makefile
+can_erika/ee/erika/inc/ee_oscfg.h
+can_erika/ee/erika/osSignature.oil
+can_erika/ee/erika/pull/ee_oscfg_h.txt
+can_erika/ee/erika/pull/ee_oscfg_mk.txt
+can_erika/ee/erika/src/ee_tc_cstart.c
+can_erika/ee/out/applSignature.oil
+can_erika/ee/out/ee_applcfg.c
+can_erika/ee/out/ee_applcfg.h

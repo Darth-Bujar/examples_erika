@@ -62,7 +62,7 @@ extern "C" {
  * Stack Size declaration
  *
  **************************************************************************/
-#define osEE_task_stack_1_StackSize (1024U)
+#define osEE_task_stack_1_StackSize (2048U)
 #define osEE_task_stack_2_StackSize (512U)
 
 /***************************************************************************

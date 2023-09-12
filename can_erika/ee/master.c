@@ -111,6 +111,12 @@ int main(void)
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
+    IfxScuCcu_Config IfxScuCcu_sampleClockConfig;
+    IfxScuCcu_initConfig(&IfxScuCcu_sampleClockConfig);
+
+    // standard PLL & clock initialisation
+    IfxScuCcu_init(&IfxScuCcu_sampleClockConfig);
+
     can_init();
 
     message_data_length = CAN_MESSAGE_MAX_DATA_LENGTH;

@@ -48,7 +48,7 @@ CPU test_application {
     EE_OPT = "OS_EE_BUILD_DEBUG";
     EE_OPT = "OSEE_API_EXTENSION";
     EE_OPT = "OS_EE_VERBOSE";
-    EE_OPT = "OSEE_TC_2G";
+    //EE_OPT = "OSEE_TC_2G";
     //EE_OPT = "OSEE_TRICORE_ILLD";
     //EE_OPT = "OSEE_TC_LINK_BMHD";
     //EE_OPT = "OSEE_TC_CLONE_OS";

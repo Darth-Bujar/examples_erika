@@ -30,10 +30,4 @@ CPU test_application {
 			RQ = MQ;
 		};
 	};
-	ISR can_ISR_RX_handler {
-		CPU_ID = 0x0;
-		CATEGORY = 1;
-		SOURCE = "CAN_CAN0_INT0";
-		PRIORITY = 10;
-	};
 };

@@ -154,8 +154,7 @@ void IfxCan_Node_enableConfigurationChange(Ifx_CAN_N *node)
     Ifx_CAN_N_CCCR cccr;
 
     node->CCCR.B.CCE = 1;
-    // Because after osEE_tc_disable_safety_wdt ENDINIT is set to 1. According to datasheet its should be 0
-    //osEE_tc_clear_safety_endinit(safety_wdt_pw);
+
     /* If INIT already set, clear it before setting again. */
     /* The module needs some time if INIT was rewritten !*/
     if (node->CCCR.B.INIT == 1)

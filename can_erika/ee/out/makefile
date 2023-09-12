@@ -72,6 +72,7 @@ export OS_EE_BASE_DIR
 OS_EE_APP_CFG_SRCS += ee_applcfg.c
 OS_EE_APP_CFG_SRCS += master.c
 OS_EE_APP_CFG_SRCS += can_control.c
+OS_EE_APP_CFG_SRCS += slave1.c
 
 
 export OS_EE_APP_CFG_SRCS

@@ -77,10 +77,6 @@
 
 #include "ee_internal.h"
 #include <stdlib.h>
-#include "Ifx_Cfg.h"
-#include "Ifx_Ssw.h"
-#include "Ifx_Ssw_Infra.h"
-#include "Ifx_Cfg_Ssw.h"
 
 /******************************************************************************
                           Default Caches policies
@@ -93,89 +89,6 @@
 #define OSEE_TC_PCACHE_ENABLED OSEE_TRUE
 #endif /* OSEE_TC_PCACHE_ENABLED */
 
-
-#ifndef IFX_CFG_SSW_CALLOUT_PMS_INIT
-#define IFX_CFG_SSW_CALLOUT_PMS_INIT()
-#endif
-
-#ifndef IFX_CFG_SSW_CALLOUT_LBIST
-#define IFX_CFG_SSW_CALLOUT_LBIST()
-#endif
-
-#ifndef IFX_CFG_SSW_CALLOUT_MONBIST
-#define IFX_CFG_SSW_CALLOUT_MONBIST()
-#endif
-
-#ifndef IFX_CFG_SSW_CALLOUT_SMU
-#define IFX_CFG_SSW_CALLOUT_SMU()
-#endif
-
-#define IFX_SSW_INIT_CONTEXT()                                                   \
-    {                                                                            \
-        /* Load user stack pointer */                                            \
-        Ifx_Ssw_setAddressReg(a10, __USTACK(0));                                 \
-        Ifx_Ssw_DSYNC();                                                         \
-                                                                                 \
-        /*Initialize the context save area for CPU0. Function Calls Possible */  \
-        /* Setup the context save area linked list */                            \
-        Ifx_Ssw_initCSA((unsigned int *)__CSA(0), (unsigned int *)__CSA_END(0)); \
-        /* Clears any instruction buffer */                                      \
-        Ifx_Ssw_ISYNC();                                                         \
-    }
-
-static void __StartUpSoftware(void);
-static void __StartUpSoftware(void)
-{
-    /* Initialize A1 pointer to use the global constants with small data addressing */
-    Ifx_Ssw_setAddressReg(a1, __SDATA2(0));
-
-    /* Set the PSW to its reset value in case of a warm start,clear PSW.IS */
-    Ifx_Ssw_MTCR(CPU_PSW, IFX_CFG_SSW_PSW_DEFAULT);
-
-    /* This phase is executed only if last reset is not of type application reset */
-    if (Ifx_Ssw_isApplicationReset() != 1)
-    {
-       /* Power and EVRC configurations */
-      IFX_CFG_SSW_CALLOUT_PMS_INIT();
-
-      /* LBIST Tests and evaluation */
-      IFX_CFG_SSW_CALLOUT_LBIST();
-
-      /* MONBIST Tests and evaluation */
-      IFX_CFG_SSW_CALLOUT_MONBIST();
-
-      IFX_SSW_INIT_CONTEXT();
-
-       /* This is for ADAS chip, where clock is provided by MMIC chip. This has to be
-      * implemented according the board.
-      */
-      IFX_CFG_SSW_CALLOUT_MMIC_CHECK();
-
-      {
-          /* Update safety and cpu watchdog reload value*/
-          unsigned short cpuWdtPassword    = Ifx_Ssw_getCpuWatchdogPasswordInline(&MODULE_SCU.WDTCPU[0]);
-          unsigned short safetyWdtPassword = Ifx_Ssw_getSafetyWatchdogPasswordInline();
-
-          /* servicing watchdog timers */
-          Ifx_Ssw_serviceCpuWatchdog(&MODULE_SCU.WDTCPU[0], cpuWdtPassword);
-          Ifx_Ssw_serviceSafetyWatchdog(safetyWdtPassword);
-      }
-
-      /* Initialize the clock system */
-      IFX_CFG_SSW_CALLOUT_PLL_INIT();
-
-      /* MBIST Tests and evaluation */
-      IFX_CFG_SSW_CALLOUT_MBIST();
-
-      /* SMU alarm handling */
-      IFX_CFG_SSW_CALLOUT_SMU();
-  
-    }
-    else
-    {
-        IFX_SSW_INIT_CONTEXT();
-    }
-}
 /******************************************************************************
                            Compilers support 
  *****************************************************************************/
@@ -587,7 +500,6 @@ __asm__ (
 
 void _start(void)
 {
-  osEE_tc_jump_abs(__StartUpSoftware);
   /* asm instruction to jump to the core startup */
   osEE_tc_jump_abs(osEE_tc_core0_start);
 }

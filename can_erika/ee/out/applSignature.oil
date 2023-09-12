@@ -33,15 +33,16 @@ CPU test_application {
 	APPDATA tricore_2G_mc_blink {
 		APP_SRC = "master.c";
 		APP_SRC = "can_control.c";
+		APP_SRC = "slave1.c";
 	};
 	TASK can_init_task {
 		CPU_ID = 0x0;
-		AUTOSTART = TRUE;
 		PRIORITY = 1;
+		AUTOSTART = TRUE;
 		ACTIVATION = 1;
 		SCHEDULE = NON;
 		STACK = PRIVATE {
-			SIZE = 1024;
+			SIZE = 2048;
 			EXTENDED = TRUE;
 		};
 	};
@@ -54,12 +55,6 @@ CPU test_application {
 			SIZE = 512;
 			EXTENDED = TRUE;
 		};
-	};
-	ISR can_ISR_RX_handler {
-		CPU_ID = 0x0;
-		CATEGORY = 1;
-		SOURCE = "CAN_CAN0_INT0";
-		PRIORITY = 10;
 	};
 	COUNTER system_timer_master {
 		CPU_ID = 0x0;
@@ -79,7 +74,7 @@ CPU test_application {
 			TASK = can_recieve_task;
 		};
 		AUTOSTART = TRUE {
-			ALARMTIME = 1000;
+			ALARMTIME = 2000;
 			CYCLETIME = 100;
 		};
 	};
