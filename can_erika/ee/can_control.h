@@ -22,7 +22,7 @@
 #define EXTENDED_MESSAGE_ID_2       0xAABBCCD                   /* Message ID that will be used in arbitration phase */
 #define RX_INTERRUPT_SRC_ID         IfxMultican_SrcId_1         /* RX interrupt service request ID                   */
 #define INVALID_TX_DATA_VALUE       (uint8)0xEE                 /* Used to invalidate TX message data content        */
-#define ISR_PRIORITY_CAN_RX         1                           /* Define the CAN RX interrupt priority              */
+#define ISR_PRIORITY_CAN_RX         3                           /* Define the CAN RX interrupt priority              */
 #define MAXIMUM_CAN_FD_DATA_PAYLOAD 64                          /* Define maximum CAN payload in bytes               */
 #define MAGICK_FIFO_CONSTANT (uint8)4                           /* Probably maximum size in x64 bits                */
 #define PREDEFINED_MESSAGES_NUMBER 4

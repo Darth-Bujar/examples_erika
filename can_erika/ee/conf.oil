@@ -133,7 +133,7 @@ CPU test_application {
 		CPU_ID = 0x0;
 		CATEGORY = 1;
 		SOURCE = "CAN_CAN0_INT0";
-		PRIORITY = 1;
+		PRIORITY = 3;
    };
   
   COUNTER system_timer_master {
@@ -153,13 +153,13 @@ CPU test_application {
   ALARM AlarmMaster_1000ms {
     COUNTER = system_timer_master;
     ACTION = ACTIVATETASK { TASK = can_recieve_task; };
-    AUTOSTART = TRUE { ALARMTIME = 2000 ; CYCLETIME = 100; };
+    AUTOSTART = TRUE { ALARMTIME = 20 ; CYCLETIME = 100; };
   };
 
   ALARM AlarmMaster_2000ms {
     COUNTER = system_timer_master;
     ACTION = ACTIVATETASK { TASK = can_send_task; };
-    AUTOSTART = TRUE { ALARMTIME = 1000; CYCLETIME = 200; };
+    AUTOSTART = TRUE { ALARMTIME = 10; CYCLETIME = 200; };
   };
   
 };
