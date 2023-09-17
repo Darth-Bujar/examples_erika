@@ -51,7 +51,7 @@ CPU test_application {
     //EE_OPT = "OSEE_TC_2G";
     //EE_OPT = "OSEE_TRICORE_ILLD";
     //EE_OPT = "OSEE_TC_LINK_BMHD";
-    //EE_OPT = "OSEE_TC_CLONE_OS";
+    EE_OPT = "OSEE_TC_CLONE_OS";
 
     CPU_DATA = TRICORE {
       ID = 0x0;
@@ -92,17 +92,17 @@ CPU test_application {
     APP_SRC="slave1.c";
   };
 
-//  TASK can_send_task {
-//    CPU_ID = 0x0;
-//    PRIORITY = 8;
-//    ACTIVATION = 1;
-//    SCHEDULE = FULL;
+  TASK can_send_task {
+    CPU_ID = 0x0;
+    PRIORITY = 8;
+    ACTIVATION = 1;
+    SCHEDULE = FULL;
 //    RESOURCE = can_mutex;
-//    STACK = PRIVATE {
-//      SIZE = 512;
-//      EXTENDED = TRUE;
-//    };
-//  };
+    STACK = PRIVATE {
+      SIZE = 512;
+      EXTENDED = TRUE;
+    };
+  };
 	
   TASK can_init_task {
     CPU_ID = 0x0;
@@ -129,12 +129,12 @@ CPU test_application {
     };
   };
   
-//  ISR can_ISR_RX_handler {
-//		CPU_ID = 0x0;
-//		CATEGORY = 1;
-//		SOURCE = "CAN_CAN0_INT0";
-//		PRIORITY = 10;
-//   };
+  ISR can_ISR_RX_handler {
+		CPU_ID = 0x0;
+		CATEGORY = 1;
+		SOURCE = "CAN_CAN0_INT0";
+		PRIORITY = 1;
+   };
   
   COUNTER system_timer_master {
     CPU_ID = 0x0;
@@ -156,10 +156,10 @@ CPU test_application {
     AUTOSTART = TRUE { ALARMTIME = 2000 ; CYCLETIME = 100; };
   };
 
-//  ALARM AlarmMaster_2000ms {
-//    COUNTER = system_timer_master;
-//    ACTION = ACTIVATETASK { TASK = can_send_task; };
-//    AUTOSTART = TRUE { ALARMTIME = 1000; CYCLETIME = 200; };
-//  };
+  ALARM AlarmMaster_2000ms {
+    COUNTER = system_timer_master;
+    ACTION = ACTIVATETASK { TASK = can_send_task; };
+    AUTOSTART = TRUE { ALARMTIME = 1000; CYCLETIME = 200; };
+  };
   
 };

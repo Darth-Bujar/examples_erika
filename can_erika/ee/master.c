@@ -65,7 +65,7 @@ TASK(can_recieve_task)
 {
    //acquire semaphore
    //WaitSem(&can_structure_semaphore);
-   // SuspendAllInterrupts();
+   //SuspendAllInterrupts();
    //printf("RX: Semaphore value: %d\n", can_structure_semaphore.count);
    can_recieved_message_show(1);
    //release semaphore
