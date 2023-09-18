@@ -76,7 +76,7 @@ CPU test_application {
 
  
   APPDATA tricore_2G_mc_blink {
-    APP_SRC="cpuo_main.c";
+    APP_SRC="cpu0_main.c";
     APP_SRC="can_control.c";
   };
 
