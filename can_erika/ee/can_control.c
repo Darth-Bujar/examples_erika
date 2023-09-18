@@ -172,7 +172,7 @@ void can_transmit_message(IfxCan_Message msg, uint8 *data_to_transfer, uint8 dat
     }
 
     printf("TX: message ID:  0x%X \n", g_can.rxMsg.messageId);
-    printf("TX: message data (first 4 bytes): \n 0x%X 0x%X 0x%X 0x%X\n"
+    printf("TX: message data (first 4 bytes): \n 0x%X 0x%X 0x%X 0x%X \n"
                                                              ,(uint8)g_can.txData[0]
                                                              ,(uint8)g_can.txData[1]
                                                              ,(uint8)g_can.txData[2]
@@ -193,16 +193,26 @@ void can_recieved_message_show(uint8 type)
 
     if(type == (uint8)1)
     {
-       printf("RX: message:  0x%X 0x%X 0x%X 0x%X 0x%X 0x%X 0x%X 0x%X 0x%X\n"
-                                                           ,g_can.rxMsg.messageId
-                                                           ,(uint8)g_can.rxData[0]
-                                                           ,(uint8)g_can.rxData[1]
-                                                           ,(uint8)g_can.rxData[2]
-                                                           ,(uint8)g_can.rxData[3]
-                                                           ,(uint8)g_can.rxData[4]
-                                                           ,(uint8)g_can.rxData[5]
-                                                           ,(uint8)g_can.rxData[6]
-                                                           ,(uint8)g_can.rxData[7]);
+       printf("RX: message:  ID:0x%X DATA: 0x%X 0x%X 0x%X 0x%X 0x%X 0x%X 0x%X 0x%X \n DATA: 0x%X 0x%X 0x%X 0x%X 0x%X 0x%X 0x%X 0x%X 0x%X \r\n"
+                                                                                                            ,g_can.rxMsg.messageId
+                                                                                                            ,(uint8)g_can.rxData[0]
+                                                                                                            ,(uint8)g_can.rxData[1]
+                                                                                                            ,(uint8)g_can.rxData[2]
+                                                                                                            ,(uint8)g_can.rxData[3]
+                                                                                                            ,(uint8)g_can.rxData[4]
+                                                                                                            ,(uint8)g_can.rxData[5]
+                                                                                                            ,(uint8)g_can.rxData[6]
+                                                                                                            ,(uint8)g_can.rxData[7]
+                                                                                                            ,(uint8)g_can.rxData[8]
+                                                                                                            ,(uint8)g_can.rxData[9]
+                                                                                                            ,(uint8)g_can.rxData[10]
+                                                                                                            ,(uint8)g_can.rxData[11]
+                                                                                                            ,(uint8)g_can.rxData[12]
+                                                                                                            ,(uint8)g_can.rxData[13]
+                                                                                                            ,(uint8)g_can.rxData[14]
+                                                                                                            ,(uint8)g_can.rxData[15]
+                                                                                                            ,(uint8)g_can.rxData[16]
+                                                                                                            ,(uint8)g_can.rxData[17]);
     }else
     {
         printf("RX: message ID:  0x%X \n", g_can.rxMsg.messageId);

@@ -62,29 +62,18 @@ void idle_hook_core0(void);
 /*********************************************************************************************************************/
 
 TASK(can_recieve_task)
+
 {
-   //acquire semaphore
-   //WaitSem(&can_structure_semaphore);
-   //SuspendAllInterrupts();
-   //printf("RX: Semaphore value: %d\n", can_structure_semaphore.count);
    can_recieved_message_show(1);
-   //release semaphore
-   //PostSem(&can_structure_semaphore);
-   //ResumeAllInterrupts();
+
 
    TerminateTask();
 }
 
 TASK(can_send_task)
 {
-    //acquire semaphore
-    //WaitSem(&can_structure_semaphore);
-    //SuspendAllInterrupts();
-    //printf("TX: Semaphore value: %d\n", can_structure_semaphore.count);
+
     can_transmit_message(msg, &data_to_transfer, message_data_length);
-    //release semaphore
-    //PostSem(&can_structure_semaphore);
-    //ResumeAllInterrupts();
 
     TerminateTask();
 }
@@ -144,16 +133,8 @@ int main(void)
 
 TASK(can_init_task)
 {
-   //acquire semaphore
-   //WaitSem(&can_structure_semaphore);
-   //SuspendAllInterrupts();
-
    printf("CAN init");
    can_init();
-
-   //release semaphore
-   //PostSem(&can_structure_semaphore);
-   //ResumeAllInterrupts();
 
    TerminateTask();
 }
