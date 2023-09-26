@@ -68,7 +68,6 @@ dkms.conf
 .settings/*
 .history/
 *.vsix
-.project
 
 # ERIKA out folder. Generated each time during compilation
 **/erika
