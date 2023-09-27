@@ -113,6 +113,14 @@ CPU test_application {
       EXTENDED = TRUE;
     };
   };
+
+ TASK can_ISR_RX_fifo0_full_handler {
+    CPU_ID = 0x0;
+    PRIORITY = 7;
+    STACK = PRIVATE {
+      SIZE = 512;
+    };
+  };
   
   ISR can_ISR_RX_handler {
 		CPU_ID = 0x0;
@@ -129,23 +137,12 @@ CPU test_application {
    };
    
       
-  //ISR can_ISR_RX_fifo0_full_handler {
+//  ISR can_ISR_RX_fifo0_full_handler {
 //		CPU_ID = 0x0;
 //		CATEGORY = 1;
 //		SOURCE = "CAN_CAN0_INT2";
-//		PRIORITY = 1;
+//		PRIORITY = 5;
 //   };
-   
-//  TASK can_ISR_RX_fifo0_full_handler {
-//    CPU_ID = 0x0;
-//    PRIORITY = 1;
-//    ACTIVATION = 1;
-//    SCHEDULE = NON;
-//    STACK = PRIVATE {
-//      SIZE = 512;
-//      EXTENDED = TRUE;
-//    };
-//  };
   
   COUNTER system_timer_master {
     CPU_ID = 0x0;

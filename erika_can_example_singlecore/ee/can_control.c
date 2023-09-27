@@ -10,9 +10,12 @@
 #include "ee.h"
 
 
+#define DEBUG_ENABLE_CAN_ID 0x1
+
 /*********************************************************************************************************************/
-/*-------------------------------------------------Global variables--------------------------------------------------*/
+/*-------------------------------------------------Local variables--------------------------------------------------*/
 /*********************************************************************************************************************/
+boolean is_debug_text_on;
 
 /*********************************************************************************************************************/
 /*---------------------------------------------Local function declaration--------------------------------------------*/
@@ -75,7 +78,7 @@ void can_init(void)
      *  - initialize CAN module with the default configuration
      * ==========================================================================================
      */
-
+    is_debug_text_on = FALSE;
     is_new_message_recieved = FALSE;
     number_of_succefull_transmition = 0;
 
@@ -176,8 +179,11 @@ void can_transmit_message(IfxCan_Message msg, uint8 *data_to_transfer, uint8 dat
     }
     com_status = CanCommunicationStatus_Success;
     
-    printf("TX: Success \n");
-    printf("TX: number of success: %ld \n", number_of_succefull_transmition);
+    if (is_debug_text_on)
+    {
+        printf("TX: Success \n");
+        printf("TX: number of success: %ld \n", number_of_succefull_transmition);
+    }
 }
 
 /*
@@ -185,15 +191,29 @@ void can_transmit_message(IfxCan_Message msg, uint8 *data_to_transfer, uint8 dat
  */
 void can_recieved_message_show_clear(uint32 *can_id, uint8 *rxData, uint8 data_length)
 {
+    if(*can_id == DEBUG_ENABLE_CAN_ID)
+    {
+        if(*rxData >=1)
+        {
+            is_debug_text_on = TRUE;
+        }
+        else
+        {
+            is_debug_text_on = FALSE;
+        }
+    }
+
     if(is_new_message_recieved)
     {
-        printf("\n\n RX CAN ID: 0x%lX \n message: \n",(uint32)*can_id);
-        
-        print_data(rxData, data_length);
+        if (is_debug_text_on)
+        {
+            printf("\n\n RX CAN ID: 0x%lX \n message: \n",(uint32)*can_id);
+            print_data(rxData, data_length);
+            printf(" END\n\n");
+        }
         is_new_message_recieved = FALSE;
         clear_data(rxData, data_length);
-        
-        printf(" END\n\n");
+
     }
 }
 /* Calculate the data from recieved message by default return AAAAA

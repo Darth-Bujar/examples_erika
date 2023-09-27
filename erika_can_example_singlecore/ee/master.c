@@ -39,6 +39,8 @@
 #define CAN_MESSAGE_MAX_DATA_LENGTH IfxCan_DataLengthCode_8
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
+extern boolean is_debug_text_on;
+
 const static can_FD_message_type can_fd_messages[PREDEFINED_MESSAGES_NUMBER] =
 {
   { STANDARD_MESSAGE_ID_1, IfxCan_MessageIdLength_standard, IfxCan_FrameMode_standard, IfxCan_DataLengthCode_8 },
@@ -68,15 +70,21 @@ void idle_hook_core0(void);
 
 TASK(can_recieve_task)
 {
-  printf("TASK: CAN RX \n");
+  if(is_debug_text_on)
+  {
+      printf("TASK: CAN RX \n");
+  }
   can_recieved_message_show_clear(&g_can.rxMsg.messageId, g_can.rxData, IfxCan_DataLengthCode_64);
   TerminateTask();
 }
 
 TASK(can_send_task)
 {
-  printf("TASK: CAN TX \n");
+    if(is_debug_text_on)
+    {
+        printf("TASK: CAN TX \n");
 
+    }
   message_data_length = CAN_MESSAGE_MAX_DATA_LENGTH;
 
   uint32 calculated_data = calculate_data_from_recieved_message(g_can.rxData , IfxCan_DataLengthCode_64);
@@ -102,7 +110,11 @@ TASK(can_send_task)
 TASK(can_ISR_RX_fifo0_full_handler)
 {
    IfxCan_Node_clearInterruptFlag(g_can.canSrcNode.node, IfxCan_Interrupt_rxFifo0Full);
-   printf(" \n\n !!! FIFO0 iS FULL !!! \n\n");
+
+   if(is_debug_text_on)
+   {
+       printf(" \n\n !!! FIFO0 iS FULL !!! \n\n");
+   }
 
    /* Received message content should be updated with the data stored in the RX FIFO 0 */
    g_can.rxMsg.readFromRxFifo0 = TRUE;
