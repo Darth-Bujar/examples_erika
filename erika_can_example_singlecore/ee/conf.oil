@@ -105,7 +105,7 @@ CPU test_application {
   
   TASK can_recieve_task {
     CPU_ID = 0x0;
-    PRIORITY = 4;
+    PRIORITY = 1;
     ACTIVATION = 1;
     SCHEDULE = FULL;
     STACK = PRIVATE {
@@ -113,36 +113,35 @@ CPU test_application {
       EXTENDED = TRUE;
     };
   };
-
- TASK can_ISR_RX_fifo0_full_handler {
+  
+  TASK can_full_fifo0_task {
     CPU_ID = 0x0;
-    PRIORITY = 7;
-    STACK = PRIVATE {
-      SIZE = 512;
-    };
+    PRIORITY = 4;
   };
+  
   
   ISR can_ISR_RX_handler {
 		CPU_ID = 0x0;
 		CATEGORY = 1;
 		SOURCE = "CAN_CAN0_INT0";
-		PRIORITY = 3;
+		PRIORITY = 10;
    };
    
   ISR can_ISR_TX_complete_handler {
 		CPU_ID = 0x0;
 		CATEGORY = 1;
-		SOURCE = "CAN_CAN0_INT1";
-		PRIORITY = 4;
+		SOURCE = "CAN_CAN0_INT9";
+		PRIORITY = 11;
    };
    
       
-//  ISR can_ISR_RX_fifo0_full_handler {
-//		CPU_ID = 0x0;
-//		CATEGORY = 1;
-//		SOURCE = "CAN_CAN0_INT2";
-//		PRIORITY = 5;
-//   };
+  ISR can_ISR_RX_fifo0_full_handler {
+		CPU_ID = 0x0;
+		CATEGORY = 2;
+		SOURCE = "CAN_CAN0_INT2";
+		HANDLER  = "can_full_fifo0_isr_handler";
+		PRIORITY = 5;
+   };
   
   COUNTER system_timer_master {
     CPU_ID = 0x0;
@@ -158,16 +157,16 @@ CPU test_application {
   };
   
 
-  ALARM alarm_100ms {
+  ALARM alarm_can_recieve_task {
     COUNTER = system_timer_master;
     ACTION = ACTIVATETASK { TASK = can_recieve_task; };
-    AUTOSTART = TRUE { ALARMTIME = 20 ; CYCLETIME = 100; };
+    AUTOSTART = TRUE { ALARMTIME = 10 ; CYCLETIME = 20; };
   };
 
-  ALARM alarm_200ms {
+  ALARM alarm_can_send_task {
     COUNTER = system_timer_master;
     ACTION = ACTIVATETASK { TASK = can_send_task; };
-    AUTOSTART = TRUE { ALARMTIME = 10; CYCLETIME = 200; };
+    AUTOSTART = TRUE { ALARMTIME = 20; CYCLETIME = 20; };
   };
   
 };
