@@ -8,19 +8,22 @@
 
 #include "can_control.h"
 #include "ee.h"
+#include "IfxCpu_IntrinsicsTasking.h"
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Macro defenition--------------------------------------------------*/
 /*********************************************************************************************************************/
-#define DEBUG_ENABLE_CAN_ID 0x1                                              /* Debug message configuration values   */
-#define DEBUG_ENABLE_VALUE  1
+#define DEBUG_ENABLE_CAN_ID                    0x1                         /* Debug message configuration values                */
+#define DEBUG_ENABLE_VALUE                     1
+#define INVALID_DATA_VALUE                     0xEE             /* Used to invalidate TX message data content        */
+#define ISR_PRIORITY_CAN_RX                    10               /* Define the CAN RX interrupt priority              */
+#define MAXIMUM_CAN_FD_DATA_PAYLOAD            64               /* Define maximum CAN payload in bytes               */
+#define CAN_BUFFER_SIZE                        1                /* Size of the buffer                                */
+
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local variables---------------------------------------------------*/
 /*********************************************************************************************************************/
-can_communication_status_type com_status;                                    /* Communication status variable        */
-uint32 number_of_succefull_transmission;                                     /* Number of trnasmition counter        */
 mcmcan_type g_can;                                                           /* Structure for handling MCMCAN        */
-boolean is_new_message_recieved;                                             /* Flag TRUE if new message is received */
 boolean is_debug_text_on;                                                    /* Flag indicate debug text state       */
 
 // Default pin configuration for CAN
@@ -83,8 +86,8 @@ const static IfxCan_Can_NodeConfig default_can_node_cfg =
         .rxConfig                                    =
         {
             .rxMode                = IfxCan_RxMode_fifo0,
-            .rxBufferDataFieldSize = IfxCan_DataFieldSize_64,
-            .rxFifo0DataFieldSize  = IfxCan_DataFieldSize_64,
+            .rxBufferDataFieldSize = IfxCan_DataFieldSize_8,
+            .rxFifo0DataFieldSize  = IfxCan_DataFieldSize_8,
             .rxFifo1DataFieldSize  = IfxCan_DataFieldSize_8,
             .rxFifo0OperatingMode  = IfxCan_RxFifoMode_blocking,
             .rxFifo1OperatingMode  = IfxCan_RxFifoMode_blocking,
@@ -108,14 +111,14 @@ const static IfxCan_Can_NodeConfig default_can_node_cfg =
         {
             .rxFifo0NewMessageEnabled                = TRUE,
             .rxFifo0WatermarkEnabled                 = FALSE,
-            .rxFifo0FullEnabled                      = TRUE,
+            .rxFifo0FullEnabled                      = FALSE,
             .rxFifo0MessageLostEnabled               = FALSE,
             .rxFifo1NewMessageEnabled                = FALSE,
             .rxFifo1WatermarkEnabled                 = FALSE,
             .rxFifo1FullEnabled                      = FALSE,
             .rxFifo1MessageLostEnabled               = FALSE,
             .highPriorityMessageEnabled              = FALSE,
-            .transmissionCompletedEnabled            = TRUE,
+            .transmissionCompletedEnabled            = FALSE,
             .transmissionCancellationFinishedEnabled = FALSE,
             .txFifoEmptyEnabled                      = FALSE,
             .txEventFifoNewEntryEnabled              = FALSE,
@@ -196,7 +199,7 @@ const static IfxCan_Can_NodeConfig default_can_node_cfg =
             .rxf0f                                   =
             {
                 .interruptLine = IfxCan_InterruptLine_2,
-                .priority      = ISR_PRIORITY_CAN_RX_FIFO0F,
+                .priority      = 0,
                 .typeOfService = IfxSrc_Tos_cpu0
             },
             .rxf1n                                   =
@@ -226,7 +229,7 @@ const static IfxCan_Can_NodeConfig default_can_node_cfg =
             .traco                                   =
             {
                 .interruptLine = IfxCan_InterruptLine_3,
-                .priority      = ISR_PRIORITY_CAN_TX,
+                .priority      = 0,
                 .typeOfService = IfxSrc_Tos_cpu0
             }
         },
@@ -246,7 +249,7 @@ static void _can_hw_configuration(void);
 /*********************************************************************************************************************/
 
 /* See header file*/
-void can_ISR_RX_handler(void)
+void can_ISR_RX_handler_func(void)
 {
     /* Clear the "RX FIFO 0 new message" interrupt flag */
     IfxCan_Node_clearInterruptFlag(g_can.canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
@@ -257,37 +260,14 @@ void can_ISR_RX_handler(void)
     /* Read the received CAN message */
     IfxCan_Can_readMessage(&g_can.canNode, &g_can.rxMsg, (uint32*)&g_can.rxData[0]);
 
-    /* Set new message flag to true (atomic operation) */
-    __ldmst(&is_new_message_recieved, 0xFF, 0xFF);
-}
-
-/* See header file*/
-void can_ISR_TX_complete_handler(void)
-{
-    /* Clear the "RX FIFO 0 new message" interrupt flag */
-    IfxCan_Node_clearInterruptFlag(g_can.canNode.node, IfxCan_Interrupt_transmissionCompleted);
-
-    /* Successful transmission */
-    if(number_of_succefull_transmission == 0xFFFF)
-    {
-        number_of_succefull_transmission = 0;
-    }
-
-    number_of_succefull_transmission++;
-}
-
-/* See header file*/
-void can_full_fifo0_isr_handler(void)
-{
-    ActivateTask(can_full_fifo0_task);
+    /* Retransmit this message */
+    ActivateTask(can_retransmit_task);
 }
 
 /* See header file*/
 void can_init(void)
 {
     is_debug_text_on = FALSE;
-    is_new_message_recieved = FALSE;
-    number_of_succefull_transmission = 0;
 
     _can_hw_configuration();
 
@@ -296,8 +276,8 @@ void can_init(void)
     IfxCan_Can_initMessage((IfxCan_Message *)&g_can.txMsg);
 
     /* Data arrays initialization to invalid value */
-    memset(&g_can.rxData, INVALID_DATA_VALUE, MAXIMUM_CAN_FD_DATA_PAYLOAD);
-    memset(&g_can.txData, INVALID_DATA_VALUE, MAXIMUM_CAN_FD_DATA_PAYLOAD);
+    memset(&g_can.rxData, 0, MAXIMUM_CAN_FD_DATA_PAYLOAD);
+    memset(&g_can.txData, 0, MAXIMUM_CAN_FD_DATA_PAYLOAD);
 }
 
 /* See header file*/
@@ -309,33 +289,23 @@ void can_transmit_message(void)
     {
 
     }
-
-    com_status = CanCommunicationStatus_Success;
     
     if (is_debug_text_on)
     {
         printf("TX: Success \n");
-        printf("TX: number of success: %ld \n", number_of_succefull_transmission);
     }
 }
 
 /* See header file*/
-void can_recieved_message_show_clear(uint32 *can_id, uint8 *rxData, uint32 data_length)
+void can_recieved_message_show(uint32 *can_id, uint8 *rxData, uint32 data_length)
 {   
     _process_debug_message(can_id, rxData);
 
-    if(is_new_message_recieved)
+    if (is_debug_text_on)
     {
-        if (is_debug_text_on)
-        {
-            printf("\n\n RX CAN ID: 0x%lX \n message: \n",(uint32)*can_id);
-            _print_data(rxData, data_length);
-            printf(" END\n\n");
-        }
-        is_new_message_recieved = FALSE;
-        // Clear the array after reading
-        memset(rxData, 0, data_length);
-
+        printf("\n\n RX CAN ID: 0x%lX \n message: \n",(uint32)*can_id);
+        _print_data(rxData, data_length);
+        printf(" END\n\n");
     }
 }
 
@@ -344,10 +314,7 @@ uint32 calculate_data_from_recieved_message(uint8 *rxData)
 {
     uint32 result = INVALID_DATA_VALUE;
 
-    if (is_new_message_recieved)
-    {
-        result = (*rxData) + 1;
-    }
+    result = (*rxData) + 1;
 
     return result;
 }
@@ -363,7 +330,7 @@ static void _print_data(uint8 *data, uint32 data_length)
     
     for (i = 0; i < data_length; i++)
     {
-        printf(" 0x%X\n ", data[i]);
+        printf(" 0x%02X\n ", data[i]);
     }
 
     printf("\n");
@@ -373,7 +340,7 @@ static void _process_debug_message(uint32 *can_id, uint8 *rxData)
 {
     if (*can_id == DEBUG_ENABLE_CAN_ID)
     {
-        if (*rxData >= DEBUG_ENABLE_VALUE)
+        if (*rxData >= DEBUG_ENABLE_VALUE && *rxData != INVALID_DATA_VALUE)
         {
             is_debug_text_on = TRUE;
         }
@@ -394,7 +361,6 @@ static void _can_hw_configuration(void)
     // CAN configuration
     IfxCan_Can_initModuleConfig(&g_can.canConfig, &MODULE_CAN0);
     IfxCan_Can_initModule(&g_can.canModule, &g_can.canConfig);
-    //IfxCan_Can_initNodeConfig(&g_can.canNodeConfig, &g_can.canModule);
     g_can.canNodeConfig = default_can_node_cfg;
     
     IfxCan_Can_initNode(&g_can.canNode, &g_can.canNodeConfig);

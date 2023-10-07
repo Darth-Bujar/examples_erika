@@ -40,9 +40,9 @@
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local variables--------------------------------------------------*/
 /*********************************************************************************************************************/
-IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;                  /* CPU sync event value                           */
+
+IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 OsEE_reg myErrorCounter;                                           /* ERIKA RTOS Error counter                       */
-static uint32 number_of_fifo0_full_interrupts;                     /* Counter of RX FIFO0 buffer overflow occasions  */
 /*********************************************************************************************************************/
 /*---------------------------------------------LOCAL FUNCTION DEFENITIO----------------------------------------------*/
 /*********************************************************************************************************************/
@@ -51,95 +51,58 @@ void idle_hook_core0(void);                                        /* idle hool 
 /*-------------------------------------------------TASKS DEFINITION--------------------------------------------------*/
 /*********************************************************************************************************************/
 
-/* This task is called by alarm alarm_can_send_task defined in conf.oil
-  * Task is calculated CAN ID as last recived message CAN ID + 1
-  * and calculate data for the message as first byte from recieved data + 1
-  * if first byte in last messae is 0 function return 0xAAAA
-  */
-TASK(can_send_task)
+/* This task called only once after start of ERIKA RTOS. Defined byt
+ * Properties:     
+ *                 AUTOSTART = TRUE;
+ *                 ACTIVATION = 1;
+ */
+TASK(can_init_task)
+{
+  printf("CAN drivers initialization: ");
+
+  can_init();
+  printf("Complete \n");
+  
+  TerminateTask();
+}
+
+/* This task being called from RX new message interrupt.
+ * Task will print (if is_debug_text_on == TRUE) and send back the response
+ * response is defined by function calculate_data_from_recieved_message()
+ */
+TASK(can_retransmit_task)
 {
   if(is_debug_text_on)
   {
-    printf("TASK: CAN TX \n");
+    printf("TASK: CAN retransmit message \n");
   }
 
+  DisableAllInterrupts();
+  
+  /* Configurate message header*/
   g_can.txMsg.messageId        =  g_can.rxMsg.messageId + 1;
   g_can.txMsg.messageIdLength  =  IfxCan_MessageIdLength_extended;
   g_can.txMsg.frameMode        =  IfxCan_FrameMode_standard;
   g_can.txMsg.dataLengthCode   =  IfxCan_DataLengthCode_8;
 
+  /* Print message to standard output*/
+  can_recieved_message_show(&g_can.rxMsg.messageId, g_can.rxData, IfxCan_Node_getDataLength(g_can.rxMsg.dataLengthCode));
+
+  /* Calculated data from received message */
   uint32 calculated_data = calculate_data_from_recieved_message((uint8 *)&g_can.rxData);
 
   /* Application assume only 1 byte messages, second byte checked in case of overflow*/
   g_can.txData[0] = calculated_data & 0xff;
   g_can.txData[1] = (calculated_data >> 8)  & 0xff;
 
+  /* Transmit new message */
   can_transmit_message();
 
-  TerminateTask();
-}
+  /* Message structure clear */
+  IfxCan_Can_initMessage((IfxCan_Message *)&g_can.rxMsg);
+  IfxCan_Can_initMessage((IfxCan_Message *)&g_can.txMsg);
 
-/* This task is triggered by can_full_fifo0_isr_handler. Function will clear interrupt flag
-  * read the data from RX fifo and increase number of interrupts
-  */
-TASK(can_full_fifo0_task)
-{
-  IfxCan_Node_clearInterruptFlag(g_can.canNode.node, IfxCan_Interrupt_rxFifo0Full);
-
-  if (number_of_fifo0_full_interrupts == 0xFFFF)
-  {
-    number_of_fifo0_full_interrupts = 0;
-  }
-  number_of_fifo0_full_interrupts++;
-  
-  if(is_debug_text_on)
-  {
-    printf(" \n\n !!! FIFO0 iS FULL !!! \n");
-    printf("!!! overflow counter: %ld !!! \n\n", number_of_fifo0_full_interrupts);
-  }
-
-  TerminateTask();
-}
-
-/* This task called only once after start of ERIKA RTOS. Defined byt
-  * Properties:     
-  *                 AUTOSTART = TRUE;
-  *                 ACTIVATION = 1;
-  */
-TASK(can_init_task)
-{
-  printf("CAN drivers initialization: ");
-
-  can_init();
-  number_of_fifo0_full_interrupts = 0;
-  printf("Complete \n");
-  
-  TerminateTask();
-}
-
-/* This task is called by alarm alarm_can_recieve_task defined in conf.oil
- * The task will print the recieved data (if is_debug_text_on == TRUE)
- */
-TASK(can_recieve_task)
-{
-  if(is_debug_text_on)
-  {
-    printf("TASK: CAN RX \n");
-  }
-  
-  uint8 i;
-
-  /* Received message content should be updated with the data stored in the RX FIFO 0 */
-  g_can.rxMsg.readFromRxFifo0 = TRUE;
-
-  for (i = 0; i < g_can.rxMsg.bufferNumber; i++)
-  {
-    printf("BFN: %d \n", g_can.rxMsg.bufferNumber);
-    IfxCan_Can_readMessage(&g_can.canNode, &g_can.rxMsg, (uint32*)&g_can.rxData[0]); 
-  }
-
-  can_recieved_message_show_clear(&g_can.rxMsg.messageId, g_can.rxData, IfxCan_Node_getDataLength(g_can.rxMsg.dataLengthCode));
-
+  EnableAllInterrupts();
   TerminateTask();
 }
 
@@ -151,7 +114,6 @@ TASK(can_recieve_task)
  */
 int main(void)
 {
-
   IfxCpu_enableInterrupts();
 
   /* !!WATCHDOG0 AND SAFETY WATCHDOG ARE DISABLED HERE!!
