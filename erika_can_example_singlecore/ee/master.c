@@ -70,42 +70,6 @@ TASK(can_init_task)
  * Task will print (if is_debug_text_on == TRUE) and send back the response
  * response is defined by function calculate_data_from_recieved_message()
  */
-TASK(can_retransmit_task)
-{
-  if(is_debug_text_on)
-  {
-    printf("TASK: CAN retransmit message \n");
-  }
-
-  DisableAllInterrupts();
-  
-  /* Configurate message header*/
-  g_can.txMsg.messageId        =  g_can.rxMsg.messageId + 1;
-  g_can.txMsg.messageIdLength  =  IfxCan_MessageIdLength_extended;
-  g_can.txMsg.frameMode        =  IfxCan_FrameMode_standard;
-  g_can.txMsg.dataLengthCode   =  IfxCan_DataLengthCode_8;
-
-  /* Print message to standard output*/
-  can_recieved_message_show(&g_can.rxMsg.messageId, g_can.rxData, IfxCan_Node_getDataLength(g_can.rxMsg.dataLengthCode));
-
-  /* Calculated data from received message */
-  uint32 calculated_data = calculate_data_from_recieved_message((uint8 *)&g_can.rxData);
-
-  /* Application assume only 1 byte messages, second byte checked in case of overflow*/
-  g_can.txData[0] = calculated_data & 0xff;
-  g_can.txData[1] = (calculated_data >> 8)  & 0xff;
-
-  /* Transmit new message */
-  can_transmit_message();
-
-  /* Message structure clear */
-  IfxCan_Can_initMessage((IfxCan_Message *)&g_can.rxMsg);
-  IfxCan_Can_initMessage((IfxCan_Message *)&g_can.txMsg);
-
-  EnableAllInterrupts();
-  TerminateTask();
-}
-
 /*********************************************************************************************************************/
 /*-------------------------------------------------FUNCTION DEFINITION--------------------------------------------------*/
 /*********************************************************************************************************************/

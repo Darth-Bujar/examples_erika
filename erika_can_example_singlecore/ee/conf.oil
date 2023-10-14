@@ -92,16 +92,6 @@ CPU test_application {
     };
   };
   
-  TASK can_retransmit_task {
-    CPU_ID = 0x0;
-    PRIORITY = 4;
-    ACTIVATION = 1;
-    SCHEDULE = NON;
-    STACK = PRIVATE {
-      SIZE = 1024;
-      EXTENDED = TRUE;
-    };
-  };
   
   ISR can_ISR_RX_handler {
 		CPU_ID = 0x0;

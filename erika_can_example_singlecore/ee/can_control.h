@@ -40,7 +40,7 @@ typedef struct
 /*-------------------------------------------------Global variables--------------------------------------------------*/
 /*********************************************************************************************************************/
 extern mcmcan_type g_can;                                                    /* Structure for handling MCMCAN        */
-extern boolean is_debug_text_on;                                             /* Flag indicate debug text state       */
+extern boolean debug_print;                                             /* Flag indicate debug text state       */
 /*********************************************************************************************************************/
 /*-----------------------------------------------Function Prototypes-------------------------------------------------*/
 /*********************************************************************************************************************/
@@ -69,5 +69,7 @@ void can_recieved_message_show(uint32 *can_id, uint8 *rxData, uint32 data_length
 /* Calculate the data from recieved message by default return INVALID_DATA_VALUE
  */
 uint32 calculate_data_from_recieved_message(uint8 *rxData);
+
+void can_retransmit();
 
 #endif /* CAN_CONTROL_H_*/

@@ -24,7 +24,7 @@
 /*-------------------------------------------------Local variables---------------------------------------------------*/
 /*********************************************************************************************************************/
 mcmcan_type g_can;                                                           /* Structure for handling MCMCAN        */
-boolean is_debug_text_on;                                                    /* Flag indicate debug text state       */
+boolean debug_print;                                                    /* Flag indicate debug text state       */
 
 // Default pin configuration for CAN
 const static IfxCan_Can_Pins default_can_pin_cfg =
@@ -251,23 +251,57 @@ static void _can_hw_configuration(void);
 /* See header file*/
 void can_ISR_RX_handler_func(void)
 {
-    /* Clear the "RX FIFO 0 new message" interrupt flag */
-    IfxCan_Node_clearInterruptFlag(g_can.canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
 
+    // TODO: Timestamps
     /* Received message content should be updated with the data stored in the RX FIFO 0 */
     g_can.rxMsg.readFromRxFifo0 = TRUE;
 
     /* Read the received CAN message */
     IfxCan_Can_readMessage(&g_can.canNode, &g_can.rxMsg, (uint32*)&g_can.rxData[0]);
 
+    /* Clear the "RX FIFO 0 new message" interrupt flag */
+    IfxCan_Node_clearInterruptFlag(g_can.canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
+
     /* Retransmit this message */
-    ActivateTask(can_retransmit_task);
+    can_retransmit();
+}
+
+void can_retransmit()
+{
+  if(debug_print)
+  {
+    printf("TASK: CAN retransmit message \n");
+  }
+  
+  /* Configurate message header*/
+  g_can.txMsg.messageId        =  g_can.rxMsg.messageId + 1;
+  g_can.txMsg.messageIdLength  =  IfxCan_MessageIdLength_extended;
+  g_can.txMsg.frameMode        =  IfxCan_FrameMode_standard;
+  g_can.txMsg.dataLengthCode   =  IfxCan_DataLengthCode_8;
+
+  /* Print message to standard output*/
+  can_recieved_message_show(&g_can.rxMsg.messageId, g_can.rxData, IfxCan_Node_getDataLength(g_can.rxMsg.dataLengthCode));
+
+  /* Calculated data from received message */
+  uint32 calculated_data = calculate_data_from_recieved_message((uint8 *)&g_can.rxData);
+
+  /* Application assume only 1 byte messages, second byte checked in case of overflow*/
+  g_can.txData[0] = calculated_data & 0xff;
+  g_can.txData[1] = (calculated_data >> 8)  & 0xff;
+
+  /* Transmit new message */
+  can_transmit_message();
+
+  /* Message structure clear */
+  IfxCan_Can_initMessage((IfxCan_Message *)&g_can.rxMsg);
+  IfxCan_Can_initMessage((IfxCan_Message *)&g_can.txMsg);
+
 }
 
 /* See header file*/
 void can_init(void)
 {
-    is_debug_text_on = FALSE;
+    debug_print = FALSE;
 
     _can_hw_configuration();
 
@@ -290,7 +324,7 @@ void can_transmit_message(void)
 
     }
     
-    if (is_debug_text_on)
+    if (debug_print)
     {
         printf("TX: Success \n");
     }
@@ -301,7 +335,7 @@ void can_recieved_message_show(uint32 *can_id, uint8 *rxData, uint32 data_length
 {   
     _process_debug_message(can_id, rxData);
 
-    if (is_debug_text_on)
+    if (debug_print)
     {
         printf("\n\n RX CAN ID: 0x%lX \n message: \n",(uint32)*can_id);
         _print_data(rxData, data_length);
@@ -342,11 +376,11 @@ static void _process_debug_message(uint32 *can_id, uint8 *rxData)
     {
         if (*rxData >= DEBUG_ENABLE_VALUE && *rxData != INVALID_DATA_VALUE)
         {
-            is_debug_text_on = TRUE;
+            debug_print = TRUE;
         }
         else
         {
-            is_debug_text_on = FALSE;
+            debug_print = FALSE;
         }
     }
 }
