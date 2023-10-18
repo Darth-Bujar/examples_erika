@@ -20,7 +20,6 @@
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
-#include "can_control.h"
 #include "ee.h"
 
 #if (defined(__TASKING__))
