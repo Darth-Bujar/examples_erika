@@ -1,8 +1,17 @@
 # ERIKA RTOS CAN SINGLE-CORE EXAMPLE
 ## Overview
-This ADS (AURIX Development Studio) project provides users with a basic example of configuring the CAN co-processor for the TriCore TC387QP microcontroller using iLLD drivers and Tasking compiler.
 
-At each received CAN message, message is being stored in FIFO0 memory of CAN co-processor and interrupt rxf0n(FIFO0 new message received) being generated. ERIKA RTOS (OS) reacts with calling ISR2 function that will:
+This AURIX Development Studio project provides users with a basic example of using the CAN co-processor for the TriCore TC387QP microcontroller using iLLD drivers and Tasking compiler.
+
+TODO: Is it co-processor or controller?
+
+The example works ...
+At each received CAN message, message is being stored in FIFO0 memory
+of CAN co-processor and interrupt rxf0n(FIFO0 new message received)
+being generated. ERIKA RTOS (OS) is configured to handle the IRQ with
+ISR of category 2 (i.e. callback called within a task context). Our
+callback function will:
+
 * Reset interrupt pending flag
 * Read received message
 * Calculate the response CAN message (ID and data)
