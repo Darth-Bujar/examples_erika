@@ -21,10 +21,20 @@
 #define CAN_BUFFER_SIZE                        1                /* Size of the buffer                                */
 
 /*********************************************************************************************************************/
+/*------------------------------------------------------Macros-------------------------------------------------------*/
+/*********************************************************************************************************************/
+#define MAXIMUM_CAN_FD_DATA_PAYLOAD            64               /* Define maximum CAN payload in bytes               */
+/*********************************************************************************************************************/
+/*--------------------------------------------------Data Structures--------------------------------------------------*/
+/*********************************************************************************************************************/
+IfxCan_Can_Config canConfig;                        /* CAN module configuration structure                        */
+IfxCan_Can canModule;                               /* CAN module handle                                         */
+IfxCan_Can_Node canNode;                            /* CAN node handle data structure                            */
+
+/*********************************************************************************************************************/
 /*-------------------------------------------------Local variables---------------------------------------------------*/
 /*********************************************************************************************************************/
-mcmcan_type g_can;                                                           /* Structure for handling MCMCAN        */
-boolean debug_print;                                                    /* Flag indicate debug text state       */
+static boolean debug_print;                                                    /* Flag indicate debug text state       */
 
 // Default pin configuration for CAN
 const static IfxCan_Can_Pins default_can_pin_cfg =
@@ -242,7 +252,7 @@ const static IfxCan_Can_NodeConfig default_can_node_cfg =
 /*********************************************************************************************************************/
 
 static void _print_data(uint8 *data, uint32 data_length);
-static void _process_debug_message(uint32 *can_id, uint8 *rxData);
+static void _process_print_control_message(uint32 *can_id, uint8 *rxData);
 static void _can_hw_configuration(void);
 /*********************************************************************************************************************/
 /*---------------------------------------------Function Implementations----------------------------------------------*/
@@ -252,49 +262,49 @@ static void _can_hw_configuration(void);
 void can_ISR_RX_handler_func(void)
 {
 
-    // TODO: Timestamps
-    /* Received message content should be updated with the data stored in the RX FIFO 0 */
-    g_can.rxMsg.readFromRxFifo0 = TRUE;
+    IfxCan_Message rxMsg;                               /* Received CAN message structure                            */
+    uint8 rxData[MAXIMUM_CAN_FD_DATA_PAYLOAD];          /* Received CAN data array                                   */
+
+    IfxCan_Can_initMessage(&rxMsg);
+    /* Received message content should be read from RX FIFO 0 */
+    rxMsg.readFromRxFifo0 = TRUE;
 
     /* Read the received CAN message */
-    IfxCan_Can_readMessage(&g_can.canNode, &g_can.rxMsg, (uint32*)&g_can.rxData[0]);
+    IfxCan_Can_readMessage(&g_can.canNode, &rxMsg, (uint32*)rxData);
 
     /* Clear the "RX FIFO 0 new message" interrupt flag */
     IfxCan_Node_clearInterruptFlag(g_can.canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
 
-    /* Retransmit this message */
-    can_retransmit();
+    /* Process incoming message */
+
+    /* Print message to standard output*/
+    can_message_print("RX:", rxMsgHdr, rxData);
+
+    if (rxMsg.can_id == DEBUG_ENABLE_CAN_ID)
+        _process_print_control_message(rxData);
+
+    /* Reply to the received message */
+    if (TODO: Check that txData contains at least one byte)
+        can_reply(&rxMsg, rxData);
 }
 
-void can_retransmit()
+void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
 {
-  if(debug_print)
-  {
-    printf("TASK: CAN retransmit message \n");
-  }
-  
-  /* Configurate message header*/
-  g_can.txMsg.messageId        =  g_can.rxMsg.messageId + 1;
-  g_can.txMsg.messageIdLength  =  IfxCan_MessageIdLength_extended;
-  g_can.txMsg.frameMode        =  IfxCan_FrameMode_standard;
-  g_can.txMsg.dataLengthCode   =  IfxCan_DataLengthCode_8;
+  IfxCan_Message txMsgHdr;
+  uint8 txData[MAXIMUM_CAN_FD_DATA_PAYLOAD];
 
-  /* Print message to standard output*/
-  can_recieved_message_show(&g_can.rxMsg.messageId, g_can.rxData, IfxCan_Node_getDataLength(g_can.rxMsg.dataLengthCode));
+  IfxCan_Can_initMessage(&txMsgHdr);
+  /* Configure message header*/
+  txMsgHdr.messageId        =  rxMsgHdr->messageId + 1;
+  txMsgHdr.messageIdLength  =  IfxCan_MessageIdLength_extended;
+  txMsgHdr.frameMode        =  IfxCan_FrameMode_standard;
+  txMsgHdr.dataLengthCode   =  IfxCan_DataLengthCode_1;
 
-  /* Calculated data from received message */
-  uint32 calculated_data = calculate_data_from_recieved_message((uint8 *)&g_can.rxData);
-
-  /* Application assume only 1 byte messages, second byte checked in case of overflow*/
-  g_can.txData[0] = calculated_data & 0xff;
-  g_can.txData[1] = (calculated_data >> 8)  & 0xff;
+  /* Reply with first byte incremented */
+  txData[0] = rxData[0] + 1;
 
   /* Transmit new message */
-  can_transmit_message();
-
-  /* Message structure clear */
-  IfxCan_Can_initMessage((IfxCan_Message *)&g_can.rxMsg);
-  IfxCan_Can_initMessage((IfxCan_Message *)&g_can.txMsg);
+  can_transmit_message(&txMsgHdr, txData);
 
 }
 
@@ -330,63 +340,36 @@ void can_transmit_message(void)
     }
 }
 
-/* See header file*/
-void can_recieved_message_show(uint32 *can_id, uint8 *rxData, uint32 data_length)
-{   
-    _process_debug_message(can_id, rxData);
-
+void can_message_print(const char *prefix, const IfxCan_Message *hdr, const uint8 *data)
+{
     if (debug_print)
     {
-        printf("\n\n RX CAN ID: 0x%lX \n message: \n",(uint32)*can_id);
-        _print_data(rxData, data_length);
-        printf(" END\n\n");
+        printf("%s CAN ID: 0x%lX data:", prefix, hdr->can_id);
+        uint8 i = 0;
+        for (i = 0; i < data_length; i++)
+        {
+            printf(" 0x%02X", data[i]);
+        }
+        printf("\n");
     }
 }
 
-/* See header file*/
-uint32 calculate_data_from_recieved_message(uint8 *rxData)
+static void _process_print_control_message(uint8 *rxData)
 {
-    uint32 result = INVALID_DATA_VALUE;
-
-    result = (*rxData) + 1;
-
-    return result;
-}
-
-/*********************************************************************************************************************/
-/*---------------------------------------------Local Function Implementations----------------------------------------*/
-/*********************************************************************************************************************/
-/* Prints the vbalues saved in *data with the length specified by data_length
- */
-static void _print_data(uint8 *data, uint32 data_length)
-{
-    uint8 i = 0;
-    
-    for (i = 0; i < data_length; i++)
+    if (*rxData >= DEBUG_ENABLE_VALUE && *rxData != INVALID_DATA_VALUE)
     {
-        printf(" 0x%02X\n ", data[i]);
+        debug_print = TRUE;
     }
-
-    printf("\n");
-}
-
-static void _process_debug_message(uint32 *can_id, uint8 *rxData)
-{
-    if (*can_id == DEBUG_ENABLE_CAN_ID)
+    else
     {
-        if (*rxData >= DEBUG_ENABLE_VALUE && *rxData != INVALID_DATA_VALUE)
-        {
-            debug_print = TRUE;
-        }
-        else
-        {
-            debug_print = FALSE;
-        }
+        debug_print = FALSE;
     }
 }
 
 static void _can_hw_configuration(void)
 {
+    IfxCan_Can_NodeConfig canNodeConfig;                /* CAN node configuration structure                          */
+    
     // standard PLL & clock init
     IfxScuCcu_Config IfxScuCcu_sampleClockConfig;
     IfxScuCcu_initConfig(&IfxScuCcu_sampleClockConfig);
