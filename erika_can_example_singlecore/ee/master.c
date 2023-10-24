@@ -58,17 +58,11 @@ void idle_hook_core0(void);                                        /* idle hool 
 TASK(can_init_task)
 {
   printf("CAN drivers initialization: ");
-
   can_init();
   printf("Complete \n");
   
   TerminateTask();
 }
-
-/* This task being called from RX new message interrupt.
- * Task will print (if is_debug_text_on == TRUE) and send back the response
- * response is defined by function calculate_data_from_recieved_message()
- */
 /*********************************************************************************************************************/
 /*-------------------------------------------------FUNCTION DEFINITION--------------------------------------------------*/
 /*********************************************************************************************************************/

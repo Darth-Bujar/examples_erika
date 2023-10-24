@@ -1,6 +1,5 @@
 /*
  * can_control.c
- *
  *  Created on: 18.09.2023
  *      Author: Danylo Begim
  */
@@ -13,28 +12,20 @@
 /*********************************************************************************************************************/
 /*-------------------------------------------------Macro defenition--------------------------------------------------*/
 /*********************************************************************************************************************/
-#define DEBUG_ENABLE_CAN_ID                    0x1                         /* Debug message configuration values                */
-#define DEBUG_ENABLE_VALUE                     1
+#define DEBUG_ENABLE_CAN_ID                    0x1              /* Debug message CAN ID                              */
+#define DEBUG_ENABLE_VALUE                     1                /* Debug message value to enable debug mode          */
 #define INVALID_DATA_VALUE                     0xEE             /* Used to invalidate TX message data content        */
 #define ISR_PRIORITY_CAN_RX                    10               /* Define the CAN RX interrupt priority              */
-#define MAXIMUM_CAN_FD_DATA_PAYLOAD            64               /* Define maximum CAN payload in bytes               */
+#define MAXIMUM_RX_CAN_FD_DATA_PAYLOAD         64               /* Define maximum CAN payload in bytes               */
 #define CAN_BUFFER_SIZE                        1                /* Size of the buffer                                */
-
-/*********************************************************************************************************************/
-/*------------------------------------------------------Macros-------------------------------------------------------*/
-/*********************************************************************************************************************/
-#define MAXIMUM_CAN_FD_DATA_PAYLOAD            64               /* Define maximum CAN payload in bytes               */
-/*********************************************************************************************************************/
-/*--------------------------------------------------Data Structures--------------------------------------------------*/
-/*********************************************************************************************************************/
-IfxCan_Can_Config canConfig;                        /* CAN module configuration structure                        */
-IfxCan_Can canModule;                               /* CAN module handle                                         */
-IfxCan_Can_Node canNode;                            /* CAN node handle data structure                            */
+#define MAXIMUM_TX_CAN_DATA_PAYLOAD            1               /* Define maximum CAN payload in bytes               */
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local variables---------------------------------------------------*/
 /*********************************************************************************************************************/
-static boolean debug_print;                                                    /* Flag indicate debug text state       */
+static boolean debug_print;                                                  /* Flag indicate debug text state       */
+IfxCan_Can_NodeConfig canNodeConfig;                            /*   CAN node configuration structure                */
+IfxCan_Can_Node canNode;                                       /* CAN node handle data structure                     */
 
 // Default pin configuration for CAN
 const static IfxCan_Can_Pins default_can_pin_cfg =
@@ -250,10 +241,11 @@ const static IfxCan_Can_NodeConfig default_can_node_cfg =
 /*********************************************************************************************************************/
 /*---------------------------------------------Local function declaration--------------------------------------------*/
 /*********************************************************************************************************************/
+static void _can_message_print(const char *prefix, const IfxCan_Message *hdr, const uint8 *data);
+static void _can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData);
+static void _can_transmit_message(IfxCan_Message *txMsgHdr, uint8 *txData);
+static void _process_debug_print_control_message(uint8 *rxData);
 
-static void _print_data(uint8 *data, uint32 data_length);
-static void _process_print_control_message(uint32 *can_id, uint8 *rxData);
-static void _can_hw_configuration(void);
 /*********************************************************************************************************************/
 /*---------------------------------------------Function Implementations----------------------------------------------*/
 /*********************************************************************************************************************/
@@ -262,38 +254,47 @@ static void _can_hw_configuration(void);
 void can_ISR_RX_handler_func(void)
 {
 
-    IfxCan_Message rxMsg;                               /* Received CAN message structure                            */
-    uint8 rxData[MAXIMUM_CAN_FD_DATA_PAYLOAD];          /* Received CAN data array                                   */
+    IfxCan_Message rxMsgHdr;                            /* Received CAN message structure                            */
+    uint8 rxData[MAXIMUM_RX_CAN_FD_DATA_PAYLOAD];       /* Received CAN data array                                   */
 
-    IfxCan_Can_initMessage(&rxMsg);
+    IfxCan_Can_initMessage(&rxMsgHdr);
     /* Received message content should be read from RX FIFO 0 */
-    rxMsg.readFromRxFifo0 = TRUE;
+    rxMsgHdr.readFromRxFifo0 = TRUE;
 
     /* Read the received CAN message */
-    IfxCan_Can_readMessage(&g_can.canNode, &rxMsg, (uint32*)rxData);
+    IfxCan_Can_readMessage(&canNode, &rxMsgHdr, (uint32*)rxData);
 
     /* Clear the "RX FIFO 0 new message" interrupt flag */
-    IfxCan_Node_clearInterruptFlag(g_can.canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
+    IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
 
     /* Process incoming message */
 
     /* Print message to standard output*/
-    can_message_print("RX:", rxMsgHdr, rxData);
+    _can_message_print("RX:", &rxMsgHdr, rxData);
 
-    if (rxMsg.can_id == DEBUG_ENABLE_CAN_ID)
-        _process_print_control_message(rxData);
-
+    if (rxMsgHdr.messageId == DEBUG_ENABLE_CAN_ID)
+    {
+        _process_debug_print_control_message(rxData);
+    }
+    
     /* Reply to the received message */
-    if (TODO: Check that txData contains at least one byte)
-        can_reply(&rxMsg, rxData);
+    if (rxMsgHdr.dataLengthCode != IfxCan_DataLengthCode_0)
+    {
+        _can_reply(&rxMsgHdr,  rxData);
+    }
+
 }
 
-void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
+/* Function replies to the message ID specified in rxMsgHdr with processed
+ * data taken from rxData
+ */
+static void _can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
 {
   IfxCan_Message txMsgHdr;
-  uint8 txData[MAXIMUM_CAN_FD_DATA_PAYLOAD];
+  uint8 txData[MAXIMUM_TX_CAN_DATA_PAYLOAD] = {0}; // initialize array to zeroes
 
   IfxCan_Can_initMessage(&txMsgHdr);
+  
   /* Configure message header*/
   txMsgHdr.messageId        =  rxMsgHdr->messageId + 1;
   txMsgHdr.messageIdLength  =  IfxCan_MessageIdLength_extended;
@@ -302,9 +303,9 @@ void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
 
   /* Reply with first byte incremented */
   txData[0] = rxData[0] + 1;
-
+  
   /* Transmit new message */
-  can_transmit_message(&txMsgHdr, txData);
+  _can_transmit_message(&txMsgHdr, txData);
 
 }
 
@@ -312,27 +313,34 @@ void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
 void can_init(void)
 {
     debug_print = FALSE;
+    IfxScuCcu_Config IfxScuCcu_sampleClockConfig;       /* SCU CCU configuration handler */
+    IfxCan_Can_Config canConfig;                        /* CAN module configuration structure */
+    IfxCan_Can canModule;                               /* CAN module handler */
 
-    _can_hw_configuration();
+    // standard PLL & clock init
+    IfxScuCcu_initConfig(&IfxScuCcu_sampleClockConfig);
+    IfxScuCcu_init(&IfxScuCcu_sampleClockConfig);
 
-    /* Message structure initialization */
-    IfxCan_Can_initMessage((IfxCan_Message *)&g_can.rxMsg);
-    IfxCan_Can_initMessage((IfxCan_Message *)&g_can.txMsg);
-
-    /* Data arrays initialization to invalid value */
-    memset(&g_can.rxData, 0, MAXIMUM_CAN_FD_DATA_PAYLOAD);
-    memset(&g_can.txData, 0, MAXIMUM_CAN_FD_DATA_PAYLOAD);
+    // CAN configuration
+    IfxCan_Can_initModuleConfig(&canConfig, &MODULE_CAN0);
+    IfxCan_Can_initModule(&canModule, &canConfig);
+    canNodeConfig = default_can_node_cfg;
+    IfxCan_Can_initNode(&canNode, &canNodeConfig);
 }
 
-/* See header file*/
-void can_transmit_message(void)
+/* Send message via CAN interface.
+ * txMsgHdr - data for constructing CAN header
+ * txData - data to send via CAN inteface
+ */
+static void _can_transmit_message(IfxCan_Message *txMsgHdr, uint8 *txData)
 {
+    IfxCan_Status status = IfxCan_Status_ok;
     /* Send the CAN message with the previously defined TX message configuration and content */
-    while( IfxCan_Status_notSentBusy ==
-           IfxCan_Can_sendMessage(&g_can.canNode, &g_can.txMsg, (uint32*)&g_can.txData))
+    do
     {
+        status = IfxCan_Can_sendMessage(&canNode, txMsgHdr, (uint32 *)txData);
 
-    }
+    }while(status == IfxCan_Status_notSentBusy);
     
     if (debug_print)
     {
@@ -340,13 +348,19 @@ void can_transmit_message(void)
     }
 }
 
-void can_message_print(const char *prefix, const IfxCan_Message *hdr, const uint8 *data)
+/*
+ * Print message and CAN ID if debug_print is TRUE
+ */
+static void _can_message_print(const char *prefix, const IfxCan_Message *hdr, const uint8 *data)
 {
     if (debug_print)
     {
-        printf("%s CAN ID: 0x%lX data:", prefix, hdr->can_id);
         uint8 i = 0;
-        for (i = 0; i < data_length; i++)
+        //Conversion from data word to number of bytes
+        uint32 data_length_in_bytes = IfxCan_Node_getDataLengthInBytes(hdr->dataLengthCode);
+
+        printf("%s CAN ID: 0x%lX data:", prefix, hdr->messageId);
+        for (i = 0; i < data_length_in_bytes; i++)
         {
             printf(" 0x%02X", data[i]);
         }
@@ -354,31 +368,13 @@ void can_message_print(const char *prefix, const IfxCan_Message *hdr, const uint
     }
 }
 
-static void _process_print_control_message(uint8 *rxData)
+/* Process debug message
+ */
+static void _process_debug_print_control_message(uint8 *rxData)
 {
+    debug_print = FALSE;
     if (*rxData >= DEBUG_ENABLE_VALUE && *rxData != INVALID_DATA_VALUE)
     {
         debug_print = TRUE;
     }
-    else
-    {
-        debug_print = FALSE;
-    }
-}
-
-static void _can_hw_configuration(void)
-{
-    IfxCan_Can_NodeConfig canNodeConfig;                /* CAN node configuration structure                          */
-    
-    // standard PLL & clock init
-    IfxScuCcu_Config IfxScuCcu_sampleClockConfig;
-    IfxScuCcu_initConfig(&IfxScuCcu_sampleClockConfig);
-    IfxScuCcu_init(&IfxScuCcu_sampleClockConfig);
-
-    // CAN configuration
-    IfxCan_Can_initModuleConfig(&g_can.canConfig, &MODULE_CAN0);
-    IfxCan_Can_initModule(&g_can.canModule, &g_can.canConfig);
-    g_can.canNodeConfig = default_can_node_cfg;
-    
-    IfxCan_Can_initNode(&g_can.canNode, &g_can.canNodeConfig);
 }
