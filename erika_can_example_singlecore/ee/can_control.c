@@ -13,7 +13,6 @@
 /*-------------------------------------------------Macro defenition--------------------------------------------------*/
 /*********************************************************************************************************************/
 #define DEBUG_ENABLE_CAN_ID                    0x1              /* Debug message CAN ID                              */
-#define DEBUG_ENABLE_VALUE                     1                /* Debug message value to enable debug mode          */
 #define INVALID_DATA_VALUE                     0xEE             /* Used to invalidate TX message data content        */
 #define ISR_PRIORITY_CAN_RX                    10               /* Define the CAN RX interrupt priority              */
 #define MAXIMUM_RX_CAN_FD_DATA_PAYLOAD         64               /* Define maximum CAN payload in bytes               */
@@ -243,7 +242,7 @@ const static IfxCan_Can_NodeConfig canNodeConfig =
 static void _can_message_print(const char *prefix, const IfxCan_Message *hdr, const uint8 *data);
 static void _can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData);
 static void _can_transmit_message(IfxCan_Message *txMsgHdr, uint8 *txData);
-static void _process_debug_print_control_message(uint8 *rxData);
+static void _process_debug_print_control_message(const IfxCan_Message *hdr, const uint8 *rxData);
 
 /*********************************************************************************************************************/
 /*---------------------------------------------Function Implementations----------------------------------------------*/
@@ -273,7 +272,7 @@ void can_ISR_RX_handler_func(void)
 
     if (rxMsgHdr.messageId == DEBUG_ENABLE_CAN_ID)
     {
-        _process_debug_print_control_message(rxData);
+        _process_debug_print_control_message(&rxMsgHdr, rxData);
     }
     
     /* Reply to the received message */
@@ -368,11 +367,10 @@ static void _can_message_print(const char *prefix, const IfxCan_Message *hdr, co
 
 /* Process debug message
  */
-static void _process_debug_print_control_message(uint8 *rxData)
+static void _process_debug_print_control_message(const IfxCan_Message *hdr, const uint8 *rxData)
 {
-    debug_print = FALSE;
-    if (*rxData >= DEBUG_ENABLE_VALUE && *rxData != INVALID_DATA_VALUE)
+    if (hdr->dataLengthCode >= IfxCan_DataLengthCode_1)
     {
-        debug_print = TRUE;
+        debug_print = (*rxData != 0);
     }
 }
