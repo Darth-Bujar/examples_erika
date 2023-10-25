@@ -58,7 +58,7 @@ void idle_hook_core0(void);                                        /* idle hool 
 TASK(can_init_task)
 {
   printf("CAN drivers initialization: ");
-  can_init();
+  can_init(); // TODO: Remove this task and move can_init to main()
   printf("Complete \n");
   
   TerminateTask();
@@ -71,13 +71,13 @@ TASK(can_init_task)
  */
 int main(void)
 {
-  IfxCpu_enableInterrupts();
+  IfxCpu_enableInterrupts(); // TODO: Is this needed?
 
   /* !!WATCHDOG0 AND SAFETY WATCHDOG ARE DISABLED HERE!!
   * Enable the watchdogs and service them periodically if it is required
   */
 
-  /* Wait for CPU sync event */
+  /* Wait for CPU sync event */ // TODO: Is this needed?
   IfxCpu_emitEvent(&g_cpuSyncEvent);
   IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
 
