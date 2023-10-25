@@ -24,7 +24,6 @@
 /*-------------------------------------------------Local variables---------------------------------------------------*/
 /*********************************************************************************************************************/
 static boolean debug_print;                                                  /* Flag indicate debug text state       */
-IfxCan_Can_NodeConfig canNodeConfig;                            /*   CAN node configuration structure                */
 IfxCan_Can_Node canNode;                                       /* CAN node handle data structure                     */
 
 // Default pin configuration for CAN
@@ -38,7 +37,7 @@ const static IfxCan_Can_Pins default_can_pin_cfg =
 };
 
 // Default pin configuration for CAN
-const static IfxCan_Can_NodeConfig default_can_node_cfg =
+const static IfxCan_Can_NodeConfig canNodeConfig =
 {
         .can         = &MODULE_CAN0,
         .nodeId      = IfxCan_NodeId_0,
@@ -324,7 +323,6 @@ void can_init(void)
     // CAN configuration
     IfxCan_Can_initModuleConfig(&canConfig, &MODULE_CAN0);
     IfxCan_Can_initModule(&canModule, &canConfig);
-    canNodeConfig = default_can_node_cfg;
     IfxCan_Can_initNode(&canNode, &canNodeConfig);
 }
 
