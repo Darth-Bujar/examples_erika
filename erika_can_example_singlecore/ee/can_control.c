@@ -9,6 +9,16 @@
 #include "ee.h"
 #include "IfxCpu_IntrinsicsTasking.h"
 
+// TODO: Chech which headers below are actually needed
+#include <stdio.h>
+#include <string.h>
+#include "Ifx_Types.h"
+#include "IfxCan_Can.h"
+#include "IfxCan.h"
+#include "IfxCpu_Irq.h"
+#include "IfxPort.h"
+#include "IfxCan_PinMap.h"
+
 /*********************************************************************************************************************/
 /*-------------------------------------------------Macro defenition--------------------------------------------------*/
 /*********************************************************************************************************************/
