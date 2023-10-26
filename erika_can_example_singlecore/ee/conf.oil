@@ -44,11 +44,7 @@ CPU test_application {
   OS EE {
    	EE_OPT = "OSEE_DEBUG";
     EE_OPT = "OSEE_ASSERT";
-    EE_OPT = "OS_EE_APPL_BUILD_DEBUG";
-    EE_OPT = "OS_EE_BUILD_DEBUG";
     EE_OPT = "OSEE_API_EXTENSION";
-    EE_OPT = "OS_EE_VERBOSE";
-    //EE_OPT = "OSEE_TC_CLONE_OS";
 
     CPU_DATA = TRICORE {
       ID = 0x0;
@@ -65,7 +61,6 @@ CPU test_application {
     };
 
     STATUS = EXTENDED;
-    ERRORHOOK = TRUE;
     USERESSCHEDULER = FALSE;
     USEORTI = TRUE;
     KERNEL_TYPE = OSEK {
@@ -91,7 +86,6 @@ CPU test_application {
       EXTENDED = TRUE;
     };
   };
-  
   
   ISR can_ISR_RX_handler {
 		CPU_ID = 0x0;

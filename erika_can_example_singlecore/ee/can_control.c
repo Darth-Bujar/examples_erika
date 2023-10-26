@@ -5,17 +5,13 @@
  */
 //Reference: https://www.infineon.com/dgdl/Infineon-AURIX_TC3xx_Part2-UserManual-v02_00-EN.pdf?fileId=5546d462712ef9b701717d35f8541d94
 
-#include "can_control.h"
-#include "ee.h"
-#include "IfxCpu_IntrinsicsTasking.h"
-
-// TODO: Chech which headers below are actually needed
 #include <stdio.h>
 #include <string.h>
-#include "Ifx_Types.h"
+
+#include "can_control.h"
+#include "ee.h"
 #include "IfxCan_Can.h"
 #include "IfxCan.h"
-#include "IfxCpu_Irq.h"
 #include "IfxPort.h"
 #include "IfxCan_PinMap.h"
 
@@ -23,16 +19,15 @@
 /*-------------------------------------------------Macro defenition--------------------------------------------------*/
 /*********************************************************************************************************************/
 #define DEBUG_ENABLE_CAN_ID                    0x1              /* Debug message CAN ID                              */
-#define INVALID_DATA_VALUE                     0xEE             /* Used to invalidate TX message data content        */
 #define ISR_PRIORITY_CAN_RX                    10               /* Define the CAN RX interrupt priority              */
 #define MAXIMUM_RX_CAN_FD_DATA_PAYLOAD         64               /* Define maximum CAN payload in bytes               */
 #define CAN_BUFFER_SIZE                        1                /* Size of the buffer                                */
-#define MAXIMUM_TX_CAN_DATA_PAYLOAD            1               /* Define maximum CAN payload in bytes               */
+#define MAXIMUM_TX_CAN_DATA_PAYLOAD            1                /* Define maximum CAN payload in bytes               */
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local variables---------------------------------------------------*/
 /*********************************************************************************************************************/
-static boolean debug_print;                                                  /* Flag indicate debug text state       */
+static boolean debug_print;                                    /* Flag indicate debug text state       */
 IfxCan_Can_Node canNode;                                       /* CAN node handle data structure                     */
 
 // Default pin configuration for CAN
@@ -262,8 +257,8 @@ static void _process_debug_print_control_message(const IfxCan_Message *hdr, cons
 void can_ISR_RX_handler_func(void)
 {
 
-    IfxCan_Message rxMsgHdr;                            /* Received CAN message structure                            */
-    uint8 rxData[MAXIMUM_RX_CAN_FD_DATA_PAYLOAD];       /* Received CAN data array                                   */
+    IfxCan_Message rxMsgHdr;                                    /* Received CAN message structure                    */
+    uint8 rxData[MAXIMUM_RX_CAN_FD_DATA_PAYLOAD];               /* Received CAN data array                           */
 
     IfxCan_Can_initMessage(&rxMsgHdr);
     /* Received message content should be read from RX FIFO 0 */

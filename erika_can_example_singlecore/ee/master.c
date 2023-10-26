@@ -39,9 +39,6 @@
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local variables--------------------------------------------------*/
 /*********************************************************************************************************************/
-
-IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
-OsEE_reg myErrorCounter;                                           /* ERIKA RTOS Error counter                       */
 /*********************************************************************************************************************/
 /*---------------------------------------------LOCAL FUNCTION DEFENITIO----------------------------------------------*/
 /*********************************************************************************************************************/
@@ -49,41 +46,29 @@ void idle_hook_core0(void);                                        /* idle hool 
 /*********************************************************************************************************************/
 /*-------------------------------------------------TASKS DEFINITION--------------------------------------------------*/
 /*********************************************************************************************************************/
-
 /* This task called only once after start of ERIKA RTOS. Defined byt
- * Properties:     
+ * Properties:
  *                 AUTOSTART = TRUE;
  *                 ACTIVATION = 1;
  */
 TASK(can_init_task)
 {
-  printf("CAN drivers initialization: ");
-  can_init(); // TODO: Remove this task and move can_init to main()
-  printf("Complete \n");
-  
-  TerminateTask();
+    printf("CAN drivers initialization: ");
+    can_init();
+    printf("Complete \n");
+
+    TerminateTask();
 }
 /*********************************************************************************************************************/
-/*-------------------------------------------------FUNCTION DEFINITION--------------------------------------------------*/
+/*-------------------------------------------------FUNCTION DEFINITION-----------------------------------------------*/
 /*********************************************************************************************************************/
 /*
  * MAIN TASK
  */
 int main(void)
 {
-  IfxCpu_enableInterrupts(); // TODO: Is this needed?
-
-  /* !!WATCHDOG0 AND SAFETY WATCHDOG ARE DISABLED HERE!!
-  * Enable the watchdogs and service them periodically if it is required
-  */
-
-  /* Wait for CPU sync event */ // TODO: Is this needed?
-  IfxCpu_emitEvent(&g_cpuSyncEvent);
-  IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
-
-  AppModeType      mode = OSDEFAULTAPPMODE;
-
-  StartOS(mode);
+  // Start ERIKA RTOS
+  StartOS(0);
 
   return 0;
 }
@@ -91,12 +76,6 @@ int main(void)
 /*********************************************************************************************************************/
 /*-------------------------------------------------ERIKA`s special function definition-------------------------------*/
 /*********************************************************************************************************************/
-void ErrorHook(StatusType Error)
-{
-  (void)Error;
-
-  ++myErrorCounter;
-}
 void idle_hook_core0(void)
 {
   idle_hook_body();
