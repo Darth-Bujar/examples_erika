@@ -256,7 +256,7 @@ static void _process_debug_print_control_message(const IfxCan_Message *hdr, cons
 /* See header file*/
 void can_ISR_RX_handler_func(void)
 {
-
+    uint32 start_time = osEE_tc_stm_get_time_lower_word(osEE_get_curr_core_id());
     IfxCan_Message rxMsgHdr;                                    /* Received CAN message structure                    */
     uint8 rxData[MAXIMUM_RX_CAN_FD_DATA_PAYLOAD];               /* Received CAN data array                           */
 
@@ -285,7 +285,8 @@ void can_ISR_RX_handler_func(void)
     {
         _can_reply(&rxMsgHdr,  rxData);
     }
-
+    uint32 stop_time = osEE_tc_stm_get_time_lower_word(osEE_get_curr_core_id());
+    printf("Time: %u f: %u\n",stop_time - start_time,osEE_tc_get_fsource());
 }
 
 /* Function replies to the message ID specified in rxMsgHdr with processed
