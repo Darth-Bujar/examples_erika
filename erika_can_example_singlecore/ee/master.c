@@ -20,6 +20,7 @@
 #include "Ifx_Types.h"
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
+#include "IfxCan.h"
 #include "ee.h"
 
 #if (defined(__TASKING__))
@@ -33,6 +34,7 @@
     #include "Os_MemMap.h"
 #endif /* __TASKING__ */
 
+#define KEEP_ALIVE_CAN_MESSAGE_ID 1
 /*********************************************************************************************************************/
 /*-------------------------------------------------Macro defenitions-------------------------------------------------*/
 /*********************************************************************************************************************/
@@ -51,12 +53,9 @@ void idle_hook_core0(void);                                        /* idle hool 
  *                 AUTOSTART = TRUE;
  *                 ACTIVATION = 1;
  */
-TASK(can_init_task)
+TASK(can_keep_alive_task)
 {
-    printf("CAN drivers initialization: ");
-    can_init();
-    printf("Complete \n");
-
+    send_keep_alive_message();
     TerminateTask();
 }
 /*********************************************************************************************************************/
@@ -67,6 +66,7 @@ TASK(can_init_task)
  */
 int main(void)
 {
+  can_init();
   // Start ERIKA RTOS
   StartOS(0);
 

@@ -24,6 +24,7 @@
 #define CAN_BUFFER_SIZE                        1                /* Size of the buffer                                */
 #define MAXIMUM_TX_CAN_DATA_PAYLOAD            1                /* Define maximum CAN payload in bytes               */
 
+#define KEEP_ALIVE_CAN_MESSAGE_ID 2
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local variables---------------------------------------------------*/
 /*********************************************************************************************************************/
@@ -248,7 +249,7 @@ static void _can_message_print(const char *prefix, const IfxCan_Message *hdr, co
 static void _can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData);
 static void _can_transmit_message(IfxCan_Message *txMsgHdr, uint8 *txData);
 static void _process_debug_print_control_message(const IfxCan_Message *hdr, const uint8 *rxData);
-
+static uint32 rx_counter;
 /*********************************************************************************************************************/
 /*---------------------------------------------Function Implementations----------------------------------------------*/
 /*********************************************************************************************************************/
@@ -267,6 +268,7 @@ void can_ISR_RX_handler_func(void)
     /* Read the received CAN message */
     IfxCan_Can_readMessage(&canNode, &rxMsgHdr, (uint32*)rxData);
 
+    rx_counter++;
     /* Clear the "RX FIFO 0 new message" interrupt flag */
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
 
@@ -279,12 +281,16 @@ void can_ISR_RX_handler_func(void)
     {
         _process_debug_print_control_message(&rxMsgHdr, rxData);
     }
-    
-    /* Reply to the received message */
-    if (rxMsgHdr.dataLengthCode != IfxCan_DataLengthCode_0)
+    else
     {
-        _can_reply(&rxMsgHdr,  rxData);
+        /* Reply to the received message */
+        if (rxMsgHdr.dataLengthCode != IfxCan_DataLengthCode_0)
+        {
+            _can_reply(&rxMsgHdr,  rxData);
+        }
+
     }
+
     uint32 stop_time = osEE_tc_stm_get_time_lower_word(osEE_get_curr_core_id());
     printf("Time: %u f: %u\n",stop_time - start_time,osEE_tc_get_fsource());
 }
@@ -301,7 +307,7 @@ static void _can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
   
   /* Configure message header*/
   txMsgHdr.messageId        =  rxMsgHdr->messageId + 1;
-  txMsgHdr.messageIdLength  =  IfxCan_MessageIdLength_extended;
+  txMsgHdr.messageIdLength  =  rxMsgHdr->messageIdLength;
   txMsgHdr.frameMode        =  IfxCan_FrameMode_standard;
   txMsgHdr.dataLengthCode   =  IfxCan_DataLengthCode_1;
 
@@ -331,6 +337,18 @@ void can_init(void)
     IfxCan_Can_initNode(&canNode, &canNodeConfig);
 }
 
+void send_keep_alive_message(void)
+{
+    static const IfxCan_Message keep_alive_msg_hdr = 
+    {
+      .dataLengthCode  = IfxCan_DataLengthCode_4,
+      .frameMode       = IfxCan_FrameMode_standard,
+      .messageIdLength = IfxCan_MessageIdLength_standard,
+      .messageId       = KEEP_ALIVE_CAN_MESSAGE_ID
+    };
+
+    _can_transmit_message(&keep_alive_msg_hdr, &rx_counter);
+}
 /* Send message via CAN interface.
  * txMsgHdr - data for constructing CAN header
  * txData - data to send via CAN inteface

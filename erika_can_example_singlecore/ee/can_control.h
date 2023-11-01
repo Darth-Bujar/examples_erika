@@ -12,4 +12,6 @@ void can_init(void);
  */
 void can_ISR_RX_handler_func(void);
 
+void send_keep_alive_message(void);
+
 #endif /* CAN_CONTROL_H_*/
