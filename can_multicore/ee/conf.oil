@@ -109,10 +109,13 @@ CPU test_application
     APP_SRC="can_control.c";
   };
 
+  RESOURCE can_data_mutex { RESOURCEPROPERTY = STANDARD; };
+
 // TASKS
   TASK task_can_tx_msg_cpu0 
   {
     CPU_ID = 0x0;
+    RESOURCE = "can_data_mutex";
     PRIORITY = 10;
     ACTIVATION = 1;
   };
@@ -135,19 +138,20 @@ CPU test_application
     CPU_ID = 0x1;
     PRIORITY = 1;
   };
+
 // ISR
-  ISR isr_can_fifo0_new_message {
+  ISR can_isr_rx_handler_func {
 		CPU_ID = 0x0;
-		CATEGORY = 1;
-		SOURCE = "CAN_CAN0_INT0";
+		CATEGORY = 2;
+		SOURCE = "CAN_CAN0_INT1";
 		PRIORITY = 10;
    };
    
-   ISR isr_bus_off {
+   ISR can_isr_fifo0_msg_lost {
 		CPU_ID = 0x0;
-		CATEGORY = 2;
-		SOURCE = "CAN_CAN0_INT0";
-		PRIORITY = 10;
+		CATEGORY = 1;
+		SOURCE = "CAN_CAN0_INT2";
+		PRIORITY = 11;
    };
 
 // COUNTERS

@@ -14,10 +14,11 @@
 #define DEBUG_ENABLE_CAN_ID                    0x1              /* Debug message CAN ID                              */
 #define ISR_PRIORITY_CAN_RX                    10               /* Define the CAN RX interrupt priority              */
 #define MAXIMUM_RX_CAN_FD_DATA_PAYLOAD         64               /* Define maximum CAN payload in bytes               */
-#define CAN_RX_BUFFER_SIZE                     32                /* Size of the buffer                                */
+#define CAN_RX_BUFFER_SIZE                     CAN_SW_BUFFER_SIZE            /* Size of the buffer                                */
 #define MAXIMUM_TX_CAN_DATA_PAYLOAD            1                /* Define maximum CAN payload in bytes               */
 
-#define KEEP_ALIVE_CAN_MESSAGE_ID 2
+#define KEEP_ALIVE_CAN_MESSAGE_ID2             2                   /* Debug message ID for all cores except of 0   */
+#define KEEP_ALIVE_CAN_MESSAGE_ID1              1                   /* Debug message ID for core 0                 */
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local variables---------------------------------------------------*/
@@ -236,6 +237,18 @@ const static IfxCan_Can_NodeConfig canNodeConfig =
         .calculateBitTimingValues = TRUE
 };
 
+typedef struct
+{
+    uint32 rx_counter;
+    //uint16 msg_lost;
+    uint32 tx_counter;
+    //uint8  bus_off_coutner;
+
+}debug_info;
+
+static debug_info debug_counters;
+static can_message can_sw_rx_buffer[CAN_SW_BUFFER_SIZE];  /* Declaration of the variable */
+static uint8 can_sw_rx_buffer_index;
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local function declaration----------------------------------------*/
 /*********************************************************************************************************************/
@@ -244,37 +257,80 @@ static void _can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData);
 static void _can_transmit_message(IfxCan_Message *txMsgHdr, uint8 *txData);
 static void _process_debug_print_control_message(const IfxCan_Message *hdr, const uint8 *rxData);
 static void _can_acceptance_filter_config(void);
-static uint32 rx_counter; // TODO: TX counter
+
 /*********************************************************************************************************************/
 /*-------------------------------------------------Function definition=----------------------------------------------*/
 /*********************************************************************************************************************/
 
-// TODO: rework into interrupt of category 1
+// TODO: RN reworked to store message to SW buffer.
 /* See header file*/
-void can_ISR_RX_handler_func(void)
+void can_isr_rx_handler_func(void)
 {
-    IfxCan_Message rxMsgHdr;                                    /* Received CAN message structure                    */
-    uint8 rxData[MAXIMUM_RX_CAN_FD_DATA_PAYLOAD];               /* Received CAN data array                           */
-
-    IfxCan_Can_initMessage(&rxMsgHdr);
     /* Received message content should be read from RX FIFO 0 */
-    rxMsgHdr.readFromRxFifo0 = TRUE;
+    rcan_sw_rx_buffer[can_sw_rx_buffer_index].header = TRUE;
 
     // TODO: With every reading increase acknowledgment bit. more info in Notion
     /* Read the received CAN message */
-    IfxCan_Can_readMessage(&canNode, &rxMsgHdr, (uint32*)rxData);
+    IfxCan_Can_readMessage(&canNode, &can_sw_rx_buffer[can_sw_rx_buffer_index].header, (uint32*)can_sw_rx_buffer[can_sw_rx_buffer_index].header);
     
-    /* Incremment recieved message counter */
-    rx_counter++;
+    /* Check that array limit within the limt and increase it */
+    if (can_sw_rx_buffer_index == (CAN_SW_BUFFER_SIZE - 1))
+    {
+        can_sw_rx_buffer_index = 0;
+    }
+    else
+    {
+        can_sw_rx_buffer_index++;
+    } 
+    
+    /* Incremment recieved message debug counter */
+    debug_counters.rx_counter++;
 
     /* Clear the "RX FIFO 0 new message" interrupt flag */
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
 }
 
+void can_isr_tx_success(void)
+{   
+    /* Debug statistics counter of completed transmissions update*/
+    debug_counters.tx_counter++;
+
+    /* Clear interrupt flag*/
+    IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_transmissionCompleted);
+}
+
+void can_isr_fifo0_full(void)
+{
+    int i = 0;
+
+    // TODO:
+    // The size on CAN SW Buffer must be the same as size of HW buffer (easier implememntation)
+    // In other case I should keep traking on which message has been read and which is not. That will overcomplicate example.
+
+    // Reading all the data from FIFO0. 
+    for (i = 0; i <= CAN_SW_BUFFER_SIZE; i++)
+    {
+        IfxCan_Can_readMessage(&canNode, &can_sw_rx_buffer[i].header, (uint32*)can_sw_rx_buffer[i].data);
+    }
+
+    debug_counters.rx_counter += CAN_SW_BUFFER_SIZE;
+
+    IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0Full);
+}
+
+void can_isr_fifo0_msg_lost(void)
+{
+    /* Debug statistics cpuunter of lost messages update */
+    // debug_counters.msg_lost++;
+    
+    /* Clear the "RX FIFO 0 message lost" interrupt flag */
+    IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0MessageLost);
+}
+
 /* Function replies to the message ID specified in rxMsgHdr with processed
  * data taken from rxData
  */
-static void _can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
+void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
 {
   IfxCan_Message txMsgHdr;
   uint8 txData[MAXIMUM_TX_CAN_DATA_PAYLOAD] = {0}; // initialize array to zeroes
@@ -313,17 +369,18 @@ void can_init(void)
     IfxCan_Can_initNode(&canNode, &canNodeConfig);
 }
 
-void send_keep_alive_message(void)
+void send_keep_alive_message(IfxCpu_Id coreID)
 {
-    static const IfxCan_Message keep_alive_msg_hdr = 
+
+    const IfxCan_Message keep_alive_msg_hdr = 
     {
-      .dataLengthCode  = IfxCan_DataLengthCode_4,
-      .frameMode       = IfxCan_FrameMode_standard,
-      .messageIdLength = IfxCan_MessageIdLength_standard,
-      .messageId       = KEEP_ALIVE_CAN_MESSAGE_ID
+    .dataLengthCode  = IfxCan_DataLengthCode_8,
+    .frameMode       = IfxCan_FrameMode_standard,
+    .messageIdLength = IfxCan_MessageIdLength_extended,
+    .messageId       = coreID ? KEEP_ALIVE_CAN_MESSAGE_ID2 : KEEP_ALIVE_CAN_MESSAGE_ID1
     };
 
-    _can_transmit_message(&keep_alive_msg_hdr, &rx_counter);
+    _can_transmit_message(&keep_alive_msg_hdr, &debug_counters.rx_counter);
 }
 
 static void _can_acceptance_filter_config(void)
@@ -359,6 +416,11 @@ static void _can_transmit_message(IfxCan_Message *txMsgHdr, uint8 *txData)
     {
         printf("TX: Success \n");
     }
+}
+
+can_message* can_get_sw_buffer_pointer(void)
+{
+    return &can_sw_rx_buffer;
 }
 
 /*
