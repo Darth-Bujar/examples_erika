@@ -42,7 +42,7 @@
 
 #include "shared.h"
 #include "can_control.h"
-
+#include "IfxCpu.h"
 #if (defined(__TASKING__))
 #define OS_CORE1_START_SEC_CODE
 #include "Os_MemMap.h"
@@ -53,7 +53,6 @@
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local variables---------------------------------------------------*/
-
 /*********************************************************************************************************************/
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local function declaration----------------------------------------*/
@@ -62,21 +61,25 @@ void idle_hook_core1(void);
 /*********************************************************************************************************************/
 /*-------------------------------------------------Function definition=----------------------------------------------*/
 /*********************************************************************************************************************/
-TASK(task_can_tx_msg_cpu1)
+TASK(task_can_tx_msg_processing_cpu1)
 {
   uint8 i = 0;
   can_message* can_sw_rx_buffer = can_get_sw_buffer_pointer();
+  get_acces_to_can_sw_buffer();
 
+  /* Begining of critical section*/
   for(i = 0; i <= CAN_SW_BUFFER_SIZE; i++)
   {
-    can_reply(&can_sw_rx_buffer.header, can_sw_rx_buffer.data);
+    can_reply(&can_sw_rx_buffer->header, can_sw_rx_buffer->data);
   }
-
+  /* End of critical section */
+  release_acces_to_can_sw_buffer();
+  
   /* Cleanly terminate the Task */
   TerminateTask();
 }
 
-TASK(task_keep_alive_cpu0)
+TASK(task_keep_alive_cpu1)
 {
   send_keep_alive_message(IfxCpu_getCoreId());
   TerminateTask();
