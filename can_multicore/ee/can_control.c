@@ -110,16 +110,16 @@ const static IfxCan_Can_NodeConfig canNodeConfig =
         },
         .interruptConfig                             =
         {
-            .rxFifo0NewMessageEnabled                = TRUE,
+            .rxFifo0NewMessageEnabled                = FALSE,
             .rxFifo0WatermarkEnabled                 = FALSE,
-            .rxFifo0FullEnabled                      = FALSE,
+            .rxFifo0FullEnabled                      = TRUE,
             .rxFifo0MessageLostEnabled               = TRUE,
             .rxFifo1NewMessageEnabled                = FALSE,
             .rxFifo1WatermarkEnabled                 = FALSE,
             .rxFifo1FullEnabled                      = FALSE,
             .rxFifo1MessageLostEnabled               = FALSE,
             .highPriorityMessageEnabled              = FALSE,
-            .transmissionCompletedEnabled            = FALSE,
+            .transmissionCompletedEnabled            = TRUE,
             .transmissionCancellationFinishedEnabled = FALSE,
             .txFifoEmptyEnabled                      = FALSE,
             .txEventFifoNewEntryEnabled              = FALSE,
@@ -157,8 +157,8 @@ const static IfxCan_Can_NodeConfig canNodeConfig =
             },
             .alrt                                    =
             {
-                .interruptLine = IfxCan_InterruptLine_0,
-                .priority      = 0,
+                .interruptLine = IfxCan_InterruptLine_1,
+                .priority      = ISR_ALERTS_PRIO,
                 .typeOfService = IfxSrc_Tos_cpu0
             },
             .moer                                    =
@@ -200,7 +200,7 @@ const static IfxCan_Can_NodeConfig canNodeConfig =
             .rxf0f                                   =
             {
                 .interruptLine = IfxCan_InterruptLine_2,
-                .priority      = 0,
+                .priority      = ISR_FIFO0F_PRIO,
                 .typeOfService = IfxSrc_Tos_cpu0
             },
             .rxf1n                                   =
@@ -211,8 +211,8 @@ const static IfxCan_Can_NodeConfig canNodeConfig =
             },
             .rxf0n                                   =
             {
-                .interruptLine = IfxCan_InterruptLine_1,
-                .priority      = ISR_PRIORITY_CAN_RX,
+                .interruptLine = IfxCan_InterruptLine_0,
+                .priority      = 0,
                 .typeOfService = IfxSrc_Tos_cpu0
             },
             .reti                                    =
@@ -229,8 +229,8 @@ const static IfxCan_Can_NodeConfig canNodeConfig =
             },
             .traco                                   =
             {
-                .interruptLine = IfxCan_InterruptLine_3,
-                .priority      = 0,
+                .interruptLine = IfxCan_InterruptLine_9,
+                .priority      = ISR_TRACO_PRIO,
                 .typeOfService = IfxSrc_Tos_cpu0
             }
         },
@@ -311,12 +311,12 @@ void can_isr_fifo0_full(void)
     // The size on CAN SW Buffer must be the same as size of HW buffer (easier implememntation)
     // In other case I should keep traking on which message has been read and which is not. That will overcomplicate example.
 
-    get_acces_to_can_sw_buffer();
     IfxCan_Message tmp_header;
     uint8 tmp_data[MAXIMUM_RX_CAN_FD_DATA_PAYLOAD] = {};
+    get_acces_to_can_sw_buffer();
 
     // Reading all the data from FIFO0.     
-    for (i = 0; i <= CAN_SW_BUFFER_SIZE; i++)
+    for (i = 0; i < CAN_SW_BUFFER_SIZE; i++)
     {   
         IfxCan_Can_readMessage(&canNode, &tmp_header, (uint32*)tmp_data);
 
@@ -411,7 +411,7 @@ void can_init(void)
     IfxCan_Can_initModule(&canModule, &canConfig);
     IfxCan_Can_initNode(&canNode, &canNodeConfig);
 
-    //_can_acceptance_filter_config();
+    _can_acceptance_filter_config();
 }
 
 
@@ -421,9 +421,9 @@ void send_keep_alive_message(IfxCpu_Id coreID)
     const IfxCan_Message keep_alive_msg_hdr = 
     {
     .dataLengthCode  = IfxCan_DataLengthCode_12,
-    .frameMode       = IfxCan_FrameMode_fdLongAndFast,
+    .frameMode       = IfxCan_FrameMode_fdLong,
     .messageIdLength = IfxCan_MessageIdLength_extended,
-    .messageId       = coreID ? KEEP_ALIVE_CAN_MESSAGE_ID2 : KEEP_ALIVE_CAN_MESSAGE_ID1
+    .messageId       = (coreID == 1) ? KEEP_ALIVE_CAN_MESSAGE_ID2 : KEEP_ALIVE_CAN_MESSAGE_ID1
     };
 
     _can_transmit_message(&keep_alive_msg_hdr, &debug_counters.rx_counter);

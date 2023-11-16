@@ -44,7 +44,7 @@ CPU test_application
 
   OS EE 
   {
-    /* EE_OPT = "OS_EE_VERBOSE"; */
+    //EE_OPT = "OS_EE_VERBOSE";
     EE_OPT = "OSEE_DEBUG";
     EE_OPT = "OSEE_ASSERT";
     EE_OPT = "OS_EE_APPL_BUILD_DEBUG";
@@ -87,7 +87,7 @@ CPU test_application
 
     KERNEL_TYPE = OSEK 
     {
-      CLASS = ECC1;
+      CLASS = ECC2;
 //      RQ    = MQ;
     };
     
@@ -96,32 +96,29 @@ CPU test_application
   APPDATA tricore_2G_mc 
   {
     APP_SRC="cpu0_appl.c";
-    APP_SRC="cpu1_appl.c";
     APP_SRC="can_control.c";
+    APP_SRC="cpu1_appl.c";
+    
   };
 
-	//SPINLOCK spinlock_can_sw_buffer {};
-  //RESOURCE mutex_can_data { RESOURCEPROPERTY = ; };
-    EVENT can_sw_buffer_full  { MASK = AUTO; };
 
-// TASKS
-//  TASK task_can_rx_msg_processing_cpu0 
-//  {
-//  	//RESOURCE = mutex_can_data;
-//    CPU_ID = 0x0;
-//    PRIORITY = 10;
-//    ACTIVATION = 1;
-//  };
-//  
+// Event and resources definition
+  EVENT can_sw_buffer_full  { MASK = AUTO; };
+  // SPINLOCK spinlock_can_sw_buffer {};
+  // RESOURCE mutex_can_data { RESOURCEPROPERTY = ; };
+
   TASK task_can_tx_msg_processing_cpu1 
   {
     CPU_ID = 0x1;
-    PRIORITY = 10;
+    AUTOSTART = TRUE;
+    SCHEDULE = FULL;
     ACTIVATION = 1;
+    PRIORITY = 10;
     STACK = PRIVATE {
       SIZE = 256;
     };
-	EVENT = can_sw_buffer_full;
+    EVENT = can_sw_buffer_full;
+
   };
 
   TASK task_keep_alive_cpu0 
@@ -131,33 +128,25 @@ CPU test_application
 
   };
 
-// ISR
-//  ISR can_isr_rx_handler_func {
-//		CPU_ID = 0x0;
-//		CATEGORY = 1;
-//		SOURCE = "CAN_CAN0_INT2";
-//		PRIORITY = 12;
-//   };
-   
    ISR can_isr_fifo0_msg_lost {
 		CPU_ID = 0x0;
 		CATEGORY = 1;
-		SOURCE = "CAN_CAN0_INT1";
-		PRIORITY = 11;
+		SOURCE = "CAN_CAN0_INT3";
+		PRIORITY = 6;
    };
    
    ISR can_isr_tx_success {
 		CPU_ID = 0x0;
 		CATEGORY = 1;
-		SOURCE = "CAN_CAN0_INT4";
-		PRIORITY = 14;
+		SOURCE = "CAN_CAN0_INT9";
+		PRIORITY = 8;
    };
    
    ISR can_isr_fifo0_full {
 		CPU_ID = 0x0;
 		CATEGORY = 2;
-		SOURCE = "CAN_CAN0_INT3";
-		PRIORITY = 13;
+		SOURCE = "CAN_CAN0_INT2";
+		PRIORITY = 7;
    };
 
 // COUNTERS
@@ -175,21 +164,6 @@ CPU test_application
     SECONDSPERTICK = 0.001;
   };
 
-//  COUNTER system_timer_cpu1
-//  {
-//    CPU_ID = 0x2;
-//    MINCYCLE = 1;
-//    MAXALLOWEDVALUE = 2147483647;
-//    TICKSPERBASE = 1;
-//    TYPE = HARDWARE
-//     {
-//      DEVICE = "STM_SR0";
-//      SYSTEM_TIMER = TRUE;
-//      PRIORITY = 2;
-//    };
-//    SECONDSPERTICK = 0.001;
-//  };
-  
 // ALARMS
   ALARM keep_alive_alarm_cpu0_1s
   {
@@ -197,11 +171,6 @@ CPU test_application
     ACTION = ACTIVATETASK { TASK = task_keep_alive_cpu0; };
     AUTOSTART = TRUE { ALARMTIME = 100; CYCLETIME = 1000; };
   };
+  
 
-//  ALARM can_rx_msg_processing_cpu0_100ms 
-//  {
-//    COUNTER = system_timer_cpu0;
-//    ACTION = ACTIVATETASK { TASK = task_can_rx_msg_processing_cpu0; };
-//    AUTOSTART = TRUE { ALARMTIME = 50; CYCLETIME = 100; };
-//  };
 };

@@ -58,12 +58,13 @@ int main(void)
   /* ERIKA RTOS start */
   if (core_id == OS_CORE_ID_MASTER) 
   {
+    can_init();
     StartCore(OS_CORE_ID_1, &status);
     mode = OSDEFAULTAPPMODE;
-    can_init();
-  } else 
-  {
 
+  }
+  else
+  {
     mode = DONOTCARE;
   }
 
