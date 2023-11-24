@@ -42,9 +42,12 @@
 CPU test_application {
 
   OS EE {
-   	EE_OPT = "OSEE_DEBUG";
+
+    EE_OPT = "OSEE_DEBUG";
     EE_OPT = "OSEE_ASSERT";
+    EE_OPT = "OS_EE_APPL_BUILD_DEBUG";
     EE_OPT = "OSEE_API_EXTENSION";
+    EE_OPT = "OS_EE_BUILD_DEBUG";
 
     CPU_DATA = TRICORE {
       ID = 0x0;

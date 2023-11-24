@@ -23,7 +23,7 @@
 #define MAXIMUM_RX_CAN_FD_DATA_PAYLOAD         64               /* Define maximum CAN payload in bytes               */
 #define CAN_BUFFER_SIZE                        1                /* Size of the buffer                                */
 #define MAXIMUM_TX_CAN_DATA_PAYLOAD            1                /* Define maximum CAN payload in bytes               */
-
+#define CAN_RX_TX_BUFFER_SIZE                  10
 #define KEEP_ALIVE_CAN_MESSAGE_ID 2
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local variables---------------------------------------------------*/
@@ -292,7 +292,7 @@ void can_ISR_RX_handler_func(void)
     }
 
     uint32 stop_time = osEE_tc_stm_get_time_lower_word(osEE_get_curr_core_id());
-    printf("Time: %u f: %u\n",stop_time - start_time,osEE_tc_get_fsource());
+    printf("Time: %u f: %lu\n", stop_time - start_time, osEE_tc_get_fsource());
 }
 
 /* Function replies to the message ID specified in rxMsgHdr with processed
