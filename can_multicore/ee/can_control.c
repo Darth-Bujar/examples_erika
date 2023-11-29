@@ -13,17 +13,17 @@
 /*-------------------------------------------------Macro definition--------------------------------------------------*/
 /*********************************************************************************************************************/
 #define CAN_SW_BUFFER_SIZE                     16         /* Maximum number of messages stored in sw CAN buffer */
-#define DEBUG_ENABLE_CAN_ID                    0x1              /* Debug message CAN ID                              */
-#define ISR_PRIORITY_CAN_RX                    10               /* Define the CAN RX interrupt priority              */
-#define MAXIMUM_RX_CAN_FD_DATA_PAYLOAD         64               /* Define maximum CAN payload in bytes               */
-#define CAN_RX_TX_BUFFER_SIZE                  CAN_SW_BUFFER_SIZE            /* Size of the buffer                                */
-#define MAXIMUM_TX_CAN_DATA_PAYLOAD            1                /* Define maximum CAN payload in bytes               */
-#define ISR_FIFO0N_PRIO                        5                /* Define priority of interrupt rxfifo0n*/
-#define ISR_ALERTS_PRIO                        6                /* Define priority of interrupt alrt*/
-#define ISR_FIFO0F_PRIO                        7                /* Define priority of interrupt rxfifo0f*/
-#define ISR_TRACO_PRIO                         8                /* Define priority of interrupt traco*/
-#define KEEP_ALIVE_CAN_MESSAGE_ID2             112              /* Debug message ID for all cores except of 0   */
-#define KEEP_ALIVE_CAN_MESSAGE_ID1             111              /* Debug message ID for core 0                 */
+#define DEBUG_ENABLE_CAN_ID                    0x1              /* Debug Enable message CAN ID */
+#define ISR_PRIORITY_CAN_RX                    10               /* CAN RX interrupt priority */
+#define MAXIMUM_RX_CAN_FD_DATA_PAYLOAD         64               /* Maximum CAN payload in bytes */
+#define CAN_RX_TX_BUFFER_SIZE                  CAN_SW_BUFFER_SIZE            /* Size of the buffer */
+#define REPLY_LENGTH                           1                /* Reply length in bytes */
+#define ISR_FIFO0N_PRIO                        5                /* Priority of interrupt rxfifo0n */
+#define ISR_ALERTS_PRIO                        6                /* Priority of interrupt alrt */
+#define ISR_FIFO0F_PRIO                        7                /* Priority of interrupt rxfifo0f */
+#define ISR_TRACO_PRIO                         8                /* Priority of interrupt traco */
+#define KEEP_ALIVE_CAN_MESSAGE_ID1             111              /* Keep Alive from CPU0 message ID */
+#define KEEP_ALIVE_CAN_MESSAGE_ID2             112              /* Keep Alive from CPU1 message ID */
 #define SPINLOCK_MAX_WAIT                      0xFFFFFFFF
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local variables---------------------------------------------------*/
@@ -250,11 +250,11 @@ typedef struct
 }debug_info;
 
 static debug_info debug_counters;
-static can_message can_sw_rx_buffer[CAN_SW_BUFFER_SIZE];       /* Declaration of the variable */
-static uint8 can_sw_rx_buffer_index;
+can_message can_sw_rx_buffer[CAN_SW_BUFFER_SIZE];       /* Declaration of the variable */
+uint8 can_sw_rx_buffer_index;
 static boolean debug_print;                                    /* Flag indicate debug text state       */
 static IfxCan_Can_Node canNode;                                /* CAN node handle data structure                     */
-static IfxCpu_spinLock can_sw_buffer_lock; 
+IfxCpu_spinLock can_sw_buffer_lock; 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local function declaration----------------------------------------*/
 /*********************************************************************************************************************/
@@ -271,25 +271,18 @@ static void _can_acceptance_filter_config(void);
  /* See header file*/
  void can_ISR_RX_handler_func(void)
  {
-
+     can_message *msg = &can_sw_rx_buffer[can_sw_rx_buffer_index];
+     
      /* Received message content should be read from RX FIFO 0 */
-     can_sw_rx_buffer[can_sw_rx_buffer_index].header.readFromRxFifo0 = TRUE;
+     msg->header.readFromRxFifo0 = TRUE;
 
      get_can_buffer_spinlock();
      // TODO: With every reading increase acknowledgment bit. More info in Notion
      /* Read the received CAN message */
-     IfxCan_Can_readMessage(&canNode, &can_sw_rx_buffer[can_sw_rx_buffer_index].header, &can_sw_rx_buffer[can_sw_rx_buffer_index].data);
-    
-     /* Check that array limit within the limt and increase it */
-     if (can_sw_rx_buffer_index == (CAN_SW_BUFFER_SIZE - 1))
-     {
-         can_sw_rx_buffer_index = 0;
-     }
-     else
-     {
-         can_sw_rx_buffer_index++;
-     }
-    
+     IfxCan_Can_readMessage(&canNode, &msg->header, &msg->data);
+
+     can_sw_rx_buffer_index = (can_sw_rx_buffer_index + 1) % CAN_SW_BUFFER_SIZE;
+
      /* Incremment recieved message debug counter */
      debug_counters.rx_counter++;
      release_can_buffer_spinlock();
@@ -333,20 +326,20 @@ void get_can_buffer_spinlock_safe(void)
 
 }
 
-void get_can_buffer_spinlock(void)
+void spinlock_lock(IfxCpu_spinLock *lock)
 {
     boolean lock = FALSE;
     // Will not exit the function until it gets a spinlock
     while (lock != TRUE)
     {
-        lock = IfxCpu_setSpinLock(&can_sw_buffer_lock, SPINLOCK_MAX_WAIT); // IfxCpu_acquireMutex instead ?;
+        lock = IfxCpu_setSpinLock(lock, SPINLOCK_MAX_WAIT);
     }
 
 }
 
-void release_can_buffer_spinlock(void)
+void spinlock_unlock(IfxCpu_spinLock *lock)
 {
-    IfxCpu_resetSpinLock(&can_sw_buffer_lock);
+    IfxCpu_resetSpinLock(lock);
 }
 
 void release_can_buffer_spinlock_safe(void)
@@ -360,7 +353,7 @@ void release_can_buffer_spinlock_safe(void)
 void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
 {
   IfxCan_Message txMsgHdr;
-  uint8 txData[MAXIMUM_TX_CAN_DATA_PAYLOAD] = {0}; // initialize array to zeroes
+  uint8 txData[REPLY_LENGTH] = {0}; // initialize array to zeroes
 
   IfxCan_Can_initMessage(&txMsgHdr);
   
@@ -402,15 +395,24 @@ void can_init(void)
 void send_keep_alive_message(IfxCpu_Id coreID)
 {
 
+    size_t size = size_to_dlc(sizeof(debug_counters));
+    char msg_data[size];
+
+    /* Copy message data to potentially bigger zero-initialized buffer */
+    memset(msg_data, 0, sizeof(msg_data));
+    /* TODO: disable interrupts to */ // Ensure that data is not changed while we are copying them
+    memcpy(msg_data, &debug_counters, size);
+    /* TODO: enable interrupts */
+    
     const IfxCan_Message keep_alive_msg_hdr = 
     {
-    .dataLengthCode  = IfxCan_DataLengthCode_12,
+    .dataLengthCode  = size,
     .frameMode       = IfxCan_FrameMode_fdLong,
     .messageIdLength = IfxCan_MessageIdLength_extended,
     .messageId       = (coreID == 1) ? KEEP_ALIVE_CAN_MESSAGE_ID2 : KEEP_ALIVE_CAN_MESSAGE_ID1
     };
 
-    _can_transmit_message(&keep_alive_msg_hdr, &debug_counters.rx_counter);
+    _can_transmit_message(&keep_alive_msg_hdr, msg_data);
 }
 
 static void _can_acceptance_filter_config(void)
@@ -432,7 +434,7 @@ static void _can_acceptance_filter_config(void)
  * txMsgHdr - data for constructing CAN header
  * txData - data to send via CAN inteface
  */
-static void _can_transmit_message(const IfxCan_Message *txMsgHdr, uint32 *txData)
+static void _can_transmit_message(const IfxCan_Message *txMsgHdr, void *txData)
 {
     IfxCan_Status status = IfxCan_Status_ok;
     /* Send the CAN message with the previously defined TX message configuration and content */

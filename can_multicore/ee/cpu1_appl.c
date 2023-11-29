@@ -72,7 +72,7 @@ TASK(task_can_tx_msg_processing_cpu1)
       // WaitEvent(can_sw_buffer_full);
       // GetEvent(task_can_tx_msg_processing_cpu1, &mask);
 
-      release_can_buffer_spinlock_safe();
+      spinlock_lock(&can_sw_buffer_lock);
 
 
       /* Begining of critical section*/
@@ -82,7 +82,7 @@ TASK(task_can_tx_msg_processing_cpu1)
       }
       *buff_idx = 0;
       /* End of critical section */
-      release_can_buffer_spinlock_safe();
+      spinlock_unlock(&can_sw_buffer_lock);
 
       // ClearEvent(can_sw_buffer_full);
   }
