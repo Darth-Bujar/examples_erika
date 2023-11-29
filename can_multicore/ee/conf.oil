@@ -103,7 +103,7 @@ CPU test_application
 
 
 // Event and resources definition
-  EVENT can_sw_buffer_full  { MASK = AUTO; };
+  // EVENT can_sw_buffer_full  { MASK = AUTO; };
   // SPINLOCK spinlock_can_sw_buffer {};
   // RESOURCE mutex_can_data { RESOURCEPROPERTY = ; };
 
@@ -117,7 +117,7 @@ CPU test_application
     STACK = PRIVATE {
       SIZE = 256;
     };
-    EVENT = can_sw_buffer_full;
+    // EVENT = can_sw_buffer_full;
 
   };
 
@@ -142,17 +142,33 @@ CPU test_application
 		PRIORITY = 8;
    };
    
-   ISR can_isr_fifo0_full {
+   
+   ISR can_ISR_RX_handler {
 		CPU_ID = 0x0;
 		CATEGORY = 2;
-		SOURCE = "CAN_CAN0_INT2";
-		PRIORITY = 7;
+		SOURCE = "CAN_CAN0_INT0";
+		HANDLER  = "can_ISR_RX_handler_func";
+		PRIORITY = 10;
    };
 
 // COUNTERS
   COUNTER system_timer_cpu0 
   {
     CPU_ID = 0x0;
+    MINCYCLE = 1;
+    MAXALLOWEDVALUE = 2147483647;
+    TICKSPERBASE = 1;
+    TYPE = HARDWARE {
+        DEVICE = "STM_SR0";
+        SYSTEM_TIMER = TRUE;
+        PRIORITY = 2;
+    };
+    SECONDSPERTICK = 0.001;
+  };
+  
+  COUNTER system_timer_cpu1 
+  {
+    CPU_ID = 0x1;
     MINCYCLE = 1;
     MAXALLOWEDVALUE = 2147483647;
     TICKSPERBASE = 1;
@@ -170,6 +186,13 @@ CPU test_application
     COUNTER = system_timer_cpu0;
     ACTION = ACTIVATETASK { TASK = task_keep_alive_cpu0; };
     AUTOSTART = TRUE { ALARMTIME = 100; CYCLETIME = 1000; };
+  };
+  
+  ALARM keep_alive_alarm_cpu0_10ms
+  {
+    COUNTER = system_timer_cpu1;
+    ACTION = ACTIVATETASK { TASK = task_can_tx_msg_processing_cpu1; };
+    AUTOSTART = TRUE { ALARMTIME = 10; CYCLETIME = 10; };
   };
   
 

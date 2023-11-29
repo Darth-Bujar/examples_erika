@@ -66,23 +66,25 @@ TASK(task_can_tx_msg_processing_cpu1)
   uint8 i = 0;
   EventMaskType mask;
   can_message* can_sw_rx_buffer = can_get_sw_buffer_pointer();
-
+  uint8 *buff_idx = get_can_sw_buffer_idx_pointer();
   while (TRUE)
   {
-      WaitEvent(can_sw_buffer_full);
-      GetEvent(task_can_tx_msg_processing_cpu1, &mask);
+      // WaitEvent(can_sw_buffer_full);
+      // GetEvent(task_can_tx_msg_processing_cpu1, &mask);
 
-      get_acces_to_can_sw_buffer();
+      release_can_buffer_spinlock_safe();
+
 
       /* Begining of critical section*/
-      for(i = 0; i < CAN_SW_BUFFER_SIZE; i++)
+      for(i = 0; i < *buff_idx; i++)
       {
         can_reply(&can_sw_rx_buffer->header, can_sw_rx_buffer->data);
       }
+      *buff_idx = 0;
       /* End of critical section */
-      release_acces_to_can_sw_buffer();
+      release_can_buffer_spinlock_safe();
 
-      ClearEvent(can_sw_buffer_full);
+      // ClearEvent(can_sw_buffer_full);
   }
   /* Cleanly terminate the Task */
   TerminateTask();

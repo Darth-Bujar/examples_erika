@@ -39,8 +39,14 @@ void can_isr_fifo0_msg_lost(void);
 
 can_message* can_get_sw_buffer_pointer(void);
 
-void get_acces_to_can_sw_buffer(void);
+void get_can_buffer_spinlock_safe(void);
 
-void release_acces_to_can_sw_buffer(void);
+void release_can_buffer_spinlock_safe(void);
+
+void get_can_buffer_spinlock(void);
+
+void release_can_buffer_spinlock(void);
+
+uint8 * get_can_sw_buffer_idx_pointer(void);
 
 #endif /* _CAN_CONTROL_H_ */

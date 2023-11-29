@@ -7,6 +7,7 @@
 #include "IfxCan.h"
 #include "IfxPort.h"
 #include "IfxCan_PinMap.h"
+#include "IfxCpu.h"
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Macro definition--------------------------------------------------*/
@@ -110,9 +111,9 @@ const static IfxCan_Can_NodeConfig canNodeConfig =
         },
         .interruptConfig                             =
         {
-            .rxFifo0NewMessageEnabled                = FALSE,
+            .rxFifo0NewMessageEnabled                = TRUE,
             .rxFifo0WatermarkEnabled                 = FALSE,
-            .rxFifo0FullEnabled                      = TRUE,
+            .rxFifo0FullEnabled                      = FALSE,
             .rxFifo0MessageLostEnabled               = TRUE,
             .rxFifo1NewMessageEnabled                = FALSE,
             .rxFifo1WatermarkEnabled                 = FALSE,
@@ -250,7 +251,7 @@ typedef struct
 
 static debug_info debug_counters;
 static can_message can_sw_rx_buffer[CAN_SW_BUFFER_SIZE];       /* Declaration of the variable */
-//static uint8 can_sw_rx_buffer_index;
+static uint8 can_sw_rx_buffer_index;
 static boolean debug_print;                                    /* Flag indicate debug text state       */
 static IfxCan_Can_Node canNode;                                /* CAN node handle data structure                     */
 static IfxCpu_spinLock can_sw_buffer_lock; 
@@ -267,32 +268,35 @@ static void _can_acceptance_filter_config(void);
 /*-------------------------------------------------Function definition=----------------------------------------------*/
 /*********************************************************************************************************************/
 
-// /* See header file*/
-// void can_isr_rx_handler_func(void)
-// {
-//     /* Received message content should be read from RX FIFO 0 */
-//     can_sw_rx_buffer[can_sw_rx_buffer_index].header.readFromRxFifo0 = TRUE;
+ /* See header file*/
+ void can_ISR_RX_handler_func(void)
+ {
 
-//     // TODO: With every reading increase acknowledgment bit. More info in Notion
-//     /* Read the received CAN message */
-//     IfxCan_Can_readMessage(&canNode, &can_sw_rx_buffer[can_sw_rx_buffer_index].header, &can_sw_rx_buffer[can_sw_rx_buffer_index].data);
-    
-//     /* Check that array limit within the limt and increase it */
-//     if (can_sw_rx_buffer_index == (CAN_SW_BUFFER_SIZE - 1))
-//     {
-//         can_sw_rx_buffer_index = 0;
-//     }
-//     else
-//     {
-//         can_sw_rx_buffer_index++;
-//     } 
-    
-//     /* Incremment recieved message debug counter */
-//     debug_counters.rx_counter++;
+     /* Received message content should be read from RX FIFO 0 */
+     can_sw_rx_buffer[can_sw_rx_buffer_index].header.readFromRxFifo0 = TRUE;
 
-//     /* Clear the "RX FIFO 0 new message" interrupt flag */
-//     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
-// }
+     get_can_buffer_spinlock();
+     // TODO: With every reading increase acknowledgment bit. More info in Notion
+     /* Read the received CAN message */
+     IfxCan_Can_readMessage(&canNode, &can_sw_rx_buffer[can_sw_rx_buffer_index].header, &can_sw_rx_buffer[can_sw_rx_buffer_index].data);
+    
+     /* Check that array limit within the limt and increase it */
+     if (can_sw_rx_buffer_index == (CAN_SW_BUFFER_SIZE - 1))
+     {
+         can_sw_rx_buffer_index = 0;
+     }
+     else
+     {
+         can_sw_rx_buffer_index++;
+     }
+    
+     /* Incremment recieved message debug counter */
+     debug_counters.rx_counter++;
+     release_can_buffer_spinlock();
+
+     /* Clear the "RX FIFO 0 new message" interrupt flag */
+     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
+ }
 
 void can_isr_tx_success(void)
 {   
@@ -303,48 +307,6 @@ void can_isr_tx_success(void)
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_transmissionCompleted);
 }
 
-void can_isr_fifo0_full(void)
-{
-    int i = 0;
-
-    // TODO: NOTE:
-    // The size on CAN SW Buffer must be the same as size of HW buffer (easier implememntation)
-    // In other case I should keep traking on which message has been read and which is not. That will overcomplicate example.
-
-    IfxCan_Message tmp_header;
-    uint8 tmp_data[MAXIMUM_RX_CAN_FD_DATA_PAYLOAD] = {};
-    get_acces_to_can_sw_buffer();
-
-    // Reading all the data from FIFO0.     
-    for (i = 0; i < CAN_SW_BUFFER_SIZE; i++)
-    {   
-        IfxCan_Can_readMessage(&canNode, &tmp_header, (uint32*)tmp_data);
-
-        if(tmp_header.messageId != DEBUG_ENABLE_CAN_ID)
-        {
-            can_sw_rx_buffer[i].header = tmp_header;
-            memcpy(can_sw_rx_buffer[i].data, tmp_data, sizeof(tmp_data));
-        }
-        else
-        {
-            _process_debug_print_control_message(&tmp_header, tmp_data);
-        }
-
-        _can_message_print("RX", &can_sw_rx_buffer[i].header, can_sw_rx_buffer[i].data);
-    }
-
-    release_acces_to_can_sw_buffer();
-
-    // Addint the size of a queue as number of recieved messages since we are always reading entire queue
-    debug_counters.rx_counter += CAN_SW_BUFFER_SIZE;
-
-    IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0Full);
-
-    /* Set event to trigger task on CPU1*/
-    SetEvent(task_can_tx_msg_processing_cpu1, can_sw_buffer_full);
-
-}
-
 void can_isr_fifo0_msg_lost(void)
 {
     /* Debug statistics cpuunter of lost messages update */
@@ -353,8 +315,25 @@ void can_isr_fifo0_msg_lost(void)
     /* Clear the "RX FIFO 0 message lost" interrupt flag */
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0MessageLost);
 }
+uint8 * get_can_sw_buffer_idx_pointer(void)
+{
+    return &can_sw_rx_buffer_index;
+}
 
-void get_acces_to_can_sw_buffer(void)
+void get_can_buffer_spinlock_safe(void)
+{
+    boolean lock = FALSE;
+    IfxCpu_disableInterrupts();
+
+    // Will not exit the function until it gets a spinlock
+    while (lock != TRUE)
+    {
+        lock = IfxCpu_setSpinLock(&can_sw_buffer_lock, SPINLOCK_MAX_WAIT); // IfxCpu_acquireMutex instead ?;
+    }
+
+}
+
+void get_can_buffer_spinlock(void)
 {
     boolean lock = FALSE;
     // Will not exit the function until it gets a spinlock
@@ -365,11 +344,16 @@ void get_acces_to_can_sw_buffer(void)
 
 }
 
-void release_acces_to_can_sw_buffer(void)
+void release_can_buffer_spinlock(void)
 {
     IfxCpu_resetSpinLock(&can_sw_buffer_lock);
 }
 
+void release_can_buffer_spinlock_safe(void)
+{
+    IfxCpu_resetSpinLock(&can_sw_buffer_lock);
+    IfxCpu_enableInterrupts();
+}
 /* Function replies to the message ID specified in rxMsgHdr with processed
  * data taken from rxData
  */
