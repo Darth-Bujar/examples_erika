@@ -83,6 +83,7 @@ TASK(MID_priority_task)
 
    TerminateTask();
 }
+
 //Consumer
 TASK(LOW_priority_task)
 {
@@ -94,6 +95,7 @@ TASK(LOW_priority_task)
     //task safe zone end
     TerminateTask();
 }
+
 //Producer
 TASK(HIGH_priority_task)
 {
@@ -102,6 +104,7 @@ TASK(HIGH_priority_task)
    printf("         Semaphore value: %d\n", S.count);
    TerminateTask();
 }
+
 void idle_hook_core0(void);
 void idle_hook_core0(void)
 {
