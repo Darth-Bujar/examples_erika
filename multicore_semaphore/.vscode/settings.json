@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "*.pre": "c",
-        "ee_applcfg.h": "c",
-        "os_memmap.h": "c"
-    }
-}
