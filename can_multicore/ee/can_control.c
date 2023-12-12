@@ -250,20 +250,22 @@ typedef struct
 }debug_info;
 
 static debug_info debug_counters;
-can_message can_sw_rx_buffer[CAN_SW_BUFFER_SIZE];       /* Declaration of the variable */
-uint8 can_sw_rx_buffer_index;
+can_message can_sw_rx_buffer[CAN_SW_BUFFER_SIZE];              /* Declaration of the variable */
+uint8 can_buffer_write_idx;
+uint8 can_buffer_read_idx;
 static boolean debug_print;                                    /* Flag indicate debug text state       */
 static IfxCan_Can_Node canNode;                                /* CAN node handle data structure                     */
-IfxCpu_spinLock can_sw_buffer_lock; 
+static IfxCpu_spinLock can_sw_buffer_index_lock;
+boolean can_buffer_write_message(void);
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local function declaration----------------------------------------*/
 /*********************************************************************************************************************/
 static void _can_message_print(const char *prefix, const IfxCan_Message *hdr, const uint8 *data);
-static void _can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData);
-static void _can_transmit_message(const IfxCan_Message *txMsgHdr, uint32 *txData);
+static void _can_transmit_message(const IfxCan_Message *txMsgHdr, void *txData);
 static void _process_debug_print_control_message(const IfxCan_Message *hdr, const uint8 *rxData);
 static void _can_acceptance_filter_config(void);
-
+static void spinlock_lock(IfxCpu_spinLock *lock);
+static void spinlock_unlock(IfxCpu_spinLock *lock);
 /*********************************************************************************************************************/
 /*-------------------------------------------------Function definition=----------------------------------------------*/
 /*********************************************************************************************************************/
@@ -271,24 +273,14 @@ static void _can_acceptance_filter_config(void);
  /* See header file*/
  void can_ISR_RX_handler_func(void)
  {
-     can_message *msg = &can_sw_rx_buffer[can_sw_rx_buffer_index];
-     
-     /* Received message content should be read from RX FIFO 0 */
-     msg->header.readFromRxFifo0 = TRUE;
 
-     get_can_buffer_spinlock();
-     // TODO: With every reading increase acknowledgment bit. More info in Notion
-     /* Read the received CAN message */
-     IfxCan_Can_readMessage(&canNode, &msg->header, &msg->data);
-
-     can_sw_rx_buffer_index = (can_sw_rx_buffer_index + 1) % CAN_SW_BUFFER_SIZE;
-
-     /* Incremment recieved message debug counter */
-     debug_counters.rx_counter++;
-     release_can_buffer_spinlock();
-
-     /* Clear the "RX FIFO 0 new message" interrupt flag */
-     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
+    can_buffer_write_message();
+    /* Incremment recieved message debug counter */
+    debug_counters.rx_counter++;
+    /* Print message to terminal */
+   
+    /* Clear the "RX FIFO 0 new message" interrupt flag */
+    IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
  }
 
 void can_isr_tx_success(void)
@@ -308,25 +300,8 @@ void can_isr_fifo0_msg_lost(void)
     /* Clear the "RX FIFO 0 message lost" interrupt flag */
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0MessageLost);
 }
-uint8 * get_can_sw_buffer_idx_pointer(void)
-{
-    return &can_sw_rx_buffer_index;
-}
 
-void get_can_buffer_spinlock_safe(void)
-{
-    boolean lock = FALSE;
-    IfxCpu_disableInterrupts();
-
-    // Will not exit the function until it gets a spinlock
-    while (lock != TRUE)
-    {
-        lock = IfxCpu_setSpinLock(&can_sw_buffer_lock, SPINLOCK_MAX_WAIT); // IfxCpu_acquireMutex instead ?;
-    }
-
-}
-
-void spinlock_lock(IfxCpu_spinLock *lock)
+static void spinlock_lock(IfxCpu_spinLock *lock)
 {
     boolean lock = FALSE;
     // Will not exit the function until it gets a spinlock
@@ -337,16 +312,11 @@ void spinlock_lock(IfxCpu_spinLock *lock)
 
 }
 
-void spinlock_unlock(IfxCpu_spinLock *lock)
+static void spinlock_unlock(IfxCpu_spinLock *lock)
 {
     IfxCpu_resetSpinLock(lock);
 }
 
-void release_can_buffer_spinlock_safe(void)
-{
-    IfxCpu_resetSpinLock(&can_sw_buffer_lock);
-    IfxCpu_enableInterrupts();
-}
 /* Function replies to the message ID specified in rxMsgHdr with processed
  * data taken from rxData
  */
@@ -371,6 +341,55 @@ void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
 
 }
 
+boolean can_buffer_write_message(void)
+{
+    boolean result = FALSE;
+    can_message *msg;
+     
+    /* Received message content should be read from RX FIFO 0 */
+
+    
+    //spinlock_lock(&can_sw_buffer_index_lock);
+    
+    if (can_buffer_write_idx + 1 != can_buffer_read_idx )
+    {
+        can_buffer_write_idx = (can_buffer_write_idx + 1) % CAN_SW_BUFFER_SIZE;
+        //spinlock_unlock(&can_sw_buffer_index_lock);
+        result = TRUE;
+    }
+
+    msg = &can_sw_rx_buffer[can_buffer_write_idx];
+    msg->header.readFromRxFifo0 = TRUE;
+    
+    if (result)
+    {
+        IfxCan_Can_readMessage(&canNode, &msg->header, &msg->data);
+    }
+
+    _process_debug_print_control_message(&msg->header, &msg->data);
+    _can_message_print("RX:", &msg->header, &msg->data);
+    
+    return result;
+
+}
+
+can_message can_buffer_read_message(void)
+ {
+    can_message message = {};
+    // From iLLD point of view it is invalid value
+    message.header.frameMode = 0x4;
+
+    //spinlock_lock(&can_sw_buffer_index_lock);
+    if (can_buffer_read_idx != can_buffer_write_idx)
+    {
+        can_buffer_read_idx = (can_buffer_read_idx + 1) % CAN_SW_BUFFER_SIZE;
+        message = can_sw_rx_buffer[can_buffer_write_idx];
+    }
+    //spinlock_unlock(&can_sw_buffer_index_lock);
+
+    return message;
+}
+
 /* See header file*/
 void can_init(void)
 {
@@ -378,7 +397,8 @@ void can_init(void)
     IfxScuCcu_Config IfxScuCcu_sampleClockConfig;       /* SCU CCU configuration handler */
     IfxCan_Can_Config canConfig;                        /* CAN module configuration structure */
     IfxCan_Can canModule;                               /* CAN module handler */
-
+    can_buffer_read_idx = 0;
+    can_buffer_write_idx = 0;
     // standard PLL & clock init
     IfxScuCcu_initConfig(&IfxScuCcu_sampleClockConfig);
     IfxScuCcu_init(&IfxScuCcu_sampleClockConfig);
@@ -394,22 +414,22 @@ void can_init(void)
 
 void send_keep_alive_message(IfxCpu_Id coreID)
 {
-
-    size_t size = size_to_dlc(sizeof(debug_counters));
+    size_t size = sizeof(debug_counters);
+    IfxCan_DataLengthCode dlc = IfxCan_Node_getCodeFromDataLengthInBytes(size);
     char msg_data[size];
 
     /* Copy message data to potentially bigger zero-initialized buffer */
-    memset(msg_data, 0, sizeof(msg_data));
-    /* TODO: disable interrupts to */ // Ensure that data is not changed while we are copying them
+    memset(msg_data, 0, size);
+    IfxCpu_disableInterrupts();
     memcpy(msg_data, &debug_counters, size);
-    /* TODO: enable interrupts */
+    IfxCpu_enableInterrupts();
     
     const IfxCan_Message keep_alive_msg_hdr = 
     {
-    .dataLengthCode  = size,
+    .dataLengthCode  = dlc,
     .frameMode       = IfxCan_FrameMode_fdLong,
     .messageIdLength = IfxCan_MessageIdLength_extended,
-    .messageId       = (coreID == 1) ? KEEP_ALIVE_CAN_MESSAGE_ID2 : KEEP_ALIVE_CAN_MESSAGE_ID1
+    .messageId       = KEEP_ALIVE_CAN_MESSAGE_ID1
     };
 
     _can_transmit_message(&keep_alive_msg_hdr, msg_data);
@@ -450,11 +470,6 @@ static void _can_transmit_message(const IfxCan_Message *txMsgHdr, void *txData)
     }
 }
 
-can_message* can_get_sw_buffer_pointer(void)
-{   
-    return (can_message*) &can_sw_rx_buffer;
-}
-
 /*
  * Print message and CAN ID if debug_print is TRUE
  */
@@ -479,7 +494,7 @@ static void _can_message_print(const char *prefix, const IfxCan_Message *hdr, co
  */
 static void _process_debug_print_control_message(const IfxCan_Message *hdr, const uint8 *rxData)
 {
-    if (hdr->dataLengthCode >= IfxCan_DataLengthCode_1)
+    if (hdr->dataLengthCode >= IfxCan_DataLengthCode_1 && hdr->messageId == DEBUG_ENABLE_CAN_ID)
     {
         debug_print = (*rxData != 0);
     }

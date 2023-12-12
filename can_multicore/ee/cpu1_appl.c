@@ -58,34 +58,32 @@
 /*-------------------------------------------------Local function declaration----------------------------------------*/
 /*********************************************************************************************************************/
 void idle_hook_core1(void);
+/* Included as extern variable from can_control.h*/
+
 /*********************************************************************************************************************/
 /*-------------------------------------------------Function definition=----------------------------------------------*/
 /*********************************************************************************************************************/
 TASK(task_can_tx_msg_processing_cpu1)
 {
-  uint8 i = 0;
-  EventMaskType mask;
-  can_message* can_sw_rx_buffer = can_get_sw_buffer_pointer();
-  uint8 *buff_idx = get_can_sw_buffer_idx_pointer();
-  while (TRUE)
+  boolean result = TRUE;
+  can_message received_message = {};
+
+  while(result)
   {
-      // WaitEvent(can_sw_buffer_full);
-      // GetEvent(task_can_tx_msg_processing_cpu1, &mask);
+    received_message = can_buffer_read_message();
 
-      spinlock_lock(&can_sw_buffer_lock);
+    // Check that recieved message is valud.
+    // If message is invalid mean that buffer is empty
+    result = received_message.header.frameMode == 0x4 ? FALSE : TRUE;
 
+    if(result)
+    {
+      can_reply(&received_message.header, received_message.data);
+    }
 
-      /* Begining of critical section*/
-      for(i = 0; i < *buff_idx; i++)
-      {
-        can_reply(&can_sw_rx_buffer->header, can_sw_rx_buffer->data);
-      }
-      *buff_idx = 0;
-      /* End of critical section */
-      spinlock_unlock(&can_sw_buffer_lock);
-
-      // ClearEvent(can_sw_buffer_full);
   }
+
+  
   /* Cleanly terminate the Task */
   TerminateTask();
 }

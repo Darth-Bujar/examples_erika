@@ -21,11 +21,6 @@ typedef struct
 /*-------------------------------------------------Global variables--------------------------------------------------*/
 /*********************************************************************************************************************/
 
-extern IfxCpu_spinLock can_sw_buffer_lock;
-extern can_message can_sw_rx_buffer[CAN_SW_BUFFER_SIZE];
-extern uint8 can_sw_rx_buffer_index;
-
-
 /*********************************************************************************************************************/
 /*-------------------------------------------------Function declaration----------------------------------------------*/
 /*********************************************************************************************************************/
@@ -42,16 +37,6 @@ void can_ISR_RX_handler_func(void);
 
 void can_isr_fifo0_msg_lost(void);
 
-can_message* can_get_sw_buffer_pointer(void);
-
-void get_can_buffer_spinlock_safe(void);
-
-void release_can_buffer_spinlock_safe(void);
-
-void get_can_buffer_spinlock(void);
-
-void release_can_buffer_spinlock(void);
-
-uint8 * get_can_sw_buffer_idx_pointer(void);
+can_message can_buffer_read_message(void);
 
 #endif /* _CAN_CONTROL_H_ */

@@ -25,21 +25,6 @@ void idle_hook_core0(void);
 /*-------------------------------------------------Function definition=----------------------------------------------*/
 /*********************************************************************************************************************/
 
-// TASK(task_can_rx_msg_processing_cpu0)
-// {
-//   uint8 i = 0;
-//   can_message *can_sw_rx_buffer = can_get_sw_buffer_pointer();
-
-//   for(i = 0; i <= CAN_SW_BUFFER_SIZE; i++)
-//   {
-//     can_reply(&can_sw_rx_buffer->header, can_sw_rx_buffer->data);
-//   }
-//   /* Setting the event so the task for processing messages will be activated*/
-
-//   /* Cleanly terminate the Task */
-//   TerminateTask();
-// }
-
 TASK(task_keep_alive_cpu0)
 {
   send_keep_alive_message(IfxCpu_getCoreId());
