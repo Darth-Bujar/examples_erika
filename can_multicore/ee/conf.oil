@@ -145,10 +145,10 @@ CPU test_application
    
    ISR can_ISR_RX_handler {
 		CPU_ID = 0x0;
-		CATEGORY = 2;
+		CATEGORY = 1;
 		SOURCE = "CAN_CAN0_INT0";
 		HANDLER  = "can_ISR_RX_handler_func";
-		PRIORITY = 10;
+		PRIORITY = 5;
    };
 
 // COUNTERS

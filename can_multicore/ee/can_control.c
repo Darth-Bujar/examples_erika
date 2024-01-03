@@ -20,7 +20,7 @@
 #define REPLY_LENGTH                           1                /* Reply length in bytes */
 #define ISR_FIFO0N_PRIO                        5                /* Priority of interrupt rxfifo0n */
 #define ISR_ALERTS_PRIO                        6                /* Priority of interrupt alrt */
-#define ISR_FIFO0F_PRIO                        7                /* Priority of interrupt rxfifo0f */
+#define ISR_FIFO0F_PRIO                        5                /* Priority of interrupt rxfifo0f */
 #define ISR_TRACO_PRIO                         8                /* Priority of interrupt traco */
 #define KEEP_ALIVE_CAN_MESSAGE_ID1             111              /* Keep Alive from CPU0 message ID */
 #define KEEP_ALIVE_CAN_MESSAGE_ID2             112              /* Keep Alive from CPU1 message ID */
@@ -273,14 +273,15 @@ static void spinlock_unlock(IfxCpu_spinLock *lock);
  /* See header file*/
  void can_ISR_RX_handler_func(void)
  {
-
+    // IfxCpu_disableInterrupts();
     can_buffer_write_message();
+
     /* Incremment recieved message debug counter */
     debug_counters.rx_counter++;
-    /* Print message to terminal */
-   
+    
     /* Clear the "RX FIFO 0 new message" interrupt flag */
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
+    // IfxCpu_enableInterrupts();
  }
 
 void can_isr_tx_success(void)
@@ -303,13 +304,7 @@ void can_isr_fifo0_msg_lost(void)
 
 static void spinlock_lock(IfxCpu_spinLock *lock)
 {
-    boolean lock = FALSE;
-    // Will not exit the function until it gets a spinlock
-    while (lock != TRUE)
-    {
-        lock = IfxCpu_setSpinLock(lock, SPINLOCK_MAX_WAIT);
-    }
-
+    IfxCpu_setSpinLock(lock, SPINLOCK_MAX_WAIT);
 }
 
 static void spinlock_unlock(IfxCpu_spinLock *lock)
@@ -335,7 +330,7 @@ void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
 
   /* Reply with first byte incremented */
   txData[0] = rxData[0] + 1;
-  
+
   /* Transmit new message */
   _can_transmit_message(&txMsgHdr, (uint32 *)txData);
 
@@ -349,14 +344,15 @@ boolean can_buffer_write_message(void)
     /* Received message content should be read from RX FIFO 0 */
 
     
-    //spinlock_lock(&can_sw_buffer_index_lock);
+    spinlock_lock(&can_sw_buffer_index_lock);
     
     if (can_buffer_write_idx + 1 != can_buffer_read_idx )
     {
         can_buffer_write_idx = (can_buffer_write_idx + 1) % CAN_SW_BUFFER_SIZE;
-        //spinlock_unlock(&can_sw_buffer_index_lock);
+        spinlock_unlock(&can_sw_buffer_index_lock);
         result = TRUE;
     }
+    spinlock_unlock(&can_sw_buffer_index_lock);
 
     msg = &can_sw_rx_buffer[can_buffer_write_idx];
     msg->header.readFromRxFifo0 = TRUE;
@@ -368,7 +364,6 @@ boolean can_buffer_write_message(void)
 
     _process_debug_print_control_message(&msg->header, &msg->data);
     _can_message_print("RX:", &msg->header, &msg->data);
-    
     return result;
 
 }
@@ -379,13 +374,13 @@ can_message can_buffer_read_message(void)
     // From iLLD point of view it is invalid value
     message.header.frameMode = 0x4;
 
-    //spinlock_lock(&can_sw_buffer_index_lock);
+    spinlock_lock(&can_sw_buffer_index_lock);
     if (can_buffer_read_idx != can_buffer_write_idx)
     {
         can_buffer_read_idx = (can_buffer_read_idx + 1) % CAN_SW_BUFFER_SIZE;
         message = can_sw_rx_buffer[can_buffer_write_idx];
     }
-    //spinlock_unlock(&can_sw_buffer_index_lock);
+    spinlock_unlock(&can_sw_buffer_index_lock);
 
     return message;
 }
@@ -393,6 +388,10 @@ can_message can_buffer_read_message(void)
 /* See header file*/
 void can_init(void)
 {
+    spinlock_unlock(&can_sw_buffer_index_lock);
+    spinlock_lock(&can_sw_buffer_index_lock);
+    spinlock_unlock(&can_sw_buffer_index_lock);
+
     debug_print = FALSE;
     IfxScuCcu_Config IfxScuCcu_sampleClockConfig;       /* SCU CCU configuration handler */
     IfxCan_Can_Config canConfig;                        /* CAN module configuration structure */
