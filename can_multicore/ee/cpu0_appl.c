@@ -1,5 +1,6 @@
-
-/* ERIKA Enterprise. */
+/*
+*      Application for CPU 0 
+*/
 #include "shared.h"
 #include "can_control.h"
 

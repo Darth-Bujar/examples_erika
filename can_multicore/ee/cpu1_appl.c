@@ -1,43 +1,6 @@
-/* ###*B*###
- * Erika Enterprise, version 3
- * 
- * Copyright (C) 2017 - 2018 Evidence s.r.l.
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or (at
- * your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * General Public License, version 2, for more details.
- * 
- * You should have received a copy of the GNU General Public License,
- * version 2, along with this program; if not, see
- * < www.gnu.org/licenses/old-licenses/gpl-2.0.html >.
- * 
- * This program is distributed to you subject to the following
- * clarifications and special exceptions to the GNU General Public
- * License, version 2.
- * 
- * THIRD PARTIES' MATERIALS
- * 
- * Certain materials included in this library are provided by third
- * parties under licenses other than the GNU General Public License. You
- * may only use, copy, link to, modify and redistribute this library
- * following the terms of license indicated below for third parties'
- * materials.
- * 
- * In case you make modified versions of this library which still include
- * said third parties' materials, you are obligated to grant this special
- * exception.
- * 
- * The complete list of Third party materials allowed with ERIKA
- * Enterprise version 3, together with the terms and conditions of each
- * license, is present in the file THIRDPARTY.TXT in the root of the
- * project.
- * ###*E*### */
+/*
+*      Application for CPU 1 
+*/
 
 
 #include "shared.h"
@@ -48,35 +11,28 @@
 #include "Os_MemMap.h"
 #endif /* __TASKING__ */
 /*********************************************************************************************************************/
-/*-------------------------------------------------Macro definition--------------------------------------------------*/
-/*********************************************************************************************************************/
-
-/*********************************************************************************************************************/
-/*-------------------------------------------------Local variables---------------------------------------------------*/
-/*********************************************************************************************************************/
-/*********************************************************************************************************************/
 /*-------------------------------------------------Local function declaration----------------------------------------*/
 /*********************************************************************************************************************/
 void idle_hook_core1(void);
-/* Included as extern variable from can_control.h*/
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Function definition=----------------------------------------------*/
 /*********************************************************************************************************************/
 TASK(task_can_tx_msg_processing_cpu1)
 {
-  boolean result = TRUE;
+  boolean message_available = TRUE;
   can_message received_message = {};
 
-  while(result)
+  while (message_available)
   {
+    // read message from SW buffer
     received_message = can_buffer_read_message();
 
     // Check that recieved message is valud.
     // If message is invalid mean that buffer is empty
-    result = received_message.header.frameMode == 0x4 ? FALSE : TRUE;
+    message_available = received_message.header.frameMode == 0x4 ? FALSE : TRUE;
 
-    if(result)
+    if (message_available)
     {
       can_reply(&received_message.header, received_message.data);
     }
@@ -88,12 +44,7 @@ TASK(task_can_tx_msg_processing_cpu1)
   TerminateTask();
 }
 
-TASK(task_keep_alive_cpu1)
-{
-  send_keep_alive_message(IfxCpu_getCoreId());
-  TerminateTask();
-}
-
+//! Idle hook
 void idle_hook_core1(void)
 {
   idle_hook_body();
