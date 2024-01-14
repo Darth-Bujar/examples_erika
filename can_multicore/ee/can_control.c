@@ -21,7 +21,7 @@
 #define DEBUG_ENABLE_CAN_ID                    0x1              /* Debug Enable message CAN ID */
 #define ISR_PRIORITY_CAN_RX                    10               /* CAN RX interrupt priority */
 #define MAXIMUM_RX_CAN_FD_DATA_PAYLOAD         64               /* Maximum CAN payload in bytes */
-#define CAN_RX_TX_BUFFER_SIZE                  64               /* Size of the buffer */
+#define CAN_RX_TX_BUFFER_SIZE                  32               /* Size of the buffer */
 #define REPLY_LENGTH                           1                /* Reply length in bytes */
 #define ISR_FIFO0N_PRIO                        5                /* Priority of interrupt rxfifo0n */
 #define ISR_ALERTS_PRIO                        6                /* Priority of interrupt alrt */
@@ -43,6 +43,7 @@ const static IfxCan_Can_Pins default_can_pin_cfg =
     .txPinMode = IfxPort_OutputMode_openDrain
 };
 
+// Default pin configuration for CAN
 // Default pin configuration for CAN
 const static IfxCan_Can_NodeConfig canNodeConfig =
 {
@@ -75,9 +76,9 @@ const static IfxCan_Can_NodeConfig canNodeConfig =
         .txConfig                                    =
         {
             .txMode                   = IfxCan_TxMode_queue,
-            .dedicatedTxBuffersNumber = CAN_RX_TX_BUFFER_SIZE,
-            .txFifoQueueSize          = 0,
-            .txBufferDataFieldSize    = IfxCan_DataFieldSize_64,
+            .dedicatedTxBuffersNumber = 2,
+            .txFifoQueueSize          = CAN_RX_TX_BUFFER_SIZE,
+            .txBufferDataFieldSize    = IfxCan_DataFieldSize_12,
             .txEventFifoSize          = 0
         },
         .filterConfig                                =
@@ -93,9 +94,9 @@ const static IfxCan_Can_NodeConfig canNodeConfig =
         .rxConfig                                    =
         {
             .rxMode                = IfxCan_RxMode_fifo0,
-            .rxBufferDataFieldSize = IfxCan_DataFieldSize_64,
-            .rxFifo0DataFieldSize  = IfxCan_DataFieldSize_64,
-            .rxFifo1DataFieldSize  = IfxCan_DataFieldSize_64,
+            .rxBufferDataFieldSize = IfxCan_DataFieldSize_8,
+            .rxFifo0DataFieldSize  = IfxCan_DataFieldSize_8,
+            .rxFifo1DataFieldSize  = IfxCan_DataFieldSize_8,
             .rxFifo0OperatingMode  = IfxCan_RxFifoMode_blocking,
             .rxFifo1OperatingMode  = IfxCan_RxFifoMode_blocking,
             .rxFifo0WatermarkLevel = 0,
@@ -261,7 +262,7 @@ static uint8           can_buffer_read_idx;                    ///! SW circular 
 static boolean         debug_print;                            ///! Flag indicate debug text state
 static IfxCan_Can_Node canNode;                                ///! CAN node handle data structure
 static IfxCpu_spinLock can_sw_buffer_index_lock;               ///! Spinlock for locking SW buffer
-
+static char            debug_variable;
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local function declaration----------------------------------------*/
 /*********************************************************************************************************************/
@@ -288,10 +289,7 @@ static boolean can_buffer_write_message(void);
     debug_counters.rx_counter++;
     
     /* Clear the "RX FIFO 0 new message" interrupt flag */
-    do{
-        IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
-        
-    }while((canNode.node->IR.U & (1U << IfxCan_Interrupt_rxFifo0NewMessage)) != 0);
+    IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
  }
 
 /* Interrupt service routine for transcieve success interrupt
@@ -302,10 +300,7 @@ void can_isr_tx_success(void)
     debug_counters.tx_counter++;
 
     /* Clear interrupt flag*/
-    do{
-        IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_transmissionCompleted);
-        
-    }while((canNode.node->IR.U & (1U << IfxCan_Interrupt_transmissionCompleted)) != 0);
+    IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_transmissionCompleted);
 }
 
 /* Interrupt service routine for message lost interrupt
@@ -314,12 +309,8 @@ void can_isr_fifo0_msg_lost(void)
 {
     /* Debug statistics cpuunter of lost messages update */
     debug_counters.msg_lost++;
-    
-    /* Clear the "RX FIFO 0 message lost" interrupt flag */
-    do{
-        IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0MessageLost);
-        
-    }while((canNode.node->IR.U & (1U << IfxCan_Interrupt_rxFifo0MessageLost)) != 0);
+
+    IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0MessageLost);
 }
 
 /* Lock spinlock and reenable interrupts
@@ -390,11 +381,11 @@ static boolean can_buffer_write_message(void)
     if (buffer_has_space)
     {
         // Reading
-        IfxCan_Can_readMessage(&canNode, &msg->header, &msg->data);
+        IfxCan_Can_readMessage(&canNode, &msg->header,(uint32*) &msg->data);
 
         // Processing
-        _process_debug_print_control_message(&msg->header, &msg->data);
-        _can_message_print("RX:", &msg->header, &msg->data);
+        _process_debug_print_control_message((const IfxCan_Message*)&msg->header, (const uint8*)&msg->data);
+        _can_message_print("RX:",(const IfxCan_Message*) &msg->header,(const uint8*) &msg->data);
     }
 
     return buffer_has_space;
@@ -469,6 +460,7 @@ void send_keep_alive_message(IfxCpu_Id coreID)
     };
 
     _can_transmit_message(&keep_alive_msg_hdr, msg_data);
+
 }
 
 static void _can_acceptance_filter_config(void)
