@@ -4,6 +4,7 @@
 /* ERIKA Enterprise. */
 #include "ee.h"
 #include "IfxGpt12.h"
+#include <stdio.h>
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
@@ -19,6 +20,7 @@
 /*********************************************************************************************************************/
 
 extern SemType isr_semaphore;
+
 // Data type describes histogram data
 typedef struct
 {
@@ -36,6 +38,7 @@ static uint32_t itterations;
 extern void idle_hook(void);
 static void printHists(void);
 static void timer_init(void);
+static void timer_switch_off(void);
 void timer_isr_handler(void);
 /*********************************************************************************************************************/
 /*--------------------------------------------Function Implementations-----------------------------------------------*/
@@ -74,7 +77,7 @@ TASK(MonitorTask)
   while(itterations--)
   {
     printf("isr: %d us task: %d us \n",max_latancy.isr, max_latancy.tsk);
-    delay(1000); //1s delay
+    osEE_tc_delay(1*100000); //1s delay
   }
 
   // Stop generation ingerrupts
@@ -84,7 +87,7 @@ TASK(MonitorTask)
   printHists();
 
   // close the task
-  TerminateTask(ServiceTask);
+  TerminateTask();
 }
 
 TASK(ServiceTask)
@@ -92,7 +95,7 @@ TASK(ServiceTask)
   uint16_t ttc_val = 0;
   printf("Measurement started \n");
 
-  while(true)
+  while(TRUE)
   {
     // Wait for the semaphore from ISR
     WaitSem(&isr_semaphore); // Also can be done using events from ERIKA RTOS
@@ -139,7 +142,7 @@ static void timer_init(void)
   IfxGpt12_T2_setTimerValue(&MODULE_GPT120, RELOAD_VALUE);                        /* Set T2 reload value          */
 
   /* Initialize the interrupt */
-  Ifx_SRC_SRCR *src = IfxGpt12_T3_getSrc(&MODULE_GPT120);                         /* Get the interrupt address    */
+  volatile Ifx_SRC_SRCR *src = IfxGpt12_T3_getSrc(&MODULE_GPT120);                  /* Get the interrupt address    */
   IfxSrc_init(src, ISR_PROVIDER_GPT12_TIMER, ISR_PRIORITY_GPT12_TIMER);           /* Initialize service request   */
   IfxSrc_enable(src);                                                             /* Enable GPT12 interrupt       */
 
@@ -153,6 +156,7 @@ static void timer_switch_off(void)
 
 int main(void)
 {
+  timer_init(); // Initialization of the GPT12 function
   // Start OS in default mode
   StartOS(0);
 
