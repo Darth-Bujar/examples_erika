@@ -28,8 +28,8 @@
 #define ISR_FIFO0F_PRIO                        5                /* Priority of interrupt rxfifo0f */
 #define ISR_TRACO_PRIO                         8                /* Priority of interrupt traco */
 #define KEEP_ALIVE_CAN_MESSAGE_ID1             111              /* Keep Alive from CPU0 message ID */
-#define KEEP_ALIVE_CAN_MESSAGE_ID2             112              /* Keep Alive from CPU1 message ID */
-#define SPINLOCK_MAX_WAIT                      0xFFFFFFFF
+#define MAX_32BIT_VAL                          0xFFFFFFFF       /* Max 32 bit value used for overflow prevention*/
+
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local variables---------------------------------------------------*/
 /*********************************************************************************************************************/
@@ -286,7 +286,7 @@ static boolean can_buffer_write_message(void);
     can_buffer_write_message();
 
     /* Incremment recieved message debug counter */
-    debug_counters.rx_counter++;
+    debug_counters.rx_counter = ++debug_counters.rx_counter % MAX_32BIT_VAL ;
     
     /* Clear the "RX FIFO 0 new message" interrupt flag */
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
@@ -297,7 +297,7 @@ static boolean can_buffer_write_message(void);
 void can_isr_tx_success(void)
 {   
     /* Debug statistics counter of completed transmissions update*/
-    debug_counters.tx_counter++;
+    debug_counters.tx_counter = ++debug_counters.tx_counter % MAX_32BIT_VAL;
 
     /* Clear interrupt flag*/
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_transmissionCompleted);
@@ -308,7 +308,7 @@ void can_isr_tx_success(void)
 void can_isr_fifo0_msg_lost(void)
 {
     /* Debug statistics cpuunter of lost messages update */
-    debug_counters.msg_lost++;
+    debug_counters.msg_lost = ++debug_counters.msg_lost % MAX_32BIT_VAL;
 
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0MessageLost);
 }
