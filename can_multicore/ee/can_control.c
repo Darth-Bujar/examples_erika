@@ -1,13 +1,15 @@
- /*
-  *  Low layer support for CAN example 
-  *
+ /**
+  *  Low level control of CAN module using iLLD set of drivers.
   */
 
+// Data types and string include
 #include <stdio.h>
 #include <string.h>
-
+// self-include
 #include "can_control.h"
+// OS include 
 #include "ee.h"
+// iLLD drivers include
 #include "IfxCan_Can.h"
 #include "IfxCan.h"
 #include "IfxPort.h"
@@ -246,33 +248,32 @@ const static IfxCan_Can_NodeConfig canNodeConfig =
         .calculateBitTimingValues = TRUE
 };
 
-// Debug events counters
+///< Debug events counters. Each counter is increased in interrupt mentioned in comemnt near the counter.
 typedef struct
 {
-    uint32 rx_counter;
-    uint32 msg_lost;
-    uint32 tx_counter;
+    uint32 rx_counter;         // RX FIFO0 New message interrupt (rxf0n)
+    uint32 msg_lost_counter;   // RX Message lost interrupt (alrt)
+    uint32 tx_counter;        // TX Successful Transmission (traco)
 
 }debug_info;
 
-static debug_info      debug_counters;                         ///! Structure that contains all counter used in debug message
-static can_message     can_sw_rx_buffer[CAN_SW_BUFFER_SIZE];   ///! Declaration of the variable   
-static uint8           can_buffer_write_idx;                   ///! SW circular buffer write index
-static uint8           can_buffer_read_idx;                    ///! SW circular buffer read index 
-static boolean         debug_print;                            ///! Flag indicate debug text state
-static IfxCan_Can_Node canNode;                                ///! CAN node handle data structure
-static IfxCpu_spinLock can_sw_buffer_index_lock;               ///! Spinlock for locking SW buffer
-static char            debug_variable;
+static debug_info      debug_counters;                         ///< Structure that contains all counter used in debug message
+static can_message     can_sw_rx_buffer[CAN_SW_BUFFER_SIZE];   ///< Declaration of the variable   
+static uint8           can_buffer_write_idx;                   ///< SW circular buffer write index
+static uint8           can_buffer_read_idx;                    ///< SW circular buffer read index 
+static boolean         debug_print;                            ///< Flag indicate debug text state
+static IfxCan_Can_Node canNode;                                ///< CAN node handle data structure
+static IfxCpu_spinLock can_sw_buffer_index_lock;               ///< Spinlock for locking SW buffer
 /*********************************************************************************************************************/
 /*-------------------------------------------------Local function declaration----------------------------------------*/
 /*********************************************************************************************************************/
 static void _can_message_print(const char *prefix, const IfxCan_Message *hdr, const uint8 *data);
 static void _can_transmit_message(const IfxCan_Message *txMsgHdr, void *txData);
 static void _process_debug_print_control_message(const IfxCan_Message *hdr, const uint8 *rxData);
-static void _can_acceptance_filter_config(void);
-static void spinlock_lock(IfxCpu_spinLock *lock);
-static void spinlock_unlock(IfxCpu_spinLock *lock);
-static boolean can_buffer_write_message(void);
+static void _can_acceptance_filter_range_config(uint32 from_id, uint32 to_id);
+static void _spinlock_lock(IfxCpu_spinLock *lock);
+static void _spinlock_unlock(IfxCpu_spinLock *lock);
+static boolean _can_buffer_write_message(void);
 /*********************************************************************************************************************/
 /*-------------------------------------------------Function definition=----------------------------------------------*/
 /*********************************************************************************************************************/
@@ -281,12 +282,13 @@ static boolean can_buffer_write_message(void);
  * 
  * 
  */
- void can_ISR_RX_handler_func(void)
+ void can_isr_rx_handler_func(void)
  {
-    can_buffer_write_message();
+    /* Transfer message from HW buffer to SW buffer (Spinlock is used)*/
+    _can_buffer_write_message();
 
     /* Incremment recieved message debug counter */
-    debug_counters.rx_counter = ++debug_counters.rx_counter % MAX_32BIT_VAL ;
+    debug_counters.rx_counter = ++debug_counters.rx_counter % MAX_32BIT_VAL;
     
     /* Clear the "RX FIFO 0 new message" interrupt flag */
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
@@ -308,29 +310,28 @@ void can_isr_tx_success(void)
 void can_isr_fifo0_msg_lost(void)
 {
     /* Debug statistics cpuunter of lost messages update */
-    debug_counters.msg_lost = ++debug_counters.msg_lost % MAX_32BIT_VAL;
+    debug_counters.msg_lost_counter = ++debug_counters.msg_lost_counter % MAX_32BIT_VAL;
 
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0MessageLost);
 }
 
-/* Lock spinlock and reenable interrupts
+/** Lock spinlock and reenable interrupts
  */
-static void spinlock_lock(IfxCpu_spinLock *lock)
+static void _spinlock_lock(IfxCpu_spinLock *lock)
 {
-    // Function for blocking all interrupts: IfxCpu_disableInterruptsAllExceptMaster()
     IfxCpu_disableInterrupts();
-    IfxCpu_setSpinLock(lock, SPINLOCK_MAX_WAIT);
+    IfxCpu_setSpinLock(lock, MAX_32BIT_VAL);
 }
 
-/* Unlock spinlock and reenable interrupts
+/** Unlock spinlock and reenable interrupts
  */
-static void spinlock_unlock(IfxCpu_spinLock *lock)
+static void _spinlock_unlock(IfxCpu_spinLock *lock)
 {
     IfxCpu_resetSpinLock(lock);
     IfxCpu_enableInterrupts();
 }
 
-/* Function replies to the message ID specified in rxMsgHdr with processed
+/** Function replies to the message ID specified in rxMsgHdr with processed
  * data taken from rxData
  */
 void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
@@ -354,14 +355,14 @@ void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
 
 }
 
-/* See header file*/
-static boolean can_buffer_write_message(void)
+/** See header file */
+static boolean _can_buffer_write_message(void)
 {
     boolean buffer_has_space = FALSE;
     can_message *msg;
 
     /* Blocking spinlcok so no index changes will occure from another cores */
-    spinlock_lock(&can_sw_buffer_index_lock);
+    _spinlock_lock(&can_sw_buffer_index_lock);
     if ( ((can_buffer_write_idx + 1) % CAN_SW_BUFFER_SIZE) != can_buffer_read_idx )
     {
         /*  Update index */
@@ -372,7 +373,7 @@ static boolean can_buffer_write_message(void)
 
         buffer_has_space = TRUE;
     }
-    spinlock_unlock(&can_sw_buffer_index_lock);
+    _spinlock_unlock(&can_sw_buffer_index_lock);
 
     /* Set from where messahe should be read */
     msg->header.readFromRxFifo0 = TRUE;
@@ -392,27 +393,28 @@ static boolean can_buffer_write_message(void)
 
 }
 
-/* See header file*/
+/** See header file */
 can_message can_buffer_read_message(void)
  {
     can_message message = {};
 
     // From iLLD point of view it is invalid value
+    // Cause of compiler warning: ctc W547 undefined enum value
     message.header.frameMode = 0x4;
 
     /* Blocking spinlcok so no index changes will occure from another cores */
-    spinlock_lock(&can_sw_buffer_index_lock);
+    _spinlock_lock(&can_sw_buffer_index_lock);
     if (can_buffer_read_idx != can_buffer_write_idx)
     {
         can_buffer_read_idx = (can_buffer_read_idx + 1) % CAN_SW_BUFFER_SIZE;
         message = can_sw_rx_buffer[can_buffer_read_idx];
     }
-    spinlock_unlock(&can_sw_buffer_index_lock);
+    _spinlock_unlock(&can_sw_buffer_index_lock);
 
     return message;
 }
 
-/* See header file*/
+/** See header file */
 void can_init(void)
 {
 
@@ -435,11 +437,11 @@ void can_init(void)
     IfxCan_Can_initNode(&canNode, &canNodeConfig);
 
     // Filter configuration
-    _can_acceptance_filter_config();
+    _can_acceptance_filter_range_config(0x02, 0xAA);
 }
 
-
-void send_keep_alive_message(IfxCpu_Id coreID)
+/** See header file */
+void send_keep_alive_message(void)
 {
     size_t size = sizeof(debug_counters);
     IfxCan_DataLengthCode dlc = IfxCan_Node_getCodeFromDataLengthInBytes(size);
@@ -463,7 +465,8 @@ void send_keep_alive_message(IfxCpu_Id coreID)
 
 }
 
-static void _can_acceptance_filter_config(void)
+/** Confgiration function for CAN acceptance filter*/
+static void _can_acceptance_filter_range_config(uint32 from_id, uint32 to_id)
 {
     // Initialize the filter structure
     IfxCan_Filter filter;
@@ -471,14 +474,14 @@ static void _can_acceptance_filter_config(void)
     filter.number = 0;
     filter.elementConfiguration = IfxCan_FilterElementConfiguration_rejectId;
     filter.type = IfxCan_FilterType_range;
-    filter.id1 = 0x00;
-    filter.id2 = 0xAA;
+    filter.id1 = from_id;
+    filter.id2 = to_id;
 
     IfxCan_Can_setStandardFilter(&canNode, &filter);
     IfxCan_Can_setExtendedFilter(&canNode, &filter);
 }
 
-/* Send message via CAN interface.
+/** Send message via CAN interface.
  * txMsgHdr - data for constructing CAN header
  * txData - data to send via CAN inteface
  */
@@ -498,7 +501,7 @@ static void _can_transmit_message(const IfxCan_Message *txMsgHdr, void *txData)
     }
 }
 
-/*
+/**
  * Print message and CAN ID if debug_print is TRUE
  */
 static void _can_message_print(const char *prefix, const IfxCan_Message *hdr, const uint8 *data)
@@ -518,7 +521,7 @@ static void _can_message_print(const char *prefix, const IfxCan_Message *hdr, co
     }
 }
 
-/* Process debug message
+/** Process debug message
  */
 static void _process_debug_print_control_message(const IfxCan_Message *hdr, const uint8 *rxData)
 {

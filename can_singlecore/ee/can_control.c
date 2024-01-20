@@ -255,7 +255,7 @@ static uint32 rx_counter;
 /*********************************************************************************************************************/
 
 /* See header file*/
-void can_ISR_RX_handler_func(void)
+void can_isr_rx_handler_func(void)
 {
     uint32 start_time = osEE_tc_stm_get_time_lower_word(osEE_get_curr_core_id());
     IfxCan_Message rxMsgHdr;                                    /* Received CAN message structure                    */

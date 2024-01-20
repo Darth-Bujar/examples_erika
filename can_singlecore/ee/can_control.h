@@ -10,7 +10,7 @@ void can_init(void);
  * Reads the received CAN message and increments a counter confirming to the source node that the previous message
  * has been received.
  */
-void can_ISR_RX_handler_func(void);
+void can_isr_rx_handler_func(void);
 
 void send_keep_alive_message(void);
 
