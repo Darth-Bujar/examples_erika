@@ -12,7 +12,7 @@
 ///! Data structure for holding entire CAN message as one piece (header and data)
 typedef struct
 {
-    IfxCan_Message header;                      // Containt header of CAN message according to iLL specification
+    IfxCan_Message header;                      // Contain header of CAN message according to iLL specification
     uint8 data[MAXIMUM_RX_CAN_FD_DATA_PAYLOAD]; // Contain CAN message payload up to 64 bytes
 
 }can_message;
@@ -26,41 +26,47 @@ typedef struct
 void can_init(void);
 
 /**
- * @brief Generate a new mesasge based on passed parametrs and sent it
+ * @brief Generate a new message based on passed parameters and sent it
  * 
  * New message will have ID incremented by on
- * and firt byte of data increased by 1 (other data bytes will be cutted)
+ * and first byte of data increased by 1 (other data bytes will be cut)
  *  
- * @param rxMsgHdr - incomming CAN message header
- * @param rxData  - incomming CAN message data
+ * @param rxMsgHdr - incoming CAN message header
+ * @param rxData  - incoming CAN message data
+ * @return TRUE - the message have been constructed and sent
+ *         FALSE - the error has occurred during constructing or sending the message
  */
-void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData);
+IfxCan_Status can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData);
 
 /**
- * @brief ISR for servising TX Successful Transmission (traco)
+ * @brief ISR for servicing TX Successful Transmission (traco)
  */
 void can_isr_tx_success(void);
 
 /**
- * @brief Send keep alive message that cointains current value of debug counters
+ * @brief Send keep alive message that contains current value of debug counters
  */
 void send_keep_alive_message(void);
 
 /**
- * @brief ISR for servising RX FIFO0 New message interrupt (rxf0n)
+ * @brief ISR for servicing RX FIFO0 New message interrupt (rxf0n)
  */
 void can_isr_rx_handler_func(void);
 
 /**
- * @brief ISR for servising RX Message Lost interrupt (alrt)
+ * @brief ISR for servicing RX Message Lost interrupt (alrt)
  */
 void can_isr_fifo0_msg_lost(void);
 
 /**
- * @brief Return CAN message taken from SW buffer
+ * @brief Return a pointer to can message in SW buffer.
  * 
- * @return can_message - next message stored in SW buffer
+ * @param  message - pointer to a can_message stucture to be filled
+ * @return TRUE - next message stored in SW buffer
+ *         FALSE - buffer is empty/cannot access
  */
-can_message can_buffer_read_message(void);
+boolean can_buffer_pick_message(can_message* message);
+
+void can_buffer_move_index(void);
 
 #endif /* _CAN_CONTROL_H_ */

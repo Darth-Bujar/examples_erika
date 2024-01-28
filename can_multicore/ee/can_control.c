@@ -248,7 +248,7 @@ const static IfxCan_Can_NodeConfig canNodeConfig =
         .calculateBitTimingValues = TRUE
 };
 
-///< Debug events counters. Each counter is increased in interrupt mentioned in comemnt near the counter.
+///< Debug events counters. Each counter is increased in interrupt mentioned in comment near the counter.
 typedef struct
 {
     uint32 rx_counter;         // RX FIFO0 New message interrupt (rxf0n)
@@ -268,7 +268,7 @@ static IfxCpu_spinLock can_sw_buffer_index_lock;               ///< Spinlock for
 /*-------------------------------------------------Local function declaration----------------------------------------*/
 /*********************************************************************************************************************/
 static void _can_message_print(const char *prefix, const IfxCan_Message *hdr, const uint8 *data);
-static void _can_transmit_message(const IfxCan_Message *txMsgHdr, void *txData);
+static IfxCan_Status _can_transmit_message(const IfxCan_Message *txMsgHdr, void *txData);
 static void _process_debug_print_control_message(const IfxCan_Message *hdr, const uint8 *rxData);
 static void _can_acceptance_filter_range_config(uint32 from_id, uint32 to_id);
 static void _spinlock_lock(IfxCpu_spinLock *lock);
@@ -287,14 +287,14 @@ static boolean _can_buffer_write_message(void);
     /* Transfer message from HW buffer to SW buffer (Spinlock is used)*/
     _can_buffer_write_message();
 
-    /* Incremment recieved message debug counter */
+    /* Increment received message debug counter */
     debug_counters.rx_counter = ++debug_counters.rx_counter % MAX_32BIT_VAL;
     
     /* Clear the "RX FIFO 0 new message" interrupt flag */
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
  }
 
-/* Interrupt service routine for transcieve success interrupt
+/* Interrupt service routine for transceive success interrupt
  */
 void can_isr_tx_success(void)
 {   
@@ -334,7 +334,7 @@ static void _spinlock_unlock(IfxCpu_spinLock *lock)
 /** Function replies to the message ID specified in rxMsgHdr with processed
  * data taken from rxData
  */
-void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
+IfxCan_Status can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
 {
   IfxCan_Message txMsgHdr;
   uint8 txData[REPLY_LENGTH] = {0}; // initialize array to zeroes
@@ -351,7 +351,7 @@ void can_reply(const IfxCan_Message *rxMsgHdr, const uint8 *rxData)
   txData[0] = rxData[0] + 1;
 
   /* Transmit new message */
-  _can_transmit_message(&txMsgHdr, (uint32 *)txData);
+  return _can_transmit_message(&txMsgHdr, (uint32 *)txData);
 
 }
 
@@ -361,7 +361,7 @@ static boolean _can_buffer_write_message(void)
     boolean buffer_has_space = FALSE;
     can_message *msg;
 
-    /* Blocking spinlcok so no index changes will occure from another cores */
+    /* Blocking spinlock so no index changes will occur from another cores */
     _spinlock_lock(&can_sw_buffer_index_lock);
     if ( ((can_buffer_write_idx + 1) % CAN_SW_BUFFER_SIZE) != can_buffer_read_idx )
     {
@@ -375,7 +375,7 @@ static boolean _can_buffer_write_message(void)
     }
     _spinlock_unlock(&can_sw_buffer_index_lock);
 
-    /* Set from where messahe should be read */
+    /* Set from where message should be read */
     msg->header.readFromRxFifo0 = TRUE;
     
     /* If buffer has space, then read and process it */
@@ -394,24 +394,38 @@ static boolean _can_buffer_write_message(void)
 }
 
 /** See header file */
-can_message can_buffer_read_message(void)
+boolean can_buffer_pick_message(can_message* message)
  {
-    can_message message = {};
+    boolean buffer_status = FALSE;
 
-    // From iLLD point of view it is invalid value
-    // Cause of compiler warning: ctc W547 undefined enum value
-    message.header.frameMode = 0x4;
-
-    /* Blocking spinlcok so no index changes will occure from another cores */
+    /* Blocking spinlock so no index changes will occur from another cores */
     _spinlock_lock(&can_sw_buffer_index_lock);
     if (can_buffer_read_idx != can_buffer_write_idx)
     {
-        can_buffer_read_idx = (can_buffer_read_idx + 1) % CAN_SW_BUFFER_SIZE;
-        message = can_sw_rx_buffer[can_buffer_read_idx];
+        *message = can_sw_rx_buffer[can_buffer_read_idx];
+        buffer_status = TRUE;
     }
     _spinlock_unlock(&can_sw_buffer_index_lock);
 
-    return message;
+    return buffer_status;
+}
+
+/** See header file*/
+void can_buffer_move_index(void)
+ {
+    can_message empty_message = {};
+
+    /* Blocking spinlock so no index changes will occur from another cores */
+    _spinlock_lock(&can_sw_buffer_index_lock);
+    if (can_buffer_read_idx != can_buffer_write_idx)
+    {   
+        // Fill the old message with zeros
+        can_sw_rx_buffer[can_buffer_read_idx] = empty_message;
+
+        // Move index 
+        can_buffer_read_idx = (can_buffer_read_idx + 1) % CAN_SW_BUFFER_SIZE;
+    }
+    _spinlock_unlock(&can_sw_buffer_index_lock);
 }
 
 /** See header file */
@@ -485,20 +499,19 @@ static void _can_acceptance_filter_range_config(uint32 from_id, uint32 to_id)
  * txMsgHdr - data for constructing CAN header
  * txData - data to send via CAN inteface
  */
-static void _can_transmit_message(const IfxCan_Message *txMsgHdr, void *txData)
+static IfxCan_Status _can_transmit_message(const IfxCan_Message *txMsgHdr, void *txData)
 {
     IfxCan_Status status = IfxCan_Status_ok;
-    /* Send the CAN message with the previously defined TX message configuration and content */
-    do
-    {
-        status = IfxCan_Can_sendMessage(&canNode, txMsgHdr, (uint32 *)txData);
 
-    }while(status == IfxCan_Status_notSentBusy);
+    /* Send the CAN message with the previously defined TX message configuration and content */
+    status = IfxCan_Can_sendMessage(&canNode, txMsgHdr, (uint32 *)txData);
     
-    if (debug_print)
+    if (debug_print && status)
     {
         printf("TX: Success \n");
     }
+
+    return status;
 }
 
 /**

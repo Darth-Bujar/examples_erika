@@ -25,21 +25,28 @@ void idle_hook_core1(void);                           ///! Idle hook for CPU1. E
 TASK(task_can_tx_msg_processing_cpu1)
 {
   boolean message_available = TRUE;
-  static can_message received_message = {};
+  can_message received_message = {};
+  IfxCan_Status status = IfxCan_Status_ok;
 
+  // Continue if there last time we had available message and successfully sent it.
   while (message_available)
   {
     // Read message from SW buffer
-    received_message = can_buffer_read_message();
-
-    // Check that recieved message is valid.
-    // If message is invalid mean that buffer is empty
-    message_available = received_message.header.frameMode == 0x4 ? FALSE : TRUE;
+    message_available = can_buffer_pick_message(&received_message);
 
     // Continue only if message available
     if (message_available)
     {
-      can_reply(&received_message.header, received_message.data);
+      status = can_reply(&received_message.header, received_message.data);
+
+      if(status == IfxCan_Status_ok)
+      {
+        can_buffer_move_index();
+      }
+      else // if last message haven't been sent interrupt the loop and try it after
+      { 
+        break;
+      }
     }
 
   }
