@@ -98,7 +98,7 @@ void interruptGpt12 (void){
             byte_count++;
             bit_cnt = 0;
             if (byte_count >= to_send){
-                //__setCS(1);
+                __setCS(1);
                 IfxGpt12_T3_run(&MODULE_GPT120, IfxGpt12_TimerRun_stop);  // Terminate transmit = stop timer
                 spi_rdy = 1;
                 return;
@@ -177,7 +177,6 @@ void initQSPI2MasterBuffers(void)
         rx_buff[i] = 0;                     /* Clear RX Buffer                          */
     }
 }
-
 
 /* This function to initialize the LED */
 void initLED(void)
@@ -259,6 +258,7 @@ void qspiTransfer(uint16 len){
 void __setBit(uint8 state){
     __setCLK(0);
     __setMOSI(state);
+    __setGPIO(LED_D110, state);
 }
 
 
@@ -272,6 +272,7 @@ void __setMOSI(uint8 state){
 
 void __setCLK(uint8 state){
     __setGPIO(QSPI_CLK, state);
+
 }
 
 uint8 __getMISO(void){

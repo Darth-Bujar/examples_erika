@@ -51,7 +51,7 @@ CPU mySystem {
    ISR interruptGpt12 {
 		CPU_ID = 0x0;
 		CATEGORY = 1;
-		SOURCE = "GPT12_GPT120_T2";
+		SOURCE = "GPT12_GPT120_T3";
 		PRIORITY = 6;
    };
 

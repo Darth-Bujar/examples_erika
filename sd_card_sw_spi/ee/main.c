@@ -367,8 +367,9 @@ DSTATUS disk_initialize (
     FCLK_SLOW();
     for (n = 10; n; n--) xchg_spi(0xFF);    /* 80 dummy clocks */
 
-    ty = 0;
-    if (send_cmd(CMD0, 0) == 1) {           /* Enter Idle state */
+    if (send_cmd(CMD0, 0) == 1) /* Enter Idle state */
+    {
+        ty = 0;
         Timer1 = 1000;                      /* Initialization timeout of 1000 msec */
         if (send_cmd(CMD8, 0x1AA) == 1) {   /* SDv2? */
             for (n = 0; n < 4; n++) ocr[n] = xchg_spi(0xFF);            /* Get trailing return value of R7 resp */
@@ -652,7 +653,7 @@ void main(void)
 TASK(task_write)
 {
     UINT s2;
-    FRESULT res;
+    FRESULT res = FR_INVALID_PARAMETER;
     static boolean already_done = FALSE;
 
     if(!already_done)
@@ -661,19 +662,30 @@ TASK(task_write)
         waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100));
 
         while(disk_initialize(0)); // Trap if init fails
+        //printf("RES1: %u \n", res);
 
-        res = f_mount(&FatFs, "", 1); // Mount drive
+        res = FR_INVALID_PARAMETER;
+        while(res != FR_OK){
+            res = f_mount(&FatFs, "", 1); // Mount drive
+            //printf("RES2: %u \n", res);
+        }
 
-        while(res != FR_OK); // Trap if disk cannot be mounted
+        res = FR_INVALID_PARAMETER;
+        while(res != FR_OK)
+        {// Trap if file cannot be opened
+            //printf("RES3: %u \n", res);
+            res = f_open(&File, "/test.txt",  FA_CREATE_ALWAYS | FA_WRITE); // open file
+        }
 
-        res = f_open(&File, "/test.txt",  FA_CREATE_ALWAYS | FA_WRITE); // open file
-
-        while(res != FR_OK); // Trap if file cannot be opened
-
+        res = FR_INVALID_PARAMETER;
         unsigned char text[] = "test123";
-        res = f_write(&File, text, sizeof text, &s2); // write to file
 
-        while(res != FR_OK); // Trap if file cannot be written
+
+        while(res != FR_OK)
+        {// Trap if file cannot be written
+            //printf("RES3: %u \n", res);
+            res = f_write(&File, text, sizeof text, &s2); // write to file
+        }
 
         res = f_close(&File); // close file
 
