@@ -39,7 +39,7 @@
 /*------------------------------------------------------Macros-------------------------------------------------------*/
 /*********************************************************************************************************************/
 #define SPI_BUFFER_SIZE     8192                       /* Buffers size                  */
-#define RELOAD_VALUE                2u                  /* Reload value to have an interrupt each 500ms         */
+#define RELOAD_VALUE        2u                  /* Reload value to have an interrupt each 500ms         */
 
 
 #define QSPI_MOSI                  &MODULE_P34,2
