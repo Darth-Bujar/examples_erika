@@ -33,9 +33,12 @@ CPU mySystem {
 
   APPDATA ee_sd_card_sw_spi {
     APP_SRC = "main.c";
-	APP_SRC = "SPI_CPU.c";
-	APP_SRC = "ff.c";
-	APP_SRC = "ffunicode.c";
+	  APP_SRC = "SPI_CPU.c";
+	  APP_SRC = "ff.c";
+	  APP_SRC = "ffunicode.c";
+    APP_SRC="cpu0_appl.c";
+    APP_SRC="can_control.c";
+    APP_SRC="cpu1_appl.c";
   };
 
   TASK task_write {
@@ -47,14 +50,6 @@ CPU mySystem {
     SCHEDULE = NON;
   };
   
-  //Interrupts
-   ISR interruptGpt12 {
-		CPU_ID = 0x0;
-		CATEGORY = 1;
-		SOURCE = "GPT12_GPT120_T3";
-		PRIORITY = 6;
-   };
-
   TASK task_read {
     PRIORITY = 12;
     CPU_ID = 0x0;
@@ -63,7 +58,61 @@ CPU mySystem {
     };
     SCHEDULE = NON;
   };
+
+  // TASK declaration
+  TASK task_can_tx_msg_processing_cpu1 
+  {
+    CPU_ID = 0x1;
+    AUTOSTART = TRUE;
+    SCHEDULE = FULL;
+    ACTIVATION = 1;
+    PRIORITY = 10;
+    STACK = PRIVATE {
+      SIZE = 256;
+    };
+
+  };
+
+  TASK task_keep_alive_cpu0 
+  {
+    CPU_ID = 0x0;
+    PRIORITY = 1;
+
+  };
   
+  //Interrupts
+   ISR interruptGpt12 {
+		CPU_ID = 0x1;
+		CATEGORY = 1;
+		SOURCE = "GPT12_GPT120_T3";
+		PRIORITY = 6;
+   };
+
+   ISR can_isr_fifo0_msg_lost {
+		CPU_ID = 0x0;
+		CATEGORY = 1;
+		SOURCE = "CAN_CAN0_INT3";
+		PRIORITY = 6;
+   };
+   
+   ISR can_isr_tx_success {
+		CPU_ID = 0x0;
+		CATEGORY = 1;
+		SOURCE = "CAN_CAN0_INT9";
+		PRIORITY = 8;
+   };
+   
+   
+   ISR can_ISR_RX_handler {
+		CPU_ID = 0x0;
+		CATEGORY = 1;
+		SOURCE = "CAN_CAN0_INT0";
+		HANDLER  = "can_isr_tx_success";
+		PRIORITY = 5;
+   };
+  
+
+// COUNTERS 
   COUNTER system_timer_cpu0 
   {
     CPU_ID = 0x0;
@@ -77,11 +126,43 @@ CPU mySystem {
     };
     SECONDSPERTICK = 0.001;
   };
-  
+
+  COUNTER system_timer_cpu1 
+  {
+    CPU_ID = 0x1;
+    MINCYCLE = 1;
+    MAXALLOWEDVALUE = 2147483647;
+    TICKSPERBASE = 1;
+    TYPE = HARDWARE {
+        DEVICE = "STM_SR0";
+        SYSTEM_TIMER = TRUE;
+        PRIORITY = 2;
+    };
+    SECONDSPERTICK = 0.001;
+  };
+
+
+// ALARMS
   ALARM keep_alive_alarm_cpu0_1s
   {
     COUNTER = system_timer_cpu0;
     ACTION = ACTIVATETASK { TASK = task_write; };
     AUTOSTART = TRUE { ALARMTIME = 100; CYCLETIME = 1000; };
   };
+
+  ALARM keep_alive_alarm_cpu0_1s
+  {
+    COUNTER = system_timer_cpu0;
+    ACTION = ACTIVATETASK { TASK = task_keep_alive_cpu0; };
+    AUTOSTART = TRUE { ALARMTIME = 100; CYCLETIME = 1000; };
+  };
+  
+  ALARM keep_alive_alarm_cpu0_10ms
+  {
+    COUNTER = system_timer_cpu1;
+    ACTION = ACTIVATETASK { TASK = task_can_tx_msg_processing_cpu1; };
+    AUTOSTART = TRUE { ALARMTIME = 10; CYCLETIME = 10; };
+  };
+
+  
 };

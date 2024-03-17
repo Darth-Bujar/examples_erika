@@ -53,7 +53,7 @@
 #define ISR_PRIORITY_SLAVE_ER       55
 
 #define ISR_PRIORITY_GPT12_TIMER    6                       /* Define the GPT12 Timer interrupt priority            */
-#define ISR_PROVIDER_GPT12_TIMER    IfxSrc_Tos_cpu0         /* Interrupt provider                                   */
+#define ISR_PROVIDER_GPT12_TIMER    IfxSrc_Tos_cpu1         /* Interrupt provider                                   */
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
