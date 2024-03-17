@@ -41,22 +41,13 @@ CPU mySystem {
     APP_SRC="cpu1_appl.c";
   };
 
-  TASK task_write {
+  TASK task_log_write {
   	PRIORITY = 10;
   	CPU_ID = 0x0;
     STACK = PRIVATE {
       SIZE = 256;
     };
-    SCHEDULE = NON;
-  };
-  
-  TASK task_read {
-    PRIORITY = 12;
-    CPU_ID = 0x0;
-    STACK = PRIVATE {
-      SIZE = 256;
-    };
-    SCHEDULE = NON;
+    SCHEDULE = FULL;
   };
 
   // TASK declaration

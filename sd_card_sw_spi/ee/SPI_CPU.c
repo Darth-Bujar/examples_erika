@@ -33,6 +33,10 @@
 #include "IfxGpt12.h"
 #include "Bsp.h"
 #include <string.h>
+#include "can_control.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include "IfxCpu.h"
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
@@ -54,25 +58,29 @@
 
 #define ISR_PRIORITY_GPT12_TIMER    6                       /* Define the GPT12 Timer interrupt priority            */
 #define ISR_PROVIDER_GPT12_TIMER    IfxSrc_Tos_cpu1         /* Interrupt provider                                   */
+#define LOG_BUFFER_SIZE             64                      /* Determine the log buffer size defined by can_message */
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
 /*********************************************************************************************************************/
-uint8 edge_select_flag;
-uint8 bit_cnt;
-uint16 byte_count;
-uint16 to_send;
-uint8 spi_rdy;
-uint8 tx_buff[SPI_BUFFER_SIZE];
-uint8 rx_buff[SPI_BUFFER_SIZE];
-
+static uint8 edge_select_flag;
+static uint8 bit_cnt;
+static uint16 byte_count;
+static uint16 to_send;
+static uint8 spi_rdy;
+static uint8 tx_buff[SPI_BUFFER_SIZE];
+static uint8 rx_buff[SPI_BUFFER_SIZE];
+static can_message log_buffer[LOG_BUFFER_SIZE];      ///< Declaration of the variable   
+static IfxCpu_spinLock log_buffer_index_lock;        ///< Spinlock for locking SW buffer
+static uint8 log_buffer_write_idx;                   ///< SW circular buffer write index
+static uint8 log_buffer_read_idx;                    ///< SW circular buffer read index 
 /*********************************************************************************************************************/
 /*------------------------------------------------Function Prototypes------------------------------------------------*/
 /*********************************************************************************************************************/
-void initQSPI2Master(void);
-void initQSPI2MasterBuffers(void);
-void initQSPI(void);
-void initLED(void);
+static void initQSPI2Master(void);
+static void initQSPI2MasterBuffers(void);
+static void initQSPI(void);
+static void initLED(void);
 
 /*********************************************************************************************************************/
 /*----------------------------------------------Function Implementations---------------------------------------------*/
@@ -140,10 +148,9 @@ void initGpt12Timer(void)
     /* Initialize the LED */
     IfxPort_setPinModeOutput(&MODULE_P15,0, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
 
-
 }
 
-void initQSPI2Master(void)
+static void initQSPI2Master(void)
 {
     edge_select_flag = 0;
     bit_cnt = 0;
@@ -169,7 +176,7 @@ void initQSPI2Master(void)
 /* QSPI Master SW buffer initialization
  * This function initializes SW buffers the Master uses.
  */
-void initQSPI2MasterBuffers(void)
+static void initQSPI2MasterBuffers(void)
 {
     for (uint16 i = 0; i < SPI_BUFFER_SIZE; i++)
     {
@@ -179,7 +186,7 @@ void initQSPI2MasterBuffers(void)
 }
 
 /* This function to initialize the LED */
-void initLED(void)
+static void initLED(void)
 {
     /* Set the port pin 13.3 (to which the LED D110 is connected) to output push-pull mode */
     IfxPort_setPinModeOutput(LED_D110, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
@@ -189,7 +196,7 @@ void initLED(void)
 }
 
 /* This function initialize the QSPI modules */
-void initQSPI(void)
+static void initQSPI(void)
 {
 
     /* Secondly initialize the Master */
@@ -203,7 +210,6 @@ void initPeripherals(void)
     IfxPort_setPinModeInput(SD_CD, IfxPort_InputMode_pullUp);
     initLED();
     initQSPI();
-
 
     IfxScuCcu_Config IfxScuCcu_sampleClockConfig;       /* SCU CCU configuration handler */
 
@@ -282,4 +288,73 @@ uint8 __getMISO(void){
 void __setGPIO(Ifx_P *port, uint8 pinIndex, uint8 state){
     if(state==1)IfxPort_setPinHigh(port, pinIndex);
     if(state==0)IfxPort_setPinLow(port, pinIndex);
+}
+
+/** See header file */
+boolean _can_buffer_write_message(can_message* msg)
+{
+    boolean buffer_has_space = FALSE;
+    can_message *msg;
+
+    /* Blocking spinlock so no index changes will occur from another cores */
+    _spinlock_lock(&log_buffer_index_lock);
+    if ( ((can_buffer_write_idx + 1) % CAN_SW_BUFFER_SIZE) != can_buffer_read_idx )
+    {
+        /*  Update index */
+        can_buffer_write_idx = (can_buffer_write_idx + 1) % CAN_SW_BUFFER_SIZE;
+
+        /*  Copy message pointer*/
+        msg = &can_sw_rx_buffer[can_buffer_write_idx];
+
+        buffer_has_space = TRUE;
+    }
+    _spinlock_unlock(&log_buffer_index_lock);
+
+    /* Set from where message should be read */
+    msg->header.readFromRxFifo0 = TRUE;
+    
+    /* If buffer has space, then read and process it */
+    if (buffer_has_space)
+    {
+        // Reading
+        IfxCan_Can_readMessage(&canNode, &msg->header,(uint32*) &msg->data);
+    }
+
+    return buffer_has_space;
+
+}
+
+/** See header file */
+boolean can_buffer_pick_message(can_message* message)
+ {
+    boolean buffer_status = FALSE;
+
+    /* Blocking spinlock so no index changes will occur from another cores */
+    _spinlock_lock(&log_buffer_index_lock);
+    if (can_buffer_read_idx != can_buffer_write_idx)
+    {
+        *message = can_sw_rx_buffer[can_buffer_read_idx];
+        buffer_status = TRUE;
+    }
+    _spinlock_unlock(&log_buffer_index_lock);
+
+    return buffer_status;
+}
+
+/** See header file*/
+void can_buffer_move_index(void)
+ {
+    can_message empty_message = {};
+
+    /* Blocking spinlock so no index changes will occur from another cores */
+    _spinlock_lock(&log_buffer_index_lock);
+    if (can_buffer_read_idx != can_buffer_write_idx)
+    {   
+        // Fill the old message with zeros
+        can_sw_rx_buffer[can_buffer_read_idx] = empty_message;
+
+        // Move index 
+        can_buffer_read_idx = (can_buffer_read_idx + 1) % CAN_SW_BUFFER_SIZE;
+    }
+    _spinlock_unlock(&log_buffer_index_lock);
 }

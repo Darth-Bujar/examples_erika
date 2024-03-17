@@ -43,6 +43,7 @@ int main(void)
   if (core_id == OS_CORE_ID_MASTER) 
   {
     can_init();
+    initPeripherals();
     StartCore(OS_CORE_ID_1, &status);
     mode = OSDEFAULTAPPMODE;
 

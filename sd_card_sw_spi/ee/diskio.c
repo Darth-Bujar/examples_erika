@@ -45,11 +45,6 @@
 #define FCLK_SLOW()     IfxGpt12_T3_setTimerValue(&MODULE_GPT120, 10*RELOAD_VALUE)         /* Set slow clock for card initialization (100k-400k) */
 #define FCLK_FAST()     IfxGpt12_T3_setTimerValue(&MODULE_GPT120, RELOAD_VALUE)        /* Set fast clock for generic read/write */
 
-//#define FCLK_SLOW()          /* Set slow clock for card initialization (100k-400k) */
-//#define FCLK_FAST()          /* Set fast clock for generic read/write */
-
-
-
 /*--------------------------------------------------------------------------
 
    Module Private Functions
@@ -634,74 +629,3 @@ void disk_timerproc (void) // Treba dat do timeru ak chcete checkovat presence
     }
     Stat = s;
 }
-
-
-IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
-
-void main(void)
-{
-    IfxCpu_enableInterrupts();
-
-    /* Initialize the QSPI modules and the LED */
-    initPeripherals();
-
-
-    StartOS(0);
-
-}
-
-TASK(task_write)
-{
-    UINT s2;
-    FRESULT res = FR_INVALID_PARAMETER;
-    static boolean already_done = FALSE;
-
-    if(!already_done)
-    {
-        /* Start data transfer via QSPI */
-        waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100));
-
-        while(disk_initialize(0)); // Trap if init fails
-        //printf("RES1: %u \n", res);
-
-        res = FR_INVALID_PARAMETER;
-        while(res != FR_OK){
-            res = f_mount(&FatFs, "", 1); // Mount drive
-            //printf("RES2: %u \n", res);
-        }
-
-        res = FR_INVALID_PARAMETER;
-        while(res != FR_OK)
-        {// Trap if file cannot be opened
-            //printf("RES3: %u \n", res);
-            res = f_open(&File, "/test.txt",  FA_CREATE_ALWAYS | FA_WRITE); // open file
-        }
-
-        res = FR_INVALID_PARAMETER;
-        unsigned char text[] = "test123";
-
-
-        while(res != FR_OK)
-        {// Trap if file cannot be written
-            //printf("RES3: %u \n", res);
-            res = f_write(&File, text, sizeof text, &s2); // write to file
-        }
-
-        res = f_close(&File); // close file
-
-        while(res != FR_OK); // Trap if file cannot be closed
-
-        f_mount(&FatFs, "", 0); // unmount drive
-
-        already_done = TRUE;
-
-    }
-
-    TerminateTask();
-}
-
-TASK(task_read)
-{
-    TerminateTask();
-}
-
