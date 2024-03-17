@@ -37,6 +37,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "IfxCpu.h"
+#include "diskio.h"
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
@@ -70,8 +71,8 @@ static uint16 to_send;
 static uint8 spi_rdy;
 static uint8 tx_buff[SPI_BUFFER_SIZE];
 static uint8 rx_buff[SPI_BUFFER_SIZE];
-static can_message log_buffer[LOG_BUFFER_SIZE];      ///< Declaration of the variable   
-static IfxCpu_spinLock log_buffer_index_lock;        ///< Spinlock for locking SW buffer
+static log_item log_buffer[LOG_BUFFER_SIZE];      ///< Declaration of the variable   
+static IfxCpu_spinLock log_buffer_index_lock;               ///< Spinlock for locking SW buffer
 static uint8 log_buffer_write_idx;                   ///< SW circular buffer write index
 static uint8 log_buffer_read_idx;                    ///< SW circular buffer read index 
 /*********************************************************************************************************************/
@@ -291,33 +292,30 @@ void __setGPIO(Ifx_P *port, uint8 pinIndex, uint8 state){
 }
 
 /** See header file */
-boolean _can_buffer_write_message(can_message* msg)
+boolean log_buffer_write_message(log_item* log)
 {
     boolean buffer_has_space = FALSE;
-    can_message *msg;
+    log_item *buffer_item;
 
     /* Blocking spinlock so no index changes will occur from another cores */
     _spinlock_lock(&log_buffer_index_lock);
-    if ( ((can_buffer_write_idx + 1) % CAN_SW_BUFFER_SIZE) != can_buffer_read_idx )
+    if ( ((log_buffer_write_idx + 1) % LOG_BUFFER_SIZE) != log_buffer_read_idx )
     {
         /*  Update index */
-        can_buffer_write_idx = (can_buffer_write_idx + 1) % CAN_SW_BUFFER_SIZE;
+        log_buffer_write_idx = (log_buffer_write_idx + 1) % LOG_BUFFER_SIZE;
 
         /*  Copy message pointer*/
-        msg = &can_sw_rx_buffer[can_buffer_write_idx];
+        buffer_item = &log_buffer[log_buffer_write_idx];
 
         buffer_has_space = TRUE;
     }
     _spinlock_unlock(&log_buffer_index_lock);
-
-    /* Set from where message should be read */
-    msg->header.readFromRxFifo0 = TRUE;
     
     /* If buffer has space, then read and process it */
     if (buffer_has_space)
     {
-        // Reading
-        IfxCan_Can_readMessage(&canNode, &msg->header,(uint32*) &msg->data);
+        // Copy data to a buffer as a value
+        *buffer_item = *log;
     }
 
     return buffer_has_space;
@@ -325,15 +323,15 @@ boolean _can_buffer_write_message(can_message* msg)
 }
 
 /** See header file */
-boolean can_buffer_pick_message(can_message* message)
+boolean log_buffer_pick_message(log_item* log)
  {
     boolean buffer_status = FALSE;
 
     /* Blocking spinlock so no index changes will occur from another cores */
     _spinlock_lock(&log_buffer_index_lock);
-    if (can_buffer_read_idx != can_buffer_write_idx)
+    if (log_buffer_read_idx != log_buffer_write_idx)
     {
-        *message = can_sw_rx_buffer[can_buffer_read_idx];
+        *log = log_buffer[log_buffer_write_idx];
         buffer_status = TRUE;
     }
     _spinlock_unlock(&log_buffer_index_lock);
@@ -342,19 +340,19 @@ boolean can_buffer_pick_message(can_message* message)
 }
 
 /** See header file*/
-void can_buffer_move_index(void)
+void log_buffer_move_index(void)
  {
-    can_message empty_message = {};
+    log_item empty_message = {};
 
     /* Blocking spinlock so no index changes will occur from another cores */
     _spinlock_lock(&log_buffer_index_lock);
-    if (can_buffer_read_idx != can_buffer_write_idx)
+    if (log_buffer_read_idx != log_buffer_write_idx)
     {   
         // Fill the old message with zeros
-        can_sw_rx_buffer[can_buffer_read_idx] = empty_message;
+        log_buffer[log_buffer_write_idx] = empty_message;
 
         // Move index 
-        can_buffer_read_idx = (can_buffer_read_idx + 1) % CAN_SW_BUFFER_SIZE;
+        log_buffer_read_idx = (log_buffer_write_idx + 1) % LOG_BUFFER_SIZE;
     }
     _spinlock_unlock(&log_buffer_index_lock);
 }

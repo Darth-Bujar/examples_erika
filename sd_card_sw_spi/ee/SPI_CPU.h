@@ -34,7 +34,8 @@
 /*********************************************************************************************************************/
 #include "Ifx_Types.h"
 #include "IfxQspi_SpiMaster.h"
-
+#include "can_control.h"
+#include <stdbool.h>
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
 /*********************************************************************************************************************/
@@ -51,7 +52,19 @@
 #define RISING 1
 #define FALLING 0
 
+enum
+{
+    RX_EVENT,
+    TX_EVENT,
+    ERROR_EVENT,
+    INFO_EVENT
+}
+typedef struct
+{
+    can_message msg;
+    log_type type;
 
+}log_item;
 /*********************************************************************************************************************/
 /*------------------------------------------------Function Prototypes------------------------------------------------*/
 /*********************************************************************************************************************/
@@ -90,25 +103,72 @@ void clear_first_n_bytes_of_tx_buff(uint16 len);
 void initLED(void);
 
 
-
+/**
+ * @brief Self-explaining name
+ */
 void qspiTransfer(uint16 len);
 
-
+/**
+ * @brief Self-explaining name
+ */
 void __setBit(uint8 state);
 
-
+/**
+ * @brief Self-explaining name
+ */
 void __setCS(uint8 state);
 
+/**
+ * @brief Self-explaining name
+ */
 void __setMOSI(uint8 state);
 
+/**
+ * @brief Self-explaining name
+ */
 void __setCLK(uint8 state);
 
+/**
+ * @brief Self-explaining name
+ */
 uint8 __getMISO(void);
 
+/**
+ * @brief Self-explaining name
+ */
 void __setGPIO(Ifx_P *port, uint8 pinIndex, uint8 state);
 
+/**
+ * @brief Add a data to log bufer
+ * 
+ * @param  log - pointer to a log_item stucture to be filled
+ * @return TRUE - log stored inW buffer
+ *         FALSE - buffer is empty/cannot access
+ */
+boolean log_buffer_write_message(log_item* ;pg)
 
+/**
+ * @brief Return a pointer to log_item in log buffer.
+ * 
+ * @param  log - pointer to a log_item stucture to be filled
+ * @return TRUE - next message stored in SW buffer
+ *         FALSE - buffer is empty/cannot access
+ */
+boolean log_buffer_pick_message(log_item* log)
 
+/**
+ * @brief Write log using SPI peripheral
+ * 
+ * @param  log - pointer to a log
+ * @return TRUE - log has been written
+ *         FALSE - log has NOT been written
+ */
+boolean spi_write_log(log_item* log);
+
+/**
+ * @brief incrementing index of log buffer
+ */
+void log_buffer_move_index(void);
 
 
 #endif /* QSPI_CPU_H_ */
