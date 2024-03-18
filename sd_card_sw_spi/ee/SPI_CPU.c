@@ -33,11 +33,11 @@
 #include "IfxGpt12.h"
 #include "Bsp.h"
 #include <string.h>
-#include "can_control.h"
 #include <stdint.h>
 #include <stdbool.h>
 #include "IfxCpu.h"
 #include "diskio.h"
+#include "ff.h"
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
@@ -45,9 +45,9 @@
 /* QSPI modules */
 
 /* LED port pin */
-#define LED_D110                    &MODULE_P20,14   /* LED D110 Port, Pin definition                                */
+#define LED_D110                    &MODULE_P20, 14   /* LED D110 Port, Pin definition                                */
 
-#define MASTER_CHANNEL_BAUDRATE     1000000         /* Master channel baud rate - NOT IMPLEMENTED                    */
+#define MASTER_CHANNEL_BAUDRATE     1000000          /* Master channel baud rate - NOT IMPLEMENTED                    */
 
 /* Interrupt Service Routine priorities for Master and Slave SPI communication */
 #define ISR_PRIORITY_MASTER_TX      50
@@ -57,7 +57,7 @@
 #define ISR_PRIORITY_SLAVE_RX       54
 #define ISR_PRIORITY_SLAVE_ER       55
 
-#define ISR_PRIORITY_GPT12_TIMER    6                       /* Define the GPT12 Timer interrupt priority            */
+#define ISR_PRIORITY_GPT12_TIMER    3                       /* Define the GPT12 Timer interrupt priority            */
 #define ISR_PROVIDER_GPT12_TIMER    IfxSrc_Tos_cpu1         /* Interrupt provider                                   */
 #define LOG_BUFFER_SIZE             64                      /* Determine the log buffer size defined by can_message */
 
@@ -124,7 +124,7 @@ void interruptGpt12 (void){
 }
 
 
-void initGpt12Timer(void)
+static void initGpt12Timer(void)
 {
     /* Initialize the GPT12 module */
     IfxGpt12_enableModule(&MODULE_GPT120);                                          /* Enable the GPT12 module      */
@@ -298,7 +298,7 @@ boolean log_buffer_write_message(log_item* log)
     log_item *buffer_item;
 
     /* Blocking spinlock so no index changes will occur from another cores */
-    _spinlock_lock(&log_buffer_index_lock);
+    spinlock_lock(&log_buffer_index_lock);
     if ( ((log_buffer_write_idx + 1) % LOG_BUFFER_SIZE) != log_buffer_read_idx )
     {
         /*  Update index */
@@ -309,7 +309,7 @@ boolean log_buffer_write_message(log_item* log)
 
         buffer_has_space = TRUE;
     }
-    _spinlock_unlock(&log_buffer_index_lock);
+    spinlock_unlock(&log_buffer_index_lock);
     
     /* If buffer has space, then read and process it */
     if (buffer_has_space)
@@ -328,13 +328,13 @@ boolean log_buffer_pick_message(log_item* log)
     boolean buffer_status = FALSE;
 
     /* Blocking spinlock so no index changes will occur from another cores */
-    _spinlock_lock(&log_buffer_index_lock);
+    spinlock_lock(&log_buffer_index_lock);
     if (log_buffer_read_idx != log_buffer_write_idx)
     {
         *log = log_buffer[log_buffer_write_idx];
         buffer_status = TRUE;
     }
-    _spinlock_unlock(&log_buffer_index_lock);
+    spinlock_unlock(&log_buffer_index_lock);
 
     return buffer_status;
 }
@@ -345,7 +345,7 @@ void log_buffer_move_index(void)
     log_item empty_message = {};
 
     /* Blocking spinlock so no index changes will occur from another cores */
-    _spinlock_lock(&log_buffer_index_lock);
+    spinlock_lock(&log_buffer_index_lock);
     if (log_buffer_read_idx != log_buffer_write_idx)
     {   
         // Fill the old message with zeros
@@ -354,5 +354,33 @@ void log_buffer_move_index(void)
         // Move index 
         log_buffer_read_idx = (log_buffer_write_idx + 1) % LOG_BUFFER_SIZE;
     }
-    _spinlock_unlock(&log_buffer_index_lock);
+    spinlock_unlock(&log_buffer_index_lock);
+}
+
+boolean spi_write_log(log_item* log)
+{
+
+    FATFS FatFs;            /* File system object */
+    FIL File;               /* File objects */
+    boolean result = TRUE;
+
+    // /* Start data transfer via QSPI */
+    // waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100));
+
+    disk_initialize(0); // Initialize SD card
+    
+    if (FR_OK != f_mount(&FatFs, "", 1)) {result = false;} // Mount drive
+
+    if (FR_OK != f_open(&File, "/log.txt",  FA_OPEN_APPEND | FA_WRITE)) {result = false;} // open file
+
+    // Here should be a coversion of data to string
+    //sprintf();
+
+    // if (FR_OK != f_write(&File, text, sizeof text, &s2)) {result = false;}// write to file
+
+    if (FR_OK != f_close(&File)) {result = false;} // close file
+
+    f_mount(&FatFs, "", 0); // unmount drive
+    
+    return result;
 }

@@ -24,10 +24,13 @@ void idle_hook_core1(void);                           ///! Idle hook for CPU1. E
  * Contain busy_waiting when sending message.
  */
 TASK(task_can_tx_msg_processing_cpu1)
-{
+{ 
+  // EventMaskType mask;
   boolean message_available = TRUE;
   can_message received_message = {};
   IfxCan_Status status = IfxCan_Status_ok;
+  
+  // GetEvent(task_can_tx_msg_processing_cpu1, &mask);
 
   // Continue if there last time we had available message and successfully sent it.
   while (message_available)
@@ -41,7 +44,7 @@ TASK(task_can_tx_msg_processing_cpu1)
       status = can_reply(&received_message.header, received_message.data);
       
       log_item log = 
-      {.msg = received_message, type = TX_EVENT };
+      {.msg = received_message, .type = TX_EVENT };
       // TODO: Add log collection that the message has been sent
       log_buffer_write_message(&log);
       if(status == IfxCan_Status_ok)
@@ -55,6 +58,8 @@ TASK(task_can_tx_msg_processing_cpu1)
     }
 
   }
+
+  // ClearEvent(event_can_message)
 
   /* Cleanly terminate the Task */
   TerminateTask();
@@ -71,7 +76,7 @@ TASK(task_log_write)
 {
   boolean log_available = TRUE;
   log_item log = {};
-  IfxCan_Status status = IfxCan_Status_ok;
+  boolean status = IfxCan_Status_ok;
 
   // Continue if there last time we had available message and successfully sent it.
   while (log_available)
@@ -82,14 +87,14 @@ TASK(task_log_write)
     // Continue only if message available
     if (log_available)
     {
-      status = // TODO: Implement SPI data exchange;
+      // status = // TODO: Implement SPI data exchange;
 
       if(status == TRUE) // Log has been written
       {
         log_buffer_move_index();
       }
       else
-      { // If log hasnt been written we don't want to move a index
+      { // If log hasn't been written we don't want to move a index
         break;
       }
     }
@@ -101,10 +106,10 @@ TASK(task_log_write)
 /**
  * @brief Idle hook for CPU1. Executed when system has nothing to do
  */
-void idle_hook_core1(void)
-{
-  idle_hook_body();
-}
+// void idle_hook_core1(void)
+// {
+//   idle_hook_body();
+// }
 
 #if (defined(__TASKING__))
 #define OS_CORE1_STOP_SEC_CODE

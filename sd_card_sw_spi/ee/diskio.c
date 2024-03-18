@@ -81,8 +81,6 @@ UINT Timer1, Timer2;        /* 1000Hz decrement timer */
 static
 UINT CardType;
 
-FATFS FatFs;            /* File system object */
-FIL File;            /* File objects */
 FILINFO Finfo;
 BYTE Buff[4096];        /* Working buffer */
 

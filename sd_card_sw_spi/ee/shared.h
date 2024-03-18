@@ -48,11 +48,11 @@
 
 #include "ee.h"
 
-/* Uncomment the following to check stackoverflow response with SP really
-   outside the boundaries */
-/* #define OSEE_REAL_STACK_OVERFLOW */
-
-extern void really_grab_stack(void * stack_buffer);
+// static void idle_hook_body(void) {
+//   __asm__ volatile(
+//     "nop\n\t""nop\n\t""nop\n\t""nop\n\t""nop\n\t"
+//     "nop\n\t""nop\n\t""nop\n\t""nop\n\t""nop\n\t");
+// }
 
 
 #endif /* !OSEE_SHARED_H */

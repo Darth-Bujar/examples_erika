@@ -52,24 +52,23 @@
 #define RISING 1
 #define FALLING 0
 
-enum
+enum log_type
 {
     RX_EVENT,
     TX_EVENT,
     ERROR_EVENT,
     INFO_EVENT
-}
+};
+
 typedef struct
 {
     can_message msg;
-    log_type type;
+    enum log_type type;
 
 }log_item;
 /*********************************************************************************************************************/
 /*------------------------------------------------Function Prototypes------------------------------------------------*/
 /*********************************************************************************************************************/
-/* This function initialize the QSPI modules */
-void initQSPI(void);
 
 /* This function to initialize the QSPI modules and the LED */
 void initPeripherals(void);
@@ -83,24 +82,11 @@ void get_rx_buff(uint8 *rx, uint16 len);
 /* Check ready status of the spi */
 uint8 get_rdy(void);
 
-
-void initGpt12Timer(void);
-
-void initQSPI2Master(void);
-
-
-/* QSPI Master SW buffer initialization
- * This function initializes SW buffers the Master uses.
- */
-void initQSPI2MasterBuffers(void);
-
 /*Helper functions to clean up buffers*/
 void clear_first_byte_of_rx_buff(void);
 void clear_first_n_bytes_of_rx_buff(uint16 len);
 void clear_first_n_bytes_of_tx_buff(uint16 len);
-
-/* This function to initialize the LED */
-void initLED(void);
+;
 
 
 /**
@@ -139,22 +125,22 @@ uint8 __getMISO(void);
 void __setGPIO(Ifx_P *port, uint8 pinIndex, uint8 state);
 
 /**
- * @brief Add a data to log bufer
+ * @brief Add a data to log buffer
  * 
- * @param  log - pointer to a log_item stucture to be filled
+ * @param  log - pointer to a log_item structure to be filled
  * @return TRUE - log stored inW buffer
  *         FALSE - buffer is empty/cannot access
  */
-boolean log_buffer_write_message(log_item* ;pg)
+boolean log_buffer_write_message(log_item* log);
 
 /**
  * @brief Return a pointer to log_item in log buffer.
  * 
- * @param  log - pointer to a log_item stucture to be filled
+ * @param  log - pointer to a log_item structure to be filled
  * @return TRUE - next message stored in SW buffer
  *         FALSE - buffer is empty/cannot access
  */
-boolean log_buffer_pick_message(log_item* log)
+boolean log_buffer_pick_message(log_item* log);
 
 /**
  * @brief Write log using SPI peripheral
@@ -169,6 +155,5 @@ boolean spi_write_log(log_item* log);
  * @brief incrementing index of log buffer
  */
 void log_buffer_move_index(void);
-
 
 #endif /* QSPI_CPU_H_ */

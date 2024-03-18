@@ -15,6 +15,7 @@
 #include "IfxPort.h"
 #include "IfxCan_PinMap.h"
 #include "IfxCpu.h"
+#include "SPI_CPU.h"
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Macro definition--------------------------------------------------*/
@@ -271,9 +272,8 @@ static void _can_message_print(const char *prefix, const IfxCan_Message *hdr, co
 static IfxCan_Status _can_transmit_message(const IfxCan_Message *txMsgHdr, void *txData);
 static void _process_debug_print_control_message(const IfxCan_Message *hdr, const uint8 *rxData);
 static void _can_acceptance_filter_range_config(uint32 from_id, uint32 to_id);
-static void _spinlock_lock(IfxCpu_spinLock *lock);
-static void _spinlock_unlock(IfxCpu_spinLock *lock);
 static boolean _can_buffer_write_message(void);
+
 /*********************************************************************************************************************/
 /*-------------------------------------------------Function definition=----------------------------------------------*/
 /*********************************************************************************************************************/
@@ -287,11 +287,20 @@ static boolean _can_buffer_write_message(void);
     /* Transfer message from HW buffer to SW buffer (Spinlock is used)*/
     _can_buffer_write_message();
 
+    /* Add this message to a log */
+    can_message msg;
+    can_buffer_pick_message(&msg);
+    log_item log = {.msg = msg, .type = RX_EVENT};
+    log_buffer_write_message(&log);
+
     /* Increment received message debug counter */
     debug_counters.rx_counter = ++debug_counters.rx_counter % MAX_32BIT_VAL;
     
     /* Clear the "RX FIFO 0 new message" interrupt flag */
     IfxCan_Node_clearInterruptFlag(canNode.node, IfxCan_Interrupt_rxFifo0NewMessage);
+
+    /* Set an event to wake up task_log_write */
+    // SetEvent(task_can_tx_msg_processing_cpu1, event_can_message);
  }
 
 /* Interrupt service routine for transceive success interrupt
@@ -317,7 +326,7 @@ void can_isr_fifo0_msg_lost(void)
 
 /** Lock spinlock and reenable interrupts
  */
-static void _spinlock_lock(IfxCpu_spinLock *lock)
+void spinlock_lock(IfxCpu_spinLock *lock)
 {
     IfxCpu_disableInterrupts();
     IfxCpu_setSpinLock(lock, MAX_32BIT_VAL);
@@ -325,7 +334,7 @@ static void _spinlock_lock(IfxCpu_spinLock *lock)
 
 /** Unlock spinlock and reenable interrupts
  */
-static void _spinlock_unlock(IfxCpu_spinLock *lock)
+void spinlock_unlock(IfxCpu_spinLock *lock)
 {
     IfxCpu_resetSpinLock(lock);
     IfxCpu_enableInterrupts();
@@ -362,7 +371,7 @@ static boolean _can_buffer_write_message(void)
     can_message *msg;
 
     /* Blocking spinlock so no index changes will occur from another cores */
-    _spinlock_lock(&can_sw_buffer_index_lock);
+    spinlock_lock(&can_sw_buffer_index_lock);
     if ( ((can_buffer_write_idx + 1) % CAN_SW_BUFFER_SIZE) != can_buffer_read_idx )
     {
         /*  Update index */
@@ -373,7 +382,7 @@ static boolean _can_buffer_write_message(void)
 
         buffer_has_space = TRUE;
     }
-    _spinlock_unlock(&can_sw_buffer_index_lock);
+    spinlock_unlock(&can_sw_buffer_index_lock);
 
     /* Set from where message should be read */
     msg->header.readFromRxFifo0 = TRUE;
@@ -399,13 +408,13 @@ boolean can_buffer_pick_message(can_message* message)
     boolean buffer_status = FALSE;
 
     /* Blocking spinlock so no index changes will occur from another cores */
-    _spinlock_lock(&can_sw_buffer_index_lock);
+    spinlock_lock(&can_sw_buffer_index_lock);
     if (can_buffer_read_idx != can_buffer_write_idx)
     {
         *message = can_sw_rx_buffer[can_buffer_read_idx];
         buffer_status = TRUE;
     }
-    _spinlock_unlock(&can_sw_buffer_index_lock);
+    spinlock_unlock(&can_sw_buffer_index_lock);
 
     return buffer_status;
 }
@@ -416,7 +425,7 @@ void can_buffer_move_index(void)
     can_message empty_message = {};
 
     /* Blocking spinlock so no index changes will occur from another cores */
-    _spinlock_lock(&can_sw_buffer_index_lock);
+    spinlock_lock(&can_sw_buffer_index_lock);
     if (can_buffer_read_idx != can_buffer_write_idx)
     {   
         // Fill the old message with zeros
@@ -425,7 +434,7 @@ void can_buffer_move_index(void)
         // Move index 
         can_buffer_read_idx = (can_buffer_read_idx + 1) % CAN_SW_BUFFER_SIZE;
     }
-    _spinlock_unlock(&can_sw_buffer_index_lock);
+    spinlock_unlock(&can_sw_buffer_index_lock);
 }
 
 /** See header file */

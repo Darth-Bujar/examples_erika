@@ -3,6 +3,7 @@
 */
 #include "shared.h"
 #include "can_control.h"
+#include "SPI_CPU.h"
 
 #if (defined(__TASKING__))
 #define OS_CORE0_START_SEC_CODE
@@ -64,10 +65,10 @@ int main(void)
 /**
  * Idle hook for CPU0. Executed when system has nothing to do
 */ 
-void idle_hook_core0(void)
-{
-  idle_hook_body();
-}
+// void idle_hook_core0(void)
+// {
+//   idle_hook_body();
+// }
 
 /**
  * Idle hook for CPU0. Executed when system has nothing to do

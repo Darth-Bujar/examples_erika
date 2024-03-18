@@ -2,6 +2,7 @@
 #define _CAN_CONTROL_H_
 
 #include "IfxCan.h"
+#include "can_control.h"
 /*********************************************************************************************************************/
 /*-------------------------------------------------Macro definition--------------------------------------------------*/
 /*********************************************************************************************************************/
@@ -68,5 +69,13 @@ void can_isr_fifo0_msg_lost(void);
 boolean can_buffer_pick_message(can_message* message);
 
 void can_buffer_move_index(void);
+
+/** @brief Spinlock and reenable interrupts
+ */
+void spinlock_lock(IfxCpu_spinLock *lock);
+
+/** @brief Unlock spinlock and reenable interrupts
+ */
+void spinlock_unlock(IfxCpu_spinLock *lock);
 
 #endif /* _CAN_CONTROL_H_ */
