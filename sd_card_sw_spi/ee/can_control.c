@@ -20,7 +20,7 @@
 /*********************************************************************************************************************/
 /*-------------------------------------------------Macro definition--------------------------------------------------*/
 /*********************************************************************************************************************/
-#define CAN_SW_BUFFER_SIZE                     128              /* Maximum number of messages stored in sw CAN buffer */
+#define CAN_SW_BUFFER_SIZE                     32              /* Maximum number of messages stored in sw CAN buffer */
 #define DEBUG_ENABLE_CAN_ID                    0x1              /* Debug Enable message CAN ID */
 #define ISR_PRIORITY_CAN_RX                    10               /* CAN RX interrupt priority */
 #define MAXIMUM_RX_CAN_FD_DATA_PAYLOAD         64               /* Maximum CAN payload in bytes */

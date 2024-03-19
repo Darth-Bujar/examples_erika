@@ -126,7 +126,7 @@ void power_off (void)
 static
 BYTE xchg_spi (BYTE dat){
     BYTE result;
-    clear_first_byte_of_rx_buff();
+    // clear_first_byte_of_rx_buff();
     set_tx_buff(&dat, 1);
     qspiTransfer(1);
     while(!get_rdy());          /* Wait for end of the SPI transaction */

@@ -57,9 +57,9 @@
 #define ISR_PRIORITY_SLAVE_RX       54
 #define ISR_PRIORITY_SLAVE_ER       55
 
-#define ISR_PRIORITY_GPT12_TIMER    3                       /* Define the GPT12 Timer interrupt priority            */
-#define ISR_PROVIDER_GPT12_TIMER    IfxSrc_Tos_cpu1         /* Interrupt provider                                   */
-#define LOG_BUFFER_SIZE             64                      /* Determine the log buffer size defined by can_message */
+#define ISR_PRIORITY_GPT12_TIMER    7                       /* Define the GPT12 Timer interrupt priority            */
+#define ISR_PROVIDER_GPT12_TIMER    IfxSrc_Tos_cpu0         /* Interrupt provider                                   */
+#define LOG_BUFFER_SIZE             8                      /* Determine the log buffer size defined by can_message */
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
@@ -78,10 +78,10 @@ static uint8 log_buffer_read_idx;                    ///< SW circular buffer rea
 /*********************************************************************************************************************/
 /*------------------------------------------------Function Prototypes------------------------------------------------*/
 /*********************************************************************************************************************/
-static void initQSPI2Master(void);
-static void initQSPI2MasterBuffers(void);
-static void initQSPI(void);
-static void initLED(void);
+// static void initQSPI2Master(void);
+// static void initQSPI2MasterBuffers(void);
+// static void initQSPI(void);
+// static void initLED(void);
 
 /*********************************************************************************************************************/
 /*----------------------------------------------Function Implementations---------------------------------------------*/
@@ -182,7 +182,7 @@ static void initQSPI2MasterBuffers(void)
     for (uint16 i = 0; i < SPI_BUFFER_SIZE; i++)
     {
         tx_buff[i] = 255;        /* Fill TX Master Buffer with pattern       */
-        rx_buff[i] = 0;                     /* Clear RX Buffer                          */
+        rx_buff[i] = 0;          /* Clear RX Buffer                          */
     }
 }
 
@@ -199,7 +199,6 @@ static void initLED(void)
 /* This function initialize the QSPI modules */
 static void initQSPI(void)
 {
-
     /* Secondly initialize the Master */
     initQSPI2Master();
     initQSPI2MasterBuffers();
@@ -362,6 +361,7 @@ boolean spi_write_log(log_item* log)
 
     FATFS FatFs;            /* File system object */
     FIL File;               /* File objects */
+    UINT s2;
     boolean result = TRUE;
 
     // /* Start data transfer via QSPI */
@@ -375,8 +375,8 @@ boolean spi_write_log(log_item* log)
 
     // Here should be a coversion of data to string
     //sprintf();
-
-    // if (FR_OK != f_write(&File, text, sizeof text, &s2)) {result = false;}// write to file
+    unsigned char data_string[] = "TEST";
+    if (FR_OK != f_write(&File, data_string, sizeof (data_string), &s2)) {result = false;}// write to file
 
     if (FR_OK != f_close(&File)) {result = false;} // close file
 

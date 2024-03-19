@@ -75,32 +75,33 @@ TASK(task_can_tx_msg_processing_cpu1)
 TASK(task_log_write)
 {
   boolean log_available = TRUE;
-  log_item log = {};
-  boolean status = IfxCan_Status_ok;
-
+  log_item _log = {0};
+  boolean status = FALSE;
+  // printf("LOG TASK");
   // Continue if there last time we had available message and successfully sent it.
-  while (log_available)
-  {
+//  while (log_available)
+//  {
     // Read message from SW buffer
-    log_available = log_buffer_pick_message(&log);
+    // log_available = log_buffer_pick_message(&_log);
 
     // Continue only if message available
-    if (log_available)
-    {
-      // status = // TODO: Implement SPI data exchange;
+//    if (log_available)
+//    {
+      status = spi_write_log(&_log);
 
-      if(status == TRUE) // Log has been written
-      {
-        log_buffer_move_index();
-      }
-      else
-      { // If log hasn't been written we don't want to move a index
-        break;
-      }
-    }
+//       if(status == TRUE) // Log has been written
+//       {
+//         log_buffer_move_index();
+//       }
+//       else
+//       { // If log hasn't been written we don't want to move a index
+//         break;
+//       }
+//    }
 
-  }
-
+// }
+  /* Cleanly terminate the Task */
+  TerminateTask();
 }
 
 /**
