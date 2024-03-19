@@ -33,7 +33,6 @@
 #include "ff.h"
 #include "IfxGpt12.h"
 #include "shared.h"
-
 /* Socket controls  (Platform dependent) */
 #define CS_LOW()    __setCS(0); /* MMC CS = L */
 #define CS_HIGH()   __setCS(1)  /* MMC CS = H */
@@ -44,6 +43,11 @@
 
 #define FCLK_SLOW()     IfxGpt12_T3_setTimerValue(&MODULE_GPT120, 10*RELOAD_VALUE)         /* Set slow clock for card initialization (100k-400k) */
 #define FCLK_FAST()     IfxGpt12_T3_setTimerValue(&MODULE_GPT120, RELOAD_VALUE)        /* Set fast clock for generic read/write */
+
+//#define FCLK_SLOW()          /* Set slow clock for card initialization (100k-400k) */
+//#define FCLK_FAST()          /* Set fast clock for generic read/write */
+
+
 
 /*--------------------------------------------------------------------------
 
@@ -84,6 +88,8 @@ UINT CardType;
 FILINFO Finfo;
 BYTE Buff[4096];        /* Working buffer */
 
+FATFS FatFs;            /* File system object */
+FIL File;            /* File objects */
 
 volatile UINT Timer;    /* 1kHz increment timer */
 volatile WORD rtcYear = 2017;
@@ -126,7 +132,7 @@ void power_off (void)
 static
 BYTE xchg_spi (BYTE dat){
     BYTE result;
-    // clear_first_byte_of_rx_buff();
+    clear_first_byte_of_rx_buff();
     set_tx_buff(&dat, 1);
     qspiTransfer(1);
     while(!get_rdy());          /* Wait for end of the SPI transaction */
@@ -342,6 +348,8 @@ DSTATUS disk_status (
     return Stat;
 }
 
+
+
 /*-----------------------------------------------------------------------*/
 /* Initialize Disk Drive                                                 */
 /*-----------------------------------------------------------------------*/
@@ -360,9 +368,8 @@ DSTATUS disk_initialize (
     FCLK_SLOW();
     for (n = 10; n; n--) xchg_spi(0xFF);    /* 80 dummy clocks */
 
-    if (send_cmd(CMD0, 0) == 1) /* Enter Idle state */
-    {
-        ty = 0;
+    ty = 0;
+    if (send_cmd(CMD0, 0) == 1) {           /* Enter Idle state */
         Timer1 = 1000;                      /* Initialization timeout of 1000 msec */
         if (send_cmd(CMD8, 0x1AA) == 1) {   /* SDv2? */
             for (n = 0; n < 4; n++) ocr[n] = xchg_spi(0xFF);            /* Get trailing return value of R7 resp */

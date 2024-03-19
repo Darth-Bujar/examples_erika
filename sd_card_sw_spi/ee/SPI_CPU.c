@@ -107,7 +107,7 @@ void interruptGpt12 (void){
             byte_count++;
             bit_cnt = 0;
             if (byte_count >= to_send){
-                __setCS(1);
+                //__setCS(1);
                 IfxGpt12_T3_run(&MODULE_GPT120, IfxGpt12_TimerRun_stop);  // Terminate transmit = stop timer
                 spi_rdy = 1;
                 return;
@@ -363,24 +363,32 @@ boolean spi_write_log(log_item* log)
     FIL File;               /* File objects */
     UINT s2;
     boolean result = TRUE;
+    FRESULT res;
 
-    // /* Start data transfer via QSPI */
-    // waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100));
+    /* Start data transfer via QSPI */
+    waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, 100));
 
-    disk_initialize(0); // Initialize SD card
-    
-    if (FR_OK != f_mount(&FatFs, "", 1)) {result = false;} // Mount drive
+    while(disk_initialize(0)); // Trap if init fails
 
-    if (FR_OK != f_open(&File, "/log.txt",  FA_OPEN_APPEND | FA_WRITE)) {result = false;} // open file
+    res = f_mount(&FatFs, "", 1); // Mount drive
 
-    // Here should be a coversion of data to string
-    //sprintf();
-    unsigned char data_string[] = "TEST";
-    if (FR_OK != f_write(&File, data_string, sizeof (data_string), &s2)) {result = false;}// write to file
+    while(res != FR_OK); // Trap if disk cannot be mounted
 
-    if (FR_OK != f_close(&File)) {result = false;} // close file
+    res = f_open(&File, "/test2.txt",  FA_CREATE_ALWAYS | FA_WRITE); // open file
+
+    while(res != FR_OK); // Trap if file cannot be opened
+
+    unsigned char text[] = "test123";
+    res = f_write(&File, text, sizeof text, &s2); // write to file
+
+    while(res != FR_OK); // Trap if file cannot be written
+
+    res = f_close(&File); // close file
+
+    while(res != FR_OK); // Trap if file cannot be closed
 
     f_mount(&FatFs, "", 0); // unmount drive
+    for(;;);
     
     return result;
 }

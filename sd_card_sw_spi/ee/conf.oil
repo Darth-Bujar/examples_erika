@@ -62,7 +62,7 @@ CPU mySystem {
   	PRIORITY = 10;
   	CPU_ID   = 0x0;
   	AUTOSTART = TRUE;
-    SCHEDULE = FULL;
+    SCHEDULE = NON;
   };
 
 // TASK declaration
@@ -154,10 +154,10 @@ CPU mySystem {
 
 
 // ALARMS
-
+//
 //  ALARM alarm_log_write_cpu1
 //  {
-//    COUNTER   = system_timer_cpu1;
+//    COUNTER   = system_timer_cpu0;
 //    ACTION    = ACTIVATETASK { TASK = task_log_write; };
 //    AUTOSTART = TRUE { ALARMTIME = 100; CYCLETIME = 1000; };
 //  };
