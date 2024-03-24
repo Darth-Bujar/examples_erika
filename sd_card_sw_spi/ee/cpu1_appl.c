@@ -17,6 +17,7 @@ void idle_hook_core1(void);                           ///! Idle hook for CPU1. E
 /*********************************************************************************************************************/
 /*-------------------------------------------------Function definition=----------------------------------------------*/
 /*********************************************************************************************************************/
+
 /**
  * @brief Task for processing messages in CAN SW buffer
  * 
@@ -77,14 +78,14 @@ TASK(task_log_write)
   boolean log_available = TRUE;
   log_item _log = {0};
   boolean status = FALSE;
-  // printf("LOG TASK");
-  // Continue if there last time we had available message and successfully sent it.
+//   printf("LOG TASK");
+//   Continue if there last time we had available message and successfully sent it.
 //  while (log_available)
 //  {
-    // Read message from SW buffer
-    // log_available = log_buffer_pick_message(&_log);
+//     Read message from SW buffer
+//     log_available = log_buffer_pick_message(&_log);
 
-    // Continue only if message available
+//     Continue only if message available
 //    if (log_available)
 //    {
       status = spi_write_log(&_log);
@@ -103,14 +104,6 @@ TASK(task_log_write)
   /* Cleanly terminate the Task */
   TerminateTask();
 }
-
-/**
- * @brief Idle hook for CPU1. Executed when system has nothing to do
- */
-// void idle_hook_core1(void)
-// {
-//   idle_hook_body();
-// }
 
 #if (defined(__TASKING__))
 #define OS_CORE1_STOP_SEC_CODE
