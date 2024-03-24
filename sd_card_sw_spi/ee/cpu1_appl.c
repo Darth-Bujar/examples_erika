@@ -78,6 +78,7 @@ TASK(task_log_write)
   boolean log_available = TRUE;
   log_item _log = {0};
   boolean status = FALSE;
+  SuspendOSInterrupts();
 //   printf("LOG TASK");
 //   Continue if there last time we had available message and successfully sent it.
 //  while (log_available)
@@ -101,6 +102,7 @@ TASK(task_log_write)
 //    }
 
 // }
+  ResumeOSInterrupts();
   /* Cleanly terminate the Task */
   TerminateTask();
 }
